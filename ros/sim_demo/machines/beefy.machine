@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Machine description -->
+    <machine
+        name="beefy"
+        address="rosi"
+        user="igmr_remote"
+        env-loader="~/.igmr/ros/env.sh"
+        ssh-port="22"
+        timeout="20"
+    />
+</launch>

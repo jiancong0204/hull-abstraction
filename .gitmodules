@@ -1,0 +1,3 @@
+[submodule "ros/modules/igmr_robotics_system_toolbox"]
+	path = ros/modules/igmr_robotics_system_toolbox
+	url = ../../../COAR/igmr_packages/igmr_robotics_system_toolbox

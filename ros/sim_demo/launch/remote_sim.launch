@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Include the machine definition -->
+    <include file="$(find sim_demo)/machines/beefy.machine" />
+
+    <!-- Define nodes to start -->
+    <node machine="beefy" pkg="template_nodes" type="do_something_big" name="do_something_big" >
+        <!-- Load the parameters to the parameter server -->
+        <rosparam command="load" file="$(find template_nodes)/config/example_default.yaml" />
+    </node>
+</launch>

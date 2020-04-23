@@ -1,0 +1,141 @@
+# Gitlab CI configuration.
+# This configuration was copied from the Perfect ROS Repository. Consider
+# updating it there if you make changes here.
+# https://igm-git.igm.rwth-aachen.de/COAR/best_practices/perfect_ros_repository
+
+# Predefined:
+# CI_PROJECT_DIR: The repository root of the cloned repository in the container.
+variables:
+  ROS_WORKSPACE_PATH: '/catkin_ws'
+  ROS_SOURCE_PATH: '/catkin_ws/src'
+  # This line causes submodules to be initialized before running the actions further down.
+  # To make this work, please refer to your submodules in .gitmodules by relative URLs:
+  #   url = ../../../COAR/group/some_project.git
+  # This will result in the correct transport (SSH/HTTPS/file) to be used in various
+  # scenarios.
+  GIT_SUBMODULE_STRATEGY: recursive
+
+
+stages:
+  - build
+  - test
+  - style
+  - pages
+
+before_script:
+  - export ROS_MASTER_URI=http://localhost:11311
+  - rm -rf $ROS_SOURCE_PATH
+  - mkdir -p $ROS_SOURCE_PATH
+  - cd $ROS_SOURCE_PATH
+  # At this point, clone any dependent repositories. For example, if the project
+  # depends on the IGMR robotics system toolbox:
+  #  - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@igm-git.igm.rwth-aachen.de/COAR/igmr_packages/igmr_robotics_system_toolbox.git
+  - shopt -s extglob
+  - cp -R $CI_PROJECT_DIR/ros/* $ROS_SOURCE_PATH
+
+build_ros_kinetic:
+  stage: build
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:kinetic
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/kinetic/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin build
+  # As this repo needs features from modern melodic, we shouldn't rely on outdated kinetic.
+  allow_failure: true
+
+build_ros_melodic:
+  stage: build
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:melodic
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/melodic/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin build
+  allow_failure: false
+
+build_ros_indigo:
+  stage: build
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:indigo
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/indigo/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin build
+  allow_failure: true
+
+
+test_ros_kinetic:
+  stage: test
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:kinetic
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/kinetic/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin run_tests
+  allow_failure: true
+
+test_ros_melodic:
+  stage: test
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:melodic
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/melodic/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin run_tests
+  allow_failure: false
+
+test_ros_indigo:
+  stage: test
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/ros:indigo
+    entrypoint: ['']
+  script:
+    - cd $ROS_SOURCE_PATH
+    - source /opt/ros/indigo/setup.bash
+    - catkin_init_workspace
+    - cd $ROS_WORKSPACE_PATH
+    - catkin run_tests
+  allow_failure: true
+
+# Automated quality check
+quality-inspection:
+  stage: style
+  image: igm-git.igm.rwth-aachen.de:4999/it/docker/quality-inspector:latest
+  script:
+    - cd /quality-inspector/python
+    - pipenv run python3 -m src.core.controller.controller -p $CI_PROJECT_DIR -c $CI_PROJECT_DIR/qi-config.json -u $GITLAB_USER_NAME
+  allow_failure: false
+
+# Automated Doxygen build and deploy to GitLab Pages
+pages:
+  stage: pages
+  image:
+    name: igm-git.igm.rwth-aachen.de:4999/it/docker/doxygen:latest
+  before_script: []
+  script:
+    - cd ${CI_PROJECT_DIR}
+    - cd doc/
+    - doxygen Doxyfile && assets/postprocess.py
+    - cd ../
+    - mkdir public && cp -rf doc/html/* public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

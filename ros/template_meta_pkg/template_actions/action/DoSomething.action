@@ -1,0 +1,25 @@
+## @file
+## @ros_action Purpose of this ROS Action.
+##
+## This action does something and gives feedback.
+
+## @name Goal
+##@{
+
+uint32 dishes_to_clean      ##< Define the goal
+
+##@}
+---
+## @name Result
+##@{
+
+uint32 total_dishes_cleaned ##< Define the result
+
+##@}
+---
+## @name Feedback
+##@{
+
+float32 percent_complete    ##< Define a feedback message
+
+##@}

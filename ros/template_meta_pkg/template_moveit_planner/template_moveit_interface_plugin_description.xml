@@ -1,0 +1,5 @@
+<library path="lib/libmoveit_template_moveit_planner_plugin">
+  <class name="template_moveit_interface/TEMPLATE_MOVEITPlanner" type="template_moveit_interface::TEMPLATE_MOVEITPlannerManager" base_class_type="planning_interface::PlannerManager">
+    <description>TEMPLATE_MOVEIT Planner - The Optimal Control Trajectory Optimization Planner</description>
+  </class>
+</library>

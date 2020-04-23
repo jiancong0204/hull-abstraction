@@ -1,0 +1,5 @@
+#  Choose which planner to use
+planner_configs:
+  TEMPLATE_MOVEIT_Interp:
+    N: 10.0                             # Number of interpolation points
+    trajectory_execution_time: 1.0      # Duration of the trajectory execution

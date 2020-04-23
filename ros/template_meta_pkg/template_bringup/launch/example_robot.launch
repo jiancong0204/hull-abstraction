@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot_ns" default=""/>
+
+    <group ns="$(arg robot_ns)">
+        <!-- Load URDF on ROS parameter server -->
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find template_description)/robots/example_robot.xacro' robot_ns:=$(arg robot_ns)"/>
+
+        <!-- Start publisher for robot joint states -->
+        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false" output="screen">
+            <param name="use_gui" value="true"/>
+        </node>
+
+        <!-- Start publisher for robot tf frames -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+    </group>
+</launch>

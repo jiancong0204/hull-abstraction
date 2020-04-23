@@ -1,0 +1,470 @@
+
+
+{
+  "path": "",
+
+  "NamingConventionsTest": {
+    "is_active": true,
+    "default": {
+        "top_level_folder" : {"numbering": "forbidden"},
+        "folder" : {"convention": "under_score"},
+        "ros":{
+          "ros_package" : {"convention": "under_score"},
+          "description_package" : {"trailing": "_description"},
+          "bringup_package" : {"trailing": "_bringup"},
+          ".launch" : {"leading": ["run_", "bringup_"]},
+          "msg_package": {"trailing": "_msgs"},
+          "srv_package": {"trailing": "_srvs"},
+          "action_package": {"trailing": "_actions"},
+          "communication_package": {"trailing": "_communication"},
+          "message_file" : {"convention": "CamelCased"},
+          "service_file" : {"convention": "CamelCased"},
+          "action_file" : {"convention": "CamelCased"},
+          "other" : {"convention": "under_score"}
+        },
+        "cpp": {
+          "class": {"convention": "CamelCAse"},
+          "function": {"convention": "camelCase"},
+          "variable": {"convention": "under_score"},
+          "constant": {"convention": "ALL_CAPITAL"},
+          "member_variable": {"trailing": "_"},
+          "global_variable": {"leading": "g_"},
+          "namespace": {"convention": "under_score"}
+          },
+        "py": {
+          "class": {"convention": "CamelCase"},
+          "function": {"convention": "under_score"},
+          "member_variable": {"leading": "_"},
+          "global_variable": {"leading": "_global"}
+        },
+        "m": {
+          "function": {"convention": "camelCase"},
+          "variable": {"convention": "camelCase", "min_length": 2},
+          "local_constant": {"convention": "ALL_CAPITAL"},
+          "structure": "CamelCase"
+        }
+    }
+  },
+  "GlobalVariableExistenceTest": {
+    "is_active": true,
+    "default": {}
+  },
+  "StaticClassVariableExistenceTest": {
+    "is_active": true,
+    "default": {}
+  },
+  "DocumentationTest" : {
+    "is_active" : true,
+    "default" : {
+      "header": ["@brief"],
+      "message": ["@brief"],
+      "service": ["@brief"],
+      "action": ["@brief"],
+      "cpp" : {
+        "class": ["@brief"],
+        "function": ["@brief"],
+        "ros_node": ["@brief", "@ros_node"],
+        "member_variable": ["@brief"]
+      }
+    }
+
+
+  },
+  "CppExistenceTest" : {
+    "is_active" : true,
+    "default" : {
+      "forbidden" : ["cout","uint "],
+      "alternatives" : ["rosconsole","unsigned int"]
+    }
+  },
+  "FileStructureTest": {
+    "is_active": true,
+    "default":{ 
+      "rules" : [
+        {
+          "name": "root",
+          "parent": [],
+          "subdirectories": [
+            ".git",
+            "arduino",
+            "doc",
+            "docker",
+            "matlab",
+            "modules",
+            "plc",
+            "python",
+            "ros",
+            "tools"
+          ],
+          "files": [
+            ".gitlab-ci.*",
+            "*.gitignore",
+            ".gitmodules",
+            ".clang-format",
+            "qi-config.json",
+            "LICENSE",
+            "README.md",
+            "CONTRIBUTING.md"
+          ]
+        },
+        {
+          "name": "arduino",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            ".ino"
+          ]
+        },
+        {
+          "name": "doc",
+          "parent": [
+            "root"
+          ],
+          "subdirectories": ["figures","latex"],
+          "files": [
+            "Doxyfile",
+            "DoxygenLayout.xml",
+            "*.jpg",
+            "*.jpeg",
+            "*.png"
+          ]
+        },
+        {
+          "name": "latex",
+          "parent": ["doc"],
+          "subdirectories": [],
+          "files": ["*.tex"]
+        },
+        {
+          "name": "examples",
+          "parent": "root",
+          "subdirectories": [],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "matlab",
+          "parent": "root",
+          "subdirectories": [],
+          "files": [
+            "*.m"
+          ]
+        },
+        {
+          "name": "ros",
+          "parent": "root",
+          "subdirectories": [
+            "actions",
+            "bringup",
+            "communication",
+            "msgs",
+            "description",
+            "code",
+            "srvs",
+            "*_pkg"
+          ],
+          "files": [
+            "<empty>"
+          ]
+        },
+        {
+          "name": "tools",
+          "parent": "root",
+          "subdirectories": ["*"],
+          "files": ["*"]
+        },
+        {
+          "name": "plc",
+          "parent": "root",
+          "subdirectories": [],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "*_pkg",
+          "parent": "ros",
+          "subdirectories" : ["*"],
+          "files" : ["*"]
+        },
+        {
+          "name": "python",
+          "parent": "root",
+          "subdirectories": [],
+          "files": [
+            "*.py",
+            "*.yaml",
+            "*.yml",
+            "*.config"
+          ]
+        },
+        {
+          "name": "modules",
+          "parent": "root",
+          "subdirectories": [],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "figures",
+          "parent": "doc",
+          "subdirectories": [],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "actions",
+          "parent": "ros",
+          "subdirectories": [
+            "action"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "bringup",
+          "parent": "ros",
+          "subdirectories": [
+            "config",
+            "launch"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "communication",
+          "parent": "ros",
+          "subdirectories": [
+            "action",
+            "msg",
+            "srv"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "msgs",
+          "parent": "ros",
+          "subdirectories": [
+            "msg"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "description",
+          "parent": "ros",
+          "subdirectories": [
+            "config",
+            "launch",
+            "meshes",
+            "robots",
+            "urdf"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "code",
+          "parent": "ros",
+          "subdirectories": [
+            "benchmark",
+            "cfg",
+            "config",
+            "include",
+            "launch",
+            "scripts",
+            "src",
+            "test"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "srvs",
+          "parent": "ros",
+          "subdirectories": [
+            "srv"
+          ],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        },
+        {
+          "name": "metaparent",
+          "parent": "ros",
+          "subdirectories": [
+            "meta"
+          ],
+          "files": [
+            "<empty>"
+          ]
+        },
+        {
+          "name": "action",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.action"
+          ]
+        },
+        {
+          "name": "config",
+          "parent": [],
+          "subdirectories": ["*"],
+          "files": [
+            "*.yaml"
+          ]
+        },
+        {
+            "name": "config",
+            "parent": ["bringup"],
+            "subdirectories": [],
+            "files": [
+                "*.yaml",
+                "*.config",
+                "*.rviz"
+            ]
+        },
+        {
+          "name": "launch",
+          "parent": [],
+          "subdirectories": ["*"],
+          "files": [
+            "*.launch"
+          ]
+        },
+        {
+          "name": "msg",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.msg"
+          ]
+        },
+        {
+          "name": "srv",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.srv"
+          ]
+        },
+        {
+          "name": "meshes",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.stl"
+          ]
+        },
+        {
+          "name": "robots",
+          "parent": [],
+          "subdirectories": ["*"],
+          "files": [
+            "*.urdf",
+            "*.xacro"
+          ]
+        },
+        {
+          "name": "urdf",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.urdf"
+          ]
+        },
+        {
+          "name": "benchmark",
+          "parent": [],
+          "subdirectories": ["*"],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "cfg",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.cfg"
+          ]
+        },
+        {
+          "name": "include",
+          "parent": [],
+          "subdirectories": [
+            "*"
+          ],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "scripts",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.bash"
+          ]
+        },
+        {
+          "name": "src",
+          "parent": [],
+          "subdirectories": [
+            "*"
+          ],
+          "files": [
+            "*_node.cpp",
+            "*"
+          ]
+        },
+        {
+          "name": "node",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*.cpp",
+            "*.h"
+          ]
+        },
+        {
+          "name": "test",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "*"
+          ]
+        },
+        {
+          "name": "meta",
+          "parent": [],
+          "subdirectories": [],
+          "files": [
+            "CMakeLists.txt",
+            "package.xml"
+          ]
+        }
+    ]}},
+    ".git" : {
+      "is_active" : false,
+      "rules" : []
+    }
+}
