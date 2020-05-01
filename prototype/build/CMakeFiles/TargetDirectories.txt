@@ -1,3 +1,0 @@
-/home/jc/master_thesis/prototype/build/CMakeFiles/edit_cache.dir
-/home/jc/master_thesis/prototype/build/CMakeFiles/rebuild_cache.dir
-/home/jc/master_thesis/prototype/build/CMakeFiles/hull_abstraction.dir
