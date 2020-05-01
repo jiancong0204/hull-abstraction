@@ -1,0 +1,2 @@
+hull_abstraction
+-DCATKIN_DEVEL_PREFIX=/home/jc/master_thesis/ros/devel -DCMAKE_INSTALL_PREFIX=/home/jc/master_thesis/ros/install -G Unix Makefiles

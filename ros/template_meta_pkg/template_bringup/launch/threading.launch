@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Start threading node -->
-    <node pkg="template_nodes" type="threading" name="threading_example" output="screen" />
-</launch>

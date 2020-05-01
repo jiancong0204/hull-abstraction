@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Load configuration for ROS Console -->
-    <env name="ROSCONSOLE_CONFIG_FILE" value="$(find template_bringup)/config/rosconsole_debug.config"/>
-
-    <!-- Nodes to run with debug output -->
-    <node pkg="template_nodes" type="threading" name="threading_example" output="screen" />
-</launch>

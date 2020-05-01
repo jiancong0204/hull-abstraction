@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Put all tests here -->
-    <node pkg="template_nodes" type="conduct_heavy_computation_test" name="conduct_heavy_computation_test" output="screen" />
-    <node pkg="template_nodes" type="template_class_test" name="template_class_test" output="screen" />
-</launch>

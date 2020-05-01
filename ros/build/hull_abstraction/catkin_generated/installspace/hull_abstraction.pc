@@ -1,0 +1,8 @@
+prefix=/home/jc/master_thesis/ros/install
+
+Name: hull_abstraction
+Description: Description of hull_abstraction
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
