@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jc/master_thesis/ros/src
+CMAKE_SOURCE_DIR = /home/jc/hull_abstraction/ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jc/master_thesis/ros/build
+CMAKE_BINARY_DIR = /home/jc/hull_abstraction/ros/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/jc/master_thesis/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jc/master_thesis/ros/src /home/jc/master_thesis/ros/src /home/jc/master_thesis/ros/build /home/jc/master_thesis/ros/build /home/jc/master_thesis/ros/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jc/hull_abstraction/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jc/hull_abstraction/ros/src /home/jc/hull_abstraction/ros/src /home/jc/hull_abstraction/ros/build /home/jc/hull_abstraction/ros/build /home/jc/hull_abstraction/ros/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

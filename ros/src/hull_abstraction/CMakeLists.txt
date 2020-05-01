@@ -47,7 +47,6 @@ SET(moving_least_squares
     src/moving_least_squares_node.cpp 
     src/moving_least_squares_node/moving_least_squares.cpp
     src/hull_abstraction/functions.cpp
-    src/hull_abstraction/preprocessor.cpp
 )
 
 add_executable(moving_least_squares ${moving_least_squares})

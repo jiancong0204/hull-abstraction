@@ -1,4 +1,4 @@
-prefix=/home/jc/master_thesis/ros/install
+prefix=/home/jc/hull_abstraction/ros/install
 
 Name: hull_abstraction
 Description: Description of hull_abstraction

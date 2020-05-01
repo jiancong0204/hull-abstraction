@@ -25,7 +25,7 @@ double hull_abstraction::computeCloudResolution(pcl::PointCloud<pcl::PointXYZ>::
     }
     if (numberOfPoints != 0)
         resolution /= numberOfPoints;
-    std::cout << "number of point: " <<numberOfPoints << std::endl;
+    // std::cout << "number of point: " << numberOfPoints << std::endl;
     return resolution;
 }
 

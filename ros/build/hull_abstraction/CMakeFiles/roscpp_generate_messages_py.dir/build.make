@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jc/master_thesis/ros/src
+CMAKE_SOURCE_DIR = /home/jc/hull_abstraction/ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jc/master_thesis/ros/build
+CMAKE_BINARY_DIR = /home/jc/hull_abstraction/ros/build
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -63,10 +63,10 @@ hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/build: roscpp_genera
 .PHONY : hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/build
 
 hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	cd /home/jc/master_thesis/ros/build/hull_abstraction && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/jc/hull_abstraction/ros/build/hull_abstraction && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/jc/master_thesis/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jc/master_thesis/ros/src /home/jc/master_thesis/ros/src/hull_abstraction /home/jc/master_thesis/ros/build /home/jc/master_thesis/ros/build/hull_abstraction /home/jc/master_thesis/ros/build/hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jc/hull_abstraction/ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jc/hull_abstraction/ros/src /home/jc/hull_abstraction/ros/src/hull_abstraction /home/jc/hull_abstraction/ros/build /home/jc/hull_abstraction/ros/build/hull_abstraction /home/jc/hull_abstraction/ros/build/hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hull_abstraction/CMakeFiles/roscpp_generate_messages_py.dir/depend
 

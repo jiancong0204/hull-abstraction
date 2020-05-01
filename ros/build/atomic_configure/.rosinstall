@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/jc/master_thesis/ros/devel/setup.sh
+    local-name: /home/jc/hull_abstraction/ros/devel/setup.sh

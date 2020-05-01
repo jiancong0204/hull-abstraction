@@ -6,5 +6,5 @@ CXX_FLAGS =     -march=native -msse4.2 -mfpmath=sse -std=gnu++14
 
 CXX_DEFINES = -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"hull_abstraction\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT="1(vtkRenderingContextOpenGL)" -DvtkRenderingCore_AUTOINIT="3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL)"
 
-CXX_INCLUDES = -isystem /usr/local/include/vtk-6.2 -isystem /usr/local/include/pcl-1.10 -isystem /usr/include/eigen3 -I/home/jc/master_thesis/ros/src/hull_abstraction/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/pcl-1.7 
+CXX_INCLUDES = -isystem /usr/local/include/vtk-6.2 -isystem /usr/local/include/pcl-1.10 -isystem /usr/include/eigen3 -I/home/jc/hull_abstraction/ros/src/hull_abstraction/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/pcl-1.7 
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jc/master_thesis/ros/src/hull_abstraction
+# Install script for directory: /home/jc/hull_abstraction/ros/src/hull_abstraction
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jc/master_thesis/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jc/hull_abstraction/ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jc/master_thesis/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstraction.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jc/hull_abstraction/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstraction.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hull_abstraction/cmake" TYPE FILE FILES
-    "/home/jc/master_thesis/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstractionConfig.cmake"
-    "/home/jc/master_thesis/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstractionConfig-version.cmake"
+    "/home/jc/hull_abstraction/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstractionConfig.cmake"
+    "/home/jc/hull_abstraction/ros/build/hull_abstraction/catkin_generated/installspace/hull_abstractionConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hull_abstraction" TYPE FILE FILES "/home/jc/master_thesis/ros/src/hull_abstraction/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hull_abstraction" TYPE FILE FILES "/home/jc/hull_abstraction/ros/src/hull_abstraction/package.xml")
 endif()
 
