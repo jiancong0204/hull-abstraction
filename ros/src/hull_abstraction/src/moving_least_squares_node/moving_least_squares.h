@@ -1,16 +1,13 @@
+#pragma once
 #include <ros/ros.h>
-#include <iostream>
 #include <sensor_msgs/PointCloud2.h>
+#include <iostream>
 #include <pcl_conversions/pcl_conversions.h>
-#include <pcl/surface/mls.h>
-#include "hull_abstraction/preprocessor.h"
-#include "hull_abstraction/functions.h"
-#include <pcl/io/pcd_io.h>
-
-
-#include <pcl/point_types.h>
-#include <pcl/filters/voxel_grid.h>
 #include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/surface/mls.h>
+
 
 namespace moving_least_squares_node {
     class MovingLeastSquares {
