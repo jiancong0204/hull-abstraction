@@ -12,7 +12,7 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-include_directories(${CMAKE_SOURCE_DIR}) # include the directory where head files and source files are stored
+include_directories(${CMAKE_SOURCE_DIR}/include) # include the directory where head files and source files are stored
 
 SET(codes src/main.cpp src/hull_abstraction/reconstructor.cpp src/hull_abstraction/preprocessor.cpp src/hull_abstraction/functions.cpp)
  

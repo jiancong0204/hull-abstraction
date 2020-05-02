@@ -1,75 +1,74 @@
-#include "include/hull_abstraction/preprocessor.h"
+#include "hull_abstraction/preprocessor.h"
 
-void hull_abstraction::Preprocessor::voxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered)
+void hull_abstraction::Preprocessor::voxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
     // Down sampling to reduce the number of points without losing much precision
-    voxelGrid.setInputCloud(cloud);
-    voxelGrid.setLeafSize(0.01f, 0.01f, 0.01f);  //Volume of voxel(AABB) is 1 cm3
-    voxelGrid.setDownsampleAllData(false); //No down sampling based on RGB information
-    voxelGrid.filter(*cloudFiltered);
+    approximate_voxel_grid.setInputCloud(cloud);
+    approximate_voxel_grid.setLeafSize(0.01f, 0.01f, 0.01f);  //Volume of voxel(AABB) is 1 cm3
+    approximate_voxel_grid.setDownsampleAllData(false); //No down sampling based on RGB information
+    approximate_voxel_grid.filter(*filtered_cloud);
 }
 
-void hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered)
+void hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
-    statistical.setInputCloud(cloud);
-    statistical.setMeanK(50);
-    statistical.setStddevMulThresh(1.0);
-    statistical.filter(*cloudFiltered);
+    statistical_outlier_removal.setInputCloud(cloud);
+    statistical_outlier_removal.setMeanK(50);
+    statistical_outlier_removal.setStddevMulThresh(1.0);
+    statistical_outlier_removal.filter(*filtered_cloud);
 }
 
-void hull_abstraction::Preprocessor::passThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered)
+void hull_abstraction::Preprocessor::passThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
-    passThrough.setInputCloud(cloud);
-    passThrough.setFilterFieldName("z"); //opration for z-axis
-    passThrough.setFilterLimits(0.0, 400.0); //range
+    pass_through.setInputCloud(cloud);
+    pass_through.setFilterFieldName("z"); //opration for z-axis
+    pass_through.setFilterLimits(0.0, 400.0); //range
     //passThrough.setFilterLimitsNegative(true);
-    passThrough.filter(*cloudFiltered);
+    pass_through.filter(*filtered_cloud);
 }
 
-void hull_abstraction::Preprocessor::conditionalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered)
+void hull_abstraction::Preprocessor::conditionalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
-    pcl::ConditionAnd<pcl::PointXYZ>::Ptr rangeCondition(new pcl::ConditionAnd<pcl::PointXYZ>());
-    rangeCondition->addComparison(pcl::FieldComparison<pcl::PointXYZ>::ConstPtr(new pcl::FieldComparison<pcl::PointXYZ>("z", pcl::ComparisonOps::GT, 0.0)));
-    rangeCondition->addComparison(pcl::FieldComparison<pcl::PointXYZ>::ConstPtr(new pcl::FieldComparison<pcl::PointXYZ>("z", pcl::ComparisonOps::LT, 0.8)));
-    condition.setCondition(rangeCondition);
-    condition.setInputCloud(cloud);
-    condition.setKeepOrganized(true);
-    condition.filter(*cloudFiltered);
+    pcl::ConditionAnd<pcl::PointXYZ>::Ptr range_condition(new pcl::ConditionAnd<pcl::PointXYZ>());
+    range_condition->addComparison(pcl::FieldComparison<pcl::PointXYZ>::ConstPtr(new pcl::FieldComparison<pcl::PointXYZ>("z", pcl::ComparisonOps::GT, 0.0)));
+    range_condition->addComparison(pcl::FieldComparison<pcl::PointXYZ>::ConstPtr(new pcl::FieldComparison<pcl::PointXYZ>("z", pcl::ComparisonOps::LT, 0.8)));
+    conditional_removal.setCondition(range_condition);
+    conditional_removal.setInputCloud(cloud);
+    conditional_removal.setKeepOrganized(true);
+    conditional_removal.filter(*filtered_cloud);
 }
 
-void hull_abstraction::Preprocessor::radiusFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered)
+void hull_abstraction::Preprocessor::radiusFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
-    radius.setInputCloud(cloud);
-    radius.setRadiusSearch(100);
-    radius.setMinNeighborsInRadius(2); //delete the point whose number of neighbours is less than 2
-    radius.filter(*cloudFiltered);
+    radius_outlier_removal.setInputCloud(cloud);
+    radius_outlier_removal.setRadiusSearch(100);
+    radius_outlier_removal.setMinNeighborsInRadius(2); //delete the point whose number of neighbours is less than 2
+    radius_outlier_removal.filter(*filtered_cloud);
 }
 
-void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr cloudWithNormals)
+void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
     pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
-    normalEstimation.setInputCloud(cloud);
-    normalEstimation.setSearchMethod(tree);
-    normalEstimation.setKSearch(20);
-    normalEstimation.compute(*normals);
-    pcl::concatenateFields(*cloud, *normals, *cloudWithNormals);
+    normal_estimation.setInputCloud(cloud);
+    normal_estimation.setSearchMethod(tree);
+    normal_estimation.setKSearch(20);
+    normal_estimation.compute(*normals);
+    pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
 }
 
-void hull_abstraction::Preprocessor::movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudSmoothed, pcl::PointCloud<pcl::PointNormal>::Ptr cloudSmoothedWithNormals)
+void hull_abstraction::Preprocessor::movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr smoothed_cloud, pcl::PointCloud<pcl::PointNormal>::Ptr smoothed_cloud_with_normals)
 {
     double resolution = hull_abstraction::computeCloudResolution(cloud);
-    std::cout << resolution << std::endl;
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
-    movingLS.setInputCloud(cloud);
-    movingLS.setComputeNormals(true);
-    movingLS.setPolynomialOrder(3);
-    movingLS.setSearchMethod(tree);
-    movingLS.setSearchRadius(10 * resolution);
+    moving_least_squares.setInputCloud(cloud);
+    moving_least_squares.setComputeNormals(true); //我们都知道表面重构时需要估计点云的法向量，这里MLS提供了一种方法来估计点云法向量(如果是true的话注意输出数据格式)
+    moving_least_squares.setPolynomialOrder(3); //MLS拟合曲线的阶数，这个阶数在构造函数里默认是2，但是参考文献给出最好选择3或者4
+    moving_least_squares.setSearchMethod(tree);
+    moving_least_squares.setSearchRadius(10 * resolution);
     // Reconstruct
-    movingLS.process(mlsPoints);
-    pcl::copyPointCloud(mlsPoints, *cloudSmoothed);
-    pcl::copyPointCloud(mlsPoints, *cloudSmoothedWithNormals);
+    moving_least_squares.process(mls_points);
+    pcl::copyPointCloud(mls_points, *smoothed_cloud);
+    pcl::copyPointCloud(mls_points, *smoothed_cloud_with_normals);
 }

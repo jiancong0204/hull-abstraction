@@ -7,11 +7,11 @@
 #include <pcl/filters/conditional_removal.h>
 #include <pcl/filters/radius_outlier_removal.h>
 #include <pcl/surface/mls.h>
-#include "include/hull_abstraction/functions.h"
+#include "hull_abstraction/functions.h"
 
 /* Class that wraps the preprocessing of a point cloud. */
-
-namespace hull_abstraction {
+namespace hull_abstraction
+{
     class Preprocessor
     {
     public:
@@ -20,44 +20,45 @@ namespace hull_abstraction {
         ~Preprocessor() {}
 
         /* Function that implements a voxel grid filter to perform down sampling. 
-           Input: a cloud of PointXYZ
-           Output: a set of PointXYZ
-           The output is stored in cloudFiltered. */
-        void voxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered);
+        Input: a cloud of PointXYZ
+        Output: a set of PointXYZ
+        The output is stored in cloudFiltered. */
+        void voxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /* Function that implements a statistical filter to remove outliers. 
-           The output is stored in cloudFiltered.*/
-        void statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered);
+        The output is stored in cloudFiltered.*/
+        void statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /* Function that implements a pass-through filter. 
-           The output is stored in cloudFiltered.*/
-        void passThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered);
+        The output is stored in cloudFiltered.*/
+        void passThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /* Function that implements a conditional filter. 
-           The output is stored in cloudFiltered.*/
-        void conditionalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered);
+        The output is stored in cloudFiltered.*/
+        void conditionalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /* Function that implements a radius filter. 
-           The output is stored in cloudFiltered.*/
-        void radiusFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered);
+        The output is stored in cloudFiltered.*/
+        void radiusFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /* Function that estimates the normals and appends them to the cloud. 
-           The output is stored in cloudFiltered.*/
-        void appendNormalEstimation(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr cloudFiltered);
+        The output is stored in cloudFiltered.*/
+        void appendNormalEstimation(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /* Function that implements MLS (Moving Least Squares) algorithm for data smoothing (up sampling) and improved normal estimation. 
-           The first output is a point cloud after applying MLS, which is stored in cloudSmoothed.
-           The second output is the cloud with normals, which is stored in cloudSmoothedWithNormals*/
-        void movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr cloudSmoothed, pcl::PointCloud<pcl::PointNormal>::Ptr cloudSmoothedWithNormals);
+        The first output is a point cloud after applying MLS, which is stored in cloudSmoothed.
+        The second output is the cloud with normals, which is stored in cloudSmoothedWithNormals*/
+        void movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr smoothed_cloud, 
+            pcl::PointCloud<pcl::PointNormal>::Ptr smoothed_cloud_with_normals);
 
     private:
-        pcl::ApproximateVoxelGrid<pcl::PointXYZ> voxelGrid;
-        pcl::StatisticalOutlierRemoval<pcl::PointXYZ> statistical;
-        pcl::PassThrough<pcl::PointXYZ> passThrough;
-        pcl::ConditionalRemoval<pcl::PointXYZ> condition;
-        pcl::RadiusOutlierRemoval<pcl::PointXYZ> radius;
-        pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> movingLS;
-        pcl::PointCloud<pcl::PointNormal> mlsPoints;
-        pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> normalEstimation;
+        pcl::ApproximateVoxelGrid<pcl::PointXYZ> approximate_voxel_grid;
+        pcl::StatisticalOutlierRemoval<pcl::PointXYZ> statistical_outlier_removal;
+        pcl::PassThrough<pcl::PointXYZ> pass_through;
+        pcl::ConditionalRemoval<pcl::PointXYZ> conditional_removal;
+        pcl::RadiusOutlierRemoval<pcl::PointXYZ> radius_outlier_removal;
+        pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> normal_estimation;
+        pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> moving_least_squares;
+        pcl::PointCloud<pcl::PointNormal> mls_points;
     };
 }
