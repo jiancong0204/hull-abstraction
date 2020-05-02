@@ -1,33 +1,35 @@
 #include "load_pcd.h"
 
-void load_pcd::LoadPCD::run(int argc, char **argv) {
-    initialization(argc, argv);
-    createROSMsg();
-    publish();
-}
-
-void load_pcd::LoadPCD::initialization(int argc, char **argv) {
-    ros::init (argc, argv, "load_pcd"); // Node name
-    ros::NodeHandle nh;
+void load_pcd::LoadPCD::run()
+{
     pcl_pub = nh.advertise<sensor_msgs::PointCloud2> ("load_pcd", 1);
+    createROSMsg();
+    publishROSMsg();
 }
 
-void load_pcd::LoadPCD::createROSMsg() {
+int load_pcd::LoadPCD::createROSMsg()
+{
     //Convert the cloud to ROS message
-    pcl::io::loadPCDFile ("/home/jc/master_thesis/prototype/point_cloud_data/16_5.pcd", input_cloud);
-    pcl::toROSMsg(input_cloud, output_cloud);
-    output_cloud.header.frame_id = "base";
+    bool is_loaded = ~pcl::io::loadPCDFile ("/home/jc/master_thesis/prototype/point_cloud_data/16_5.pcd", cloud);
+    if (is_loaded)
+        std::cout << "PCD file loaded. " << std::endl;
+    else
+    {
+        std::cout << "Loading failed! " << std::endl;
+        return 0;
+    }
+    pcl::toROSMsg(cloud, msg);
+    msg.header.frame_id = "base";
+    return 1;
 }
 
-void load_pcd::LoadPCD::publish() {
+void load_pcd::LoadPCD::publishROSMsg() {
     ros::Rate loop_rate(1);
     while (ros::ok())
     {
-        pcl_pub.publish(output_cloud);
+        pcl_pub.publish(msg);
         ros::spinOnce();
-        std::cout << "published" << std::endl;
+        std::cout << "Cloud is published. " << std::endl;
         loop_rate.sleep();
     }
-
 }
-

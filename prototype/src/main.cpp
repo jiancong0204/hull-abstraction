@@ -48,7 +48,6 @@ int main()
     //pp.appendNormalEstimation(cloudFiltered, cloudFilteredWithNormals);
     //end = clock();
     //std::cout << "Time cost for normal estimation (filtered cloud): " << (end - start)  << " μs" << std::endl;
-
     // B-spline surface fitting
     start = clock();
     mesh1 = rc.bsplineSurfaceFitting(cloud);

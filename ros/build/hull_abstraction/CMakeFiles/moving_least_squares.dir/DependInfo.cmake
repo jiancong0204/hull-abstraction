@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/functions.cpp" "/home/jc/hull_abstraction/ros/build/hull_abstraction/CMakeFiles/moving_least_squares.dir/src/hull_abstraction/functions.cpp.o"
+  "/home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/preprocessor.cpp" "/home/jc/hull_abstraction/ros/build/hull_abstraction/CMakeFiles/moving_least_squares.dir/src/hull_abstraction/preprocessor.cpp.o"
   "/home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node.cpp" "/home/jc/hull_abstraction/ros/build/hull_abstraction/CMakeFiles/moving_least_squares.dir/src/moving_least_squares_node.cpp.o"
   "/home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node/moving_least_squares.cpp" "/home/jc/hull_abstraction/ros/build/hull_abstraction/CMakeFiles/moving_least_squares.dir/src/moving_least_squares_node/moving_least_squares.cpp.o"
   )
@@ -12,30 +13,35 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "DISABLE_DAVIDSDK"
+  "DISABLE_DSSDK"
+  "DISABLE_ENSENSO"
+  "DISABLE_LIBUSB_1_0"
+  "DISABLE_OPENNI2"
+  "DISABLE_PCAP"
+  "DISABLE_PNG"
+  "DISABLE_RSSDK"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"hull_abstraction\""
+  "qh_QHpointer"
+  "vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)"
+  "vtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)"
+  "vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/include/vtk-6.2"
+  "/usr/local/include/pcl-1.8"
+  "/usr/include/eigen3"
+  "/usr/local/include/pcl-1.10"
+  "/usr/include/ni"
   "/home/jc/hull_abstraction/ros/src/hull_abstraction/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
-  "/usr/include/ni"
-  "/usr/include/vtk-6.2"
-  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"
-  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"
-  "/usr/lib/openmpi/include"
-  "/usr/lib/openmpi/include/openmpi"
-  "/usr/include/jsoncpp"
-  "/usr/include/freetype2"
-  "/usr/include/python2.7"
-  "/usr/include/x86_64-linux-gnu"
-  "/usr/include/tcl"
-  "/usr/include/libxml2"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.

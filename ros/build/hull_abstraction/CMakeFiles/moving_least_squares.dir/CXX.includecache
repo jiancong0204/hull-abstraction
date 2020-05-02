@@ -10,9 +10,33 @@
 pcl/search/kdtree.h
 -
 
+/home/jc/hull_abstraction/ros/src/hull_abstraction/include/hull_abstraction/preprocessor.h
+pcl/point_types.h
+-
+pcl/filters/approximate_voxel_grid.h
+-
+pcl/features/normal_3d.h
+-
+pcl/filters/statistical_outlier_removal.h
+-
+pcl/filters/passthrough.h
+-
+pcl/filters/conditional_removal.h
+-
+pcl/filters/radius_outlier_removal.h
+-
+pcl/surface/mls.h
+-
+hull_abstraction/functions.h
+/home/jc/hull_abstraction/ros/src/hull_abstraction/include/hull_abstraction/hull_abstraction/functions.h
+
 /home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/functions.cpp
 hull_abstraction/functions.h
 /home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/hull_abstraction/functions.h
+
+/home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/preprocessor.cpp
+hull_abstraction/preprocessor.h
+/home/jc/hull_abstraction/ros/src/hull_abstraction/src/hull_abstraction/hull_abstraction/preprocessor.h
 
 /home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node.cpp
 moving_least_squares_node/moving_least_squares.h
@@ -23,22 +47,16 @@ moving_least_squares.h
 /home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node/moving_least_squares.h
 
 /home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node/moving_least_squares.h
+iostream
+-
 ros/ros.h
 -
 sensor_msgs/PointCloud2.h
 -
-iostream
--
 pcl_conversions/pcl_conversions.h
 -
-pcl/point_cloud.h
--
-pcl/point_types.h
--
-pcl/kdtree/kdtree_flann.h
--
-pcl/surface/mls.h
--
+hull_abstraction/preprocessor.h
+/home/jc/hull_abstraction/ros/src/hull_abstraction/src/moving_least_squares_node/hull_abstraction/preprocessor.h
 
 /opt/ros/kinetic/include/pcl_conversions/pcl_conversions.h
 vector
@@ -1864,7 +1882,7 @@ details.h
 
 /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/usr/include/pcl-1.7/pcl/ModelCoefficients.h
+/usr/local/include/pcl-1.8/pcl/ModelCoefficients.h
 string
 -
 vector
@@ -1874,7 +1892,7 @@ ostream
 pcl/PCLHeader.h
 -
 
-/usr/include/pcl-1.7/pcl/PCLHeader.h
+/usr/local/include/pcl-1.8/pcl/PCLHeader.h
 string
 -
 vector
@@ -1886,7 +1904,7 @@ pcl/pcl_macros.h
 ostream
 -
 
-/usr/include/pcl-1.7/pcl/PCLImage.h
+/usr/local/include/pcl-1.8/pcl/PCLImage.h
 string
 -
 vector
@@ -1896,7 +1914,7 @@ ostream
 pcl/PCLHeader.h
 -
 
-/usr/include/pcl-1.7/pcl/PCLPointCloud2.h
+/usr/local/include/pcl-1.8/pcl/PCLPointCloud2.h
 string
 -
 vector
@@ -1910,7 +1928,7 @@ pcl/PCLHeader.h
 pcl/PCLPointField.h
 -
 
-/usr/include/pcl-1.7/pcl/PCLPointField.h
+/usr/local/include/pcl-1.8/pcl/PCLPointField.h
 string
 -
 vector
@@ -1922,7 +1940,7 @@ boost/shared_ptr.hpp
 pcl/pcl_macros.h
 -
 
-/usr/include/pcl-1.7/pcl/PointIndices.h
+/usr/local/include/pcl-1.8/pcl/PointIndices.h
 string
 -
 vector
@@ -1932,7 +1950,7 @@ ostream
 pcl/PCLHeader.h
 -
 
-/usr/include/pcl-1.7/pcl/PolygonMesh.h
+/usr/local/include/pcl-1.8/pcl/PolygonMesh.h
 string
 -
 vector
@@ -1946,7 +1964,7 @@ pcl/PCLPointCloud2.h
 pcl/Vertices.h
 -
 
-/usr/include/pcl-1.7/pcl/TextureMesh.h
+/usr/local/include/pcl-1.8/pcl/TextureMesh.h
 Eigen/Core
 -
 string
@@ -1956,17 +1974,19 @@ pcl/PCLPointCloud2.h
 pcl/Vertices.h
 -
 
-/usr/include/pcl-1.7/pcl/Vertices.h
+/usr/local/include/pcl-1.8/pcl/Vertices.h
 string
 -
 vector
 -
 ostream
 -
+boost/shared_ptr.hpp
+-
 pcl/pcl_macros.h
 -
 
-/usr/include/pcl-1.7/pcl/cloud_iterator.h
+/usr/local/include/pcl-1.8/pcl/cloud_iterator.h
 pcl/point_cloud.h
 -
 pcl/PointIndices.h
@@ -1976,7 +1996,7 @@ pcl/correspondence.h
 pcl/impl/cloud_iterator.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/centroid.h
+/usr/local/include/pcl-1.8/pcl/common/centroid.h
 pcl/point_cloud.h
 -
 pcl/point_traits.h
@@ -1990,7 +2010,7 @@ pcl/common/impl/accumulators.hpp
 pcl/common/impl/centroid.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/common.h
+/usr/local/include/pcl-1.8/pcl/common/common.h
 pcl/pcl_base.h
 -
 cfloat
@@ -1998,15 +2018,15 @@ cfloat
 pcl/common/impl/common.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/concatenate.h
+/usr/local/include/pcl-1.8/pcl/common/concatenate.h
 pcl/conversions.h
 -
 
-/usr/include/pcl-1.7/pcl/common/copy_point.h
+/usr/local/include/pcl-1.8/pcl/common/copy_point.h
 pcl/common/impl/copy_point.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/eigen.h
+/usr/local/include/pcl-1.8/pcl/common/eigen.h
 cmath
 -
 pcl/ModelCoefficients.h
@@ -2030,11 +2050,11 @@ Eigen/Eigenvalues
 pcl/common/impl/eigen.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/geometry.h
+/usr/local/include/pcl-1.8/pcl/common/geometry.h
 Eigen/Core
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/accumulators.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/accumulators.hpp
 map
 -
 boost/mpl/filter_view.hpp
@@ -2048,7 +2068,7 @@ boost/fusion/include/as_vector.hpp
 pcl/point_types.h
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/centroid.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/centroid.hpp
 pcl/common/centroid.h
 -
 pcl/conversions.h
@@ -2056,13 +2076,13 @@ pcl/conversions.h
 boost/mpl/size.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/common.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/common.hpp
 pcl/point_types.h
 -
 pcl/common/common.h
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/copy_point.hpp
 pcl/point_types.h
 -
 pcl/point_traits.h
@@ -2072,11 +2092,11 @@ pcl/for_each_type.h
 pcl/common/concatenate.h
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/eigen.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/eigen.hpp
 pcl/console/print.h
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/io.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/io.hpp
 pcl/common/concatenate.h
 -
 pcl/common/copy_point.h
@@ -2084,11 +2104,11 @@ pcl/common/copy_point.h
 pcl/point_types.h
 -
 
-/usr/include/pcl-1.7/pcl/common/impl/projection_matrix.hpp
+/usr/local/include/pcl-1.8/pcl/common/impl/projection_matrix.hpp
 pcl/cloud_iterator.h
 -
 
-/usr/include/pcl-1.7/pcl/common/io.h
+/usr/local/include/pcl-1.8/pcl/common/io.h
 string
 -
 pcl/pcl_base.h
@@ -2104,11 +2124,11 @@ locale
 pcl/common/impl/io.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/point_tests.h
+/usr/local/include/pcl-1.8/pcl/common/point_tests.h
 Eigen/src/StlSupport/details.h
 -
 
-/usr/include/pcl-1.7/pcl/common/projection_matrix.h
+/usr/local/include/pcl-1.8/pcl/common/projection_matrix.h
 pcl/common/eigen.h
 -
 pcl/console/print.h
@@ -2116,15 +2136,17 @@ pcl/console/print.h
 pcl/common/impl/projection_matrix.hpp
 -
 
-/usr/include/pcl-1.7/pcl/common/time.h
+/usr/local/include/pcl-1.8/pcl/common/time.h
 cmath
+-
+queue
 -
 string
 -
 boost/date_time/posix_time/posix_time.hpp
 -
 
-/usr/include/pcl-1.7/pcl/console/print.h
+/usr/local/include/pcl-1.8/pcl/console/print.h
 stdio.h
 -
 stdarg.h
@@ -2134,7 +2156,7 @@ pcl/pcl_exports.h
 pcl/pcl_config.h
 -
 
-/usr/include/pcl-1.7/pcl/conversions.h
+/usr/local/include/pcl-1.8/pcl/conversions.h
 pcl/PCLPointField.h
 -
 pcl/PCLPointCloud2.h
@@ -2154,7 +2176,7 @@ pcl/console/print.h
 boost/foreach.hpp
 -
 
-/usr/include/pcl-1.7/pcl/correspondence.h
+/usr/local/include/pcl-1.8/pcl/correspondence.h
 boost/shared_ptr.hpp
 -
 Eigen/StdVector
@@ -2164,7 +2186,7 @@ Eigen/Geometry
 pcl/pcl_exports.h
 -
 
-/usr/include/pcl-1.7/pcl/exceptions.h
+/usr/local/include/pcl-1.8/pcl/exceptions.h
 stdexcept
 -
 sstream
@@ -2174,7 +2196,165 @@ pcl/pcl_macros.h
 boost/current_function.hpp
 -
 
-/usr/include/pcl-1.7/pcl/for_each_type.h
+/usr/local/include/pcl-1.8/pcl/features/feature.h
+boost/function.hpp
+-
+boost/bind.hpp
+-
+pcl/pcl_base.h
+-
+pcl/search/search.h
+-
+pcl/features/impl/feature.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/features/impl/feature.hpp
+pcl/search/pcl_search.h
+-
+
+/usr/local/include/pcl-1.8/pcl/features/impl/normal_3d.hpp
+pcl/features/normal_3d.h
+-
+
+/usr/local/include/pcl-1.8/pcl/features/normal_3d.h
+pcl/features/feature.h
+-
+pcl/common/centroid.h
+-
+pcl/features/impl/normal_3d.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/approximate_voxel_grid.h
+pcl/filters/boost.h
+-
+pcl/filters/filter.h
+-
+pcl/filters/impl/approximate_voxel_grid.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/boost.h
+boost/random.hpp
+-
+boost/random/normal_distribution.hpp
+-
+boost/shared_ptr.hpp
+-
+boost/make_shared.hpp
+-
+boost/dynamic_bitset.hpp
+-
+boost/mpl/size.hpp
+-
+boost/unordered_map.hpp
+-
+boost/fusion/sequence/intrinsic/at_key.hpp
+-
+boost/bind.hpp
+-
+boost/function.hpp
+-
+boost/optional.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/conditional_removal.h
+pcl/common/eigen.h
+-
+pcl/filters/filter.h
+-
+pcl/filters/impl/conditional_removal.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/filter.h
+pcl/pcl_base.h
+-
+pcl/common/io.h
+-
+pcl/conversions.h
+-
+pcl/filters/boost.h
+-
+cfloat
+-
+pcl/PointIndices.h
+-
+pcl/filters/impl/filter.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/filter_indices.h
+pcl/filters/filter.h
+-
+pcl/filters/impl/filter_indices.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/approximate_voxel_grid.hpp
+pcl/common/common.h
+-
+pcl/common/io.h
+-
+pcl/filters/approximate_voxel_grid.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/conditional_removal.hpp
+pcl/common/io.h
+-
+pcl/common/copy_point.h
+-
+pcl/filters/conditional_removal.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/filter.hpp
+pcl/pcl_macros.h
+-
+pcl/filters/filter.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/filter_indices.hpp
+pcl/pcl_macros.h
+-
+pcl/filters/filter_indices.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/passthrough.hpp
+pcl/filters/passthrough.h
+-
+pcl/common/io.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/radius_outlier_removal.hpp
+pcl/filters/radius_outlier_removal.h
+-
+pcl/common/io.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/impl/statistical_outlier_removal.hpp
+pcl/filters/statistical_outlier_removal.h
+-
+pcl/common/io.h
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/passthrough.h
+pcl/filters/filter_indices.h
+-
+pcl/filters/impl/passthrough.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/radius_outlier_removal.h
+pcl/filters/filter_indices.h
+-
+pcl/search/pcl_search.h
+-
+pcl/filters/impl/radius_outlier_removal.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/filters/statistical_outlier_removal.h
+pcl/filters/filter_indices.h
+-
+pcl/search/pcl_search.h
+-
+pcl/filters/impl/statistical_outlier_removal.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/for_each_type.h
 boost/mpl/is_sequence.hpp
 -
 boost/mpl/begin_end.hpp
@@ -2196,11 +2376,25 @@ boost/mpl/aux_/unwrap.hpp
 boost/type_traits/is_same.hpp
 -
 
-/usr/include/pcl-1.7/pcl/impl/cloud_iterator.hpp
+/usr/local/include/pcl-1.8/pcl/impl/cloud_iterator.hpp
 pcl/cloud_iterator.h
 -
 
-/usr/include/pcl-1.7/pcl/impl/pcl_base.hpp
+/usr/local/include/pcl-1.8/pcl/impl/instantiate.hpp
+pcl/pcl_config.h
+-
+boost/preprocessor/seq/for_each.hpp
+-
+boost/preprocessor/seq/for_each_product.hpp
+-
+boost/preprocessor/seq/to_tuple.hpp
+-
+boost/preprocessor/cat.hpp
+-
+boost/preprocessor/expand.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/impl/pcl_base.hpp
 pcl/pcl_base.h
 -
 pcl/console/print.h
@@ -2208,7 +2402,7 @@ pcl/console/print.h
 cstddef
 -
 
-/usr/include/pcl-1.7/pcl/impl/point_types.hpp
+/usr/local/include/pcl-1.8/pcl/impl/point_types.hpp
 Eigen/Core
 -
 ostream
@@ -2216,7 +2410,9 @@ ostream
 pcl/common/point_tests.h
 -
 
-/usr/include/pcl-1.7/pcl/io/boost.h
+/usr/local/include/pcl-1.8/pcl/io/boost.h
+boost/version.hpp
+-
 boost/numeric/conversion/cast.hpp
 -
 boost/thread/mutex.hpp
@@ -2276,7 +2472,7 @@ boost/signals2.hpp
 boost/signals2/slot.hpp
 -
 
-/usr/include/pcl-1.7/pcl/io/file_io.h
+/usr/local/include/pcl-1.8/pcl/io/file_io.h
 pcl/pcl_macros.h
 -
 pcl/common/io.h
@@ -2292,7 +2488,7 @@ pcl/PolygonMesh.h
 pcl/TextureMesh.h
 -
 
-/usr/include/pcl-1.7/pcl/io/impl/pcd_io.hpp
+/usr/local/include/pcl-1.8/pcl/io/impl/pcd_io.hpp
 fstream
 -
 fcntl.h
@@ -2316,11 +2512,11 @@ sys/mman.h
 pcl/io/lzf.h
 -
 
-/usr/include/pcl-1.7/pcl/io/lzf.h
+/usr/local/include/pcl-1.8/pcl/io/lzf.h
 pcl/pcl_macros.h
 -
 
-/usr/include/pcl-1.7/pcl/io/pcd_io.h
+/usr/local/include/pcl-1.8/pcl/io/pcd_io.h
 pcl/point_cloud.h
 -
 pcl/io/file_io.h
@@ -2328,11 +2524,11 @@ pcl/io/file_io.h
 pcl/io/impl/pcd_io.hpp
 -
 
-/usr/include/pcl-1.7/pcl/kdtree/flann.h
+/usr/local/include/pcl-1.8/pcl/kdtree/flann.h
 flann/flann.hpp
 -
 
-/usr/include/pcl-1.7/pcl/kdtree/impl/kdtree_flann.hpp
+/usr/local/include/pcl-1.8/pcl/kdtree/impl/kdtree_flann.hpp
 cstdio
 -
 pcl/kdtree/kdtree_flann.h
@@ -2342,7 +2538,7 @@ pcl/kdtree/flann.h
 pcl/console/print.h
 -
 
-/usr/include/pcl-1.7/pcl/kdtree/kdtree.h
+/usr/local/include/pcl-1.8/pcl/kdtree/kdtree.h
 limits.h
 -
 pcl/pcl_macros.h
@@ -2356,7 +2552,7 @@ pcl/common/io.h
 pcl/common/copy_point.h
 -
 
-/usr/include/pcl-1.7/pcl/kdtree/kdtree_flann.h
+/usr/local/include/pcl-1.8/pcl/kdtree/kdtree_flann.h
 pcl/kdtree/kdtree.h
 -
 pcl/kdtree/flann.h
@@ -2366,41 +2562,41 @@ boost/shared_array.hpp
 pcl/kdtree/impl/kdtree_flann.hpp
 -
 
-/usr/include/pcl-1.7/pcl/octree/impl/octree_pointcloud.hpp
+/usr/local/include/pcl-1.8/pcl/octree/impl/octree_base.hpp
 vector
 -
+pcl/impl/instantiate.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/octree/impl/octree_iterator.hpp
+
+/usr/local/include/pcl-1.8/pcl/octree/impl/octree_pointcloud.hpp
 assert.h
 -
 pcl/common/common.h
 -
+pcl/octree/impl/octree_base.hpp
+-
 
-/usr/include/pcl-1.7/pcl/octree/impl/octree_search.hpp
-pcl/point_cloud.h
--
-pcl/point_types.h
--
-pcl/common/common.h
--
+/usr/local/include/pcl-1.8/pcl/octree/impl/octree_search.hpp
 assert.h
 -
 
-/usr/include/pcl-1.7/pcl/octree/octree_base.h
-cstddef
--
+/usr/local/include/pcl-1.8/pcl/octree/octree_base.h
 vector
 -
-octree_nodes.h
-/usr/include/pcl-1.7/pcl/octree/octree_nodes.h
-octree_container.h
-/usr/include/pcl-1.7/pcl/octree/octree_container.h
-octree_key.h
-/usr/include/pcl-1.7/pcl/octree/octree_key.h
-octree_iterator.h
-/usr/include/pcl-1.7/pcl/octree/octree_iterator.h
-
-/usr/include/pcl-1.7/pcl/octree/octree_container.h
-string.h
+pcl/octree/octree_nodes.h
 -
+pcl/octree/octree_container.h
+-
+pcl/octree/octree_key.h
+-
+pcl/octree/octree_iterator.h
+-
+pcl/octree/impl/octree_base.hpp
+-
+
+/usr/local/include/pcl-1.8/pcl/octree/octree_container.h
 vector
 -
 cstddef
@@ -2408,73 +2604,57 @@ cstddef
 pcl/pcl_macros.h
 -
 
-/usr/include/pcl-1.7/pcl/octree/octree_iterator.h
+/usr/local/include/pcl-1.8/pcl/octree/octree_iterator.h
 cstddef
 -
 vector
 -
 deque
 -
-octree_nodes.h
-/usr/include/pcl-1.7/pcl/octree/octree_nodes.h
-octree_key.h
-/usr/include/pcl-1.7/pcl/octree/octree_key.h
-pcl/point_cloud.h
+pcl/octree/octree_nodes.h
 -
-pcl/point_types.h
+pcl/octree/octree_key.h
 -
 iterator
 -
-
-/usr/include/pcl-1.7/pcl/octree/octree_key.h
-string
+pcl/octree/impl/octree_iterator.hpp
 -
 
-/usr/include/pcl-1.7/pcl/octree/octree_nodes.h
+/usr/local/include/pcl-1.8/pcl/octree/octree_key.h
+
+/usr/local/include/pcl-1.8/pcl/octree/octree_nodes.h
 cstddef
 -
 assert.h
--
-cstring
--
-string.h
 -
 Eigen/Core
 -
 pcl/pcl_macros.h
 -
 octree_container.h
-/usr/include/pcl-1.7/pcl/octree/octree_container.h
+/usr/local/include/pcl-1.8/pcl/octree/octree_container.h
 
-/usr/include/pcl-1.7/pcl/octree/octree_pointcloud.h
-octree_base.h
-/usr/include/pcl-1.7/pcl/octree/octree_base.h
+/usr/local/include/pcl-1.8/pcl/octree/octree_pointcloud.h
+pcl/octree/octree_base.h
+-
 pcl/point_cloud.h
 -
 pcl/point_types.h
 -
-queue
--
 vector
--
-algorithm
--
-iostream
 -
 pcl/octree/impl/octree_pointcloud.hpp
 -
 
-/usr/include/pcl-1.7/pcl/octree/octree_search.h
+/usr/local/include/pcl-1.8/pcl/octree/octree_search.h
 pcl/point_cloud.h
 -
-pcl/point_types.h
+pcl/octree/octree_pointcloud.h
 -
-octree_pointcloud.h
-/usr/include/pcl-1.7/pcl/octree/octree_pointcloud.h
 pcl/octree/impl/octree_search.hpp
 -
 
-/usr/include/pcl-1.7/pcl/pcl_base.h
+/usr/local/include/pcl-1.8/pcl/pcl_base.h
 pcl/pcl_macros.h
 -
 boost/shared_ptr.hpp
@@ -2492,11 +2672,11 @@ pcl/PCLPointCloud2.h
 pcl/impl/pcl_base.hpp
 -
 
-/usr/include/pcl-1.7/pcl/pcl_config.h
+/usr/local/include/pcl-1.8/pcl/pcl_config.h
 
-/usr/include/pcl-1.7/pcl/pcl_exports.h
+/usr/local/include/pcl-1.8/pcl/pcl_exports.h
 
-/usr/include/pcl-1.7/pcl/pcl_macros.h
+/usr/local/include/pcl-1.8/pcl/pcl_macros.h
 pcl/pcl_config.h
 -
 boost/cstdint.hpp
@@ -2521,8 +2701,10 @@ stdio.h
 -
 math.h
 -
+mm_malloc.h
+-
 
-/usr/include/pcl-1.7/pcl/point_cloud.h
+/usr/local/include/pcl-1.8/pcl/point_cloud.h
 Eigen/StdVector
 -
 Eigen/Geometry
@@ -2534,7 +2716,7 @@ pcl/exceptions.h
 pcl/point_traits.h
 -
 
-/usr/include/pcl-1.7/pcl/point_representation.h
+/usr/local/include/pcl-1.8/pcl/point_representation.h
 pcl/point_types.h
 -
 pcl/pcl_macros.h
@@ -2542,9 +2724,9 @@ pcl/pcl_macros.h
 pcl/for_each_type.h
 -
 
-/usr/include/pcl-1.7/pcl/point_traits.h
+/usr/local/include/pcl-1.8/pcl/point_traits.h
 pcl/pcl_macros.h
-/usr/include/pcl-1.7/pcl/pcl/pcl_macros.h
+/usr/local/include/pcl-1.8/pcl/pcl/pcl_macros.h
 pcl/PCLPointField.h
 -
 boost/type_traits/remove_all_extents.hpp
@@ -2560,7 +2742,7 @@ Eigen/Core
 Eigen/src/StlSupport/details.h
 -
 
-/usr/include/pcl-1.7/pcl/point_types.h
+/usr/local/include/pcl-1.8/pcl/point_types.h
 pcl/pcl_macros.h
 -
 bitset
@@ -2576,7 +2758,7 @@ boost/mpl/vector.hpp
 pcl/impl/point_types.hpp
 -
 
-/usr/include/pcl-1.7/pcl/register_point_struct.h
+/usr/local/include/pcl-1.8/pcl/register_point_struct.h
 pcl/pcl_macros.h
 -
 pcl/point_traits.h
@@ -2600,13 +2782,13 @@ boost/type_traits.hpp
 stddef.h
 -
 
-/usr/include/pcl-1.7/pcl/search/impl/kdtree.hpp
+/usr/local/include/pcl-1.8/pcl/search/impl/kdtree.hpp
 pcl/search/kdtree.h
 -
 pcl/search/impl/search.hpp
 -
 
-/usr/include/pcl-1.7/pcl/search/impl/organized.hpp
+/usr/local/include/pcl-1.8/pcl/search/impl/organized.hpp
 pcl/search/organized.h
 -
 pcl/common/eigen.h
@@ -2616,11 +2798,11 @@ pcl/common/time.h
 Eigen/Eigenvalues
 -
 
-/usr/include/pcl-1.7/pcl/search/impl/search.hpp
+/usr/local/include/pcl-1.8/pcl/search/impl/search.hpp
 pcl/search/search.h
 -
 
-/usr/include/pcl-1.7/pcl/search/kdtree.h
+/usr/local/include/pcl-1.8/pcl/search/kdtree.h
 pcl/search/search.h
 -
 pcl/kdtree/kdtree_flann.h
@@ -2628,7 +2810,7 @@ pcl/kdtree/kdtree_flann.h
 pcl/search/impl/kdtree.hpp
 -
 
-/usr/include/pcl-1.7/pcl/search/octree.h
+/usr/local/include/pcl-1.8/pcl/search/octree.h
 pcl/search/search.h
 -
 pcl/octree/octree_search.h
@@ -2636,7 +2818,7 @@ pcl/octree/octree_search.h
 pcl/octree/impl/octree_search.hpp
 -
 
-/usr/include/pcl-1.7/pcl/search/organized.h
+/usr/local/include/pcl-1.8/pcl/search/organized.h
 pcl/point_cloud.h
 -
 pcl/point_types.h
@@ -2656,7 +2838,7 @@ pcl/common/projection_matrix.h
 pcl/search/impl/organized.hpp
 -
 
-/usr/include/pcl-1.7/pcl/search/pcl_search.h
+/usr/local/include/pcl-1.8/pcl/search/pcl_search.h
 pcl/search/search.h
 -
 pcl/search/kdtree.h
@@ -2666,7 +2848,7 @@ pcl/search/octree.h
 pcl/search/organized.h
 -
 
-/usr/include/pcl-1.7/pcl/search/search.h
+/usr/local/include/pcl-1.8/pcl/search/search.h
 pcl/point_cloud.h
 -
 pcl/for_each_type.h
@@ -2678,7 +2860,7 @@ pcl/common/copy_point.h
 pcl/search/impl/search.hpp
 -
 
-/usr/include/pcl-1.7/pcl/surface/boost.h
+/usr/local/include/pcl-1.8/pcl/surface/boost.h
 boost/bind.hpp
 -
 boost/function.hpp
@@ -2692,11 +2874,11 @@ boost/dynamic_bitset/dynamic_bitset.hpp
 boost/shared_ptr.hpp
 -
 
-/usr/include/pcl-1.7/pcl/surface/eigen.h
+/usr/local/include/pcl-1.8/pcl/surface/eigen.h
 Eigen/SVD
 -
 
-/usr/include/pcl-1.7/pcl/surface/impl/mls.hpp
+/usr/local/include/pcl-1.8/pcl/surface/impl/mls.hpp
 pcl/point_traits.h
 -
 pcl/surface/mls.h
@@ -2714,9 +2896,9 @@ pcl/common/geometry.h
 omp.h
 -
 
-/usr/include/pcl-1.7/pcl/surface/impl/processing.hpp
+/usr/local/include/pcl-1.8/pcl/surface/impl/processing.hpp
 
-/usr/include/pcl-1.7/pcl/surface/mls.h
+/usr/local/include/pcl-1.8/pcl/surface/mls.h
 pcl/pcl_base.h
 -
 pcl/search/pcl_search.h
@@ -2734,7 +2916,7 @@ map
 pcl/surface/impl/mls.hpp
 -
 
-/usr/include/pcl-1.7/pcl/surface/processing.h
+/usr/local/include/pcl-1.8/pcl/surface/processing.h
 pcl/pcl_base.h
 -
 pcl/point_cloud.h
@@ -2742,87 +2924,5 @@ pcl/point_cloud.h
 pcl/PolygonMesh.h
 -
 pcl/surface/impl/processing.hpp
-/usr/include/pcl-1.7/pcl/surface/pcl/surface/impl/processing.hpp
-
-/usr/include/x86_64-linux-gnu/bits/mman-linux.h
-
-/usr/include/x86_64-linux-gnu/bits/mman.h
-bits/mman-linux.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select.h
-bits/wordsize.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select2.h
-
-/usr/include/x86_64-linux-gnu/bits/sigset.h
-
-/usr/include/x86_64-linux-gnu/bits/time.h
-bits/types.h
--
-bits/types.h
--
-bits/timex.h
--
-
-/usr/include/x86_64-linux-gnu/bits/timex.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types.h
-features.h
--
-bits/wordsize.h
--
-bits/typesizes.h
--
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h
-
-/usr/include/x86_64-linux-gnu/sys/mman.h
-features.h
--
-bits/types.h
--
-stddef.h
--
-bits/mman.h
--
-
-/usr/include/x86_64-linux-gnu/sys/select.h
-features.h
--
-bits/types.h
--
-bits/select.h
--
-bits/sigset.h
--
-time.h
--
-bits/time.h
--
-bits/select2.h
--
-
-/usr/include/x86_64-linux-gnu/sys/time.h
-features.h
--
-bits/types.h
--
-time.h
--
-bits/time.h
--
-sys/select.h
--
-
-/usr/include/x86_64-linux-gnu/sys/timeb.h
-features.h
--
-time.h
--
+/usr/local/include/pcl-1.8/pcl/surface/pcl/surface/impl/processing.hpp
 

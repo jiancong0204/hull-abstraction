@@ -4,20 +4,22 @@
 #include<sensor_msgs/PointCloud2.h>
 #include<pcl/io/pcd_io.h>
 
-namespace load_pcd {
-    class LoadPCD {
+namespace load_pcd
+{
+    class LoadPCD
+    {
     public:
         LoadPCD() {}
         ~LoadPCD() {}
-        void run(int argc, char **argv);
+        void run();
 
     private:
+        ros::NodeHandle nh;
         ros::Publisher pcl_pub;
-        pcl::PointCloud<pcl::PointXYZ> input_cloud;
-        sensor_msgs::PointCloud2 output_cloud;
-        void initialization(int argc, char **argv);
-	void createROSMsg();
-        void publish();
+        pcl::PointCloud<pcl::PointXYZ> cloud;
+        sensor_msgs::PointCloud2 msg;
+        int createROSMsg();
+        void publishROSMsg();
     };
 }
 

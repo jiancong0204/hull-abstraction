@@ -1,16 +1,15 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(hull_abstraction)
-#set(CMAKE_CXX_FLAGS "-std=c++11")
-#find_package(PCL 1.10 REQUIRED) # find PCL library and define the required version
-#include_directories(${PCL_INCLUDE_DIRS})
-#link_directories(${PCL_LIBRARY_DIRS})
-#add_definitions(${PCL_DEFINITIONS})
+set(CMAKE_CXX_FLAGS "-std=c++11")
+find_package(PCL 1.7 REQUIRED) # find PCL library and define the required version
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 
 find_package(catkin REQUIRED COMPONENTS
     pcl_conversions
     pcl_msgs
-    pcl_ros
     roscpp
     sensor_msgs
     std_msgs
@@ -39,7 +38,7 @@ SET(load_pcd
 add_executable(load_pcd ${load_pcd})
 
 target_link_libraries(load_pcd
-    #${PCL_LIBRARIES}
+    ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
 
@@ -48,11 +47,12 @@ SET(moving_least_squares
     src/moving_least_squares_node.cpp 
     src/moving_least_squares_node/moving_least_squares.cpp
     src/hull_abstraction/functions.cpp
+    src/hull_abstraction/preprocessor.cpp
 )
 
 add_executable(moving_least_squares ${moving_least_squares})
 
 target_link_libraries(moving_least_squares
-    #${PCL_LIBRARIES}
+    ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
