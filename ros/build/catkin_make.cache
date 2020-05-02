@@ -1,2 +1,0 @@
-hull_abstraction
--DCATKIN_DEVEL_PREFIX=/home/jc/hull_abstraction/ros/devel -DCMAKE_INSTALL_PREFIX=/home/jc/hull_abstraction/ros/install -G Unix Makefiles
