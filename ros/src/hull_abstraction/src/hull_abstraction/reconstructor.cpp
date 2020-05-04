@@ -29,12 +29,12 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     // Configurations
     poisson.setConfidence(false); //whether uses the magnitude of normals as confidence information. when false, all normals are normalised.
     poisson.setDegree(2); //degree[1,5), the larger the value, the longer it takes.
-    poisson.setDepth(5);
+    poisson.setDepth(10);
     poisson.setIsoDivide(5); //still dont know
     poisson.setManifold(false); //whether add the center of gravity of polygons. 
     poisson.setOutputPolygons(true);
     poisson.setSamplesPerNode(20.0);
-    poisson.setScale(1.25);cloud_with_normals;
+    poisson.setScale(1.0);
     poisson.setInputCloud(cloud_with_normals);
     poisson.performReconstruction(mesh);
     return mesh;
@@ -100,19 +100,18 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     // surface refinement
     for (unsigned i = 0; i < refinement; i++)
     {
-        fitting_surface.refine (0);
-        fitting_surface.refine (1);
-        fitting_surface.assemble (surface_parameters);
-        fitting_surface.solve ();
+        fitting_surface.refine(0);
+        fitting_surface.refine(1);
+        fitting_surface.assemble(surface_parameters);
+        fitting_surface.solve();
         pcl::on_nurbs::Triangulation::convertSurface2Vertices(fitting_surface.m_nurbs, mesh_cloud, mesh_vertices, mesh_resolution);
-
     }
 
     // surface fitting with final refinement level
     for (unsigned i = 0; i < iterations; i++)
     {
         fitting_surface.assemble (surface_parameters);
-        fitting_surface.solve ();
+        fitting_surface.solve();
         pcl::on_nurbs::Triangulation::convertSurface2Vertices(fitting_surface.m_nurbs, mesh_cloud, mesh_vertices, mesh_resolution);
     }
     
@@ -126,19 +125,19 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     // curve fitting
     pcl::on_nurbs::FittingCurve2dASDM fitting_curve(&curve_data, curve_nurbs);
     // fittingCurve.setQuiet (false); // enable/disable debug output
-    fitting_curve.fitting (curve_parameters);
+    fitting_curve.fitting(curve_parameters);
 
     // triangulation of trimmed surface
     pcl::on_nurbs::Triangulation::convertTrimmedSurface2PolygonMesh(fitting_surface.m_nurbs, fitting_curve.m_nurbs, mesh, mesh_resolution);
     return mesh;
 }
 
-void hull_abstraction::Reconstructor::pointCloud2Vector3d (pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)
+void hull_abstraction::Reconstructor::pointCloud2Vector3d(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)
 {
-    for (unsigned i = 0; i < cloud->size (); i++)
+    for (unsigned i = 0; i < cloud->size(); i++)
     {
-        pcl::PointXYZ &p = cloud->at (i);
-        if (!std::isnan (p.x) && !std::isnan (p.y) && !std::isnan (p.z))
-        data.push_back (Eigen::Vector3d (p.x, p.y, p.z));
+        pcl::PointXYZ &p = cloud->at(i);
+        if (!std::isnan(p.x) && !std::isnan(p.y) && !std::isnan(p.z))
+        data.push_back(Eigen::Vector3d (p.x, p.y, p.z));
     }
 }

@@ -29,12 +29,12 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     // Configurations
     poisson.setConfidence(false); //whether uses the magnitude of normals as confidence information. when false, all normals are normalised.
     poisson.setDegree(2); //degree[1,5), the larger the value, the longer it takes.
-    poisson.setDepth(5);
+    poisson.setDepth(10);
     poisson.setIsoDivide(5); //still dont know
     poisson.setManifold(false); //whether add the center of gravity of polygons. 
     poisson.setOutputPolygons(true);
     poisson.setSamplesPerNode(20.0);
-    poisson.setScale(1.25);cloud_with_normals;
+    poisson.setScale(1.0);cloud_with_normals;
     poisson.setInputCloud(cloud_with_normals);
     poisson.performReconstruction(mesh);
     return mesh;
