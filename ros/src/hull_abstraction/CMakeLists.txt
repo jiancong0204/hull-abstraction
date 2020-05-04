@@ -56,3 +56,50 @@ target_link_libraries(moving_least_squares
     ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
+
+# B-spline surface fitting method
+SET(bspline_surface_fitting 
+    src/bspline_surface_fitting_node.cpp 
+    src/bspline_surface_fitting_node/bspline_surface_fitting.cpp
+    src/hull_abstraction/functions.cpp
+    src/hull_abstraction/reconstructor.cpp
+)
+
+add_executable(bspline_surface_fitting ${bspline_surface_fitting})
+
+target_link_libraries(bspline_surface_fitting
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+)
+
+# Greedy triangulation algorithm
+SET(greedy_triangulation 
+    src/greedy_triangulation_node.cpp 
+    src/greedy_triangulation_node/greedy_triangulation.cpp
+    src/hull_abstraction/functions.cpp
+    src/hull_abstraction/reconstructor.cpp
+    src/hull_abstraction/preprocessor.cpp
+)
+
+add_executable(greedy_triangulation ${greedy_triangulation})
+
+target_link_libraries(greedy_triangulation
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+)
+
+# Poisson reconstruction algorithm
+SET(poisson_reconstruction 
+    src/poisson_reconstruction_node.cpp 
+    src/poisson_reconstruction_node/poisson_reconstruction.cpp
+    src/hull_abstraction/functions.cpp
+    src/hull_abstraction/reconstructor.cpp
+    src/hull_abstraction/preprocessor.cpp
+)
+
+add_executable(poisson_reconstruction ${poisson_reconstruction})
+
+target_link_libraries(poisson_reconstruction
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+)
