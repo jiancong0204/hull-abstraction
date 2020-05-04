@@ -10,7 +10,7 @@ void load_pcd::LoadPCD::run()
 int load_pcd::LoadPCD::createROSMsg()
 {
     //Convert the cloud to ROS message
-    bool is_loaded = ~pcl::io::loadPCDFile ("/home/jc/master_thesis/prototype/point_cloud_data/16_5.pcd", cloud);
+    bool is_loaded = ~pcl::io::loadPCDFile ("/home/jc/hull_abstraction/prototype/point_cloud_data/16_5.pcd", cloud);
     if (is_loaded)
         std::cout << "PCD file loaded. " << std::endl;
     else
