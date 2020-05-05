@@ -6,6 +6,7 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include "hull_abstraction/reconstructor.h"
 #include "hull_abstraction/preprocessor.h"
+#include "pcl_utilization/pcl_utilization.h"
 
 namespace greedy_triangulation
 {
@@ -25,6 +26,6 @@ namespace greedy_triangulation
         ros::Publisher pub;
         ros::Subscriber sub;
         void processing(const sensor_msgs::PointCloud2ConstPtr input_msg);
-        pcl_msgs::PolygonMesh output_msg;
+        visualization_msgs::Marker output_msg;
     };
 }

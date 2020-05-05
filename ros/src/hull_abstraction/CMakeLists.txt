@@ -63,6 +63,7 @@ SET(bspline_surface_fitting
     src/bspline_surface_fitting_node/bspline_surface_fitting.cpp
     src/hull_abstraction/functions.cpp
     src/hull_abstraction/reconstructor.cpp
+    src/pcl_utilization/pcl_utilization.cpp
 )
 
 add_executable(bspline_surface_fitting ${bspline_surface_fitting})
@@ -79,6 +80,7 @@ SET(greedy_triangulation
     src/hull_abstraction/functions.cpp
     src/hull_abstraction/reconstructor.cpp
     src/hull_abstraction/preprocessor.cpp
+    src/pcl_utilization/pcl_utilization.cpp
 )
 
 add_executable(greedy_triangulation ${greedy_triangulation})

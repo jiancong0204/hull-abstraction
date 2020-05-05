@@ -4,8 +4,8 @@ void bspline_surface_fitting_node::BsplineSurfaceFitting::processing(const senso
 {
     pcl::fromROSMsg(*input_msg, *cloud); 
     mesh = rc.bsplineSurfaceFitting(cloud);
-    pcl_conversions::fromPCL(mesh, output_msg);
-    pub = nh.advertise<pcl_msgs::PolygonMesh>("bspline_surface_fitting", 1);
+    output_msg = pcl_utilization::toMarkerMsg(mesh);
+    pub = nh.advertise<visualization_msgs::Marker>("bspline_surface_fitting", 1);
     pub.publish(output_msg);
     std::cout << "successfully pulished" << std::endl;
 }
