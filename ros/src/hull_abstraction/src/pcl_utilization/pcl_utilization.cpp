@@ -6,7 +6,7 @@ visualization_msgs::Marker pcl_utilization::toMarkerMsg(pcl::PolygonMesh mesh)
     int polygon_size;
     int vertices_size;
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    geometry_msgs::Point temp_point;
+    
     std_msgs::ColorRGBA color;
     marker.type = visualization_msgs::Marker::TRIANGLE_LIST;
     marker.action = visualization_msgs::Marker::ADD;
@@ -22,22 +22,63 @@ visualization_msgs::Marker pcl_utilization::toMarkerMsg(pcl::PolygonMesh mesh)
     marker.pose.orientation.z = 0.0;
     marker.pose.orientation.w = 1.0;
     color.a = 1;
-    color.r = 255;
-    color.g = 255;
-    color.b = 255;
+    color.r = 1;
+    color.g = 1;
+    color.b = 1;
+
+    Eigen::Vector4f centroid;
     polygon_size = mesh.polygons.size();
     fromPCLPointCloud2(mesh.cloud, *mesh_cloud);
+    pcl::compute3DCentroid(*mesh_cloud,centroid); // Estimate the coordinates of the centroid.
     for (int i = 0; i < polygon_size; i++)
     {
-        vertices_size = mesh.polygons[i].vertices.size();
-        for (int j = 0; j < vertices_size; j++)
+        std::vector<geometry_msgs::Point> temp_point(3);
+        for (int j = 0; j < 3; j++)
         {
-            temp_point.x = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
-            temp_point.y = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
-            temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
-            marker.points.push_back(temp_point);
-            marker.color = color;
+            temp_point[j].x = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
+            temp_point[j].y = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
+            temp_point[j].z = mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
         }
+        std::vector<double> temp_centroid(3);
+
+        // Calculate the center of the triangle.
+        temp_centroid[0] = (temp_point[0].x + temp_point[1].x + temp_point[2].x) / 3;
+        temp_centroid[1] = (temp_point[0].y + temp_point[1].y + temp_point[2].y) / 3;
+        temp_centroid[2] = (temp_point[0].z + temp_point[1].z + temp_point[2].z) / 3;
+
+        // Vector from centriod to temp_centroid.
+        double temp_vector_x = temp_centroid[0]; //- centroid[0];
+        double temp_vector_y = temp_centroid[1]; //- centroid[1];
+        double temp_vector_z = temp_centroid[2]; //- centroid[2];
+
+        double x_1 = temp_point[1].x - temp_point[0].x;
+        double x_2 = temp_point[2].x - temp_point[1].x;
+        double y_1 = temp_point[1].y - temp_point[0].y;
+        double y_2 = temp_point[2].y - temp_point[1].y;
+        double z_1 = temp_point[1].z - temp_point[0].z;
+        double z_2 = temp_point[2].z - temp_point[1].z;
+
+        // Normal vector of the triangle.
+        double temp_n_x = y_1 * z_2 - z_1 * y_2;
+        double temp_n_y = z_1 * x_2 - x_1 * z_2;
+        double temp_n_z = x_1 * y_2 - y_1 * x_2;
+
+        // Dor product
+        double dot_product = temp_vector_x * temp_n_x + temp_vector_y * temp_n_y + temp_vector_z * temp_n_z;
+
+        if (dot_product < 0)
+        {
+            marker.points.push_back(temp_point[0]);
+            marker.points.push_back(temp_point[1]);
+            marker.points.push_back(temp_point[2]);       
+        }
+        else 
+        {
+            marker.points.push_back(temp_point[0]);
+            marker.points.push_back(temp_point[2]);
+            marker.points.push_back(temp_point[1]);           
+        }
+        marker.color = color;
     }
     return marker;
 }

@@ -5,6 +5,8 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/point_types.h>
 #include <pcl/PCLPointCloud2.h>
+#include <Eigen/Core>
+#include <pcl/common/centroid.h>
 
 namespace pcl_utilization
 {
