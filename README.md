@@ -2,7 +2,7 @@
 
 ![COAR Logo](doc/assets/coarlogo.png "Coar Logo")
 
-This repository is part of project Hull Abstraction.
+This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University.
 
 ---
 
