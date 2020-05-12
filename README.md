@@ -1,6 +1,6 @@
 # hull_abstraction
 
-![COAR Logo](doc/assets/coarlogo.png "Coar Logo")
+![COAR Logo](doc/assets/coarlogo.png "Coar Logo") ![IGM Logo](doc/assets/igmrlogo.png "IGM Logo")
 
 This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University.
 
