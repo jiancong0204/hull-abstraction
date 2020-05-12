@@ -46,7 +46,7 @@ target_link_libraries(load_pcd
 SET(moving_least_squares 
     src/moving_least_squares_node.cpp 
     src/moving_least_squares_node/moving_least_squares.cpp
-    src/hull_abstraction/functions.cpp
+    src/pcl_utilization/pcl_utilization.cpp
     src/hull_abstraction/preprocessor.cpp
 )
 
@@ -61,7 +61,6 @@ target_link_libraries(moving_least_squares
 SET(bspline_surface_fitting 
     src/bspline_surface_fitting_node.cpp 
     src/bspline_surface_fitting_node/bspline_surface_fitting.cpp
-    src/hull_abstraction/functions.cpp
     src/hull_abstraction/reconstructor.cpp
     src/pcl_utilization/pcl_utilization.cpp
 )
@@ -77,7 +76,6 @@ target_link_libraries(bspline_surface_fitting
 SET(greedy_triangulation 
     src/greedy_triangulation_node.cpp 
     src/greedy_triangulation_node/greedy_triangulation.cpp
-    src/hull_abstraction/functions.cpp
     src/hull_abstraction/reconstructor.cpp
     src/hull_abstraction/preprocessor.cpp
     src/pcl_utilization/pcl_utilization.cpp
@@ -94,7 +92,7 @@ target_link_libraries(greedy_triangulation
 SET(poisson_reconstruction 
     src/poisson_reconstruction_node.cpp 
     src/poisson_reconstruction_node/poisson_reconstruction.cpp
-    src/hull_abstraction/functions.cpp
+    src/pcl_utilization/pcl_utilization.cpp
     src/hull_abstraction/reconstructor.cpp
     src/hull_abstraction/preprocessor.cpp
 )

@@ -59,12 +59,12 @@ void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl:
 
 void hull_abstraction::Preprocessor::movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr smoothed_cloud, pcl::PointCloud<pcl::PointNormal>::Ptr smoothed_cloud_with_normals)
 {
-    double resolution = hull_abstraction::computeCloudResolution(cloud);
+    double resolution = pcl_utilization::computeCloudResolution(cloud);
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
     moving_least_squares.setInputCloud(cloud);
-    moving_least_squares.setComputeNormals(true); //我们都知道表面重构时需要估计点云的法向量，这里MLS提供了一种方法来估计点云法向量(如果是true的话注意输出数据格式)
-    moving_least_squares.setPolynomialOrder(3); //MLS拟合曲线的阶数，这个阶数在构造函数里默认是2，但是参考文献给出最好选择3或者4
+    moving_least_squares.setComputeNormals(true); // MLS offers a method to estimate normals
+    moving_least_squares.setPolynomialOrder(3); // Polynomial order used to fit the curve. The default value is 2, however 3 or 4 is better in my case
     moving_least_squares.setSearchMethod(tree);
     moving_least_squares.setSearchRadius(10 * resolution);
     // Reconstruct

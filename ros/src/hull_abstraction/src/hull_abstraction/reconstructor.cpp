@@ -2,7 +2,7 @@
 
 pcl::PolygonMesh hull_abstraction::Reconstructor::greedyTriangulation(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
-    double resolution = hull_abstraction::computeCloudResolutionN(cloud_with_normals);
+    double resolution = pcl_utilization::computeCloudResolutionN(cloud_with_normals);
     // Define search tree
     pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal>);
     tree->setInputCloud(cloud_with_normals);
@@ -42,7 +42,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
 
 pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
-    double resolution = hull_abstraction::computeCloudResolutionN(cloud_with_normals);
+    double resolution = pcl_utilization::computeCloudResolutionN(cloud_with_normals);
     // Define search tree
     pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal>);
     tree->setInputCloud(cloud_with_normals);
@@ -58,7 +58,6 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pc
 
 pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
 {
-    pcl::on_nurbs::NurbsDataSurface surface_data;
     pointCloud2Vector3d(cloud, surface_data.interior);
 
     // parameters
@@ -67,13 +66,11 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     unsigned iterations = 10;
     unsigned mesh_resolution = 256;
 
-    pcl::on_nurbs::FittingSurface::Parameter surface_parameters;
     surface_parameters.interior_smoothness = 0.2;
     surface_parameters.interior_weight = 1.0;
     surface_parameters.boundary_smoothness = 0.2;
     surface_parameters.boundary_weight = 0.0;
 
-    pcl::on_nurbs::FittingCurve2dAPDM::FitParameter curve_parameters;
     curve_parameters.addCPsAccuracy = 5e-2;
     curve_parameters.addCPsIteration = 3;
     curve_parameters.maxCPs = 200;
@@ -92,7 +89,6 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     pcl::on_nurbs::FittingSurface fitting_surface(&surface_data, surface_nurbs);
 
     // mesh for visualization
-    pcl::PolygonMesh mesh;
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     std::vector<pcl::Vertices> mesh_vertices;
     pcl::on_nurbs::Triangulation::convertSurface2PolygonMesh(fitting_surface.m_nurbs, mesh, mesh_resolution);
@@ -117,7 +113,6 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     
     // B-spline curve fitting
     // initialisation (circular)
-    pcl::on_nurbs::NurbsDataCurve2d curve_data;
     curve_data.interior = surface_data.interior_param;
     curve_data.interior_weight_function.push_back(true);
     ON_NurbsCurve curve_nurbs = pcl::on_nurbs::FittingCurve2dAPDM::initNurbsCurve2D(polynomial_order, curve_data.interior);
