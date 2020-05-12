@@ -90,7 +90,7 @@
     1. doc
         1. Doxyfile
             * Correct the include path of header files that it can be used directly in ROS (add the package name es prefix) (idea by Henrik)
-            * Add @todo and @bug list to the start
+            * Add todo and bug list to the start
 
 1. Doxygen:
     * The CI will automatically run for the **development** branch
