@@ -1,0 +1,128 @@
+\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation}{}\section{greedy\+\_\+triangulation\+\_\+node\+:\+:Greedy\+Triangulation Class Reference}
+\label{classgreedy__triangulation__node_1_1_greedy_triangulation}\index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+
+
+Class utilizing greedy triangulation method.  
+
+
+
+
+{\ttfamily \#include $<$greedy\+\_\+triangulation.\+h$>$}
+
+
+
+Collaboration diagram for greedy\+\_\+triangulation\+\_\+node\+:\+:Greedy\+Triangulation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classgreedy__triangulation__node_1_1_greedy_triangulation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_ad6f4f3406728aeb60f8b3cbedb97ba90}{Greedy\+Triangulation} ()
+\begin{DoxyCompactList}\small\item\em Constructing a new \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation}{Greedy\+Triangulation} object. \end{DoxyCompactList}\item 
+void \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_aa6c8fda7b33d62a1de3b50e46eca752f}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulating a method to run the greedy\+\_\+triangulation node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_aa0be85290792f2cb7eb48a03f4a7a22b}{processing} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Processing the input R\+OS message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_a33c0f88cc59f8eb2bf5e09382a65e991}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_abca7e84377eaee40cd99f33a1c75146f}{pub}
+\item 
+ros\+::\+Subscriber \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_adab5bb6a0e615bbb36ea53d1fa4e279a}{sub}
+\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_a87417732cd72c77cce60c58dc0a39076}{output\+\_\+msg}
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor}{hull\+\_\+abstraction\+::\+Reconstructor} \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_a7b95cdf57121ac4cdc5e5d8115a7c598}{rc}
+\item 
+\hyperlink{classhull__abstraction_1_1_preprocessor}{hull\+\_\+abstraction\+::\+Preprocessor} \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_acfff8052bccf50852690aef57800a443}{pp}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation_a569d95963837370acb71c6427022b8fc}{mesh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class utilizing greedy triangulation method. 
+
+This framework is developed to generate a mesh for a point cloud through greedy triangulation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!Greedy\+Triangulation@{Greedy\+Triangulation}}
+\index{Greedy\+Triangulation@{Greedy\+Triangulation}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{Greedy\+Triangulation()}{GreedyTriangulation()}}]{\setlength{\rightskip}{0pt plus 5cm}greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::\+Greedy\+Triangulation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_ad6f4f3406728aeb60f8b3cbedb97ba90}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_ad6f4f3406728aeb60f8b3cbedb97ba90}
+
+
+Constructing a new \hyperlink{classgreedy__triangulation__node_1_1_greedy_triangulation}{Greedy\+Triangulation} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!processing@{processing}}
+\index{processing@{processing}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{processing(const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)}{processing(const sensor_msgs::PointCloud2ConstPtr input_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::processing (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr}]{input\+\_\+msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_aa0be85290792f2cb7eb48a03f4a7a22b}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_aa0be85290792f2cb7eb48a03f4a7a22b}
+
+
+Processing the input R\+OS message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+msg} & Input R\+OS message \\
+\hline
+\end{DoxyParams}
+\index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!run@{run}}
+\index{run@{run}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_aa6c8fda7b33d62a1de3b50e46eca752f}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_aa6c8fda7b33d62a1de3b50e46eca752f}
+
+
+Encapsulating a method to run the greedy\+\_\+triangulation node. 
+
+
+
+\subsection{Member Data Documentation}
+\index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!mesh@{mesh}}
+\index{mesh@{mesh}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{mesh}{mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_a569d95963837370acb71c6427022b8fc}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_a569d95963837370acb71c6427022b8fc}
+Resulted polygon mesh \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!nh@{nh}}
+\index{nh@{nh}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_a33c0f88cc59f8eb2bf5e09382a65e991}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_a33c0f88cc59f8eb2bf5e09382a65e991}
+Node Handle reference from embedding node \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_a87417732cd72c77cce60c58dc0a39076}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_a87417732cd72c77cce60c58dc0a39076}
+Marker message used to publish the mesh \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!pp@{pp}}
+\index{pp@{pp}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{pp}{pp}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Preprocessor} greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::pp\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_acfff8052bccf50852690aef57800a443}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_acfff8052bccf50852690aef57800a443}
+Object for Preprocessor class \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!pub@{pub}}
+\index{pub@{pub}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_abca7e84377eaee40cd99f33a1c75146f}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_abca7e84377eaee40cd99f33a1c75146f}
+Polygon mesh publisher \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!rc@{rc}}
+\index{rc@{rc}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{rc}{rc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Reconstructor} greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::rc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_a7b95cdf57121ac4cdc5e5d8115a7c598}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_a7b95cdf57121ac4cdc5e5d8115a7c598}
+Object for Reconstructor class \index{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}!sub@{sub}}
+\index{sub@{sub}!greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation@{greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation}}
+\subsubsection[{\texorpdfstring{sub}{sub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Subscriber greedy\+\_\+triangulation\+\_\+node\+::\+Greedy\+Triangulation\+::sub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classgreedy__triangulation__node_1_1_greedy_triangulation_adab5bb6a0e615bbb36ea53d1fa4e279a}{}\label{classgreedy__triangulation__node_1_1_greedy_triangulation_adab5bb6a0e615bbb36ea53d1fa4e279a}
+Raw point cloud subscriber 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/greedy\+\_\+triangulation\+\_\+node/\hyperlink{greedy__triangulation_8h}{greedy\+\_\+triangulation.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/greedy\+\_\+triangulation\+\_\+node/\hyperlink{greedy__triangulation_8cpp}{greedy\+\_\+triangulation.\+cpp}\end{DoxyCompactItemize}

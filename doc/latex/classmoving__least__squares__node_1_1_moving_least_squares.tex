@@ -1,0 +1,118 @@
+\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares}{}\section{moving\+\_\+least\+\_\+squares\+\_\+node\+:\+:Moving\+Least\+Squares Class Reference}
+\label{classmoving__least__squares__node_1_1_moving_least_squares}\index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+
+
+Class utilizing moving least squares method.  
+
+
+
+
+{\ttfamily \#include $<$moving\+\_\+least\+\_\+squares.\+h$>$}
+
+
+
+Collaboration diagram for moving\+\_\+least\+\_\+squares\+\_\+node\+:\+:Moving\+Least\+Squares\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classmoving__least__squares__node_1_1_moving_least_squares__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_a55eba7b489543e53e018651e1039e51a}{Moving\+Least\+Squares} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares}{Moving\+Least\+Squares} object. \end{DoxyCompactList}\item 
+void \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_afb03a339aa9ae129d42af0b7d49dfb2c}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulating a method to run the moving\+\_\+least\+\_\+squares node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_ab334356e26407324a4fb15ab3dbf9daa}{processing} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Processing the input R\+OS message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_ae4c2a5c0960cec2bc990d0f19fee3ecb}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_a575c8db3fd78dc6e4bfd432d2d75916c}{pub}
+\item 
+ros\+::\+Subscriber \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_a3afb046b92a8d8df03d06542ba9fc9bd}{sub}
+\item 
+sensor\+\_\+msgs\+::\+Point\+Cloud2 \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_af6fbf84b91043961cc80fb71505992dd}{output\+\_\+msg}
+\item 
+\hyperlink{classhull__abstraction_1_1_preprocessor}{hull\+\_\+abstraction\+::\+Preprocessor} \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares_a64551d7faad6e219620e142472edbada}{pp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class utilizing moving least squares method. 
+
+This framework is developed to apply moving least squares method to smoothen the input point cloud. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!Moving\+Least\+Squares@{Moving\+Least\+Squares}}
+\index{Moving\+Least\+Squares@{Moving\+Least\+Squares}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{Moving\+Least\+Squares()}{MovingLeastSquares()}}]{\setlength{\rightskip}{0pt plus 5cm}moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::\+Moving\+Least\+Squares (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_a55eba7b489543e53e018651e1039e51a}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_a55eba7b489543e53e018651e1039e51a}
+
+
+Construct a new \hyperlink{classmoving__least__squares__node_1_1_moving_least_squares}{Moving\+Least\+Squares} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!processing@{processing}}
+\index{processing@{processing}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{processing(const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)}{processing(const sensor_msgs::PointCloud2ConstPtr input_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::processing (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr}]{input\+\_\+msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_ab334356e26407324a4fb15ab3dbf9daa}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_ab334356e26407324a4fb15ab3dbf9daa}
+
+
+Processing the input R\+OS message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+msg} & Input R\+OS message \\
+\hline
+\end{DoxyParams}
+\index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!run@{run}}
+\index{run@{run}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_afb03a339aa9ae129d42af0b7d49dfb2c}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_afb03a339aa9ae129d42af0b7d49dfb2c}
+
+
+Encapsulating a method to run the moving\+\_\+least\+\_\+squares node. 
+
+
+
+\subsection{Member Data Documentation}
+\index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!nh@{nh}}
+\index{nh@{nh}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_ae4c2a5c0960cec2bc990d0f19fee3ecb}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_ae4c2a5c0960cec2bc990d0f19fee3ecb}
+Node Handle reference from embedding node \index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}sensor\+\_\+msgs\+::\+Point\+Cloud2 moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_af6fbf84b91043961cc80fb71505992dd}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_af6fbf84b91043961cc80fb71505992dd}
+point cloud message used to publish the result \index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!pp@{pp}}
+\index{pp@{pp}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{pp}{pp}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Preprocessor} moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::pp\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_a64551d7faad6e219620e142472edbada}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_a64551d7faad6e219620e142472edbada}
+Object for Preprocessor class \index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!pub@{pub}}
+\index{pub@{pub}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_a575c8db3fd78dc6e4bfd432d2d75916c}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_a575c8db3fd78dc6e4bfd432d2d75916c}
+Point cloud publisher \index{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}!sub@{sub}}
+\index{sub@{sub}!moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares@{moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares}}
+\subsubsection[{\texorpdfstring{sub}{sub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Subscriber moving\+\_\+least\+\_\+squares\+\_\+node\+::\+Moving\+Least\+Squares\+::sub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmoving__least__squares__node_1_1_moving_least_squares_a3afb046b92a8d8df03d06542ba9fc9bd}{}\label{classmoving__least__squares__node_1_1_moving_least_squares_a3afb046b92a8d8df03d06542ba9fc9bd}
+Raw point cloud subscriber 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/moving\+\_\+least\+\_\+squares\+\_\+node/\hyperlink{moving__least__squares_8h}{moving\+\_\+least\+\_\+squares.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/moving\+\_\+least\+\_\+squares\+\_\+node/\hyperlink{moving__least__squares_8cpp}{moving\+\_\+least\+\_\+squares.\+cpp}\end{DoxyCompactItemize}

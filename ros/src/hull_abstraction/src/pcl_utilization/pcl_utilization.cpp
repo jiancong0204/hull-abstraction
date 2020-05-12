@@ -103,7 +103,7 @@ double pcl_utilization::computeCloudResolution(pcl::PointCloud<pcl::PointXYZ>::P
         if (nres == 2)
         {
             resolution += sqrt(squaredDistances[1]);
-            ++numberOfPoints;
+            numberOfPoints++;
         }
     }
     if (numberOfPoints != 0)
@@ -112,7 +112,7 @@ double pcl_utilization::computeCloudResolution(pcl::PointCloud<pcl::PointXYZ>::P
     return resolution;
 }
 
-double pcl_utilization::computeCloudResolutionN(pcl::PointCloud<pcl::PointNormal>::Ptr cloudWithNormals)
+double pcl_utilization::computeCloudResolution(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
     double resolution = 0.0;
     int numberOfPoints = 0;
@@ -120,11 +120,11 @@ double pcl_utilization::computeCloudResolutionN(pcl::PointCloud<pcl::PointNormal
     std::vector<int> indices(2);
     std::vector<float> squaredDistances(2);
     pcl::search::KdTree<pcl::PointNormal> tree;
-    tree.setInputCloud(cloudWithNormals);
+    tree.setInputCloud(cloud_with_normals);
 
-    for (size_t i = 0; i < cloudWithNormals->size(); ++i)
+    for (size_t i = 0; i < cloud_with_normals->size(); ++i)
     {
-        if (!std::isfinite((*cloudWithNormals)[i].x))
+        if (!std::isfinite((*cloud_with_normals)[i].x))
             continue;
 
         // Considering the second neighbor since the first is the point itself.
@@ -132,7 +132,7 @@ double pcl_utilization::computeCloudResolutionN(pcl::PointCloud<pcl::PointNormal
         if (nres == 2)
         {
             resolution += sqrt(squaredDistances[1]);
-            ++numberOfPoints;
+            numberOfPoints++;
         }
     }
     if (numberOfPoints != 0)

@@ -1,13 +1,13 @@
 #include "load_pcd.h"
 
-void load_pcd::LoadPCD::run()
+void load_pcd_node::LoadPCD::run()
 {
-    pcl_pub = nh.advertise<sensor_msgs::PointCloud2> ("load_pcd", 1);
+    pub = nh.advertise<sensor_msgs::PointCloud2> ("load_pcd", 1);
     createROSMsg();
     publishROSMsg();
 }
 
-int load_pcd::LoadPCD::createROSMsg()
+bool load_pcd_node::LoadPCD::createROSMsg()
 {
     bool is_loaded = ~pcl::io::loadPCDFile ("/home/jc/hull_abstraction/prototype/point_cloud_data/16_5.pcd", cloud);
     if (is_loaded)
@@ -15,18 +15,18 @@ int load_pcd::LoadPCD::createROSMsg()
     else
     {
         std::cout << "Loading failed! " << std::endl;
-        return 0;
+        return false;
     }
-    pcl::toROSMsg(cloud, msg);
-    msg.header.frame_id = "base";
-    return 1;
+    pcl::toROSMsg(cloud, output_msg);
+    output_msg.header.frame_id = "base";
+    return true;
 }
 
-void load_pcd::LoadPCD::publishROSMsg() {
+void load_pcd_node::LoadPCD::publishROSMsg() {
     ros::Rate loop_rate(1);
     while (ros::ok())
     {
-        pcl_pub.publish(msg);
+        pub.publish(output_msg);
         ros::spinOnce();
         std::cout << "Cloud is published. " << std::endl;
         loop_rate.sleep();

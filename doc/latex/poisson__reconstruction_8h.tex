@@ -1,0 +1,54 @@
+\hypertarget{poisson__reconstruction_8h}{}\section{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/poisson\+\_\+reconstruction\+\_\+node/poisson\+\_\+reconstruction.h File Reference}
+\label{poisson__reconstruction_8h}\index{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/poisson\+\_\+reconstruction\+\_\+node/poisson\+\_\+reconstruction.\+h@{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/poisson\+\_\+reconstruction\+\_\+node/poisson\+\_\+reconstruction.\+h}}
+
+
+Framework of Poisson reconstruction node.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ros/ros.\+h$>$}\\*
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+msgs/\+Polygon\+Mesh.\+h$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+conversions/pcl\+\_\+conversions.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}hull\+\_\+abstraction/reconstructor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hull\+\_\+abstraction/preprocessor.\+h\char`\"{}}\\*
+Include dependency graph for poisson\+\_\+reconstruction.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{poisson__reconstruction_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{poisson__reconstruction_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction}{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}
+\begin{DoxyCompactList}\small\item\em Class utilizing Poisson reconstruction method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepoisson__reconstruction__node}{poisson\+\_\+reconstruction\+\_\+node}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Framework of Poisson reconstruction node. 
+
+\begin{DoxyRefDesc}{R\+O\+S Node}
+\item[\hyperlink{ros_node__ros_node000004}{R\+O\+S Node}]poisson\+\_\+reconstruction\end{DoxyRefDesc}
+
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/12
+\end{DoxyDate}
+This node subscribes a R\+OS topic to get an input point cloud and then utilize Poisson reconstruction to generate a mesh. The result of Poisson reconstruction is published as a point cloud message. 

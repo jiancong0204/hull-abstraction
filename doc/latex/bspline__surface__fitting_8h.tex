@@ -1,0 +1,53 @@
+\hypertarget{bspline__surface__fitting_8h}{}\section{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/bspline\+\_\+surface\+\_\+fitting\+\_\+node/bspline\+\_\+surface\+\_\+fitting.h File Reference}
+\label{bspline__surface__fitting_8h}\index{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/bspline\+\_\+surface\+\_\+fitting\+\_\+node/bspline\+\_\+surface\+\_\+fitting.\+h@{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/bspline\+\_\+surface\+\_\+fitting\+\_\+node/bspline\+\_\+surface\+\_\+fitting.\+h}}
+
+
+Framework of b-\/spline surface fitting node.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ros/ros.\+h$>$}\\*
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+conversions/pcl\+\_\+conversions.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}hull\+\_\+abstraction/reconstructor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pcl\+\_\+utilization/pcl\+\_\+utilization.\+h\char`\"{}}\\*
+Include dependency graph for bspline\+\_\+surface\+\_\+fitting.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bspline__surface__fitting_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bspline__surface__fitting_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting}{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}
+\begin{DoxyCompactList}\small\item\em Class utilizing B-\/spline surface fitting method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacebspline__surface__fitting__node}{bspline\+\_\+surface\+\_\+fitting\+\_\+node}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Framework of b-\/spline surface fitting node. 
+
+\begin{DoxyRefDesc}{R\+O\+S Node}
+\item[\hyperlink{ros_node__ros_node000001}{R\+O\+S Node}]bspline\+\_\+surface\+\_\+fitting\end{DoxyRefDesc}
+
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/12
+\end{DoxyDate}
+This node subscribes a R\+OS topic to get an input point cloud and then perform b-\/spline surface fitting to generate a mesh. The result of b-\/spline surface fitting is published as a Marker message containing triangle lists. 

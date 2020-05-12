@@ -1,0 +1,285 @@
+\hypertarget{classhull__abstraction_1_1_reconstructor}{}\section{hull\+\_\+abstraction\+:\+:Reconstructor Class Reference}
+\label{classhull__abstraction_1_1_reconstructor}\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+
+
+Class containing several hull construction methods.  
+
+
+
+
+{\ttfamily \#include $<$reconstructor.\+h$>$}
+
+
+
+Collaboration diagram for hull\+\_\+abstraction\+:\+:Reconstructor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classhull__abstraction_1_1_reconstructor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{Reconstructor} ()
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{$\sim$\+Reconstructor} ()
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{greedy\+Triangulation} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{poisson\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{marching\+Cubes\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{bspline\+Surface\+Fitting} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{Reconstructor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{$\sim$\+Reconstructor} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{greedy\+Triangulation} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes using greedy triangulation algorithm. \end{DoxyCompactList}\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{poisson\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes through Poisson reconstruction method. \end{DoxyCompactList}\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{marching\+Cubes\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes utilizing marching cubes method. \end{DoxyCompactList}\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{bspline\+Surface\+Fitting} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes based on b-\/spline surface fitting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{point\+Cloud2\+Vector3d} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)
+\item 
+void \hyperlink{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{point\+Cloud2\+Vector3d} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)
+\begin{DoxyCompactList}\small\item\em Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Greedy\+Projection\+Triangulation$<$ pcl\+::\+Point\+Normal $>$ \hyperlink{classhull__abstraction_1_1_reconstructor_aeb53b00a5a6300f6fcbef59d6759f01b}{greedy\+\_\+projection\+\_\+triangulation}
+\item 
+pcl\+::\+Poisson$<$ pcl\+::\+Point\+Normal $>$ \hyperlink{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}{poisson}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_af0818936b15dd13f3a9fa3e70734cd57}{mesh}
+\item 
+pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Surface \hyperlink{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}{surface\+\_\+data}
+\item 
+pcl\+::on\+\_\+nurbs\+::\+Fitting\+Surface\+::\+Parameter \hyperlink{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}{surface\+\_\+parameters}
+\item 
+pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Curve2d \hyperlink{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}{curve\+\_\+data}
+\item 
+pcl\+::on\+\_\+nurbs\+::\+Fitting\+Curve2d\+A\+P\+D\+M\+::\+Fit\+Parameter \hyperlink{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}{curve\+\_\+parameters}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing several hull construction methods. 
+
+This class wraps some hull construction methods for point cloud data
+\begin{DoxyItemize}
+\item Greedy triangulation algorithm
+\item Poisson reconstruction
+\item Marching cubes method
+\item B-\/spline surface fitting 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!Reconstructor@{Reconstructor}}
+\index{Reconstructor@{Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{Reconstructor()}{Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::\+Reconstructor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{}\label{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!````~Reconstructor@{$\sim$\+Reconstructor}}
+\index{````~Reconstructor@{$\sim$\+Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{$\sim$\+Reconstructor()}{~Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::$\sim$\+Reconstructor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{}\label{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!Reconstructor@{Reconstructor}}
+\index{Reconstructor@{Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{Reconstructor()}{Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::\+Reconstructor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{}\label{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}
+
+
+Constructor. 
+
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!````~Reconstructor@{$\sim$\+Reconstructor}}
+\index{````~Reconstructor@{$\sim$\+Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{$\sim$\+Reconstructor()}{~Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::$\sim$\+Reconstructor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{}\label{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}
+
+
+Deconstructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}}
+\index{bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{bspline\+Surface\+Fitting(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{bsplineSurfaceFitting(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::bspline\+Surface\+Fitting (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{}\label{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}}
+\index{bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{bspline\+Surface\+Fitting(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{bsplineSurfaceFitting(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::bspline\+Surface\+Fitting (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{}\label{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}
+
+
+Generate polygon meshes based on b-\/spline surface fitting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+Triangulation@{greedy\+Triangulation}}
+\index{greedy\+Triangulation@{greedy\+Triangulation}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{greedy\+Triangulation(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{greedyTriangulation(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::greedy\+Triangulation (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{}\label{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+Triangulation@{greedy\+Triangulation}}
+\index{greedy\+Triangulation@{greedy\+Triangulation}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{greedy\+Triangulation(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{greedyTriangulation(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::greedy\+Triangulation (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{}\label{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}
+
+
+Generate polygon meshes using greedy triangulation algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}}
+\index{marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{marching\+Cubes\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{marchingCubesReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::marching\+Cubes\+Reconstruction (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{}\label{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}}
+\index{marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{marching\+Cubes\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{marchingCubesReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::marching\+Cubes\+Reconstruction (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{}\label{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}
+
+
+Generate polygon meshes utilizing marching cubes method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}}
+\index{point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{point\+Cloud2\+Vector3d(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)}{pointCloud2Vector3d(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Reconstructor\+::point\+Cloud2\+Vector3d (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud, }
+\item[{pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{}\label{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}}
+\index{point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{point\+Cloud2\+Vector3d(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)}{pointCloud2Vector3d(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Reconstructor\+::point\+Cloud2\+Vector3d (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud, }
+\item[{pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{}\label{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}
+
+
+Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em data} & A set of three-\/dimentional vectors \\
+\hline
+\end{DoxyParams}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!poisson\+Reconstruction@{poisson\+Reconstruction}}
+\index{poisson\+Reconstruction@{poisson\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{poisson\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{poissonReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::poisson\+Reconstruction (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{}\label{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!poisson\+Reconstruction@{poisson\+Reconstruction}}
+\index{poisson\+Reconstruction@{poisson\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{poisson\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{poissonReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::poisson\+Reconstruction (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{}\label{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}
+
+
+Generate polygon meshes through Poisson reconstruction method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!curve\+\_\+data@{curve\+\_\+data}}
+\index{curve\+\_\+data@{curve\+\_\+data}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{curve\+\_\+data}{curve_data}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Curve2d hull\+\_\+abstraction\+::\+Reconstructor\+::curve\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}{}\label{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}
+Data structure for N\+U\+R\+BS curve fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!curve\+\_\+parameters@{curve\+\_\+parameters}}
+\index{curve\+\_\+parameters@{curve\+\_\+parameters}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{curve\+\_\+parameters}{curve_parameters}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Fitting\+Curve2d\+A\+P\+D\+M\+::\+Fit\+Parameter hull\+\_\+abstraction\+::\+Reconstructor\+::curve\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}{}\label{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}
+Parameters for curve fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+\_\+projection\+\_\+triangulation@{greedy\+\_\+projection\+\_\+triangulation}}
+\index{greedy\+\_\+projection\+\_\+triangulation@{greedy\+\_\+projection\+\_\+triangulation}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{greedy\+\_\+projection\+\_\+triangulation}{greedy_projection_triangulation}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Greedy\+Projection\+Triangulation$<$ pcl\+::\+Point\+Normal $>$ hull\+\_\+abstraction\+::\+Reconstructor\+::greedy\+\_\+projection\+\_\+triangulation\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_aeb53b00a5a6300f6fcbef59d6759f01b}{}\label{classhull__abstraction_1_1_reconstructor_aeb53b00a5a6300f6fcbef59d6759f01b}
+Object for performing greedy triangulation algorithm \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!mesh@{mesh}}
+\index{mesh@{mesh}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{mesh}{mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_af0818936b15dd13f3a9fa3e70734cd57}{}\label{classhull__abstraction_1_1_reconstructor_af0818936b15dd13f3a9fa3e70734cd57}
+Result of polygon meshes generation \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!poisson@{poisson}}
+\index{poisson@{poisson}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{poisson}{poisson}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Poisson$<$ pcl\+::\+Point\+Normal $>$ hull\+\_\+abstraction\+::\+Reconstructor\+::poisson\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}{}\label{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}
+Object for performing Poisson reconstruction \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!surface\+\_\+data@{surface\+\_\+data}}
+\index{surface\+\_\+data@{surface\+\_\+data}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{surface\+\_\+data}{surface_data}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Surface hull\+\_\+abstraction\+::\+Reconstructor\+::surface\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}{}\label{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}
+Data structure for N\+U\+R\+BS surface fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!surface\+\_\+parameters@{surface\+\_\+parameters}}
+\index{surface\+\_\+parameters@{surface\+\_\+parameters}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{surface\+\_\+parameters}{surface_parameters}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Fitting\+Surface\+::\+Parameter hull\+\_\+abstraction\+::\+Reconstructor\+::surface\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}{}\label{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}
+Parameters for surface fitting 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/\hyperlink{prototype_2include_2hull__abstraction_2reconstructor_8h}{reconstructor.\+h}\item 
+/home/jc/hull\+\_\+abstraction/prototype/src/hull\+\_\+abstraction/\hyperlink{prototype_2src_2hull__abstraction_2reconstructor_8cpp}{reconstructor.\+cpp}\end{DoxyCompactItemize}

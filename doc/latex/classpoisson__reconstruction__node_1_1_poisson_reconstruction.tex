@@ -1,0 +1,119 @@
+\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction}{}\section{poisson\+\_\+reconstruction\+\_\+node\+:\+:Poisson\+Reconstruction Class Reference}
+\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction}\index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+
+
+Class utilizing Poisson reconstruction method.  
+
+
+
+
+{\ttfamily \#include $<$poisson\+\_\+reconstruction.\+h$>$}
+
+
+
+Collaboration diagram for poisson\+\_\+reconstruction\+\_\+node\+:\+:Poisson\+Reconstruction\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpoisson__reconstruction__node_1_1_poisson_reconstruction__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_acda9fc43d3789cb5ab53ebb305841afc}{Poisson\+Reconstruction} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction}{Poisson\+Reconstruction} object. \end{DoxyCompactList}\item 
+void \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4332de0505ba34082e8371a529731b6f}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulating a method to run the poisson\+\_\+reconstruction node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a7b079c1e99540c4e3971fb0139afd55b}{processing} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a20283d25ab47d9487311fd84aae03856}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_ae771ab3e291d8ae32216a644ef8aa26d}{pub}
+\item 
+ros\+::\+Subscriber \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a2ea0793db79cbde2bd6195fe3f473392}{sub}
+\item 
+pcl\+\_\+msgs\+::\+Polygon\+Mesh \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_aa96805cee822cdeada23ed2dd3d70ac9}{output\+\_\+msg}
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor}{hull\+\_\+abstraction\+::\+Reconstructor} \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4630f308fbba0aa64e41f0044d950063}{rc}
+\item 
+\hyperlink{classhull__abstraction_1_1_preprocessor}{hull\+\_\+abstraction\+::\+Preprocessor} \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a0fd4f45342a06eeb16e43d50a85fb0eb}{pp}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a527bb851ae184ae23ab9a77e40893f1a}{mesh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class utilizing Poisson reconstruction method. 
+
+This framework is developed to apply Poisson reconstruction to generate mesh based on the input point cloud. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!Poisson\+Reconstruction@{Poisson\+Reconstruction}}
+\index{Poisson\+Reconstruction@{Poisson\+Reconstruction}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{Poisson\+Reconstruction()}{PoissonReconstruction()}}]{\setlength{\rightskip}{0pt plus 5cm}poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::\+Poisson\+Reconstruction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_acda9fc43d3789cb5ab53ebb305841afc}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_acda9fc43d3789cb5ab53ebb305841afc}
+
+
+Construct a new \hyperlink{classpoisson__reconstruction__node_1_1_poisson_reconstruction}{Poisson\+Reconstruction} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!processing@{processing}}
+\index{processing@{processing}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{processing(const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)}{processing(const sensor_msgs::PointCloud2ConstPtr input_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::processing (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr}]{input\+\_\+msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a7b079c1e99540c4e3971fb0139afd55b}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a7b079c1e99540c4e3971fb0139afd55b}
+\index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!run@{run}}
+\index{run@{run}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4332de0505ba34082e8371a529731b6f}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4332de0505ba34082e8371a529731b6f}
+
+
+Encapsulating a method to run the poisson\+\_\+reconstruction node. 
+
+
+
+\subsection{Member Data Documentation}
+\index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!mesh@{mesh}}
+\index{mesh@{mesh}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{mesh}{mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a527bb851ae184ae23ab9a77e40893f1a}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a527bb851ae184ae23ab9a77e40893f1a}
+Resulted polygon mesh \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!nh@{nh}}
+\index{nh@{nh}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a20283d25ab47d9487311fd84aae03856}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a20283d25ab47d9487311fd84aae03856}
+Node Handle reference from embedding node \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+\_\+msgs\+::\+Polygon\+Mesh poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_aa96805cee822cdeada23ed2dd3d70ac9}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_aa96805cee822cdeada23ed2dd3d70ac9}
+Polygon mesh message used to publish the mesh \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!pp@{pp}}
+\index{pp@{pp}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{pp}{pp}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Preprocessor} poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::pp\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a0fd4f45342a06eeb16e43d50a85fb0eb}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a0fd4f45342a06eeb16e43d50a85fb0eb}
+Object for Preprocessor class \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!pub@{pub}}
+\index{pub@{pub}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_ae771ab3e291d8ae32216a644ef8aa26d}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_ae771ab3e291d8ae32216a644ef8aa26d}
+Polygon mesh publisher \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!rc@{rc}}
+\index{rc@{rc}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{rc}{rc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Reconstructor} poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::rc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4630f308fbba0aa64e41f0044d950063}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a4630f308fbba0aa64e41f0044d950063}
+Object for Reconstructor class \index{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}!sub@{sub}}
+\index{sub@{sub}!poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction@{poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction}}
+\subsubsection[{\texorpdfstring{sub}{sub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Subscriber poisson\+\_\+reconstruction\+\_\+node\+::\+Poisson\+Reconstruction\+::sub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a2ea0793db79cbde2bd6195fe3f473392}{}\label{classpoisson__reconstruction__node_1_1_poisson_reconstruction_a2ea0793db79cbde2bd6195fe3f473392}
+Raw point cloud subscriber 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/poisson\+\_\+reconstruction\+\_\+node/\hyperlink{poisson__reconstruction_8h}{poisson\+\_\+reconstruction.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/poisson\+\_\+reconstruction\+\_\+node/\hyperlink{poisson__reconstruction_8cpp}{poisson\+\_\+reconstruction.\+cpp}\end{DoxyCompactItemize}

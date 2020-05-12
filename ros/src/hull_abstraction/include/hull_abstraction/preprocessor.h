@@ -1,8 +1,9 @@
 /**
-  * @file
-  * @brief This file contains the declaration of the Preprocessor class
+  * @file preprocessor.h
+  * @brief This file contains the declaration for the Preprocessor class
   *
   * @author Jiancong Zheng
+  * @date 2020-05-12
   **/
 
 #pragma once
@@ -22,69 +23,84 @@
 namespace hull_abstraction
 {
     /**
-     * @brief The Preprocessor class
+     * @brief Class containing several preprocessing procedures
      *
-     * This class wraps some preprocessing methods for point cloud data
+     * This class wraps some preprocessing procedures for point cloud data
+     *  - Voxel grid filter
+     *  - Statistical filter
+     *  - Pass-through filter
+     *  - Conditional filter
+     *  - Radius filter
+     *  - Moving least squares method
+     *  - Normal estimation
      **/
     class Preprocessor
     {
     public:
         /**
-         * @brief Constructor
-         **/
+         * @brief Construct a new Preprocessor object
+         */
         Preprocessor() {}
 
         /**
-         * @brief Deconstructor
-         **/
+         * @brief Destroy the Preprocessor object
+         */
         ~Preprocessor() {}
 
         /**
          * @brief Implementation of the voxel grid filter to perform down sampling
-         * @param cloud Cloud of PointXYZ
-         * @param filtered_cloud Cloud of PointXYZ
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] filtered_cloud Cloud of PointXYZ
          **/
+
         void voxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /**
-         * @brief Removing outliers through the statitical filter
-         * @param cloud Cloud of PointXYZ
-         * @param filtered_cloud Cloud of PointXYZ
+         * @brief Remove outliers through the statitical filter
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] filtered_cloud Cloud of PointXYZ
          **/
         void statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /**
-         * @brief Implementation of the pass-through filter
-         * @param cloud Cloud of PointXYZ
-         * @param filtered_cloud Cloud of PointXYZ
+         * @brief Implement the pass-through filter
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] filtered_cloud Cloud of PointXYZ
          **/
         void passThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /**
-         * @brief Implementation of the conditional filter
-         * @param cloud Cloud of PointXYZ
-         * @param filtered_cloud Cloud of PointXYZ
+         * @brief Implement the conditional filter
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] filtered_cloud Cloud of PointXYZ
          **/
         void conditionalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /**
-         * @brief Implementation of the radius filter
-         * @param cloud Cloud of PointXYZ
-         * @param filtered_cloud Cloud of PointXYZ
+         * @brief Implement the radius filter
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] filtered_cloud Cloud of PointXYZ
          **/
         void radiusFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud);
 
         /**
-         * @brief Estimating normals and append those to the input cloud
-         * @param cloud Cloud of PointXYZ
-         * @param cloud_with_normals Cloud of PointNormal
+         * @brief Estimate normals and append those to the input cloud
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] cloud_with_normals Cloud of PointNormal
          **/
         void appendNormalEstimation(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /**
-         * @brief Performing MLS (Moving Least Squares) algorithm for data smoothing and normal estimation
-         * @param cloud Cloud of PointXYZ
-         * @param smoothed_cloud Cloud of PointXYZ
+         * @brief Perform MLS (Moving Least Squares) method for data smoothing and normal estimation
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] smoothed_cloud Cloud of PointXYZ
          **/
         void movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr smoothed_cloud, 
             pcl::PointCloud<pcl::PointNormal>::Ptr smoothed_cloud_with_normals);

@@ -1,0 +1,71 @@
+\hypertarget{namespacepcl__utilization}{}\section{pcl\+\_\+utilization Namespace Reference}
+\label{namespacepcl__utilization}\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}{to\+Marker\+Msg} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message for triangle lists. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud with normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}}
+\index{compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{computeCloudResolution(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}double pcl\+\_\+utilization\+::compute\+Cloud\+Resolution (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{}\label{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}
+
+
+Compute the resolution of a point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resolution of the input cloud 
+\end{DoxyReturn}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}}
+\index{compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{computeCloudResolution(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}double pcl\+\_\+utilization\+::compute\+Cloud\+Resolution (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{}\label{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}
+
+
+Compute the resolution of a point cloud with normals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resolution of the input cloud 
+\end{DoxyReturn}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!to\+Marker\+Msg@{to\+Marker\+Msg}}
+\index{to\+Marker\+Msg@{to\+Marker\+Msg}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{to\+Marker\+Msg(pcl\+::\+Polygon\+Mesh mesh)}{toMarkerMsg(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker pcl\+\_\+utilization\+::to\+Marker\+Msg (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}{}\label{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}
+
+
+Convert a polygon mesh to a marker message for triangle lists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Triangle mesh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Marker message as triangle lists 
+\end{DoxyReturn}

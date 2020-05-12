@@ -1,0 +1,55 @@
+\hypertarget{pcl__utilization_8h}{}\section{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.h File Reference}
+\label{pcl__utilization_8h}\index{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.\+h@{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.\+h}}
+
+
+This file contains the declaration of P\+CL utilization methods.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\\*
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$visualization\+\_\+msgs/\+Marker.\+h$>$}\\*
+{\ttfamily \#include $<$Eigen/\+Core$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+conversions/pcl\+\_\+conversions.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/point\+\_\+types.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/\+P\+C\+L\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/common/centroid.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/search/kdtree.\+h$>$}\\*
+Include dependency graph for pcl\+\_\+utilization.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcl__utilization_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pcl__utilization_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepcl__utilization}{pcl\+\_\+utilization}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}{pcl\+\_\+utilization\+::to\+Marker\+Msg} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message for triangle lists. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud with normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the declaration of P\+CL utilization methods. 
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/12 
+\end{DoxyDate}

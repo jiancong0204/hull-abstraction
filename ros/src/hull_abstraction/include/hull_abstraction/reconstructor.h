@@ -1,8 +1,9 @@
 /**
   * @file
-  * @brief This file contains the declaration of the Reconstructor class.
+  * @brief This file contains the declaration for the Reconstructor class.
   *
   * @author Jiancong Zheng
+  * @date 2020-05-12
   **/
 
 #pragma once
@@ -22,9 +23,13 @@
 namespace hull_abstraction
 {
     /**
-     * @brief The Reconstructor class
+     * @brief Class containing several hull construction methods
      *
      * This class wraps some hull construction methods for point cloud data
+     *  - Greedy triangulation algorithm
+     *  - Poisson reconstruction
+     *  - Marching cubes method
+     *  - B-spline surface fitting
      **/
     class Reconstructor 
     {
@@ -40,28 +45,32 @@ namespace hull_abstraction
         ~Reconstructor() {}
 
         /**
-         * @brief Generating polygon meshes using greedy triangulation algorithm
+         * @brief Generate polygon meshes using greedy triangulation algorithm
+         * 
          * @param cloud_with_normals Cloud of PointNormal
          * @return Resulting polygon meshes of cloud_with_normals
          **/
         pcl::PolygonMesh greedyTriangulation(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /**
-         * @brief Generating polygon meshes through Poisson reconstruction method
+         * @brief Generate polygon meshes through Poisson reconstruction method
+         * 
          * @param cloud_with_normals Cloud of PointNormal
          * @return Resulting polygon meshes of cloud_with_normals
          **/
         pcl::PolygonMesh poissonReconstruction(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /**
-         * @brief Generating polygon meshes utilizing marching cubes method
+         * @brief Generate polygon meshes utilizing marching cubes method
+         * 
          * @param cloud_with_normals Cloud of PointNormal
          * @return Resulting polygon meshes of cloud_with_normals
          **/
         pcl::PolygonMesh marchingCubesReconstruction(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /**
-         * @brief Generating polygon meshes based on b-spline surface fitting
+         * @brief Generate polygon meshes based on b-spline surface fitting
+         * 
          * @param cloud Cloud of PointXYZ
          * @return Resulting polygon meshes of cloud_with_normals
          **/
@@ -82,8 +91,9 @@ namespace hull_abstraction
 
         /**
          * @brief Converting a cloud of PointXYZ to a set of three-dimensional vectors
-         * @param cloud Cloud of PointXYZ
-         * @param data A set of three-dimentional vectors
+         * 
+         * @param[in] cloud Cloud of PointXYZ
+         * @param[out] data A set of three-dimentional vectors
          **/
         void pointCloud2Vector3d(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::on_nurbs::vector_vec3d &data);
     };
