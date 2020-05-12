@@ -1,11 +1,72 @@
+\subsection*{1. Install required dependencies}
+
+
+\begin{DoxyCode}
+1 sudo apt-get install git build-essential linux-libc-dev
+2 sudo apt-get install cmake cmake-gui
+3 sudo apt-get install libusb-1.0-0-dev libusb-dev libudev-dev
+4 sudo apt-get install mpi-default-dev openmpi-bin openmpi-common
+5 sudo apt-get install libflann1.8 libflann-dev
+6 sudo apt-get install libeigen3-dev
+7 sudo apt-get install libboost-all-dev
+8 sudo apt-get install libqhull* libgtest-dev
+9 sudo apt-get install freeglut3-dev pkg-config
+10 sudo apt-get install libxmu-dev libxi-dev
+11 sudo apt-get install mono-complete
+12 sudo apt-get install libglew-dev
+13 sudo apt-get install libsuitesparse-dev
+\end{DoxyCode}
+
+
+\subsection*{2. Complie and install V\+TK 6.\+2.\+0}
+
+\begin{quote}
+\char`\"{}apt-\/get install\char`\"{} in ubuntu 16.\+04 can only install the version of 5.\+10. However, version of 6.\+2.\+0 or above is required for pcl. \end{quote}
 
 \begin{DoxyItemize}
-\item 1. Install required dependencies ``` sudo apt-\/get install git build-\/essential linux-\/libc-\/dev sudo apt-\/get install cmake cmake-\/gui sudo apt-\/get install libusb-\/1.\+0-\/0-\/dev libusb-\/dev libudev-\/dev sudo apt-\/get install mpi-\/default-\/dev openmpi-\/bin openmpi-\/common sudo apt-\/get install libflann1.\+8 libflann-\/dev sudo apt-\/get install libeigen3-\/dev sudo apt-\/get install libboost-\/all-\/dev sudo apt-\/get install libqhull$\ast$ libgtest-\/dev sudo apt-\/get install freeglut3-\/dev pkg-\/config sudo apt-\/get install libxmu-\/dev libxi-\/dev sudo apt-\/get install mono-\/complete sudo apt-\/get install libglew-\/dev sudo apt-\/get install libsuitesparse-\/dev ```
-\item 2. Complie and install V\+TK 6.\+2.\+0 $>$ \char`\"{}apt-\/get install\char`\"{} in ubuntu 16.\+04 can only install the version of 5.\+10. However, version of 6.\+2.\+0 or above is required for pcl.
+\item 2.\+1. Prepare the source code of V\+TK
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz
+2 tar -xvzf VTK-6.2.0.tar.gz
+3 sudo mv VTK-6.2.0 /opt
+4 cd /opt/VTK-6.2.0
+\end{DoxyCode}
+
+
+
 \begin{DoxyItemize}
-\item 2.\+1. Prepare the source code of V\+TK ``` wget \href{https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz}{\tt https\+://www.\+vtk.\+org/files/release/6.\+2/\+V\+T\+K-\/6.\+2.\+0.\+tar.\+gz} tar -\/xvzf V\+T\+K-\/6.\+2.\+0.\+tar.\+gz sudo mv V\+T\+K-\/6.\+2.\+0 /opt cd /opt/\+V\+T\+K-\/6.2.\+0 ```
-\item 2.\+2. Compile V\+TK ``` sudo mkdir build cd build sudo cmake .. sudo make sudo make install ``` $>$ \char`\"{}make -\/j(\#\+Cores of your C\+P\+U)\char`\"{} can be used to speed up compilation process, e.\+g. make -\/j6. However, you must make sure that there is enough memory for all the parallel jobs.
+\item 2.\+2. Compile V\+TK 
+\begin{DoxyCode}
+1 sudo mkdir build
+2 cd build
+3 sudo cmake ..
+4 sudo make
+5 sudo make install
+\end{DoxyCode}
+
 \end{DoxyItemize}
-\item 3. Download the source code of P\+C\+L-\/1.\+8.\+0
-\item 4. Compile the source code ``` cd pcl sudo mkdir build cd build sudo cmake-\/gui sudo make sudo make install ``` $>$ Make sure that \char`\"{}\+B\+U\+I\+L\+D\+\_\+surface\+\_\+on\+\_\+nurbs\char`\"{} and \char`\"{}\+U\+S\+E\+\_\+\+U\+M\+F\+P\+A\+C\+K\char`\"{} are both selected in cmake configuration 
-\end{DoxyItemize}
+
+\begin{quote}
+\char`\"{}make -\/j(\#\+Cores of your C\+P\+U)\char`\"{} can be used to speed up compilation process, e.\+g. make -\/j6. However, you must make sure that there is enough memory for all the parallel jobs. \end{quote}
+
+
+\subsection*{3. Download the source code of P\+C\+L-\/1.\+8.\+0}
+
+\subsection*{4. Compile the source code}
+
+
+\begin{DoxyCode}
+1 cd pcl
+2 sudo mkdir build
+3 cd build
+4 sudo cmake-gui
+5 sudo make
+6 sudo make install
+\end{DoxyCode}
+
+
+\begin{quote}
+Make sure that \char`\"{}\+B\+U\+I\+L\+D\+\_\+surface\+\_\+on\+\_\+nurbs\char`\"{} and \char`\"{}\+U\+S\+E\+\_\+\+U\+M\+F\+P\+A\+C\+K\char`\"{} are both selected in cmake configuration\end{quote}

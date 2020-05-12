@@ -1,252 +1,84 @@
-
-
-This repository is part of the Center of Advanced Robotics by the I\+G\+MR -\/ Aachen University. The main purpose is to define folder structures, coding rules and documentation habbits as a template package. 
-
-
-
-\section*{1. Installation}
-
-A summary of install instructions necessary for the template package
-
-\subsection*{1.\+1 Init Submodule}
-
-The \href{https://igm-git.igm.rwth-aachen.de/COAR/igmr_packages/igmr_robotics_system_toolbox}{\tt I\+G\+MR Robotics System Toolbox} is required to compile the ros template nodes. If you haven\textquotesingle{}t already cloned and build the toolbox, you can init and update the submodule\+: 
-\begin{DoxyCode}
-1 cd perfect\_ros\_repository/ros/modules/igmr\_robotics\_system\_toolbox/
-2 git submodule init
-3 git submodule update
-\end{DoxyCode}
- 
+ This repository is part of the Center of Advanced Robotics by the I\+G\+MR -\/ Aachen University. 
 
 
 
-$\sim$$\sim$\#\# 1.\+1 Gtest$\sim$$\sim$
+\subsection*{1. Installation}
 
-$\sim$$\sim$\+N\+O\+T\+ES\+:$\sim$$\sim$ $\sim$$\sim$$\ast$ Simply using {\ttfamily catkin\+\_\+add\+\_\+gtest} in a C\+Make\+Lists.\+txt file (no need for find\+\_\+package(\+G\+Test)) works with G\+Test out of the box. $\sim$$\sim$ $\sim$$\sim$$\ast$ The {\ttfamily libgtest-\/dev} package is already installed by R\+OS.$\sim$$\sim$ $\sim$$\sim$$\ast$ Also note that installing pre-\/compiled G\+Test libraries is discouraged \href{https://github.com/google/googletest/blob/master/googletest/docs/FAQ.md#why-is-it-not-recommended-to-install-a-pre-compiled-copy-of-google-test-for-example-into-usrlocal}{\tt by Google}.$\sim$$\sim$
-
-$\sim$$\sim$\+Gtest is required for building the test cases. Install Gtest as decribed \href{http://ysonggit.github.io/coding/2014/12/19/use-gtest-in-ros-program.html}{\tt here}$\sim$$\sim$
-
-$\sim$$\sim$cd /usr/src/gtest$\sim$$\sim$ $\sim$$\sim$sudo apt-\/get install libgtest-\/dev$\sim$$\sim$ $\sim$$\sim$sudo cmake C\+Make\+Lists.\+txt$\sim$$\sim$ $\sim$$\sim$sudo make$\sim$$\sim$ $\sim$$\sim$\#copy or symlink libgtest.\+a and ligtest\+\_\+main.\+a to /usr/lib folder$\sim$$\sim$ $\sim$$\sim$sudo cp $\ast$.a /usr/lib$\sim$$\sim$ 
+A summary of installing necessary libraries for this package. 
 
 
 
-\subsection*{1.\+2 Google Benchmark}
-
-Google Benchmark is required for building and running the benchmarks. Install Google Benchmark as described \href{https://github.com/google/benchmark}{\tt here}
-
-In the desired install folder (usually /opt), run the following commands, or paste this into a shell script\+:
+\subsubsection*{1.\+1. Install required dependencies}
 
 
 \begin{DoxyCode}
-1 git clone https://github.com/google/benchmark.git
-2 cd benchmark
-3 mkdir build
-4 cd build
-5 cmake .. -DCMAKE\_BUILD\_TYPE=RELEASE
-6 make
-7 sudo make install
+1 sudo apt-get install git build-essential linux-libc-dev
+2 sudo apt-get install cmake cmake-gui
+3 sudo apt-get install libusb-1.0-0-dev libusb-dev libudev-dev
+4 sudo apt-get install mpi-default-dev openmpi-bin openmpi-common
+5 sudo apt-get install libflann1.8 libflann-dev
+6 sudo apt-get install libeigen3-dev
+7 sudo apt-get install libboost-all-dev
+8 sudo apt-get install libqhull* libgtest-dev
+9 sudo apt-get install freeglut3-dev pkg-config
+10 sudo apt-get install libxmu-dev libxi-dev
+11 sudo apt-get install mono-complete
+12 sudo apt-get install libglew-dev
+13 sudo apt-get install libsuitesparse-dev
 \end{DoxyCode}
 
 
-\subsection*{1.\+3 Set up G\+CC version alternatives}
 
-To be able to use the latest improvements in the most commonly used C and C++ compiler G\+C\+C/\+G++, such as C++ 14/17 features, install the newest reslease version (e.\+g. currently 7.\+2)\+:
+
+\subsubsection*{1.\+2. Complie and install V\+TK 6.\+2.\+0}
+
+\begin{quote}
+\char`\"{}apt-\/get install\char`\"{} in ubuntu 16.\+04 can only install the version of 5.\+10. However, version of 6.\+2.\+0 or above is required for pcl. \end{quote}
+\paragraph*{1.\+2.\+1. Prepare the source code of V\+TK}
 
 
 \begin{DoxyCode}
-1 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-2 sudo apt-get update
-3 sudo apt-get install gcc-7 g++-7
+1 wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz
+2 tar -xvzf VTK-6.2.0.tar.gz
+3 sudo mv VTK-6.2.0 /opt
+4 cd /opt/VTK-6.2.0
 \end{DoxyCode}
 
 
-{\bfseries Do not delete older versions, unless you know what you are doing!} If you have older versions installed and you want to keep them, set up all possible versions using update-\/alternatives. This will create symbolic links to your installations, so that you can easily switch between them. To see which versions of G\+C\+C/\+G++ are installed on your system, use
+\#\#\#\# 1.\+2.\+2. Compile V\+TK 
+\begin{DoxyCode}
+1 sudo mkdir build
+2 cd build
+3 sudo cmake ..
+4 sudo make
+5 sudo make install
+\end{DoxyCode}
+
+
+\begin{quote}
+\char`\"{}make -\/j(\#\+Cores of your C\+P\+U)\char`\"{} can be used to speed up compilation process, e.\+g. make -\/j6. However, you must make sure that there is enough memory for all the parallel jobs. \end{quote}
+
+
+
+
+\subsubsection*{1.\+3. Download the source code of P\+C\+L-\/1.\+8.\+0}
+
+
+
+
+
+\subsubsection*{1.\+4. Compile the source code}
 
 
 \begin{DoxyCode}
-1 ls /usr/bin/ | grep ^gcc\(\backslash\)-[0-9]
+1 cd pcl
+2 sudo mkdir build
+3 cd build
+4 sudo cmake-gui
+5 sudo make
+6 sudo make install
 \end{DoxyCode}
 
 
-To set up the symbolic links, first remove all previously created links using
-
-
-\begin{DoxyCode}
-1 sudo update-alternatives --remove-all gcc
-2 sudo update-alternatives --remove-all g++
-\end{DoxyCode}
-
-
-Then, create new links for all desired versions. You also have to specify a priority for each version. Choose priorities between 0 and 100 depending on your preferences, such that in auto mode, Ubuntu will choose whatever version you desire. As an example, we will assume we installed G\+C\+C/\+G++ 4.\+9 and 7 and want to set 7.\+x as the default version. In this case we can use the following commandos\+:
-
-
-\begin{DoxyCode}
-1 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 60 --slave /usr/bin/gcc gcc /usr/bin/gcc
-      -7
-2 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 40 --slave /usr/bin/gcc gcc /usr/bin/
-      gcc-4.9
-\end{DoxyCode}
-
-
-By using the \char`\"{}master/slave\char`\"{} setup, we can make sure that whenever a G++ version is chosen, the corresponding G\+CC version is chosen as well. If you want to keep G++ and G\+CC separate, install both update alternatives independently (recommended only for advanced users). The priority is specified following the (master) install, here we chose a priority of 60 for version 7.\+x and 40 for version 4.\+9.
-
-We can now easily switch between versions using
-
-
-\begin{DoxyCode}
-1 sudo update-alternatives --config g++
-\end{DoxyCode}
-
-
-and choosing one of the displayed alternatives. 
-
-
-
-\section*{2. Demo}
-
-\subsection*{2.\+1 Run minimal\+\_\+publisher\+\_\+node}
-
-{\bfseries Launch\+:}
-
-
-\begin{DoxyCode}
-1 roslaunch minimal\_publisher\_pkg minimal\_publisher.launch
-\end{DoxyCode}
- 
-
-
-
-\section*{3. Tests}
-
-{\bfseries Build\+:}
-
-
-\begin{DoxyCode}
-1 catkin\_make tests
-\end{DoxyCode}
-
-
-{\bfseries Launch\+:}
-
-To start all available tests, use
-
-
-\begin{DoxyCode}
-1 roslaunch template\_nodes run\_unit\_tests.launch
-\end{DoxyCode}
-
-
-{\bfseries Run\+:}
-
-To start a specific test, use the common syntax used to start a rosnode (using one of the template tests)\+:
-
-
-\begin{DoxyCode}
-1 rosrun template\_nodes conduct\_heavy\_computation\_test
-\end{DoxyCode}
- 
-
-
-
-\section*{4. Benchmarks}
-
-\subsection*{4.\+1 General use}
-
-The basic use-\/pattern for benchmarks is\+:
-
-
-\begin{DoxyCode}
-1 rosrun template\_nodes benchmarks <arguments>
-\end{DoxyCode}
- 
-
-
-
-\subsection*{4.\+2 Running a subset of benchmarks}
-
-Per default, all benchmarks specified in the benchmarks.\+cpp will be run. To run a subset of benchmarks, use\+:
-
-
-\begin{DoxyCode}
-1 rosrun template\_nodes benchmarks --benchmark\_filter= <regex>
-\end{DoxyCode}
-
-
-where \+\_\+\+\_\+$<$regex$>$\+\_\+\+\_\+ defines a regular expression
-
-\subsubsection*{4.\+2.\+1 Regex examples}
-
-Useful examples using regular expressions\+:
-
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
-\hline
-\rowcolor{\tableheadbgcolor}{\bf Regular Expression }&{\bf Explanation  }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}{\bf Regular Expression }&{\bf Explanation  }\\\cline{1-2}
-\endhead
-\+\_\+\+\_\+\textbackslash{}$^\wedge$$<$name$>$\+\_\+\+\_\+ &Matches benchmarks starting with \+\_\+\+\_\+$<$name$>$\+\_\+\+\_\+ \\\cline{1-2}
-\+\_\+\+\_\+$<$name$>$\$\+\_\+\+\_\+ &Matches benchmarks ending with \+\_\+\+\_\+$<$name$>$\+\_\+\+\_\+ \\\cline{1-2}
-\+\_\+\+\_\+\textbackslash{}$^\wedge$$<$name$>$\$\+\_\+\+\_\+ &Matches benchmark \+\_\+\+\_\+$<$name$>$\+\_\+\+\_\+ exactly \\\cline{1-2}
-\+\_\+\+\_\+$<$name$>$\mbox{[}0-\/9\mbox{]}\{1,{\itshape n}\}\+\_\+\+\_\+ &Matches benchmarks containing \+\_\+\+\_\+$<$name$>$\+\_\+\+\_\+ followed by a number with a length of \+\_\+\+\_\+$\ast$n$\ast$\+\_\+\+\_\+ or less (e.\+g. 0-\/999 for \+\_\+\+\_\+$\ast$n$\ast$\+\_\+\+\_\+ = 3) \\\cline{1-2}
-\end{longtabu}
-
-
-
-
-\subsubsection*{4.\+2.\+2 Other useful arguments}
-
-A list of commonly used flags to pass to a benchmarks file\+:
-
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
-\hline
-\rowcolor{\tableheadbgcolor}{\bf Benchmark Argument }&{\bf Explanation  }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}{\bf Benchmark Argument }&{\bf Explanation  }\\\cline{1-2}
-\endhead
-\+\_\+\+\_\+--benchmark\+\_\+repetitions=$\ast$n$\ast$\+\_\+\+\_\+ &The specified benchmarks are run {\itshape n} times. Reports the individual times, mean, median and standard deviation of the runs \\\cline{1-2}
-\+\_\+\+\_\+--benchmark\+\_\+report\+\_\+aggregates\+\_\+only=$\ast$\mbox{[}true/false\mbox{]}$\ast$\+\_\+\+\_\+ &For use with the argument above. When set to true, only mean, median and standard deviation are reported \\\cline{1-2}
-\+\_\+\+\_\+--benchmark\+\_\+out\+\_\+format=$\ast$\mbox{[}console/json/csv\mbox{]}$\ast$\+\_\+\+\_\+ &Sets the output format. Per default format is set to console. \\\cline{1-2}
-\+\_\+\+\_\+--benchmark\+\_\+out={\itshape filename}\+\_\+\+\_\+ &Save the output in the specified file. Does not supress console output. \\\cline{1-2}
-\end{longtabu}
-
-
-
-
-\subsection*{4.\+3 C\+PU scaling warning}
-
-If you see the following warning, when running benchmarks\+:
-
-
-\begin{DoxyCode}
-1 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur
-       extra overhead.
-\end{DoxyCode}
-
-
-your machine scales down your C\+P\+U-\/frequency to reduce energy-\/consumption. To disable scaling, use\+:
-
-
-\begin{DoxyCode}
-1 sudo cpupower frequency-set --governor performance
-\end{DoxyCode}
-
-
-The scaling mode is reset on each startup, so you will do no permanent damage
-
-You might need to install linux-\/tools-\/common\+:
-
-
-\begin{DoxyCode}
-1 sudo apt-get install linux-tools-common
-\end{DoxyCode}
- 
-
- 
+\begin{quote}
+Make sure that \char`\"{}\+B\+U\+I\+L\+D\+\_\+surface\+\_\+on\+\_\+nurbs\char`\"{} and \char`\"{}\+U\+S\+E\+\_\+\+U\+M\+F\+P\+A\+C\+K\char`\"{} are both selected in cmake configuration\end{quote}

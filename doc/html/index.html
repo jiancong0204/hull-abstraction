@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Hull Abstraction: perfect_ros_repository</title>
+<title>Hull Abstraction: hull_abstraction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,90 +80,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">perfect_ros_repository </div>  </div>
+<div class="title"><a class="el" href="namespacehull__abstraction.html">hull_abstraction</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="image">
-<img src="doc/figures/COAR_Doxygen.png"  alt="COAR Logo" title="Coar Logo"/>
-</div>
-<p>This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University. The main purpose is to define folder structures, coding rules and documentation habbits as a template package. </p><hr/>
-<h1>1. Installation</h1>
-<p>A summary of install instructions necessary for the template package</p>
-<h2>1.1 Init Submodule</h2>
-<p>The <a href="https://igm-git.igm.rwth-aachen.de/COAR/igmr_packages/igmr_robotics_system_toolbox">IGMR Robotics System Toolbox</a> is required to compile the ros template nodes. If you haven't already cloned and build the toolbox, you can init and update the submodule: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd perfect_ros_repository/ros/modules/igmr_robotics_system_toolbox/</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;git submodule init</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;git submodule update</div></div><!-- fragment --> <hr/>
-<p>~~## 1.1 Gtest~~</p>
-<p>~~NOTES:~~ ~~* Simply using <code>catkin_add_gtest</code> in a CMakeLists.txt file (no need for find_package(GTest)) works with GTest out of the box. ~~ ~~* The <code>libgtest-dev</code> package is already installed by ROS.~~ ~~* Also note that installing pre-compiled GTest libraries is discouraged <a href="https://github.com/google/googletest/blob/master/googletest/docs/FAQ.md#why-is-it-not-recommended-to-install-a-pre-compiled-copy-of-google-test-for-example-into-usrlocal">by Google</a>.~~</p>
-<p>~~Gtest is required for building the test cases. Install Gtest as decribed <a href="http://ysonggit.github.io/coding/2014/12/19/use-gtest-in-ros-program.html">here</a>~~</p>
-<p>~~cd /usr/src/gtest~~ ~~sudo apt-get install libgtest-dev~~ ~~sudo cmake CMakeLists.txt~~ ~~sudo make~~ ~~#copy or symlink libgtest.a and ligtest_main.a to /usr/lib folder~~ ~~sudo cp *.a /usr/lib~~ </p><hr/>
-<h2>1.2 Google Benchmark</h2>
-<p>Google Benchmark is required for building and running the benchmarks. Install Google Benchmark as described <a href="https://github.com/google/benchmark">here</a></p>
-<p>In the desired install folder (usually /opt), run the following commands, or paste this into a shell script:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;git clone https://github.com/google/benchmark.git</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd benchmark</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;mkdir build</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd build</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;cmake .. -DCMAKE_BUILD_TYPE=RELEASE</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;make</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;sudo make install</div></div><!-- fragment --><h2>1.3 Set up GCC version alternatives</h2>
-<p>To be able to use the latest improvements in the most commonly used C and C++ compiler GCC/G++, such as C++ 14/17 features, install the newest reslease version (e.g. currently 7.2):</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo add-apt-repository ppa:ubuntu-toolchain-r/test</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo apt-get update</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo apt-get install gcc-7 g++-7</div></div><!-- fragment --><p><b>Do not delete older versions, unless you know what you are doing!</b> If you have older versions installed and you want to keep them, set up all possible versions using update-alternatives. This will create symbolic links to your installations, so that you can easily switch between them. To see which versions of GCC/G++ are installed on your system, use</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;ls /usr/bin/ | grep ^gcc\-[0-9]</div></div><!-- fragment --><p>To set up the symbolic links, first remove all previously created links using</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo update-alternatives --remove-all gcc</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo update-alternatives --remove-all g++</div></div><!-- fragment --><p>Then, create new links for all desired versions. You also have to specify a priority for each version. Choose priorities between 0 and 100 depending on your preferences, such that in auto mode, Ubuntu will choose whatever version you desire. As an example, we will assume we installed GCC/G++ 4.9 and 7 and want to set 7.x as the default version. In this case we can use the following commandos:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 60 --slave /usr/bin/gcc gcc /usr/bin/gcc-7</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 40 --slave /usr/bin/gcc gcc /usr/bin/gcc-4.9</div></div><!-- fragment --><p>By using the "master/slave" setup, we can make sure that whenever a G++ version is chosen, the corresponding GCC version is chosen as well. If you want to keep G++ and GCC separate, install both update alternatives independently (recommended only for advanced users). The priority is specified following the (master) install, here we chose a priority of 60 for version 7.x and 40 for version 4.9.</p>
-<p>We can now easily switch between versions using</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo update-alternatives --config g++</div></div><!-- fragment --><p>and choosing one of the displayed alternatives. </p><hr/>
-<h1>2. Demo</h1>
-<h2>2.1 Run minimal_publisher_node</h2>
-<p><b>Launch:</b></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;roslaunch minimal_publisher_pkg minimal_publisher.launch</div></div><!-- fragment --> <hr/>
-<h1>3. Tests</h1>
-<p><b>Build:</b></p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;catkin_make tests</div></div><!-- fragment --><p><b>Launch:</b></p>
-<p>To start all available tests, use</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;roslaunch template_nodes run_unit_tests.launch</div></div><!-- fragment --><p><b>Run:</b></p>
-<p>To start a specific test, use the common syntax used to start a rosnode (using one of the template tests):</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;rosrun template_nodes conduct_heavy_computation_test</div></div><!-- fragment --> <hr/>
-<h1>4. Benchmarks</h1>
-<h2>4.1 General use</h2>
-<p>The basic use-pattern for benchmarks is:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;rosrun template_nodes benchmarks &lt;arguments&gt;</div></div><!-- fragment --> <hr/>
-<h2>4.2 Running a subset of benchmarks</h2>
-<p>Per default, all benchmarks specified in the benchmarks.cpp will be run. To run a subset of benchmarks, use:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;rosrun template_nodes benchmarks --benchmark_filter= &lt;regex&gt;</div></div><!-- fragment --><p>where __&lt;regex&gt;__ defines a regular expression</p>
-<h3>4.2.1 Regex examples</h3>
-<p>Useful examples using regular expressions:</p>
-<table class="doxtable">
-<tr>
-<th>Regular Expression </th><th>Explanation  </th></tr>
-<tr>
-<td>__\^&lt;name&gt;__ </td><td>Matches benchmarks starting with __&lt;name&gt;__ </td></tr>
-<tr>
-<td>__&lt;name&gt;$__ </td><td>Matches benchmarks ending with __&lt;name&gt;__ </td></tr>
-<tr>
-<td>__\^&lt;name&gt;$__ </td><td>Matches benchmark __&lt;name&gt;__ exactly </td></tr>
-<tr>
-<td>__&lt;name&gt;[0-9]{1,<em>n</em>}__ </td><td>Matches benchmarks containing __&lt;name&gt;__ followed by a number with a length of __*n*__ or less (e.g. 0-999 for __*n*__ = 3) </td></tr>
-</table>
+<img src="igmrlogo.png" alt="igmrlogo.png"/>
+<div class="caption">
+IGM Logo</div></div>
+<p> This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University. </p><hr/>
+<h2>1. Installation</h2>
+<p>A summary of installing necessary libraries for this package. </p><hr/>
+<h3>1.1. Install required dependencies</h3>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install git build-essential linux-libc-dev</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo apt-get install cmake cmake-gui</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo apt-get install libusb-1.0-0-dev libusb-dev libudev-dev</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo apt-get install mpi-default-dev openmpi-bin openmpi-common</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo apt-get install libflann1.8 libflann-dev</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;sudo apt-get install libeigen3-dev</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;sudo apt-get install libboost-all-dev</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;sudo apt-get install libqhull* libgtest-dev</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;sudo apt-get install freeglut3-dev pkg-config</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;sudo apt-get install libxmu-dev libxi-dev</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;sudo apt-get install mono-complete</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;sudo apt-get install libglew-dev</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;sudo apt-get install libsuitesparse-dev</div></div><!-- fragment --><hr/>
+<h3>1.2. Complie and install VTK 6.2.0</h3>
+<blockquote class="doxtable">
+<p>"apt-get install" in ubuntu 16.04 can only install the version of 5.10. However, version of 6.2.0 or above is required for pcl. </p>
+</blockquote>
+<h4>1.2.1. Prepare the source code of VTK</h4>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;tar -xvzf VTK-6.2.0.tar.gz</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo mv VTK-6.2.0 /opt</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd /opt/VTK-6.2.0</div></div><!-- fragment --><p>#### 1.2.2. Compile VTK </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo cmake ..</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo make</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
+<p>"make -j(#Cores of your CPU)" can be used to speed up compilation process, e.g. make -j6. However, you must make sure that there is enough memory for all the parallel jobs. </p>
+</blockquote>
 <hr/>
-<h3>4.2.2 Other useful arguments</h3>
-<p>A list of commonly used flags to pass to a benchmarks file:</p>
-<table class="doxtable">
-<tr>
-<th>Benchmark Argument </th><th>Explanation  </th></tr>
-<tr>
-<td>__&ndash;benchmark_repetitions=*n*__ </td><td>The specified benchmarks are run <em>n</em> times. Reports the individual times, mean, median and standard deviation of the runs </td></tr>
-<tr>
-<td>__&ndash;benchmark_report_aggregates_only=*[true/false]*__ </td><td>For use with the argument above. When set to true, only mean, median and standard deviation are reported </td></tr>
-<tr>
-<td>__&ndash;benchmark_out_format=*[console/json/csv]*__ </td><td>Sets the output format. Per default format is set to console. </td></tr>
-<tr>
-<td>__&ndash;benchmark_out=<em>filename</em>__ </td><td>Save the output in the specified file. Does not supress console output. </td></tr>
-</table>
+<h3>1.3. Download the source code of PCL-1.8.0</h3>
 <hr/>
-<h2>4.3 CPU scaling warning</h2>
-<p>If you see the following warning, when running benchmarks:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.</div></div><!-- fragment --><p>your machine scales down your CPU-frequency to reduce energy-consumption. To disable scaling, use:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo cpupower frequency-set --governor performance</div></div><!-- fragment --><p>The scaling mode is reset on each startup, so you will do no permanent damage</p>
-<p>You might need to install linux-tools-common:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install linux-tools-common</div></div><!-- fragment --> <hr/>
- </div></div><!-- contents -->
+<h3>1.4. Compile the source code</h3>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd pcl</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo mkdir build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;cd build</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo cmake-gui</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
+<p>Make sure that "BUILD_surface_on_nurbs" and "USE_UMFPACK" are both selected in cmake configuration</p>
+</blockquote>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2020 12:49:05 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 12 2020 13:42:22 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

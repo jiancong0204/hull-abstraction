@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['perfect_5fros_5frepository',['perfect_ros_repository',['../index.html',1,'']]],
   ['pass_5fthrough',['pass_through',['../classhull__abstraction_1_1_preprocessor.html#a9396fe58d584ed1e7468f694f2458734',1,'hull_abstraction::Preprocessor']]],
   ['passthroughfilter',['passThroughFilter',['../classhull__abstraction_1_1_preprocessor.html#a4912126b50bdac35c63f521e3bc04314',1,'hull_abstraction::Preprocessor::passThroughFilter(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr filtered_cloud)'],['../classhull__abstraction_1_1_preprocessor.html#a4912126b50bdac35c63f521e3bc04314',1,'hull_abstraction::Preprocessor::passThroughFilter(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr filtered_cloud)']]],
   ['path_5fto_5fadd_5fsuffix',['PATH_TO_ADD_SUFFIX',['../namespace__setup__util.html#a7de27b8c021c888c6288a885f1e9afa9',1,'_setup_util']]],
