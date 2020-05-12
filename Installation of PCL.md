@@ -1,5 +1,5 @@
 # How to install PCL in Ubuntu 16.04
-* 1. Install required dependencies
+## 1. Install required dependencies
 	```
 	sudo apt-get install git build-essential linux-libc-dev
 	sudo apt-get install cmake cmake-gui
@@ -15,7 +15,7 @@
 	sudo apt-get install libglew-dev
 	sudo apt-get install libsuitesparse-dev
 	```
-* 2. Complie and install VTK 6.2.0
+## 2. Complie and install VTK 6.2.0
 	> "apt-get install" in ubuntu 16.04 can only install the version of 5.10. However, version of 6.2.0 or above is required for pcl.
 	* 2.1. Prepare the source code of VTK
 	```
@@ -33,9 +33,9 @@
 	sudo make install
 	```
 	> "make -j(#Cores of your CPU)" can be used to speed up compilation process, e.g. make -j6. However, you must make sure that there is enough memory for all the parallel jobs. 
-* 3. Download the source code of PCL-1.8.0
+## 3. Download the source code of PCL-1.8.0
 
-* 4. Compile the source code
+## 4. Compile the source code
 	```
 	cd pcl
 	sudo mkdir build
