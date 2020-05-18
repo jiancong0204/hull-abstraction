@@ -26,7 +26,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classhull__abstraction_1_1_preprocessor.html" target="_top" xlink:title="Class containing several preprocessing procedures. ">
+<g id="a_node2"><a xlink:href="classhull__abstraction_1_1_preprocessor.html" target="_top" xlink:title="The Preprocessor class. ">
 <polygon fill="white" stroke="black" points="-1.42109e-14,-171.5 -1.42109e-14,-426.5 149,-426.5 149,-171.5 -1.42109e-14,-171.5"/>
 <text text-anchor="middle" x="74.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">hull_abstraction::Preprocessor</text>
 <polyline fill="none" stroke="black" points="-1.42109e-14,-407.5 149,-407.5 "/>

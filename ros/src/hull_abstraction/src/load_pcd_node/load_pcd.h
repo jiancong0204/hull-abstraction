@@ -8,13 +8,13 @@
  * 
  * This node load a local pcd file to get point cloud data and publish it as a ROS message.
  */
-#include<ros/ros.h>
-#include<pcl/point_cloud.h>
-#include<pcl_conversions/pcl_conversions.h>
-#include<sensor_msgs/PointCloud2.h>
-#include<pcl/io/pcd_io.h>
+#include <ros/ros.h>
+#include <pcl/point_cloud.h>
+#include <pcl_conversions/pcl_conversions.h>
+#include <sensor_msgs/PointCloud2.h>
+#include <pcl/io/pcd_io.h>
 
-namespace load_pcd_node
+namespace load_pcd
 {
     /**
      * @brief Class for loading pcd files
@@ -38,11 +38,10 @@ namespace load_pcd_node
         void run();
 
     private:
-
-        ros::NodeHandle                       nh;           /**< Node Handle reference from embedding node */
-        ros::Publisher                        pub;          /**< Point cloud publisher */
-        sensor_msgs::PointCloud2              output_msg;   /**< point cloud message used to publish the result */
-        pcl::PointCloud<pcl::PointXYZ>        cloud;        /**< Cloud storing the point cloud loaded from the pcd file */
+        ros::NodeHandle                   nh;           /**< Node Handle reference from embedding node */
+        ros::Publisher                    pub;          /**< Point cloud publisher */
+        sensor_msgs::PointCloud2          output_msg;   /**< point cloud message used to publish the result */
+        pcl::PointCloud<pcl::PointXYZ>    cloud;        /**< Cloud storing the point cloud loaded from the pcd file */
 
         /**
          * @brief Create a ROS message for the point cloud

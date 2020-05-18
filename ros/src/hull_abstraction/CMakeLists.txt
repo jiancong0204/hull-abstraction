@@ -42,6 +42,20 @@ target_link_libraries(load_pcd
     ${catkin_LIBRARIES}
 )
 
+# Display mesh
+SET(display_mesh 
+    src/display_mesh_node.cpp 
+    src/display_mesh_node/display_mesh.cpp
+    src/pcl_utilization/pcl_utilization.cpp
+)
+
+add_executable(display_mesh ${display_mesh})
+
+target_link_libraries(display_mesh
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+)
+
 # Moving least squares method
 SET(moving_least_squares 
     src/moving_least_squares_node.cpp 

@@ -35,7 +35,7 @@ namespace moving_least_squares_node
         MovingLeastSquares() {};
 
         /**
-         * @brief Encapsulating a method to run the moving_least_squares node
+         * @brief Encapsulate a method to run the moving_least_squares node
          */
         void run();
     

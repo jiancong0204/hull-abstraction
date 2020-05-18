@@ -2,7 +2,7 @@
 \label{classhull__abstraction_1_1_reconstructor}\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 
 
-Class containing several hull construction methods.  
+The \hyperlink{classhull__abstraction_1_1_reconstructor}{Reconstructor} class.  
 
 
 
@@ -11,7 +11,8 @@ Class containing several hull construction methods.
 
 
 
-Collaboration diagram for hull\+\_\+abstraction\+:\+:Reconstructor\+:\nopagebreak
+Collaboration diagram for hull\+\_\+abstraction\+:\+:Reconstructor\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,27 +61,13 @@ pcl\+::\+Greedy\+Projection\+Triangulation$<$ pcl\+::\+Point\+Normal $>$ \hyperl
 pcl\+::\+Poisson$<$ pcl\+::\+Point\+Normal $>$ \hyperlink{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}{poisson}
 \item 
 pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_af0818936b15dd13f3a9fa3e70734cd57}{mesh}
-\item 
-pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Surface \hyperlink{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}{surface\+\_\+data}
-\item 
-pcl\+::on\+\_\+nurbs\+::\+Fitting\+Surface\+::\+Parameter \hyperlink{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}{surface\+\_\+parameters}
-\item 
-pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Curve2d \hyperlink{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}{curve\+\_\+data}
-\item 
-pcl\+::on\+\_\+nurbs\+::\+Fitting\+Curve2d\+A\+P\+D\+M\+::\+Fit\+Parameter \hyperlink{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}{curve\+\_\+parameters}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class containing several hull construction methods. 
+The \hyperlink{classhull__abstraction_1_1_reconstructor}{Reconstructor} class. 
 
-This class wraps some hull construction methods for point cloud data
-\begin{DoxyItemize}
-\item Greedy triangulation algorithm
-\item Poisson reconstruction
-\item Marching cubes method
-\item B-\/spline surface fitting 
-\end{DoxyItemize}
+This class wraps some hull construction methods for point cloud data 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!Reconstructor@{Reconstructor}}
@@ -129,7 +116,7 @@ Deconstructor.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{}\label{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}
-\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}}
+$<$ Data structure for N\+U\+R\+BS surface fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}}
 \index{bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{bspline\+Surface\+Fitting(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{bsplineSurfaceFitting(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::bspline\+Surface\+Fitting (
 \begin{DoxyParamCaption}
@@ -256,13 +243,7 @@ Resulting polygon meshes of cloud\+\_\+with\+\_\+normals
 
 
 \subsection{Member Data Documentation}
-\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!curve\+\_\+data@{curve\+\_\+data}}
-\index{curve\+\_\+data@{curve\+\_\+data}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
-\subsubsection[{\texorpdfstring{curve\+\_\+data}{curve_data}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Curve2d hull\+\_\+abstraction\+::\+Reconstructor\+::curve\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}{}\label{classhull__abstraction_1_1_reconstructor_a1d2843c7331c7d363d02bc65c765512e}
-Data structure for N\+U\+R\+BS curve fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!curve\+\_\+parameters@{curve\+\_\+parameters}}
-\index{curve\+\_\+parameters@{curve\+\_\+parameters}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
-\subsubsection[{\texorpdfstring{curve\+\_\+parameters}{curve_parameters}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Fitting\+Curve2d\+A\+P\+D\+M\+::\+Fit\+Parameter hull\+\_\+abstraction\+::\+Reconstructor\+::curve\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}{}\label{classhull__abstraction_1_1_reconstructor_af7033918ae29ef20bdd6d3db10175fd7}
-Parameters for curve fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+\_\+projection\+\_\+triangulation@{greedy\+\_\+projection\+\_\+triangulation}}
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+\_\+projection\+\_\+triangulation@{greedy\+\_\+projection\+\_\+triangulation}}
 \index{greedy\+\_\+projection\+\_\+triangulation@{greedy\+\_\+projection\+\_\+triangulation}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{greedy\+\_\+projection\+\_\+triangulation}{greedy_projection_triangulation}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Greedy\+Projection\+Triangulation$<$ pcl\+::\+Point\+Normal $>$ hull\+\_\+abstraction\+::\+Reconstructor\+::greedy\+\_\+projection\+\_\+triangulation\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_aeb53b00a5a6300f6fcbef59d6759f01b}{}\label{classhull__abstraction_1_1_reconstructor_aeb53b00a5a6300f6fcbef59d6759f01b}
 Object for performing greedy triangulation algorithm \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!mesh@{mesh}}
@@ -271,13 +252,7 @@ Object for performing greedy triangulation algorithm \index{hull\+\_\+abstractio
 Result of polygon meshes generation \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!poisson@{poisson}}
 \index{poisson@{poisson}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{poisson}{poisson}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Poisson$<$ pcl\+::\+Point\+Normal $>$ hull\+\_\+abstraction\+::\+Reconstructor\+::poisson\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}{}\label{classhull__abstraction_1_1_reconstructor_a60dfa765833af8d05f1426be0e96adb0}
-Object for performing Poisson reconstruction \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!surface\+\_\+data@{surface\+\_\+data}}
-\index{surface\+\_\+data@{surface\+\_\+data}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
-\subsubsection[{\texorpdfstring{surface\+\_\+data}{surface_data}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Nurbs\+Data\+Surface hull\+\_\+abstraction\+::\+Reconstructor\+::surface\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}{}\label{classhull__abstraction_1_1_reconstructor_a54297518de25118c2c44b5d8b778f65a}
-Data structure for N\+U\+R\+BS surface fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!surface\+\_\+parameters@{surface\+\_\+parameters}}
-\index{surface\+\_\+parameters@{surface\+\_\+parameters}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
-\subsubsection[{\texorpdfstring{surface\+\_\+parameters}{surface_parameters}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::on\+\_\+nurbs\+::\+Fitting\+Surface\+::\+Parameter hull\+\_\+abstraction\+::\+Reconstructor\+::surface\+\_\+parameters\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}{}\label{classhull__abstraction_1_1_reconstructor_abae19ea237011f56fa300a2461a3f019}
-Parameters for surface fitting 
+Object for performing Poisson reconstruction 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

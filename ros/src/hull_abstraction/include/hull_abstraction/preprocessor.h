@@ -1,6 +1,6 @@
 /**
   * @file preprocessor.h
-  * @brief This file contains the declaration for the Preprocessor class
+  * @brief This file contains the declaration of the Preprocessor class
   *
   * @author Jiancong Zheng
   * @date 2020-05-12
@@ -23,16 +23,9 @@
 namespace hull_abstraction
 {
     /**
-     * @brief Class containing several preprocessing procedures
+     * @brief The Preprocessor class
      *
-     * This class wraps some preprocessing procedures for point cloud data
-     *  - Voxel grid filter
-     *  - Statistical filter
-     *  - Pass-through filter
-     *  - Conditional filter
-     *  - Radius filter
-     *  - Moving least squares method
-     *  - Normal estimation
+     * This class wraps some preprocessing methods for point cloud data
      **/
     class Preprocessor
     {

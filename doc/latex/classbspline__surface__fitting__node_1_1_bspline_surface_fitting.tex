@@ -11,7 +11,8 @@ Class utilizing B-\/spline surface fitting method.
 
 
 
-Collaboration diagram for bspline\+\_\+surface\+\_\+fitting\+\_\+node\+:\+:Bspline\+Surface\+Fitting\+:\nopagebreak
+Collaboration diagram for bspline\+\_\+surface\+\_\+fitting\+\_\+node\+:\+:Bspline\+Surface\+Fitting\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,14 +23,14 @@ Collaboration diagram for bspline\+\_\+surface\+\_\+fitting\+\_\+node\+:\+:Bspli
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a0c6104db4570cd4a865e85d03fae26c3}{Bspline\+Surface\+Fitting} ()
-\begin{DoxyCompactList}\small\item\em Constructing a new \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting}{Bspline\+Surface\+Fitting} object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting}{Bspline\+Surface\+Fitting} object. \end{DoxyCompactList}\item 
 void \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a3ca4a5eb83d40636830e337cac288d03}{run} ()
-\begin{DoxyCompactList}\small\item\em Encapsulating a method to run the bspline\+\_\+surface\+\_\+fitting node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Encapsulate a method to run the bspline\+\_\+surface\+\_\+fitting node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a588e2e4f382fc5198b4c17613cf7f03a}{processing} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)
-\begin{DoxyCompactList}\small\item\em Processing the input R\+OS message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Process the input R\+OS message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +40,7 @@ ros\+::\+Publisher \hyperlink{classbspline__surface__fitting__node_1_1_bspline_s
 \item 
 ros\+::\+Subscriber \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a1ca9460f2069655ce0b55683a6622688}{sub}
 \item 
-visualization\+\_\+msgs\+::\+Marker \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_af6d288e4349188b2a8dc4cae61bc1971}{output\+\_\+msg}
+pcl\+\_\+msgs\+::\+Polygon\+Mesh \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a38d7b7bf42448ad65e7501c19ce859a2}{output\+\_\+msg}
 \item 
 \hyperlink{classhull__abstraction_1_1_reconstructor}{hull\+\_\+abstraction\+::\+Reconstructor} \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a37fc14202f71f41647bc78ed21a1f691}{rc}
 \item 
@@ -62,7 +63,7 @@ This framework is developed to generate and publish a mesh for a point cloud thr
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a0c6104db4570cd4a865e85d03fae26c3}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a0c6104db4570cd4a865e85d03fae26c3}
 
 
-Constructing a new \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting}{Bspline\+Surface\+Fitting} object. 
+Construct a new \hyperlink{classbspline__surface__fitting__node_1_1_bspline_surface_fitting}{Bspline\+Surface\+Fitting} object. 
 
 
 
@@ -76,7 +77,7 @@ Constructing a new \hyperlink{classbspline__surface__fitting__node_1_1_bspline_s
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a588e2e4f382fc5198b4c17613cf7f03a}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a588e2e4f382fc5198b4c17613cf7f03a}
 
 
-Processing the input R\+OS message. 
+Process the input R\+OS message. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -92,7 +93,7 @@ Processing the input R\+OS message.
 )}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a3ca4a5eb83d40636830e337cac288d03}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a3ca4a5eb83d40636830e337cac288d03}
 
 
-Encapsulating a method to run the bspline\+\_\+surface\+\_\+fitting node. 
+Encapsulate a method to run the bspline\+\_\+surface\+\_\+fitting node. 
 
 
 
@@ -105,8 +106,8 @@ Resulted polygon mesh \index{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bs
 \subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_ab3fb2f277d26f9a58e9575257d035251}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_ab3fb2f277d26f9a58e9575257d035251}
 Node Handle reference from embedding node \index{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}!output\+\_\+msg@{output\+\_\+msg}}
 \index{output\+\_\+msg@{output\+\_\+msg}!bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}}
-\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_af6d288e4349188b2a8dc4cae61bc1971}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_af6d288e4349188b2a8dc4cae61bc1971}
-Marker message used to publish the mesh \index{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}!pub@{pub}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+\_\+msgs\+::\+Polygon\+Mesh bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a38d7b7bf42448ad65e7501c19ce859a2}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_a38d7b7bf42448ad65e7501c19ce859a2}
+Polygon mesh message used to publish the mesh \index{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}!pub@{pub}}
 \index{pub@{pub}!bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}}
 \subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_ac1a664418699fc1f06e5da7637530520}{}\label{classbspline__surface__fitting__node_1_1_bspline_surface_fitting_ac1a664418699fc1f06e5da7637530520}
 Polygon mesh publisher \index{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting@{bspline\+\_\+surface\+\_\+fitting\+\_\+node\+::\+Bspline\+Surface\+Fitting}!rc@{rc}}

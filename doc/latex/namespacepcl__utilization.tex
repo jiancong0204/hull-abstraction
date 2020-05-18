@@ -3,12 +3,14 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}{to\+Marker\+Msg} (pcl\+::\+Polygon\+Mesh mesh)
-\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message for triangle lists. \end{DoxyCompactList}\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a051f0954371074c7331ba054d185950f}{to\+Triangle\+List} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message with a triangle list. \end{DoxyCompactList}\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a1a3ffc60b638c2a551b02ba9a755d3f1}{to\+Line\+List} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message with a line list. \end{DoxyCompactList}\item 
 double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
-\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud. \end{DoxyCompactList}\item 
 double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\begin{DoxyCompactList}\small\item\em Compute the resolution of a point cloud with normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud with normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -21,7 +23,7 @@ double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{c
 )}\hypertarget{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{}\label{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}
 
 
-Compute the resolution of a point cloud. 
+Computing the resolution of a point cloud. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -40,7 +42,7 @@ Resolution of the input cloud
 )}\hypertarget{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{}\label{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}
 
 
-Compute the resolution of a point cloud with normals. 
+Computing the resolution of a point cloud with normals. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -50,16 +52,35 @@ Compute the resolution of a point cloud with normals.
 \begin{DoxyReturn}{Returns}
 Resolution of the input cloud 
 \end{DoxyReturn}
-\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!to\+Marker\+Msg@{to\+Marker\+Msg}}
-\index{to\+Marker\+Msg@{to\+Marker\+Msg}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
-\subsubsection[{\texorpdfstring{to\+Marker\+Msg(pcl\+::\+Polygon\+Mesh mesh)}{toMarkerMsg(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker pcl\+\_\+utilization\+::to\+Marker\+Msg (
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!to\+Line\+List@{to\+Line\+List}}
+\index{to\+Line\+List@{to\+Line\+List}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{to\+Line\+List(pcl\+::\+Polygon\+Mesh mesh)}{toLineList(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker pcl\+\_\+utilization\+::to\+Line\+List (
 \begin{DoxyParamCaption}
 \item[{pcl\+::\+Polygon\+Mesh}]{mesh}
 \end{DoxyParamCaption}
-)}\hypertarget{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}{}\label{namespacepcl__utilization_a68cd1d8777b2d66ff75afa72e936887f}
+)}\hypertarget{namespacepcl__utilization_a1a3ffc60b638c2a551b02ba9a755d3f1}{}\label{namespacepcl__utilization_a1a3ffc60b638c2a551b02ba9a755d3f1}
 
 
-Convert a polygon mesh to a marker message for triangle lists. 
+Convert a polygon mesh to a marker message with a line list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Polygon mesh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Marker message as a line list 
+\end{DoxyReturn}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!to\+Triangle\+List@{to\+Triangle\+List}}
+\index{to\+Triangle\+List@{to\+Triangle\+List}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{to\+Triangle\+List(pcl\+::\+Polygon\+Mesh mesh)}{toTriangleList(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker pcl\+\_\+utilization\+::to\+Triangle\+List (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_a051f0954371074c7331ba054d185950f}{}\label{namespacepcl__utilization_a051f0954371074c7331ba054d185950f}
+
+
+Convert a polygon mesh to a marker message with a triangle list. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -67,5 +88,5 @@ Convert a polygon mesh to a marker message for triangle lists.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Marker message as triangle lists 
+Marker message as a triangle list 
 \end{DoxyReturn}

@@ -103,14 +103,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a68cd1d8777b2d66ff75afa72e936887f"><td class="memItemLeft" align="right" valign="top">visualization_msgs::Marker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a68cd1d8777b2d66ff75afa72e936887f">toMarkerMsg</a> (pcl::PolygonMesh mesh)</td></tr>
-<tr class="memdesc:a68cd1d8777b2d66ff75afa72e936887f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a polygon mesh to a marker message for triangle lists.  <a href="#a68cd1d8777b2d66ff75afa72e936887f">More...</a><br /></td></tr>
-<tr class="separator:a68cd1d8777b2d66ff75afa72e936887f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051f0954371074c7331ba054d185950f"><td class="memItemLeft" align="right" valign="top">visualization_msgs::Marker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a051f0954371074c7331ba054d185950f">toTriangleList</a> (pcl::PolygonMesh mesh)</td></tr>
+<tr class="memdesc:a051f0954371074c7331ba054d185950f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a polygon mesh to a marker message with a triangle list.  <a href="#a051f0954371074c7331ba054d185950f">More...</a><br /></td></tr>
+<tr class="separator:a051f0954371074c7331ba054d185950f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3ffc60b638c2a551b02ba9a755d3f1"><td class="memItemLeft" align="right" valign="top">visualization_msgs::Marker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a1a3ffc60b638c2a551b02ba9a755d3f1">toLineList</a> (pcl::PolygonMesh mesh)</td></tr>
+<tr class="memdesc:a1a3ffc60b638c2a551b02ba9a755d3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a polygon mesh to a marker message with a line list.  <a href="#a1a3ffc60b638c2a551b02ba9a755d3f1">More...</a><br /></td></tr>
+<tr class="separator:a1a3ffc60b638c2a551b02ba9a755d3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#ac199fc2120c5dce78fd87c2c1e0445d0">computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
-<tr class="memdesc:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the resolution of a point cloud.  <a href="#ac199fc2120c5dce78fd87c2c1e0445d0">More...</a><br /></td></tr>
+<tr class="memdesc:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computing the resolution of a point cloud.  <a href="#ac199fc2120c5dce78fd87c2c1e0445d0">More...</a><br /></td></tr>
 <tr class="separator:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fd7d53d77802f39bdec1098137e198a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a5fd7d53d77802f39bdec1098137e198a">computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
-<tr class="memdesc:a5fd7d53d77802f39bdec1098137e198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the resolution of a point cloud with normals.  <a href="#a5fd7d53d77802f39bdec1098137e198a">More...</a><br /></td></tr>
+<tr class="memdesc:a5fd7d53d77802f39bdec1098137e198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computing the resolution of a point cloud with normals.  <a href="#a5fd7d53d77802f39bdec1098137e198a">More...</a><br /></td></tr>
 <tr class="separator:a5fd7d53d77802f39bdec1098137e198a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -128,7 +131,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compute the resolution of a point cloud. </p>
+<p>Computing the resolution of a point cloud. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloud</td><td>Cloud of PointXYZ </td></tr>
@@ -153,7 +156,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compute the resolution of a point cloud with normals. </p>
+<p>Computing the resolution of a point cloud with normals. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloud</td><td>Cloud of PointNormal </td></tr>
@@ -164,12 +167,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a68cd1d8777b2d66ff75afa72e936887f"></a>
+<a class="anchor" id="a1a3ffc60b638c2a551b02ba9a755d3f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">visualization_msgs::Marker pcl_utilization::toMarkerMsg </td>
+          <td class="memname">visualization_msgs::Marker pcl_utilization::toLineList </td>
           <td>(</td>
           <td class="paramtype">pcl::PolygonMesh&#160;</td>
           <td class="paramname"><em>mesh</em></td><td>)</td>
@@ -178,21 +181,46 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convert a polygon mesh to a marker message for triangle lists. </p>
+<p>Convert a polygon mesh to a marker message with a line list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>Polygon mesh </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Marker message as a line list </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a051f0954371074c7331ba054d185950f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization_msgs::Marker pcl_utilization::toTriangleList </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PolygonMesh&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a polygon mesh to a marker message with a triangle list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mesh</td><td>Triangle mesh </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Marker message as triangle lists </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Marker message as a triangle list </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2020 13:42:22 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2020 11:08:01 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

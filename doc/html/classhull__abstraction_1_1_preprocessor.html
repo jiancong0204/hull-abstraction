@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class containing several preprocessing procedures.  
+<p>The <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> class.  
  <a href="classhull__abstraction_1_1_preprocessor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="prototype_2include_2hull__abstraction_2preprocessor_8h_source.html">preprocessor.h</a>&gt;</code></p>
@@ -130,10 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb771d9dfac554a7dd35db7d9acc3ca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_preprocessor.html#adb771d9dfac554a7dd35db7d9acc3ca3">movingLeastSquares</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr smoothed_cloud, pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr smoothed_cloud_with_normals)</td></tr>
 <tr class="separator:adb771d9dfac554a7dd35db7d9acc3ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1e7b3418d273ceddd2faa0777f3598c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_preprocessor.html#aa1e7b3418d273ceddd2faa0777f3598c">Preprocessor</a> ()</td></tr>
-<tr class="memdesc:aa1e7b3418d273ceddd2faa0777f3598c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="Class containing several preprocessing procedures. ">Preprocessor</a> object.  <a href="#aa1e7b3418d273ceddd2faa0777f3598c">More...</a><br /></td></tr>
+<tr class="memdesc:aa1e7b3418d273ceddd2faa0777f3598c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> object.  <a href="#aa1e7b3418d273ceddd2faa0777f3598c">More...</a><br /></td></tr>
 <tr class="separator:aa1e7b3418d273ceddd2faa0777f3598c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880dfe2a68232c6aea2ad41743df3d97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_preprocessor.html#a880dfe2a68232c6aea2ad41743df3d97">~Preprocessor</a> ()</td></tr>
-<tr class="memdesc:a880dfe2a68232c6aea2ad41743df3d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="Class containing several preprocessing procedures. ">Preprocessor</a> object.  <a href="#a880dfe2a68232c6aea2ad41743df3d97">More...</a><br /></td></tr>
+<tr class="memdesc:a880dfe2a68232c6aea2ad41743df3d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> object.  <a href="#a880dfe2a68232c6aea2ad41743df3d97">More...</a><br /></td></tr>
 <tr class="separator:a880dfe2a68232c6aea2ad41743df3d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a423d6c8cb5b08f8387290aae47184b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_preprocessor.html#a423d6c8cb5b08f8387290aae47184b3b">voxelGridFilter</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr filtered_cloud)</td></tr>
 <tr class="memdesc:a423d6c8cb5b08f8387290aae47184b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the voxel grid filter to perform down sampling.  <a href="#a423d6c8cb5b08f8387290aae47184b3b">More...</a><br /></td></tr>
@@ -177,16 +177,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af91d53e1e4dadaa51f3518b100598b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class containing several preprocessing procedures. </p>
-<p>This class wraps some preprocessing procedures for point cloud data</p><ul>
-<li>Voxel grid filter</li>
-<li>Statistical filter</li>
-<li>Pass-through filter</li>
-<li>Conditional filter</li>
-<li>Radius filter</li>
-<li>Moving least squares method</li>
-<li>Normal estimation </li>
-</ul>
+<div class="textblock"><p>The <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> class. </p>
+<p>This class wraps some preprocessing methods for point cloud data </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa1e7b3418d273ceddd2faa0777f3598c"></a>
 <div class="memitem">
@@ -255,7 +247,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="Class containing several preprocessing procedures. ">Preprocessor</a> object. </p>
+<p>Construct a new <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> object. </p>
 
 </div>
 </div>
@@ -280,7 +272,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="Class containing several preprocessing procedures. ">Preprocessor</a> object. </p>
+<p>Destroy the <a class="el" href="classhull__abstraction_1_1_preprocessor.html" title="The Preprocessor class. ">Preprocessor</a> object. </p>
 
 </div>
 </div>
@@ -900,7 +892,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2020 13:42:22 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2020 11:08:01 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

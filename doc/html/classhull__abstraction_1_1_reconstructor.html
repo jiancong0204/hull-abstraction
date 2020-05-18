@@ -100,14 +100,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class containing several hull construction methods.  
+<p>The <a class="el" href="classhull__abstraction_1_1_reconstructor.html" title="The Reconstructor class. ">Reconstructor</a> class.  
  <a href="classhull__abstraction_1_1_reconstructor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="prototype_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for hull_abstraction::Reconstructor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="232" height="367"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="232" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -159,23 +160,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a60dfa765833af8d05f1426be0e96adb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0818936b15dd13f3a9fa3e70734cd57"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#af0818936b15dd13f3a9fa3e70734cd57">mesh</a></td></tr>
 <tr class="separator:af0818936b15dd13f3a9fa3e70734cd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54297518de25118c2c44b5d8b778f65a"><td class="memItemLeft" align="right" valign="top">pcl::on_nurbs::NurbsDataSurface&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a54297518de25118c2c44b5d8b778f65a">surface_data</a></td></tr>
-<tr class="separator:a54297518de25118c2c44b5d8b778f65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae19ea237011f56fa300a2461a3f019"><td class="memItemLeft" align="right" valign="top">pcl::on_nurbs::FittingSurface::Parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#abae19ea237011f56fa300a2461a3f019">surface_parameters</a></td></tr>
-<tr class="separator:abae19ea237011f56fa300a2461a3f019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2843c7331c7d363d02bc65c765512e"><td class="memItemLeft" align="right" valign="top">pcl::on_nurbs::NurbsDataCurve2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a1d2843c7331c7d363d02bc65c765512e">curve_data</a></td></tr>
-<tr class="separator:a1d2843c7331c7d363d02bc65c765512e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7033918ae29ef20bdd6d3db10175fd7"><td class="memItemLeft" align="right" valign="top">pcl::on_nurbs::FittingCurve2dAPDM::FitParameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#af7033918ae29ef20bdd6d3db10175fd7">curve_parameters</a></td></tr>
-<tr class="separator:af7033918ae29ef20bdd6d3db10175fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class containing several hull construction methods. </p>
-<p>This class wraps some hull construction methods for point cloud data</p><ul>
-<li>Greedy triangulation algorithm</li>
-<li>Poisson reconstruction</li>
-<li>Marching cubes method</li>
-<li>B-spline surface fitting </li>
-</ul>
+<div class="textblock"><p>The <a class="el" href="classhull__abstraction_1_1_reconstructor.html" title="The Reconstructor class. ">Reconstructor</a> class. </p>
+<p>This class wraps some hull construction methods for point cloud data </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a621404f6ce3a4515adf85491543ace34"></a>
 <div class="memitem">
@@ -287,6 +275,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>&lt; Data structure for NURBS surface fitting </p>
 
 </div>
 </div>
@@ -516,48 +505,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1d2843c7331c7d363d02bc65c765512e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">pcl::on_nurbs::NurbsDataCurve2d hull_abstraction::Reconstructor::curve_data</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Data structure for NURBS curve fitting </p>
-
-</div>
-</div>
-<a class="anchor" id="af7033918ae29ef20bdd6d3db10175fd7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">pcl::on_nurbs::FittingCurve2dAPDM::FitParameter hull_abstraction::Reconstructor::curve_parameters</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Parameters for curve fitting </p>
-
-</div>
-</div>
 <a class="anchor" id="aeb53b00a5a6300f6fcbef59d6759f01b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -621,48 +568,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a54297518de25118c2c44b5d8b778f65a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">pcl::on_nurbs::NurbsDataSurface hull_abstraction::Reconstructor::surface_data</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Data structure for NURBS surface fitting </p>
-
-</div>
-</div>
-<a class="anchor" id="abae19ea237011f56fa300a2461a3f019"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">pcl::on_nurbs::FittingSurface::Parameter hull_abstraction::Reconstructor::surface_parameters</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Parameters for surface fitting </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/jc/hull_abstraction/prototype/include/hull_abstraction/<a class="el" href="prototype_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a></li>
 <li>/home/jc/hull_abstraction/prototype/src/hull_abstraction/<a class="el" href="prototype_2src_2hull__abstraction_2reconstructor_8cpp.html">reconstructor.cpp</a></li>
@@ -670,7 +575,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2020 13:42:22 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 18 2020 11:08:01 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

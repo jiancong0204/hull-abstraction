@@ -3,18 +3,20 @@
 pcl::PolygonMesh hull_abstraction::Reconstructor::greedyTriangulation(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
     double resolution = pcl_utilization::computeCloudResolution(cloud_with_normals);
+
     // Define search tree
     pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal>);
     tree->setInputCloud(cloud_with_normals);
+
     // Configurations of triangulation
-    greedy_projection_triangulation.setSearchRadius(5 * resolution);  //Search radium, that is the radium of KNN
-    greedy_projection_triangulation.setMu(5);  //in case that the cloud is not perfectly uniform
-    greedy_projection_triangulation.setMaximumNearestNeighbors(200);    //The largest searched neighbours，typical value: 50-100
-    greedy_projection_triangulation.setMinimumAngle(M_PI/18); // 10°
-    greedy_projection_triangulation.setMaximumAngle(2*M_PI/3);  // 120°
+    greedy_projection_triangulation.setSearchRadius(5.5 * resolution);  //Search radium, that is the radium of KNN
+    greedy_projection_triangulation.setMu(5);  // In case that the cloud is not perfectly uniform
+    greedy_projection_triangulation.setMaximumNearestNeighbors(200);    // The largest searched neighbours，typical value: 50-100
+    greedy_projection_triangulation.setMinimumAngle(0); // The minimal allowed angle in a trangle is 0°
+    greedy_projection_triangulation.setMaximumAngle(M_PI);  // The largest allowed angle for triangulation is 180°
     greedy_projection_triangulation.setMaximumSurfaceAngle(M_PI/4); // 45°
     greedy_projection_triangulation.setNormalConsistency(false);
-    greedy_projection_triangulation.setInputCloud(cloud_with_normals); // input the cloud with normal
+    greedy_projection_triangulation.setInputCloud(cloud_with_normals); // Input the cloud with normal
     greedy_projection_triangulation.setSearchMethod(tree);
     greedy_projection_triangulation.reconstruct(mesh);
     return mesh;
@@ -58,6 +60,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pc
 
 pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
 {
+    pcl::on_nurbs::NurbsDataSurface surface_data; /**< Data structure for NURBS surface fitting */
     pointCloud2Vector3d(cloud, surface_data.interior);
 
     // parameters
@@ -66,11 +69,13 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     unsigned iterations = 10;
     unsigned mesh_resolution = 256;
 
+    pcl::on_nurbs::FittingSurface::Parameter surface_parameters; // Parameters for surface fitting
     surface_parameters.interior_smoothness = 0.2;
     surface_parameters.interior_weight = 1.0;
     surface_parameters.boundary_smoothness = 0.2;
     surface_parameters.boundary_weight = 0.0;
 
+    pcl::on_nurbs::FittingCurve2dAPDM::FitParameter curve_parameters; // Parameters for curve fitting
     curve_parameters.addCPsAccuracy = 5e-2;
     curve_parameters.addCPsIteration = 3;
     curve_parameters.maxCPs = 200;
@@ -89,6 +94,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     pcl::on_nurbs::FittingSurface fitting_surface(&surface_data, surface_nurbs);
 
     // mesh for visualization
+    pcl::PolygonMesh mesh;
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     std::vector<pcl::Vertices> mesh_vertices;
     pcl::on_nurbs::Triangulation::convertSurface2PolygonMesh(fitting_surface.m_nurbs, mesh, mesh_resolution);
@@ -106,13 +112,14 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     // surface fitting with final refinement level
     for (unsigned i = 0; i < iterations; i++)
     {
-        fitting_surface.assemble (surface_parameters);
+        fitting_surface.assemble(surface_parameters);
         fitting_surface.solve();
         pcl::on_nurbs::Triangulation::convertSurface2Vertices(fitting_surface.m_nurbs, mesh_cloud, mesh_vertices, mesh_resolution);
     }
     
     // B-spline curve fitting
     // initialisation (circular)
+    pcl::on_nurbs::NurbsDataCurve2d curve_data;  // Data structure for  NURBS curve fitting
     curve_data.interior = surface_data.interior_param;
     curve_data.interior_weight_function.push_back(true);
     ON_NurbsCurve curve_nurbs = pcl::on_nurbs::FittingCurve2dAPDM::initNurbsCurve2D(polynomial_order, curve_data.interior);
@@ -120,7 +127,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     // curve fitting
     pcl::on_nurbs::FittingCurve2dASDM fitting_curve(&curve_data, curve_nurbs);
     // fittingCurve.setQuiet (false); // enable/disable debug output
-    fitting_curve.fitting(curve_parameters);
+    fitting_curve.fitting (curve_parameters);
 
     // triangulation of trimmed surface
     pcl::on_nurbs::Triangulation::convertTrimmedSurface2PolygonMesh(fitting_surface.m_nurbs, fitting_curve.m_nurbs, mesh, mesh_resolution);

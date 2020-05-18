@@ -33,27 +33,27 @@ namespace bspline_surface_fitting_node
     {
     public:
         /**
-         * @brief Constructing a new BsplineSurfaceFitting object
+         * @brief Construct a new BsplineSurfaceFitting object
          */
         BsplineSurfaceFitting() {}
         
         /**
-         * @brief  Encapsulating a method to run the bspline_surface_fitting node
+         * @brief  Encapsulate a method to run the bspline_surface_fitting node
          */
         void run();
 
     private:
-        ros::NodeHandle                       nh;           /**< Node Handle reference from embedding node */
-        ros::Publisher                        pub;          /**< Polygon mesh publisher */
-        ros::Subscriber                       sub;          /**< Raw point cloud subscriber */
-        visualization_msgs::Marker            output_msg;   /**< Marker message used to publish the mesh */
+        ros::NodeHandle                   nh;           /**< Node Handle reference from embedding node */
+        ros::Publisher                    pub;          /**< Polygon mesh publisher */
+        ros::Subscriber                   sub;          /**< Raw point cloud subscriber */
+        pcl_msgs::PolygonMesh             output_msg;   /**< Polygon mesh message used to publish the mesh */
 
-        hull_abstraction::Reconstructor       rc;           /**< Object for Reconstructor class */
-        pcl::PolygonMesh                      mesh;         /**< Resulted polygon mesh */
+        hull_abstraction::Reconstructor   rc;           /**< Object for Reconstructor class */
+        pcl::PolygonMesh                  mesh;         /**< Resulted polygon mesh */
         
 
         /**
-         * @brief Processing the input ROS message
+         * @brief Process the input ROS message
          * 
          * @param input_msg Input ROS message
          */

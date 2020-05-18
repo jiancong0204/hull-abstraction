@@ -1,6 +1,6 @@
 /**
   * @file
-  * @brief This file contains the declaration for the Reconstructor class.
+  * @brief This file contains the declaration of the Reconstructor class.
   *
   * @author Jiancong Zheng
   * @date 2020-05-12
@@ -23,13 +23,9 @@
 namespace hull_abstraction
 {
     /**
-     * @brief Class containing several hull construction methods
+     * @brief The Reconstructor class
      *
      * This class wraps some hull construction methods for point cloud data
-     *  - Greedy triangulation algorithm
-     *  - Poisson reconstruction
-     *  - Marching cubes method
-     *  - B-spline surface fitting
      **/
     class Reconstructor 
     {
@@ -81,12 +77,6 @@ namespace hull_abstraction
     private:
         pcl::GreedyProjectionTriangulation<pcl::PointNormal>   greedy_projection_triangulation;   /**< Object for performing greedy triangulation algorithm */
         pcl::Poisson<pcl::PointNormal>                         poisson;                           /**< Object for performing Poisson reconstruction */
-
-        pcl::on_nurbs::NurbsDataSurface                        surface_data;                      /**< Data structure for NURBS surface fitting */
-        pcl::on_nurbs::FittingSurface::Parameter               surface_parameters;                /**< Parameters for surface fitting */
-        pcl::on_nurbs::NurbsDataCurve2d                        curve_data;                        /**< Data structure for  NURBS curve fitting */
-        pcl::on_nurbs::FittingCurve2dAPDM::FitParameter        curve_parameters;                  /**< Parameters for curve fitting */
-
         pcl::PolygonMesh                                       mesh;                              /**< Result of polygon meshes generation */
 
         /**

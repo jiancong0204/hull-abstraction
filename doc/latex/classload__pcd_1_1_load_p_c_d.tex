@@ -1,0 +1,137 @@
+\hypertarget{classload__pcd_1_1_load_p_c_d}{}\section{load\+\_\+pcd\+:\+:Load\+P\+CD Class Reference}
+\label{classload__pcd_1_1_load_p_c_d}\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+
+
+Class for loading pcd files.  
+
+
+
+
+{\ttfamily \#include $<$load\+\_\+pcd.\+h$>$}
+
+
+
+Collaboration diagram for load\+\_\+pcd\+:\+:Load\+P\+CD\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classload__pcd_1_1_load_p_c_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classload__pcd_1_1_load_p_c_d_a3fd11130cec167f69b6061009dc84748}{Load\+P\+CD} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classload__pcd_1_1_load_p_c_d}{Load\+P\+CD} object. \end{DoxyCompactList}\item 
+\hyperlink{classload__pcd_1_1_load_p_c_d_a48acb121f4dd61dcc3f7da12a300b8ba}{$\sim$\+Load\+P\+CD} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classload__pcd_1_1_load_p_c_d}{Load\+P\+CD} object. \end{DoxyCompactList}\item 
+void \hyperlink{classload__pcd_1_1_load_p_c_d_a724e71f567347d242039611c423db5c8}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulate a method to run the \hyperlink{namespaceload__pcd}{load\+\_\+pcd} node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classload__pcd_1_1_load_p_c_d_a0f1da0f53bc1ff4029cc3ce381520317}{create\+R\+O\+S\+Msg} ()
+\begin{DoxyCompactList}\small\item\em Create a R\+OS message for the point cloud. \end{DoxyCompactList}\item 
+void \hyperlink{classload__pcd_1_1_load_p_c_d_a00a28f5f0c461754e74f49bfdb9ff0b1}{publish\+R\+O\+S\+Msg} ()
+\begin{DoxyCompactList}\small\item\em Publish the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classload__pcd_1_1_load_p_c_d_a6e3e3bd9a8feea013787115296426d30}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classload__pcd_1_1_load_p_c_d_aa05fe1d30c2b35d0af4c3936b102bb59}{pub}
+\item 
+sensor\+\_\+msgs\+::\+Point\+Cloud2 \hyperlink{classload__pcd_1_1_load_p_c_d_a598d6d8452e88cfc42dbb9f383f2d63e}{output\+\_\+msg}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$ \hyperlink{classload__pcd_1_1_load_p_c_d_a3a00c45c42111b42373154c364950842}{cloud}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for loading pcd files. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!Load\+P\+CD@{Load\+P\+CD}}
+\index{Load\+P\+CD@{Load\+P\+CD}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{Load\+P\+C\+D()}{LoadPCD()}}]{\setlength{\rightskip}{0pt plus 5cm}load\+\_\+pcd\+::\+Load\+P\+C\+D\+::\+Load\+P\+CD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a3fd11130cec167f69b6061009dc84748}{}\label{classload__pcd_1_1_load_p_c_d_a3fd11130cec167f69b6061009dc84748}
+
+
+Construct a new \hyperlink{classload__pcd_1_1_load_p_c_d}{Load\+P\+CD} object. 
+
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!````~Load\+P\+CD@{$\sim$\+Load\+P\+CD}}
+\index{````~Load\+P\+CD@{$\sim$\+Load\+P\+CD}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{$\sim$\+Load\+P\+C\+D()}{~LoadPCD()}}]{\setlength{\rightskip}{0pt plus 5cm}load\+\_\+pcd\+::\+Load\+P\+C\+D\+::$\sim$\+Load\+P\+CD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a48acb121f4dd61dcc3f7da12a300b8ba}{}\label{classload__pcd_1_1_load_p_c_d_a48acb121f4dd61dcc3f7da12a300b8ba}
+
+
+Destroy the \hyperlink{classload__pcd_1_1_load_p_c_d}{Load\+P\+CD} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!create\+R\+O\+S\+Msg@{create\+R\+O\+S\+Msg}}
+\index{create\+R\+O\+S\+Msg@{create\+R\+O\+S\+Msg}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{create\+R\+O\+S\+Msg()}{createROSMsg()}}]{\setlength{\rightskip}{0pt plus 5cm}bool load\+\_\+pcd\+::\+Load\+P\+C\+D\+::create\+R\+O\+S\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a0f1da0f53bc1ff4029cc3ce381520317}{}\label{classload__pcd_1_1_load_p_c_d_a0f1da0f53bc1ff4029cc3ce381520317}
+
+
+Create a R\+OS message for the point cloud. 
+
+\begin{DoxyReturn}{Returns}
+true when the pcd file is successfully loaded 
+
+false when the pcd file is not loaded 
+\end{DoxyReturn}
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!publish\+R\+O\+S\+Msg@{publish\+R\+O\+S\+Msg}}
+\index{publish\+R\+O\+S\+Msg@{publish\+R\+O\+S\+Msg}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{publish\+R\+O\+S\+Msg()}{publishROSMsg()}}]{\setlength{\rightskip}{0pt plus 5cm}void load\+\_\+pcd\+::\+Load\+P\+C\+D\+::publish\+R\+O\+S\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a00a28f5f0c461754e74f49bfdb9ff0b1}{}\label{classload__pcd_1_1_load_p_c_d_a00a28f5f0c461754e74f49bfdb9ff0b1}
+
+
+Publish the message. 
+
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!run@{run}}
+\index{run@{run}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void load\+\_\+pcd\+::\+Load\+P\+C\+D\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classload__pcd_1_1_load_p_c_d_a724e71f567347d242039611c423db5c8}{}\label{classload__pcd_1_1_load_p_c_d_a724e71f567347d242039611c423db5c8}
+
+
+Encapsulate a method to run the \hyperlink{namespaceload__pcd}{load\+\_\+pcd} node. 
+
+
+
+\subsection{Member Data Documentation}
+\index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!cloud@{cloud}}
+\index{cloud@{cloud}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{cloud}{cloud}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+X\+YZ$>$ load\+\_\+pcd\+::\+Load\+P\+C\+D\+::cloud\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a3a00c45c42111b42373154c364950842}{}\label{classload__pcd_1_1_load_p_c_d_a3a00c45c42111b42373154c364950842}
+Cloud storing the point cloud loaded from the pcd file \index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!nh@{nh}}
+\index{nh@{nh}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle load\+\_\+pcd\+::\+Load\+P\+C\+D\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a6e3e3bd9a8feea013787115296426d30}{}\label{classload__pcd_1_1_load_p_c_d_a6e3e3bd9a8feea013787115296426d30}
+Node Handle reference from embedding node \index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}sensor\+\_\+msgs\+::\+Point\+Cloud2 load\+\_\+pcd\+::\+Load\+P\+C\+D\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_a598d6d8452e88cfc42dbb9f383f2d63e}{}\label{classload__pcd_1_1_load_p_c_d_a598d6d8452e88cfc42dbb9f383f2d63e}
+point cloud message used to publish the result \index{load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}!pub@{pub}}
+\index{pub@{pub}!load\+\_\+pcd\+::\+Load\+P\+CD@{load\+\_\+pcd\+::\+Load\+P\+CD}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher load\+\_\+pcd\+::\+Load\+P\+C\+D\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classload__pcd_1_1_load_p_c_d_aa05fe1d30c2b35d0af4c3936b102bb59}{}\label{classload__pcd_1_1_load_p_c_d_aa05fe1d30c2b35d0af4c3936b102bb59}
+Point cloud publisher 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/load\+\_\+pcd\+\_\+node/\hyperlink{load__pcd_8h}{load\+\_\+pcd.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/load\+\_\+pcd\+\_\+node/\hyperlink{load__pcd_8cpp}{load\+\_\+pcd.\+cpp}\end{DoxyCompactItemize}

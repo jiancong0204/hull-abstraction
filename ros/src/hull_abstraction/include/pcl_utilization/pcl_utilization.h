@@ -24,15 +24,23 @@
 namespace pcl_utilization
 {
     /**
-     * @brief Convert a polygon mesh to a marker message for triangle lists
+     * @brief Convert a polygon mesh to a marker message with a triangle list
      * 
      * @param mesh Triangle mesh
-     * @return Marker message as triangle lists
+     * @return Marker message as a triangle list
      **/
-    visualization_msgs::Marker toMarkerMsg(pcl::PolygonMesh mesh);
+    visualization_msgs::Marker toTriangleList(pcl::PolygonMesh mesh);
 
     /**
-     * @brief Compute the resolution of a point cloud
+     * @brief  Convert a polygon mesh to a marker message with a line list
+     * 
+     * @param mesh Polygon mesh
+     * @return Marker message as a line list 
+     */
+    visualization_msgs::Marker toLineList(pcl::PolygonMesh mesh);
+
+    /**
+     * @brief Computing the resolution of a point cloud
      * 
      * @param cloud Cloud of PointXYZ
      * @return Resolution of the input cloud
@@ -40,7 +48,7 @@ namespace pcl_utilization
     double computeCloudResolution(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 
     /**
-     * @brief Compute the resolution of a point cloud with normals
+     * @brief Computing the resolution of a point cloud with normals
      * 
      * @param cloud Cloud of PointNormal
      * @return Resolution of the input cloud

@@ -50,14 +50,14 @@ int main()
     //std::cout << "Time cost for normal estimation (filtered cloud): " << (end - start)  << " μs" << std::endl;
     // B-spline surface fitting
     start = clock();
-    mesh1 = rc.greedyTriangulation(cloud_with_normals);
+    mesh1 = rc.bsplineSurfaceFitting(cloud);
     end = clock();
     std::cout << "Time cost for b-spline surface fitting (original cloud): " << (end - start)  << " μs" << std::endl;
     
 
     
     start = clock();
-    mesh2 = rc.poissonReconstruction(cloud_with_normals);
+    mesh2 = rc.bsplineSurfaceFitting(filtered_cloud);
     end = clock();
     std::cout << "Time cost for b-spline surface fitting (moving least square): " << (end - start)  << " μs" << std::endl;
 

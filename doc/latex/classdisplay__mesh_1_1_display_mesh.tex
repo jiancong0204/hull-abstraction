@@ -1,0 +1,130 @@
+\hypertarget{classdisplay__mesh_1_1_display_mesh}{}\section{display\+\_\+mesh\+:\+:Display\+Mesh Class Reference}
+\label{classdisplay__mesh_1_1_display_mesh}\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+
+
+Class for displaying mesh in R\+V\+IZ.  
+
+
+
+
+{\ttfamily \#include $<$display\+\_\+mesh.\+h$>$}
+
+
+
+Collaboration diagram for display\+\_\+mesh\+:\+:Display\+Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classdisplay__mesh_1_1_display_mesh__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdisplay__mesh_1_1_display_mesh_a75e143fd00c1a1b777eea976f8580030}{Display\+Mesh} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Display Mesh object. \end{DoxyCompactList}\item 
+\hyperlink{classdisplay__mesh_1_1_display_mesh_a39727abcea404714b69aa465dd6df4bb}{$\sim$\+Display\+Mesh} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Display Mesh object. \end{DoxyCompactList}\item 
+void \hyperlink{classdisplay__mesh_1_1_display_mesh_ac41b88adcb0deeaa2d4febee382c4f14}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulate a method to run the \hyperlink{namespacedisplay__mesh}{display\+\_\+mesh} node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classdisplay__mesh_1_1_display_mesh_ab6c8cea34f5e67c9ac0b578da6e9f517}{processing} (const pcl\+\_\+msgs\+::\+Polygon\+Mesh input\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Process the point cloud message to create mesh message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classdisplay__mesh_1_1_display_mesh_a8d788cd12e7e9b670da079478f3231c3}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classdisplay__mesh_1_1_display_mesh_ad2ede578fe0dae783e9e06942441e2be}{pub}
+\item 
+ros\+::\+Subscriber \hyperlink{classdisplay__mesh_1_1_display_mesh_a0cef4c6f1b95ba3ad39a470e277bbe7e}{sub}
+\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{classdisplay__mesh_1_1_display_mesh_a950554fa9242f3d358e1085955e37a5b}{output\+\_\+msg}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for displaying mesh in R\+V\+IZ. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!Display\+Mesh@{Display\+Mesh}}
+\index{Display\+Mesh@{Display\+Mesh}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{Display\+Mesh()}{DisplayMesh()}}]{\setlength{\rightskip}{0pt plus 5cm}display\+\_\+mesh\+::\+Display\+Mesh\+::\+Display\+Mesh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_a75e143fd00c1a1b777eea976f8580030}{}\label{classdisplay__mesh_1_1_display_mesh_a75e143fd00c1a1b777eea976f8580030}
+
+
+Construct a new Display Mesh object. 
+
+\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!````~Display\+Mesh@{$\sim$\+Display\+Mesh}}
+\index{````~Display\+Mesh@{$\sim$\+Display\+Mesh}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{$\sim$\+Display\+Mesh()}{~DisplayMesh()}}]{\setlength{\rightskip}{0pt plus 5cm}display\+\_\+mesh\+::\+Display\+Mesh\+::$\sim$\+Display\+Mesh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_a39727abcea404714b69aa465dd6df4bb}{}\label{classdisplay__mesh_1_1_display_mesh_a39727abcea404714b69aa465dd6df4bb}
+
+
+Destroy the Display Mesh object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!processing@{processing}}
+\index{processing@{processing}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{processing(const pcl\+\_\+msgs\+::\+Polygon\+Mesh input\+\_\+msg)}{processing(const pcl_msgs::PolygonMesh input_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void display\+\_\+mesh\+::\+Display\+Mesh\+::processing (
+\begin{DoxyParamCaption}
+\item[{const pcl\+\_\+msgs\+::\+Polygon\+Mesh}]{input\+\_\+msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_ab6c8cea34f5e67c9ac0b578da6e9f517}{}\label{classdisplay__mesh_1_1_display_mesh_ab6c8cea34f5e67c9ac0b578da6e9f517}
+
+
+Process the point cloud message to create mesh message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+msg} & Input point cloud message \\
+\hline
+\end{DoxyParams}
+\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!run@{run}}
+\index{run@{run}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void display\+\_\+mesh\+::\+Display\+Mesh\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdisplay__mesh_1_1_display_mesh_ac41b88adcb0deeaa2d4febee382c4f14}{}\label{classdisplay__mesh_1_1_display_mesh_ac41b88adcb0deeaa2d4febee382c4f14}
+
+
+Encapsulate a method to run the \hyperlink{namespacedisplay__mesh}{display\+\_\+mesh} node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic} & Name of topic for input point cloud message \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!nh@{nh}}
+\index{nh@{nh}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle display\+\_\+mesh\+::\+Display\+Mesh\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_a8d788cd12e7e9b670da079478f3231c3}{}\label{classdisplay__mesh_1_1_display_mesh_a8d788cd12e7e9b670da079478f3231c3}
+Node Handle reference from embedding node \index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}visualization\+\_\+msgs\+::\+Marker display\+\_\+mesh\+::\+Display\+Mesh\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_a950554fa9242f3d358e1085955e37a5b}{}\label{classdisplay__mesh_1_1_display_mesh_a950554fa9242f3d358e1085955e37a5b}
+Marker message used to publish the mesh \index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!pub@{pub}}
+\index{pub@{pub}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher display\+\_\+mesh\+::\+Display\+Mesh\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_ad2ede578fe0dae783e9e06942441e2be}{}\label{classdisplay__mesh_1_1_display_mesh_ad2ede578fe0dae783e9e06942441e2be}
+Point cloud publisher \index{display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}!sub@{sub}}
+\index{sub@{sub}!display\+\_\+mesh\+::\+Display\+Mesh@{display\+\_\+mesh\+::\+Display\+Mesh}}
+\subsubsection[{\texorpdfstring{sub}{sub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Subscriber display\+\_\+mesh\+::\+Display\+Mesh\+::sub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classdisplay__mesh_1_1_display_mesh_a0cef4c6f1b95ba3ad39a470e277bbe7e}{}\label{classdisplay__mesh_1_1_display_mesh_a0cef4c6f1b95ba3ad39a470e277bbe7e}
+Raw point cloud subscriber 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/display\+\_\+mesh\+\_\+node/\hyperlink{display__mesh_8h}{display\+\_\+mesh.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/display\+\_\+mesh\+\_\+node/\hyperlink{display__mesh_8cpp}{display\+\_\+mesh.\+cpp}\end{DoxyCompactItemize}

@@ -27,7 +27,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="classhull__abstraction_1_1_reconstructor.html" target="_top" xlink:title="Class containing several hull construction methods. ">
+<g id="a_node2"><a xlink:href="classhull__abstraction_1_1_reconstructor.html" target="_top" xlink:title="The Reconstructor class. ">
 <polygon fill="white" stroke="black" points="0,-182.5 0,-448.5 166,-448.5 166,-182.5 0,-182.5"/>
 <text text-anchor="middle" x="83" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">hull_abstraction::Reconstructor</text>
 <polyline fill="none" stroke="black" points="0,-429.5 166,-429.5 "/>

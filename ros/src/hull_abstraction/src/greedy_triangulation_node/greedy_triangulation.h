@@ -24,7 +24,7 @@
 #include "hull_abstraction/preprocessor.h"
 #include "pcl_utilization/pcl_utilization.h"
 
-namespace greedy_triangulation_node
+namespace greedy_triangulation
 {
     /**
      * @brief Class utilizing greedy triangulation method
@@ -35,29 +35,29 @@ namespace greedy_triangulation_node
     {
     public:
         /**
-         * @brief Constructing a new GreedyTriangulation object
+         * @brief Construct a new GreedyTriangulation object
          */
         GreedyTriangulation() {}
 
         /**
-         * @brief  Encapsulating a method to run the greedy_triangulation node
+         * @brief  Encapsulate a method to run the greedy_triangulation node
          */
         void run();
 
     private:
-        ros::NodeHandle                       nh;           /**< Node Handle reference from embedding node */
-        ros::Publisher                        pub;          /**< Polygon mesh publisher */
-        ros::Subscriber                       sub;          /**< Raw point cloud subscriber */
-        visualization_msgs::Marker            output_msg;   /**< Marker message used to publish the mesh */
+        ros::NodeHandle                   nh;           /**< Node Handle reference from embedding node */
+        ros::Publisher                    pub;          /**< Polygon mesh publisher */
+        ros::Subscriber                   sub;          /**< Raw point cloud subscriber */
+        pcl_msgs::PolygonMesh             output_msg;   /**< Polygon mesh message used to publish the mesh */
 
-        hull_abstraction::Reconstructor       rc;           /**< Object for Reconstructor class */
-        hull_abstraction::Preprocessor        pp;           /**< Object for Preprocessor class */
-        pcl::PolygonMesh                      mesh;         /**< Resulted polygon mesh */
+        hull_abstraction::Reconstructor   rc;           /**< Object for Reconstructor class */
+        hull_abstraction::Preprocessor    pp;           /**< Object for Preprocessor class */
+        pcl::PolygonMesh                  mesh;         /**< Resulted polygon mesh */
         
         /**
-         * @brief Processing the input ROS message
+         * @brief Process the point cloud message to create mesh message
          * 
-         * @param input_msg Input ROS message
+         * @param input_msg Input point cloud message
          */
         void processing(const sensor_msgs::PointCloud2ConstPtr input_msg);
     

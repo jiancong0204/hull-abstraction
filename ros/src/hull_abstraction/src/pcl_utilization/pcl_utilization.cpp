@@ -1,6 +1,57 @@
 #include "pcl_utilization/pcl_utilization.h"
 
-visualization_msgs::Marker pcl_utilization::toMarkerMsg(pcl::PolygonMesh mesh)
+visualization_msgs::Marker pcl_utilization::toLineList(pcl::PolygonMesh mesh)
+{
+    visualization_msgs::Marker marker;
+    int polygon_size;
+    int vertices_size;
+    pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+
+    std_msgs::ColorRGBA color;
+    marker.type = visualization_msgs::Marker::LINE_LIST;
+    marker.action = visualization_msgs::Marker::ADD;
+    marker.header.frame_id = "base";
+
+    // Marker parameters
+    marker.scale.x = 0.001;
+    marker.scale.y = 0.001;
+    marker.scale.z = 0.001;
+    marker.pose.position.x = 0.0;
+    marker.pose.position.y = 0.0;
+    marker.pose.position.z = 0.0;
+    marker.pose.orientation.x = 0.0;
+    marker.pose.orientation.y = 0.0;
+    marker.pose.orientation.z = 0.0;
+    marker.pose.orientation.w = 1.0;
+    color.a = 1;  // Transparency
+    color.r = 1;
+    color.g = 1;
+    color.b = 1;
+
+    polygon_size = mesh.polygons.size();
+    fromPCLPointCloud2(mesh.cloud, *mesh_cloud);
+
+    for (int i = 0; i < polygon_size; i++)
+    {
+        vertices_size = mesh.polygons[i].vertices.size();
+        geometry_msgs::Point temp_point;
+        for (int j = 0; j < vertices_size - 1; j++)
+        {
+            temp_point.x = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
+            temp_point.y = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
+            temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
+            marker.points.push_back(temp_point);
+            temp_point.x = mesh_cloud->points[mesh.polygons[i].vertices[j + 1]].x;
+            temp_point.y = mesh_cloud->points[mesh.polygons[i].vertices[j + 1]].y;
+            temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[j + 1]].z;
+            marker.points.push_back(temp_point);
+        }
+    }
+    marker.color = color;
+    return marker;
+}
+
+visualization_msgs::Marker pcl_utilization::toTriangleList(pcl::PolygonMesh mesh)
 {
     visualization_msgs::Marker marker;
     int polygon_size;
@@ -32,8 +83,9 @@ visualization_msgs::Marker pcl_utilization::toMarkerMsg(pcl::PolygonMesh mesh)
     pcl::compute3DCentroid(*mesh_cloud,centroid); // Estimate the coordinates of the centroid.
     for (int i = 0; i < polygon_size; i++)
     {
-        std::vector<geometry_msgs::Point> temp_point(3);
-        for (int j = 0; j < 3; j++)
+        vertices_size = mesh.polygons[i].vertices.size();
+        std::vector<geometry_msgs::Point> temp_point(vertices_size);
+        for (int j = 0; j < vertices_size; j++)
         {
             temp_point[j].x = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
             temp_point[j].y = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;

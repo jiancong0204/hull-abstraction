@@ -63,7 +63,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="ros_2src_2hull__abstraction_2include_2hull__abstraction_2reconstructor_8h.html" target="_top" xlink:title="This file contains the declaration for the Reconstructor class. ">
+<g id="a_node5"><a xlink:href="ros_2src_2hull__abstraction_2include_2hull__abstraction_2reconstructor_8h.html" target="_top" xlink:title="This file contains the declaration of the Reconstructor class. ">
 <polygon fill="white" stroke="black" points="554,-178.5 554,-230.5 679,-230.5 679,-178.5 554,-178.5"/>
 <text text-anchor="start" x="562" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
 <text text-anchor="start" x="562" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
