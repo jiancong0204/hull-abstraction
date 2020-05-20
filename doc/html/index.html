@@ -97,7 +97,8 @@ COAR Logo</div></div>
 <p>"apt-get install" in ubuntu 16.04 can only install the version of 5.10. However, version of 6.2.0 or above is required for pcl. </p>
 </blockquote>
 <h4>1.2.1. Prepare the source code of VTK</h4>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;tar -xvzf VTK-6.2.0.tar.gz</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo mv VTK-6.2.0 /opt</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd /opt/VTK-6.2.0</div></div><!-- fragment --><p>#### 1.2.2. Compile VTK </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo cmake ..</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo make</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;tar -xvzf VTK-6.2.0.tar.gz</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo mv VTK-6.2.0 /opt</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd /opt/VTK-6.2.0</div></div><!-- fragment --><h4>1.2.2. Compile VTK</h4>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo cmake ..</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo make</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
 <p>"make -j(#Cores of your CPU)" can be used to speed up compilation process, e.g. make -j6. However, you must make sure that there is enough memory for all the parallel jobs. </p>
 </blockquote>
 <hr/>
@@ -110,7 +111,7 @@ COAR Logo</div></div>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2020 11:08:01 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 19 2020 07:44:33 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
