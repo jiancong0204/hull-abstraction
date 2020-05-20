@@ -1,14 +1,45 @@
- This repository is part of the Center of Advanced Robotics by the I\+G\+MR -\/ Aachen University. 
 
 
 
-\subsection*{1. Installation}
 
-A summary of installing necessary libraries for this package. 
-
+\subsection*{Content}
 
 
-\subsubsection*{1.\+1. Install required dependencies}
+\begin{DoxyItemize}
+\item \href{#introduction}{\tt Introduction}
+\item \href{#installation}{\tt Installation}
+\item \href{#hull-generation-methods}{\tt Hull Generation Methods} 
+
+
+\end{DoxyItemize}
+
+\subsection*{Introduction}
+
+This repository is part of the Center of Advanced Robotics by the I\+G\+MR -\/ Aachen University. The aim is to implement several hull generation methods and compare their performances.
+
+In this repository, following hull generation methods are implemented,
+
+
+\begin{DoxyItemize}
+\item Greedy triangulation algorithm
+\item B-\/spline surface fitting
+\item Poisson reconstructio
+\item Marching cubes algorithm 
+
+
+\end{DoxyItemize}
+
+\subsection*{Installation}
+
+A summary of installing necessary libraries for this package.
+\begin{DoxyItemize}
+\item V\+TK 6.\+2.\+0
+\item P\+Cl 1.\+8.\+0 
+
+
+\end{DoxyItemize}
+
+\subsubsection*{1. Install required dependencies}
 
 
 \begin{DoxyCode}
@@ -30,13 +61,13 @@ A summary of installing necessary libraries for this package.
 
 
 
-\subsubsection*{1.\+2. Complie and install V\+TK 6.\+2.\+0}
+\subsubsection*{2. Complie and install V\+TK 6.\+2.\+0}
 
 \begin{quote}
 \char`\"{}apt-\/get install\char`\"{} in ubuntu 16.\+04 can only install the version of 5.\+10. However, version of 6.\+2.\+0 or above is required for pcl. \end{quote}
 
 
-\paragraph*{1.\+2.\+1. Prepare the source code of V\+TK}
+\paragraph*{2.\+1. Prepare the source code of V\+TK}
 
 
 \begin{DoxyCode}
@@ -47,7 +78,7 @@ A summary of installing necessary libraries for this package.
 \end{DoxyCode}
 
 
-\paragraph*{1.\+2.\+2. Compile V\+TK}
+\paragraph*{2.\+2. Compile V\+TK}
 
 
 \begin{DoxyCode}
@@ -65,13 +96,13 @@ A summary of installing necessary libraries for this package.
 
 
 
-\subsubsection*{1.\+3. Download the source code of P\+C\+L-\/1.\+8.\+0}
+\subsubsection*{3. Download the source code of P\+C\+L-\/1.\+8.\+0}
 
 
 
 
 
-\subsubsection*{1.\+4. Compile the source code}
+\subsubsection*{4. Compile the source code}
 
 
 \begin{DoxyCode}
@@ -85,4 +116,92 @@ A summary of installing necessary libraries for this package.
 
 
 \begin{quote}
-Make sure that \char`\"{}\+B\+U\+I\+L\+D\+\_\+surface\+\_\+on\+\_\+nurbs\char`\"{} and \char`\"{}\+U\+S\+E\+\_\+\+U\+M\+F\+P\+A\+C\+K\char`\"{} are both selected in cmake configuration\end{quote}
+Make sure that \char`\"{}\+B\+U\+I\+L\+D\+\_\+surface\+\_\+on\+\_\+nurbs\char`\"{} and \char`\"{}\+U\+S\+E\+\_\+\+U\+M\+F\+P\+A\+C\+K\char`\"{} are both selected in cmake configuration \end{quote}
+
+
+
+
+\subsection*{Hull Generation Methods}
+
+A summary of the implemented hull generation methods. 
+
+
+
+\subsubsection*{Greedy Triangulation Algorithm}
+
+
+\begin{DoxyItemize}
+\item Based on local 2D projection.
+\item Assumption of locally smooth surface.
+\item Assumption of relatively smooth transitions between areas with different point densities.
+\end{DoxyItemize}
+
+\paragraph*{Steps\+:}
+
+
+\begin{DoxyEnumerate}
+\item Given a point p, its normal vector and the tangent plane perpendicular to the normal vector are determined.
+\item Point p as well as its vicinity is projected to the tangent plane.
+\item Edges are formed between each pair of points and then arranged in order of length.
+\item The shortest edge is going to be removed from the memory. If it does not intersect any of the current triangulation edges, it will be added to the triangulation before being removed.
+\item Repeat step 4 until the memory is empty.
+\item Two-\/dimensional connection relationship is now established. It can then be converted into three-\/dimensional space. 
+
+
+\end{DoxyEnumerate}
+
+\subsubsection*{B-\/spline Surface Fitting}
+
+
+\begin{DoxyItemize}
+\item Given a set of point P.
+\item P is projected to a plane to obtain another set of point PP.
+\end{DoxyItemize}
+
+\paragraph*{Steps\+:}
+
+
+\begin{DoxyEnumerate}
+\item Find values for the control points, denoted by cp, that minimize the distance between PP and B-\/spline curve c(cp). This curve will be used as contour in the trimming step later.
+\item Find values for the control points (cp) that minimize the distance between P and B-\/spline surface s(cp).
+\item The result of surface fitting is a four-\/sided shape which is larger than the desired shape. It can be removed by trimming away areas that lie outside the contour. 
+
+
+\end{DoxyEnumerate}
+
+\subsubsection*{Poisson Surface Reconstruction}
+
+
+\begin{DoxyItemize}
+\item Reconstruction by solving a spatial Poisson system.
+\item Highly strong to data noise.
+\item Given a point cloud with normal estimation.
+\end{DoxyItemize}
+
+\paragraph*{Basic Ideas\+:}
+
+
+\begin{DoxyItemize}
+\item Compute a 3D indicator function which is defined as 1 at points inside the model and 0 at points outside.
+\item The gradient of the indicator function is a vector filed that is zero almost everywhere except for the boundary, where the gradients are equal to the normals of boundary.
+\item The problem is now reduced to finding the function whose gradient best approximates a known vector field (normals of point cloud).
+\item Further reduction to a Poisson problem\+: finding the function whose divergence of gradient equals divergence of the given vector field. 
+
+
+\end{DoxyItemize}
+
+\subsubsection*{Marching Cubes}
+
+
+\begin{DoxyItemize}
+\item Extract iso-\/surface from the indicator function
+\end{DoxyItemize}
+
+\paragraph*{Paradigm\+:}
+
+
+\begin{DoxyEnumerate}
+\item The space is divided into small cubes. Each cube has eight vertices.
+\item Based on how the boundary intersects the cube, each vertex of each cube is assigned a binary value (e.\+g. 0 if the point is thought to lie outside the surface.).
+\item The situation of intersection here is determined using point cloud instead of the surface. 
+\end{DoxyEnumerate}

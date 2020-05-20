@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Hull Abstraction: hull_abstraction</title>
+<title>Hull Abstraction: Efficient Abstraction of 3D Point Clouds by Hull Generation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,38 +80,114 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="namespacehull__abstraction.html">hull_abstraction</a> </div>  </div>
+<div class="title">Efficient Abstraction of 3D Point Clouds by Hull Generation </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="image">
 <img src="coarlogo.png" alt="coarlogo.png"/>
 <div class="caption">
 COAR Logo</div></div>
-<p> This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University. </p><hr/>
-<h2>1. Installation</h2>
-<p>A summary of installing necessary libraries for this package. </p><hr/>
-<h3>1.1. Install required dependencies</h3>
+<hr/>
+<h2>Content</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#hull-generation-methods">Hull Generation Methods</a> <hr/>
+</li>
+</ul>
+<h2>Introduction</h2>
+<p>This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University. The aim is to implement several hull generation methods and compare their performances.</p>
+<p>In this repository, following hull generation methods are implemented,</p>
+<ul>
+<li>Greedy triangulation algorithm</li>
+<li>B-spline surface fitting</li>
+<li>Poisson reconstructio</li>
+<li>Marching cubes algorithm <hr/>
+</li>
+</ul>
+<h2>Installation</h2>
+<p>A summary of installing necessary libraries for this package.</p><ul>
+<li>VTK 6.2.0</li>
+<li>PCl 1.8.0 <hr/>
+</li>
+</ul>
+<h3>1. Install required dependencies</h3>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo apt-get install git build-essential linux-libc-dev</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo apt-get install cmake cmake-gui</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo apt-get install libusb-1.0-0-dev libusb-dev libudev-dev</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo apt-get install mpi-default-dev openmpi-bin openmpi-common</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo apt-get install libflann1.8 libflann-dev</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;sudo apt-get install libeigen3-dev</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;sudo apt-get install libboost-all-dev</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;sudo apt-get install libqhull* libgtest-dev</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;sudo apt-get install freeglut3-dev pkg-config</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;sudo apt-get install libxmu-dev libxi-dev</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;sudo apt-get install mono-complete</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;sudo apt-get install libglew-dev</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;sudo apt-get install libsuitesparse-dev</div></div><!-- fragment --><hr/>
-<h3>1.2. Complie and install VTK 6.2.0</h3>
+<h3>2. Complie and install VTK 6.2.0</h3>
 <blockquote class="doxtable">
 <p>"apt-get install" in ubuntu 16.04 can only install the version of 5.10. However, version of 6.2.0 or above is required for pcl. </p>
 </blockquote>
-<h4>1.2.1. Prepare the source code of VTK</h4>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;tar -xvzf VTK-6.2.0.tar.gz</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo mv VTK-6.2.0 /opt</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd /opt/VTK-6.2.0</div></div><!-- fragment --><h4>1.2.2. Compile VTK</h4>
+<h4>2.1. Prepare the source code of VTK</h4>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wget https://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;tar -xvzf VTK-6.2.0.tar.gz</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo mv VTK-6.2.0 /opt</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;cd /opt/VTK-6.2.0</div></div><!-- fragment --><h4>2.2. Compile VTK</h4>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;sudo mkdir build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cd build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;sudo cmake ..</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo make</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
 <p>"make -j(#Cores of your CPU)" can be used to speed up compilation process, e.g. make -j6. However, you must make sure that there is enough memory for all the parallel jobs. </p>
 </blockquote>
 <hr/>
-<h3>1.3. Download the source code of PCL-1.8.0</h3>
+<h3>3. Download the source code of PCL-1.8.0</h3>
 <hr/>
-<h3>1.4. Compile the source code</h3>
+<h3>4. Compile the source code</h3>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd pcl</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;sudo mkdir build</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;cd build</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;sudo cmake-gui</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;sudo make</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;sudo make install</div></div><!-- fragment --><blockquote class="doxtable">
-<p>Make sure that "BUILD_surface_on_nurbs" and "USE_UMFPACK" are both selected in cmake configuration</p>
+<p>Make sure that "BUILD_surface_on_nurbs" and "USE_UMFPACK" are both selected in cmake configuration </p>
 </blockquote>
+<hr/>
+<h2>Hull Generation Methods</h2>
+<p>A summary of the implemented hull generation methods. </p><hr/>
+<h3>Greedy Triangulation Algorithm</h3>
+<ul>
+<li>Based on local 2D projection.</li>
+<li>Assumption of locally smooth surface.</li>
+<li>Assumption of relatively smooth transitions between areas with different point densities.</li>
+</ul>
+<h4>Steps:</h4>
+<ol type="1">
+<li>Given a point p, its normal vector and the tangent plane perpendicular to the normal vector are determined.</li>
+<li>Point p as well as its vicinity is projected to the tangent plane.</li>
+<li>Edges are formed between each pair of points and then arranged in order of length.</li>
+<li>The shortest edge is going to be removed from the memory. If it does not intersect any of the current triangulation edges, it will be added to the triangulation before being removed.</li>
+<li>Repeat step 4 until the memory is empty.</li>
+<li>Two-dimensional connection relationship is now established. It can then be converted into three-dimensional space. <hr/>
+</li>
+</ol>
+<h3>B-spline Surface Fitting</h3>
+<ul>
+<li>Given a set of point P.</li>
+<li>P is projected to a plane to obtain another set of point PP.</li>
+</ul>
+<h4>Steps:</h4>
+<ol type="1">
+<li>Find values for the control points, denoted by cp, that minimize the distance between PP and B-spline curve c(cp). This curve will be used as contour in the trimming step later.</li>
+<li>Find values for the control points (cp) that minimize the distance between P and B-spline surface s(cp).</li>
+<li>The result of surface fitting is a four-sided shape which is larger than the desired shape. It can be removed by trimming away areas that lie outside the contour. <hr/>
+</li>
+</ol>
+<h3>Poisson Surface Reconstruction</h3>
+<ul>
+<li>Reconstruction by solving a spatial Poisson system.</li>
+<li>Highly strong to data noise.</li>
+<li>Given a point cloud with normal estimation.</li>
+</ul>
+<h4>Basic Ideas:</h4>
+<ul>
+<li>Compute a 3D indicator function which is defined as 1 at points inside the model and 0 at points outside.</li>
+<li>The gradient of the indicator function is a vector filed that is zero almost everywhere except for the boundary, where the gradients are equal to the normals of boundary.</li>
+<li>The problem is now reduced to finding the function whose gradient best approximates a known vector field (normals of point cloud).</li>
+<li>Further reduction to a Poisson problem: finding the function whose divergence of gradient equals divergence of the given vector field. <hr/>
+</li>
+</ul>
+<h3>Marching Cubes</h3>
+<ul>
+<li>Extract iso-surface from the indicator function</li>
+</ul>
+<h4>Paradigm:</h4>
+<ol type="1">
+<li>The space is divided into small cubes. Each cube has eight vertices.</li>
+<li>Based on how the boundary intersects the cube, each vertex of each cube is assigned a binary value (e.g. 0 if the point is thought to lie outside the surface.).</li>
+<li>The situation of intersection here is determined using point cloud instead of the surface. </li>
+</ol>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 11:07:33 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2020 11:48:59 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
