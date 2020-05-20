@@ -101,7 +101,7 @@ visualization_msgs::Marker pcl_utilization::toTriangleList(pcl::PolygonMesh mesh
         // Vector from centriod to temp_centroid.
         double temp_vector_x = temp_centroid[0]; //- centroid[0];
         double temp_vector_y = temp_centroid[1]; //- centroid[1];
-        double temp_vector_z = temp_centroid[2]; //- centroid[2];
+        double temp_vector_z = temp_centroid[2]; //- centroid[2];pcl::PolygonMesh mesh
 
         double x_1 = temp_point[1].x - temp_point[0].x;
         double x_2 = temp_point[2].x - temp_point[1].x;
@@ -191,4 +191,52 @@ double pcl_utilization::computeCloudResolution(pcl::PointCloud<pcl::PointNormal>
         resolution /= numberOfPoints;
     // std::cout << "number of point: " <<numberOfPoints << std::endl;
     return resolution;
+}
+
+std::vector<double> pcl_utilization::computeCentroid(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
+{
+    Eigen::Vector4f centroid;
+    std::vector<double> cloud_centroid(3);
+    
+    pcl::compute3DCentroid(*cloud, centroid);
+    for (int i = 0; i < 3; i++)
+    {
+        cloud_centroid[i] = centroid[i];
+    }
+    return cloud_centroid;
+}
+
+std::vector<double> pcl_utilization::computeCentroid(pcl::PolygonMesh mesh)
+{
+    int polygon_size;
+    pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    std::vector<double> mesh_centroid = {0.0, 0.0, 0.0};
+
+    polygon_size = mesh.polygons.size();
+    fromPCLPointCloud2(mesh.cloud, *mesh_cloud);
+
+    for (int i = 0; i < polygon_size; i++)
+    {
+        int vertices_size = mesh.polygons[i].vertices.size();
+        std::vector<double> polygon_centroid = {0.0, 0.0, 0.0};
+        for (int j = 0; j < vertices_size - 1; j++)
+        {
+            polygon_centroid[0] += mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
+            polygon_centroid[1] += mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
+            polygon_centroid[2] += mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
+        }
+
+        // vector<int>::iterator itr=polygon_centroid.begin();
+        polygon_centroid[0] /= vertices_size;
+        polygon_centroid[1] /= vertices_size;
+        polygon_centroid[2] /= vertices_size;
+        
+        mesh_centroid[0] += polygon_centroid[0];
+        mesh_centroid[1] += polygon_centroid[1];
+        mesh_centroid[2] += polygon_centroid[2];
+    }
+        mesh_centroid[0] /= polygon_size;
+        mesh_centroid[1] /= polygon_size;
+        mesh_centroid[2] /= polygon_size;
+        return mesh_centroid;
 }

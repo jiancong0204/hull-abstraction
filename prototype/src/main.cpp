@@ -10,6 +10,7 @@
 int main()
 {
     clock_t start, end;
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud1(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
@@ -17,7 +18,8 @@ int main()
     pcl::PolygonMesh mesh1;
     pcl::PolygonMesh mesh2;
     //  Load original cloud and check if the file exists
-    if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud) == -1)
+    // if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud1) == -1)
+    if (pcl::io::loadPLYFile<pcl::PointXYZ>("../point_cloud_data/bun_zipper.ply", *cloud1) == -1)
     {
         PCL_ERROR("Could not read file.\n");
         return(-1);
@@ -28,7 +30,8 @@ int main()
 
     // Down sampling
     //start = clock();
-    //pp.statisticalFilter(cloud, filtered_cloud);
+    pp.statisticalFilter(cloud1, cloud);
+    // pp.voxelGridFilter(cloud, cloud);
     //end = clock();
     //std::cout << "Time cost fordown sampling: " << (end - start) << " μs" << std::endl;
 
@@ -50,14 +53,14 @@ int main()
     //std::cout << "Time cost for normal estimation (filtered cloud): " << (end - start)  << " μs" << std::endl;
     // B-spline surface fitting
     start = clock();
-    mesh1 = rc.bsplineSurfaceFitting(cloud);
+    mesh1 = rc.marchingCubesReconstruction(cloud_with_normals);
     end = clock();
     std::cout << "Time cost for b-spline surface fitting (original cloud): " << (end - start)  << " μs" << std::endl;
     
 
     
     start = clock();
-    mesh2 = rc.bsplineSurfaceFitting(filtered_cloud);
+    mesh2 = rc.marchingCubesReconstruction(filtered_cloud_with_normals);
     end = clock();
     std::cout << "Time cost for b-spline surface fitting (moving least square): " << (end - start)  << " μs" << std::endl;
 

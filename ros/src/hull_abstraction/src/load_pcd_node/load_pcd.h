@@ -2,6 +2,7 @@
  * @file load_pcd.h
  * 
  * @brief Framework of node for loading pcd files
+ * @ros_node load_pcd_node
  * 
  * @author Jiancong Zheng 
  * @date 2020-05-12

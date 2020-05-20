@@ -2,7 +2,7 @@
  * @file bspline_surface_fitting.h
 
  * @brief Framework of b-spline surface fitting node
- * @ros_node bspline_surface_fitting
+ * @ros_node bspline_surface_fitting_node
  * 
  * @author Jiancong Zheng
  * @date 2020-05-12

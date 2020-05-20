@@ -12,8 +12,8 @@ void hull_abstraction::Preprocessor::voxelGridFilter(pcl::PointCloud<pcl::PointX
 void hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
     statistical_outlier_removal.setInputCloud(cloud);
-    statistical_outlier_removal.setMeanK(50);
-    statistical_outlier_removal.setStddevMulThresh(1.0);
+    statistical_outlier_removal.setMeanK(60);
+    statistical_outlier_removal.setStddevMulThresh(0.3);
     statistical_outlier_removal.filter(*filtered_cloud);
 }
 

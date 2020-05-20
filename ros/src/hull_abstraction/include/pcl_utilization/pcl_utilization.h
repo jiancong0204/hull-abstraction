@@ -54,4 +54,20 @@ namespace pcl_utilization
      * @return Resolution of the input cloud
      **/
     double computeCloudResolution(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
+    
+    /**
+     * @brief  Calculate the centroid of a point cloud
+     * 
+     * @param cloud The input point cloud data
+     * @return The coordinates of the centroid 
+     */
+    std::vector<double> computeCentroid(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
+
+    /**
+     * @brief Calculate the centroid of a mesh
+     * 
+     * @param mesh The input polygon mesh
+     * @return The coordinates of the centroid 
+     */
+    std::vector<double> computeCentroid(pcl::PolygonMesh mesh);
 };

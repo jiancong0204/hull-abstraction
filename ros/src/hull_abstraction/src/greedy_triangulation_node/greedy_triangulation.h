@@ -2,7 +2,7 @@
  * @file greedy_triangulation.h
  * 
  * @brief Framework of greedy triangulation node
- * @ros_node greedy_triangulation
+ * @ros_node greedy_triangulation_node
  * 
  * @author Jiancong Zheng
  * @date 2020-05-12

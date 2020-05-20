@@ -34,6 +34,7 @@ sudo apt-get install libsuitesparse-dev
 ### 1.2. Complie and install VTK 6.2.0
 
 > "apt-get install" in ubuntu 16.04 can only install the version of 5.10. However, version of 6.2.0 or above is required for pcl.
+
 #### 1.2.1. Prepare the source code of VTK
 
 ```
@@ -44,6 +45,7 @@ cd /opt/VTK-6.2.0
 ```
 
 #### 1.2.2. Compile VTK
+
 ```
 sudo mkdir build
 cd build

@@ -2,7 +2,7 @@
  * @file poisson_reconstruction.h
  *
  * @brief Framework of Poisson reconstruction node
- * @ros_node poisson_reconstruction
+ * @ros_node poisson_reconstruction_node
  * 
  * @author Jiancong Zheng
  * @date 2020-05-12

@@ -2,6 +2,7 @@
  * @file display_mesh.h
  * 
  * @brief Framework of node for displaying polygon meshes.
+ * @ros_node display_mesh_node
  * 
  * @author Jiancong Zheng 
  * @date 2020-05-18

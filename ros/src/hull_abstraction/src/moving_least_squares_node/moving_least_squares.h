@@ -2,7 +2,7 @@
  * @file moving_least_squares.h
  * 
  * @brief Framework of moving least squares node
- * @ros_node moving_least_squares
+ * @ros_node moving_least_squares_node
  * 
  * @author Jiancong Zheng
  * @date 2020-05-12

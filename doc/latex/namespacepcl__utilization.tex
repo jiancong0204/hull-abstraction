@@ -10,10 +10,52 @@ visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a1a3ffc
 double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
 \begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud. \end{DoxyCompactList}\item 
 double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud with normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud with normals. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a217b6e0e27678d9f9bb1a7a4a39a20ea}{compute\+Centroid} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Calculate the centroid of a point cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a0fa69a5e73bdd8db793db5b515bf86e7}{compute\+Centroid} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Calculate the centroid of a mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+Centroid@{compute\+Centroid}}
+\index{compute\+Centroid@{compute\+Centroid}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{compute\+Centroid(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{computeCentroid(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ pcl\+\_\+utilization\+::compute\+Centroid (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_a217b6e0e27678d9f9bb1a7a4a39a20ea}{}\label{namespacepcl__utilization_a217b6e0e27678d9f9bb1a7a4a39a20ea}
+
+
+Calculate the centroid of a point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & The input point cloud data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The coordinates of the centroid 
+\end{DoxyReturn}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+Centroid@{compute\+Centroid}}
+\index{compute\+Centroid@{compute\+Centroid}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{compute\+Centroid(pcl\+::\+Polygon\+Mesh mesh)}{computeCentroid(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ pcl\+\_\+utilization\+::compute\+Centroid (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_a0fa69a5e73bdd8db793db5b515bf86e7}{}\label{namespacepcl__utilization_a0fa69a5e73bdd8db793db5b515bf86e7}
+
+
+Calculate the centroid of a mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The input polygon mesh \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The coordinates of the centroid 
+\end{DoxyReturn}
 \index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}}
 \index{compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
 \subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{computeCloudResolution(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}double pcl\+\_\+utilization\+::compute\+Cloud\+Resolution (
