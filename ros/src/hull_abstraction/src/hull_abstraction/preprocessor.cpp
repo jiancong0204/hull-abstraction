@@ -52,7 +52,7 @@ void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl:
     tree->setInputCloud(cloud);
     normal_estimation.setInputCloud(cloud);
     normal_estimation.setSearchMethod(tree);
-    normal_estimation.setKSearch(20);
+    normal_estimation.setKSearch(60);
     normal_estimation.compute(*normals);
     pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
 }

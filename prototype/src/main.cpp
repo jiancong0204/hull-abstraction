@@ -24,8 +24,13 @@ int main()
         PCL_ERROR("Could not read file.\n");
         return(-1);
     }
+    
 
+    int cloud_size = cloud->points.size();
+    std::cout << cloud_size << std::endl;
+    
     //std::cout << CLOCKS_PER_SEC << std::endl;
+    
     hull_abstraction::Preprocessor pp;
     hull_abstraction::Reconstructor rc;
 
@@ -47,6 +52,10 @@ int main()
     pp.appendNormalEstimation(filtered_cloud, cloud_with_normals);
     end = clock();
     std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
+        
+
+
+
 
     //start = clock();
     //pp.appendNormalEstimation(filtered_cloud, filtered_cloud_with_normals);

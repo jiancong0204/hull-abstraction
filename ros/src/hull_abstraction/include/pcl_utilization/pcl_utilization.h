@@ -59,7 +59,7 @@ namespace pcl_utilization
      * @brief  Calculate the centroid of a point cloud
      * 
      * @param cloud The input point cloud data
-     * @return The coordinates of the centroid 
+     * @return Coordinates of the centroid 
      */
     std::vector<double> computeCentroid(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 
@@ -70,4 +70,12 @@ namespace pcl_utilization
      * @return The coordinates of the centroid 
      */
     std::vector<double> computeCentroid(pcl::PolygonMesh mesh);
+
+    /**
+     * @brief Compute the AABB for the input point cloud
+     * 
+     * @param cloud The input point cloud data
+     * @return A list of the maximal as well as the minimal x-, y- and z-coordinates
+     */
+    std::vector<std::vector<double>> computeAABB(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 };

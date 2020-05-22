@@ -29,7 +29,7 @@ double hull_abstraction::computeCloudResolution(pcl::PointCloud<pcl::PointXYZ>::
     return resolution;
 }
 
-double hull_abstraction::computeCloudResolutionN(pcl::PointCloud<pcl::PointNormal>::Ptr cloudWithNormals)
+double hull_abstraction::computeCloudResolution(pcl::PointCloud<pcl::PointNormal>::Ptr cloudWithNormals)
 {
     double resolution = 0.0;
     int numberOfPoints = 0;
@@ -54,6 +54,113 @@ double hull_abstraction::computeCloudResolutionN(pcl::PointCloud<pcl::PointNorma
     }
     if (numberOfPoints != 0)
         resolution /= numberOfPoints;
-    // std::cout << "number of point: " <<numberOfPoints << std::endl;
+    // std::cout << "number of point: " << numberOfPoints << std::endl;
     return resolution;
+}
+
+std::vector<std::vector<double>> hull_abstraction::computeAABB(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
+{
+    int cloud_size = cloud->points.size(); // Number of the points
+    std::vector<std::vector<double>> result;
+    std::vector<double> max;
+    std::vector<double> min;
+
+    max.push_back(cloud->points[0].x);
+    max.push_back(cloud->points[0].y);
+    max.push_back(cloud->points[0].z);
+    min.push_back(cloud->points[0].x);
+    min.push_back(cloud->points[0].y);
+    min.push_back(cloud->points[0].z);
+
+    for (int i = 1; i < cloud_size; i++)
+    {
+        if (cloud->points[i].x > max[0])
+        {
+            max[0] = cloud->points[i].x;
+        }
+        else if (cloud->points[i].x < min[0])
+        {
+            min[0] = cloud->points[i].x;
+        }
+        else;
+
+        if (cloud->points[i].y > max[1])
+        {
+            max[1] = cloud->points[i].y;
+        }
+        else if (cloud->points[i].y < min[1])
+        {
+            min[1] = cloud->points[i].y;
+        }
+        else;
+
+
+        if (cloud->points[i].z > max[2])
+        {
+            max[2] = cloud->points[i].z;
+        }
+        else if (cloud->points[i].z < min[2])
+        {
+            min[2] = cloud->points[i].z;
+        }
+        else;
+    }
+
+    result.push_back(max);
+    result.push_back(min);
+    return result;
+}
+
+
+std::vector<std::vector<double>> hull_abstraction::computeAABB(pcl::PointCloud<pcl::PointNormal>::Ptr cloud)
+{
+    int cloud_size = cloud->points.size(); // Number of the points
+    std::vector<std::vector<double>> result;
+    std::vector<double> max;
+    std::vector<double> min;
+
+    max.push_back(cloud->points[0].x);
+    max.push_back(cloud->points[0].y);
+    max.push_back(cloud->points[0].z);
+    min.push_back(cloud->points[0].x);
+    min.push_back(cloud->points[0].y);
+    min.push_back(cloud->points[0].z);
+
+    for (int i = 1; i < cloud_size; i++)
+    {
+        if (cloud->points[i].x > max[0])
+        {
+            max[0] = cloud->points[i].x;
+        }
+        else if (cloud->points[i].x < min[0])
+        {
+            min[0] = cloud->points[i].x;
+        }
+        else;
+
+        if (cloud->points[i].y > max[1])
+        {
+            max[1] = cloud->points[i].y;
+        }
+        else if (cloud->points[i].y < min[1])
+        {
+            min[1] = cloud->points[i].y;
+        }
+        else;
+
+
+        if (cloud->points[i].z > max[2])
+        {
+            max[2] = cloud->points[i].z;
+        }
+        else if (cloud->points[i].z < min[2])
+        {
+            min[2] = cloud->points[i].z;
+        }
+        else;
+    }
+
+    result.push_back(max);
+    result.push_back(min);
+    return result;
 }
