@@ -1,0 +1,57 @@
+\hypertarget{marching__cubes_8h}{}\section{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/marching\+\_\+cubes\+\_\+node/marching\+\_\+cubes.h File Reference}
+\label{marching__cubes_8h}\index{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/marching\+\_\+cubes\+\_\+node/marching\+\_\+cubes.\+h@{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/marching\+\_\+cubes\+\_\+node/marching\+\_\+cubes.\+h}}
+
+
+Framework of marching cubes node.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ros/ros.\+h$>$}\\*
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+msgs/\+Polygon\+Mesh.\+h$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+conversions/pcl\+\_\+conversions.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}hull\+\_\+abstraction/reconstructor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hull\+\_\+abstraction/preprocessor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pcl\+\_\+utilization/pcl\+\_\+utilization.\+h\char`\"{}}\\*
+Include dependency graph for marching\+\_\+cubes.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{marching__cubes_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{marching__cubes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmarching__cubes_1_1_marching_cubes}{marching\+\_\+cubes\+::\+Marching\+Cubes}
+\begin{DoxyCompactList}\small\item\em Class utilizing marching cubes method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacemarching__cubes}{marching\+\_\+cubes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Framework of marching cubes node. 
+
+\begin{DoxyRefDesc}{R\+O\+S Node}
+\item[\hyperlink{ros_node__ros_node000005}{R\+O\+S Node}]marhcing\+\_\+cubes\+\_\+node\end{DoxyRefDesc}
+
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/23
+\end{DoxyDate}
+This node subscribes a R\+OS topic to get an input point cloud and then utilize marching cubes algorithm to generate a mesh. The result of marching cubes is published as a pcl message. 

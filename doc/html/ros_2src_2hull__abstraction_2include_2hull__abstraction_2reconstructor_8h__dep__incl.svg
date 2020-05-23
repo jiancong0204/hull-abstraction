@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1141;
+var viewWidth = 1436;
 var viewHeight = 239;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,14 +54,14 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>/home/jc/hull_abstraction/ros/src/hull_abstraction/include/hull_abstraction/reconstructor.h</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-235 1136.5,-235 1136.5,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-235 1431.5,-235 1431.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="405.5,-178.5 405.5,-230.5 530.5,-230.5 530.5,-178.5 405.5,-178.5"/>
-<text text-anchor="start" x="413.5" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="413.5" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="413.5" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/hull_abstraction</text>
-<text text-anchor="middle" x="468" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/reconstructor.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="488.5,-178.5 488.5,-230.5 613.5,-230.5 613.5,-178.5 488.5,-178.5"/>
+<text text-anchor="start" x="496.5" y="-218.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="496.5" y="-207.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="496.5" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/hull_abstraction</text>
+<text text-anchor="middle" x="551" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/reconstructor.h</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
@@ -75,8 +75,8 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge"><title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M395.391,-191.192C332.279,-179.995 238.584,-162.173 158,-142 150.904,-140.224 143.515,-138.217 136.194,-136.129"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="394.795,-194.64 405.251,-192.931 396.011,-187.747 394.795,-194.64"/>
+<path fill="none" stroke="midnightblue" d="M477.831,-195.151C398.468,-185.376 268.33,-167.25 158,-142 150.423,-140.266 142.532,-138.211 134.751,-136.031"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="477.857,-198.68 488.207,-196.417 478.705,-191.731 477.857,-198.68"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
@@ -89,8 +89,8 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge"><title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M395.803,-177.219C353.601,-161.857 302.013,-143.078 267.482,-130.508"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="394.612,-180.51 405.206,-180.642 397.006,-173.932 394.612,-180.51"/>
+<path fill="none" stroke="midnightblue" d="M478.59,-187.688C428.4,-176.242 360.212,-159.721 301,-142 289.693,-138.616 277.546,-134.503 266.509,-130.577"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="477.853,-191.11 488.38,-189.909 479.402,-184.284 477.853,-191.11"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -105,8 +105,8 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge"><title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M437.17,-170.79C428.064,-161.129 418.244,-150.71 409.664,-141.607"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="434.876,-173.459 444.282,-178.336 439.97,-168.658 434.876,-173.459"/>
+<path fill="none" stroke="midnightblue" d="M494.36,-173.635C474.578,-163.205 452.59,-151.611 433.618,-141.607"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="492.797,-176.768 503.275,-178.336 496.062,-170.576 492.797,-176.768"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
@@ -121,8 +121,8 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge"><title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M498.932,-171.077C508.226,-161.335 518.277,-150.8 527.047,-141.607"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="496.377,-168.685 492.007,-178.336 501.442,-173.517 496.377,-168.685"/>
+<path fill="none" stroke="midnightblue" d="M551,-168.191C551,-159.282 551,-149.899 551,-141.607"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="547.5,-168.336 551,-178.336 554.5,-168.336 547.5,-168.336"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
@@ -136,120 +136,167 @@ var sectionId = 'dynsection-1';
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge"><title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M540.414,-179.546C581.802,-165.854 633.05,-148.902 671.976,-136.025"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="539.056,-176.308 530.661,-182.772 541.254,-182.954 539.056,-176.308"/>
+<path fill="none" stroke="midnightblue" d="M612.388,-173.829C638.178,-161.364 667.465,-147.208 690.485,-136.082"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="610.544,-170.833 603.063,-178.336 613.59,-177.135 610.544,-170.833"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="poisson__reconstruction_8h.html" target="_top" xlink:title="Framework of Poisson reconstruction node. ">
-<polygon fill="white" stroke="black" points="840.5,-89.5 840.5,-141.5 995.5,-141.5 995.5,-89.5 840.5,-89.5"/>
-<text text-anchor="start" x="848.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="848.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="848.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
-<text text-anchor="middle" x="918" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/poisson_reconstruction.h</text>
+<g id="a_node11"><a xlink:href="marching__cubes_8h.html" target="_top" xlink:title="Framework of marching cubes node. ">
+<polygon fill="white" stroke="black" points="841,-89.5 841,-141.5 975,-141.5 975,-89.5 841,-89.5"/>
+<text text-anchor="start" x="849" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="849" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="849" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/marching_cubes_node</text>
+<text text-anchor="middle" x="908" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/marching_cubes.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge10" class="edge"><title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M540.732,-193.853C614.577,-183.442 731.972,-165.191 832,-142 834.731,-141.367 837.503,-140.697 840.296,-139.998"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="540.026,-190.418 530.608,-195.27 540.996,-197.35 540.026,-190.418"/>
+<path fill="none" stroke="midnightblue" d="M623.704,-189.837C680.751,-178.576 761.956,-161.354 832,-142 834.951,-141.185 837.956,-140.321 840.985,-139.423"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="622.836,-186.44 613.697,-191.8 624.184,-193.309 622.836,-186.44"/>
+</g>
+<!-- Node14 -->
+<g id="node14" class="node"><title>Node14</title>
+<g id="a_node14"><a xlink:href="poisson__reconstruction_8h.html" target="_top" xlink:title="Framework of Poisson reconstruction node. ">
+<polygon fill="white" stroke="black" points="1112.5,-89.5 1112.5,-141.5 1267.5,-141.5 1267.5,-89.5 1112.5,-89.5"/>
+<text text-anchor="start" x="1120.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="1120.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="1120.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
+<text text-anchor="middle" x="1190" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/poisson_reconstruction.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge13" class="edge"><title>Node1&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M623.665,-193.607C744.996,-177.087 987.777,-144.033 1112.35,-127.072"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="623.162,-190.143 613.726,-194.96 624.107,-197.079 623.162,-190.143"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
 <g id="a_node5"><a xlink:href="bspline__surface__fitting_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/bspline_surface_fitting\l_node/bspline_surface_fitting.cpp">
-<polygon fill="white" stroke="black" points="140,-0.5 140,-52.5 302,-52.5 302,-0.5 140,-0.5"/>
-<text text-anchor="start" x="148" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="148" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="148" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/bspline_surface_fitting</text>
-<text text-anchor="middle" x="221" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/bspline_surface_fitting.cpp</text>
+<polygon fill="white" stroke="black" points="139,-0.5 139,-52.5 301,-52.5 301,-0.5 139,-0.5"/>
+<text text-anchor="start" x="147" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="147" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="147" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/bspline_surface_fitting</text>
+<text text-anchor="middle" x="220" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/bspline_surface_fitting.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge"><title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M329.36,-84.6354C309.578,-74.2049 287.59,-62.6109 268.618,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="327.797,-87.7678 338.275,-89.336 331.062,-81.5759 327.797,-87.7678"/>
+<path fill="none" stroke="midnightblue" d="M329.017,-84.6354C309.115,-74.2049 286.993,-62.6109 267.906,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="327.504,-87.7939 337.986,-89.336 330.753,-81.5938 327.504,-87.7939"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
 <g id="a_node6"><a xlink:href="bspline__surface__fitting__node_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/bspline_surface_fitting\l_node.cpp">
-<polygon fill="white" stroke="black" points="320,-0.5 320,-52.5 454,-52.5 454,-0.5 320,-0.5"/>
-<text text-anchor="start" x="328" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="328" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="328" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/bspline_surface_fitting</text>
-<text text-anchor="middle" x="387" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
+<polygon fill="white" stroke="black" points="319,-0.5 319,-52.5 453,-52.5 453,-0.5 319,-0.5"/>
+<text text-anchor="start" x="327" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="327" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="327" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/bspline_surface_fitting</text>
+<text text-anchor="middle" x="386" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M386.406,-79.1908C386.508,-70.2824 386.616,-60.8986 386.711,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="382.905,-79.2964 386.289,-89.336 389.904,-79.3769 382.905,-79.2964"/>
+<path fill="none" stroke="midnightblue" d="M386,-79.1908C386,-70.2824 386,-60.8986 386,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="382.5,-79.336 386,-89.336 389.5,-79.336 382.5,-79.336"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
 <g id="a_node8"><a xlink:href="greedy__triangulation_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/greedy_triangulation\l_node/greedy_triangulation.cpp">
-<polygon fill="white" stroke="black" points="474,-0.5 474,-52.5 626,-52.5 626,-0.5 474,-0.5"/>
-<text text-anchor="start" x="482" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="482" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="482" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/greedy_triangulation</text>
-<text text-anchor="middle" x="550" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/greedy_triangulation.cpp</text>
+<polygon fill="white" stroke="black" points="471,-0.5 471,-52.5 623,-52.5 623,-0.5 471,-0.5"/>
+<text text-anchor="start" x="479" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="479" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="479" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/greedy_triangulation</text>
+<text text-anchor="middle" x="547" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/greedy_triangulation.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge7" class="edge"><title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M550.594,-79.1908C550.492,-70.2824 550.384,-60.8986 550.289,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="547.096,-79.3769 550.711,-89.336 554.095,-79.2964 547.096,-79.3769"/>
+<path fill="none" stroke="midnightblue" d="M549.377,-79.1908C548.967,-70.2824 548.536,-60.8986 548.154,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="545.887,-79.5073 549.843,-89.336 552.88,-79.1858 545.887,-79.5073"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
 <g id="a_node9"><a xlink:href="greedy__triangulation__node_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/greedy_triangulation\l_node.cpp">
-<polygon fill="white" stroke="black" points="644.5,-0.5 644.5,-52.5 769.5,-52.5 769.5,-0.5 644.5,-0.5"/>
-<text text-anchor="start" x="652.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="652.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="652.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/greedy_triangulation</text>
-<text text-anchor="middle" x="707" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
+<polygon fill="white" stroke="black" points="641.5,-0.5 641.5,-52.5 766.5,-52.5 766.5,-0.5 641.5,-0.5"/>
+<text text-anchor="start" x="649.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="649.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="649.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/greedy_triangulation</text>
+<text text-anchor="middle" x="704" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node9 -->
 <g id="edge8" class="edge"><title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M605.056,-84.3532C623.628,-73.9962 644.204,-62.5208 661.98,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="603.151,-81.4085 596.122,-89.336 606.56,-87.522 603.151,-81.4085"/>
+<path fill="none" stroke="midnightblue" d="M604.017,-84.3532C622.231,-73.9962 642.412,-62.5208 659.846,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="602.217,-81.3504 595.254,-89.336 605.677,-87.4354 602.217,-81.3504"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="poisson__reconstruction_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/poisson_reconstruction\l_node/poisson_reconstruction.cpp">
-<polygon fill="white" stroke="black" points="812.5,-0.5 812.5,-52.5 977.5,-52.5 977.5,-0.5 812.5,-0.5"/>
-<text text-anchor="start" x="820.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="820.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="820.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
-<text text-anchor="middle" x="895" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/poisson_reconstruction.cpp</text>
+<g id="a_node12"><a xlink:href="marching__cubes_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/marching_cubes_node\l/marching_cubes.cpp">
+<polygon fill="white" stroke="black" points="785,-0.5 785,-52.5 919,-52.5 919,-0.5 785,-0.5"/>
+<text text-anchor="start" x="793" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="793" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="793" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/marching_cubes_node</text>
+<text text-anchor="middle" x="852" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/marching_cubes.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node12 -->
 <g id="edge11" class="edge"><title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M908.742,-79.4811C906.364,-70.4865 903.853,-60.9887 901.638,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="905.408,-80.5627 911.347,-89.336 912.175,-78.7736 905.408,-80.5627"/>
+<path fill="none" stroke="midnightblue" d="M886.39,-80.9272C880.329,-71.511 873.846,-61.4393 868.161,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="883.447,-82.8217 891.802,-89.336 889.333,-79.033 883.447,-82.8217"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="poisson__reconstruction__node_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/poisson_reconstruction\l_node.cpp">
-<polygon fill="white" stroke="black" points="995.5,-0.5 995.5,-52.5 1132.5,-52.5 1132.5,-0.5 995.5,-0.5"/>
-<text text-anchor="start" x="1003.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
-<text text-anchor="start" x="1003.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
-<text text-anchor="start" x="1003.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
-<text text-anchor="middle" x="1064" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
+<g id="a_node13"><a xlink:href="marching__cubes__node_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/marching_cubes_node.cpp">
+<polygon fill="white" stroke="black" points="937,-6 937,-47 1089,-47 1089,-6 937,-6"/>
+<text text-anchor="start" x="945" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="945" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="middle" x="1013" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/src/marching_cubes_node.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node11&#45;&gt;Node13 -->
 <g id="edge12" class="edge"><title>Node11&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M969.066,-84.0705C986.322,-73.7877 1005.38,-62.4307 1021.87,-52.6075"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="967.028,-81.2103 960.229,-89.336 970.611,-87.2236 967.028,-81.2103"/>
+<path fill="none" stroke="midnightblue" d="M946.201,-82.8474C960.642,-70.8824 976.645,-57.6228 989.366,-47.0821"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="943.838,-80.2607 938.37,-89.336 948.304,-85.6509 943.838,-80.2607"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node"><title>Node15</title>
+<g id="a_node15"><a xlink:href="poisson__reconstruction_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/poisson_reconstruction\l_node/poisson_reconstruction.cpp">
+<polygon fill="white" stroke="black" points="1107.5,-0.5 1107.5,-52.5 1272.5,-52.5 1272.5,-0.5 1107.5,-0.5"/>
+<text text-anchor="start" x="1115.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="1115.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="1115.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
+<text text-anchor="middle" x="1190" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node/poisson_reconstruction.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node15 -->
+<g id="edge14" class="edge"><title>Node14&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M1190,-79.1908C1190,-70.2824 1190,-60.8986 1190,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1186.5,-79.336 1190,-89.336 1193.5,-79.336 1186.5,-79.336"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node"><title>Node16</title>
+<g id="a_node16"><a xlink:href="poisson__reconstruction__node_8cpp.html" target="_top" xlink:title="/home/jc/hull_abstraction\l/ros/src/hull_abstraction\l/src/poisson_reconstruction\l_node.cpp">
+<polygon fill="white" stroke="black" points="1290.5,-0.5 1290.5,-52.5 1427.5,-52.5 1427.5,-0.5 1290.5,-0.5"/>
+<text text-anchor="start" x="1298.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/jc/hull_abstraction</text>
+<text text-anchor="start" x="1298.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/ros/src/hull_abstraction</text>
+<text text-anchor="start" x="1298.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/src/poisson_reconstruction</text>
+<text text-anchor="middle" x="1359" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_node.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node16 -->
+<g id="edge15" class="edge"><title>Node14&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M1248.01,-84.6354C1268.27,-74.2049 1290.8,-62.6109 1310.23,-52.6075"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1246.17,-81.647 1238.88,-89.336 1249.37,-87.8708 1246.17,-81.647"/>
 </g>
 </g>
 </svg>

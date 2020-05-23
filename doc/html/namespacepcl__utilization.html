@@ -124,6 +124,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a21484054fe6624a5c1b6fad0c033ad95"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a21484054fe6624a5c1b6fad0c033ad95">computeAABB</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
 <tr class="memdesc:a21484054fe6624a5c1b6fad0c033ad95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the AABB for the input point cloud.  <a href="#a21484054fe6624a5c1b6fad0c033ad95">More...</a><br /></td></tr>
 <tr class="separator:a21484054fe6624a5c1b6fad0c033ad95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#ad21b81d1b10d9b0ba6c7a41488c01ada">computeAABB</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the AABB for the input point cloud.  <a href="#ad21b81d1b10d9b0ba6c7a41488c01ada">More...</a><br /></td></tr>
+<tr class="separator:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a21484054fe6624a5c1b6fad0c033ad95"></a>
@@ -143,7 +146,32 @@ Functions</h2></td></tr>
 <p>Compute the AABB for the input point cloud. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cloud</td><td>The input point cloud data </td></tr>
+    <tr><td class="paramname">cloud</td><td>Cloud of PointXYZ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of the maximal as well as the minimal x-, y- and z-coordinates </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad21b81d1b10d9b0ba6c7a41488c01ada"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; pcl_utilization::computeAABB </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr&#160;</td>
+          <td class="paramname"><em>cloud_with_normals</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the AABB for the input point cloud. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud_with_normals</td><td>Cloud of PointNormal </td></tr>
   </table>
   </dd>
 </dl>
@@ -168,7 +196,7 @@ Functions</h2></td></tr>
 <p>Calculate the centroid of a point cloud. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cloud</td><td>The input point cloud data </td></tr>
+    <tr><td class="paramname">cloud</td><td>Cloud of PointXYZ </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,7 +221,7 @@ Functions</h2></td></tr>
 <p>Calculate the centroid of a mesh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mesh</td><td>The input polygon mesh </td></tr>
+    <tr><td class="paramname">mesh</td><td>Polygon mesh </td></tr>
   </table>
   </dd>
 </dl>
@@ -243,7 +271,7 @@ Functions</h2></td></tr>
 <p>Computing the resolution of a point cloud with normals. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cloud</td><td>Cloud of PointNormal </td></tr>
+    <tr><td class="paramname">cloud_with_normals</td><td>Cloud of PointNormal </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,7 +332,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 22 2020 12:58:17 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2020 11:21:59 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

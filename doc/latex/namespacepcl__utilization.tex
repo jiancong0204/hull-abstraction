@@ -16,6 +16,8 @@ std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a217b6e0e27678d
 std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a0fa69a5e73bdd8db793db5b515bf86e7}{compute\+Centroid} (pcl\+::\+Polygon\+Mesh mesh)
 \begin{DoxyCompactList}\small\item\em Calculate the centroid of a mesh. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_a21484054fe6624a5c1b6fad0c033ad95}{compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_ad21b81d1b10d9b0ba6c7a41488c01ada}{compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
 \begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -33,7 +35,26 @@ Compute the A\+A\+BB for the input point cloud.
 
 
 \begin{DoxyParams}{Parameters}
-{\em cloud} & The input point cloud data \\
+{\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of the maximal as well as the minimal x-\/, y-\/ and z-\/coordinates 
+\end{DoxyReturn}
+\index{pcl\+\_\+utilization@{pcl\+\_\+utilization}!compute\+A\+A\+BB@{compute\+A\+A\+BB}}
+\index{compute\+A\+A\+BB@{compute\+A\+A\+BB}!pcl\+\_\+utilization@{pcl\+\_\+utilization}}
+\subsubsection[{\texorpdfstring{compute\+A\+A\+B\+B(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{computeAABB(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ double $>$ $>$ pcl\+\_\+utilization\+::compute\+A\+A\+BB (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepcl__utilization_ad21b81d1b10d9b0ba6c7a41488c01ada}{}\label{namespacepcl__utilization_ad21b81d1b10d9b0ba6c7a41488c01ada}
+
+
+Compute the A\+A\+BB for the input point cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -52,7 +73,7 @@ Calculate the centroid of a point cloud.
 
 
 \begin{DoxyParams}{Parameters}
-{\em cloud} & The input point cloud data \\
+{\em cloud} & Cloud of Point\+X\+YZ \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -71,7 +92,7 @@ Calculate the centroid of a mesh.
 
 
 \begin{DoxyParams}{Parameters}
-{\em mesh} & The input polygon mesh \\
+{\em mesh} & Polygon mesh \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -109,7 +130,7 @@ Computing the resolution of a point cloud with normals.
 
 
 \begin{DoxyParams}{Parameters}
-{\em cloud} & Cloud of Point\+Normal \\
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

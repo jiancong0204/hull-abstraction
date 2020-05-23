@@ -107,7 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for hull_abstraction::Reconstructor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="232" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="232" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,9 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a9b7e8bda9c001e4d2eab2712e2b57f04">poissonReconstruction</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
 <tr class="memdesc:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes through Poisson reconstruction method.  <a href="#a9b7e8bda9c001e4d2eab2712e2b57f04">More...</a><br /></td></tr>
 <tr class="separator:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98e633c1c4e98926b0e1beda2e867524"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a98e633c1c4e98926b0e1beda2e867524">marchingCubesReconstruction</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
-<tr class="memdesc:a98e633c1c4e98926b0e1beda2e867524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes utilizing marching cubes method.  <a href="#a98e633c1c4e98926b0e1beda2e867524">More...</a><br /></td></tr>
-<tr class="separator:a98e633c1c4e98926b0e1beda2e867524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a0fa653923a21b3329b747f0c6943b"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a41a0fa653923a21b3329b747f0c6943b">marchingCubes</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:a41a0fa653923a21b3329b747f0c6943b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes utilizing marching cubes method.  <a href="#a41a0fa653923a21b3329b747f0c6943b">More...</a><br /></td></tr>
+<tr class="separator:a41a0fa653923a21b3329b747f0c6943b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a531c5dc53b28b4f1e48a318db1acea90"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a531c5dc53b28b4f1e48a318db1acea90">bsplineSurfaceFitting</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
 <tr class="memdesc:a531c5dc53b28b4f1e48a318db1acea90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes based on b-spline surface fitting.  <a href="#a531c5dc53b28b4f1e48a318db1acea90">More...</a><br /></td></tr>
 <tr class="separator:a531c5dc53b28b4f1e48a318db1acea90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,28 +345,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a98e633c1c4e98926b0e1beda2e867524"></a>
+<a class="anchor" id="a41a0fa653923a21b3329b747f0c6943b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction </td>
-          <td>(</td>
-          <td class="paramtype">pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr&#160;</td>
-          <td class="paramname"><em>cloud_with_normals</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a98e633c1c4e98926b0e1beda2e867524"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction </td>
+          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubes </td>
           <td>(</td>
           <td class="paramtype">pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr&#160;</td>
           <td class="paramname"><em>cloud_with_normals</em></td><td>)</td>
@@ -382,6 +367,22 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resulting polygon meshes of cloud_with_normals </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a98e633c1c4e98926b0e1beda2e867524"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr&#160;</td>
+          <td class="paramname"><em>cloud_with_normals</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -574,7 +575,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 22 2020 12:58:17 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2020 11:21:59 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

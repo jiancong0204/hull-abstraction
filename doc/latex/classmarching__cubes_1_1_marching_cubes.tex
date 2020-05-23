@@ -1,0 +1,129 @@
+\hypertarget{classmarching__cubes_1_1_marching_cubes}{}\section{marching\+\_\+cubes\+:\+:Marching\+Cubes Class Reference}
+\label{classmarching__cubes_1_1_marching_cubes}\index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+
+
+Class utilizing marching cubes method.  
+
+
+
+
+{\ttfamily \#include $<$marching\+\_\+cubes.\+h$>$}
+
+
+
+Collaboration diagram for marching\+\_\+cubes\+:\+:Marching\+Cubes\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmarching__cubes_1_1_marching_cubes__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmarching__cubes_1_1_marching_cubes_a1a953862541f2d2c6a3d6a5056c208b9}{Marching\+Cubes} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classmarching__cubes_1_1_marching_cubes}{Marching\+Cubes} object. \end{DoxyCompactList}\item 
+void \hyperlink{classmarching__cubes_1_1_marching_cubes_aad8747fa8bd083aa939873d98814966e}{run} ()
+\begin{DoxyCompactList}\small\item\em Encapsulate a method to run the \hyperlink{namespacemarching__cubes}{marching\+\_\+cubes} node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmarching__cubes_1_1_marching_cubes_a7d81fc975a0a768a175af838cd4fbc86}{processing} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Process the point cloud message to create mesh message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \hyperlink{classmarching__cubes_1_1_marching_cubes_a892881775be45a5cc1de7f19ca57e8d0}{nh}
+\item 
+ros\+::\+Publisher \hyperlink{classmarching__cubes_1_1_marching_cubes_afb0123959f5be68d13e50a77c0e6cd11}{pub}
+\item 
+ros\+::\+Subscriber \hyperlink{classmarching__cubes_1_1_marching_cubes_a7330eddbb78d73dc9aa809354985cee1}{sub}
+\item 
+pcl\+\_\+msgs\+::\+Polygon\+Mesh \hyperlink{classmarching__cubes_1_1_marching_cubes_a355aafbff47eae3e8ce9829a96c70f89}{output\+\_\+msg}
+\item 
+\hyperlink{classhull__abstraction_1_1_reconstructor}{hull\+\_\+abstraction\+::\+Reconstructor} \hyperlink{classmarching__cubes_1_1_marching_cubes_a80dcffe7ec661fb3fc85edbdebebc0db}{rc}
+\item 
+\hyperlink{classhull__abstraction_1_1_preprocessor}{hull\+\_\+abstraction\+::\+Preprocessor} \hyperlink{classmarching__cubes_1_1_marching_cubes_a72ffa2bde7429caf094e1e50b7e839dd}{pp}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classmarching__cubes_1_1_marching_cubes_a169d75a95f59aa253a12d5322852f95d}{mesh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class utilizing marching cubes method. 
+
+This framework is developed to generate a mesh for a point cloud through marching cubes methods. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!Marching\+Cubes@{Marching\+Cubes}}
+\index{Marching\+Cubes@{Marching\+Cubes}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{Marching\+Cubes()}{MarchingCubes()}}]{\setlength{\rightskip}{0pt plus 5cm}marching\+\_\+cubes\+::\+Marching\+Cubes\+::\+Marching\+Cubes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a1a953862541f2d2c6a3d6a5056c208b9}{}\label{classmarching__cubes_1_1_marching_cubes_a1a953862541f2d2c6a3d6a5056c208b9}
+
+
+Construct a new \hyperlink{classmarching__cubes_1_1_marching_cubes}{Marching\+Cubes} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!processing@{processing}}
+\index{processing@{processing}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{processing(const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr input\+\_\+msg)}{processing(const sensor_msgs::PointCloud2ConstPtr input_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void marching\+\_\+cubes\+::\+Marching\+Cubes\+::processing (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr}]{input\+\_\+msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a7d81fc975a0a768a175af838cd4fbc86}{}\label{classmarching__cubes_1_1_marching_cubes_a7d81fc975a0a768a175af838cd4fbc86}
+
+
+Process the point cloud message to create mesh message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+msg} & Input point cloud message \\
+\hline
+\end{DoxyParams}
+\index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!run@{run}}
+\index{run@{run}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void marching\+\_\+cubes\+::\+Marching\+Cubes\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmarching__cubes_1_1_marching_cubes_aad8747fa8bd083aa939873d98814966e}{}\label{classmarching__cubes_1_1_marching_cubes_aad8747fa8bd083aa939873d98814966e}
+
+
+Encapsulate a method to run the \hyperlink{namespacemarching__cubes}{marching\+\_\+cubes} node. 
+
+
+
+\subsection{Member Data Documentation}
+\index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!mesh@{mesh}}
+\index{mesh@{mesh}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{mesh}{mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh marching\+\_\+cubes\+::\+Marching\+Cubes\+::mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a169d75a95f59aa253a12d5322852f95d}{}\label{classmarching__cubes_1_1_marching_cubes_a169d75a95f59aa253a12d5322852f95d}
+Resulted polygon mesh \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!nh@{nh}}
+\index{nh@{nh}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{nh}{nh}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Node\+Handle marching\+\_\+cubes\+::\+Marching\+Cubes\+::nh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a892881775be45a5cc1de7f19ca57e8d0}{}\label{classmarching__cubes_1_1_marching_cubes_a892881775be45a5cc1de7f19ca57e8d0}
+Node Handle reference from embedding node \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!output\+\_\+msg@{output\+\_\+msg}}
+\index{output\+\_\+msg@{output\+\_\+msg}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{output\+\_\+msg}{output_msg}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+\_\+msgs\+::\+Polygon\+Mesh marching\+\_\+cubes\+::\+Marching\+Cubes\+::output\+\_\+msg\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a355aafbff47eae3e8ce9829a96c70f89}{}\label{classmarching__cubes_1_1_marching_cubes_a355aafbff47eae3e8ce9829a96c70f89}
+Polygon mesh message used to publish the mesh \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!pp@{pp}}
+\index{pp@{pp}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{pp}{pp}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Preprocessor} marching\+\_\+cubes\+::\+Marching\+Cubes\+::pp\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a72ffa2bde7429caf094e1e50b7e839dd}{}\label{classmarching__cubes_1_1_marching_cubes_a72ffa2bde7429caf094e1e50b7e839dd}
+Object for Preprocessor class \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!pub@{pub}}
+\index{pub@{pub}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher marching\+\_\+cubes\+::\+Marching\+Cubes\+::pub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_afb0123959f5be68d13e50a77c0e6cd11}{}\label{classmarching__cubes_1_1_marching_cubes_afb0123959f5be68d13e50a77c0e6cd11}
+Polygon mesh publisher \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!rc@{rc}}
+\index{rc@{rc}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{rc}{rc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hull\+\_\+abstraction\+::\+Reconstructor} marching\+\_\+cubes\+::\+Marching\+Cubes\+::rc\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a80dcffe7ec661fb3fc85edbdebebc0db}{}\label{classmarching__cubes_1_1_marching_cubes_a80dcffe7ec661fb3fc85edbdebebc0db}
+Object for Reconstructor class \index{marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}!sub@{sub}}
+\index{sub@{sub}!marching\+\_\+cubes\+::\+Marching\+Cubes@{marching\+\_\+cubes\+::\+Marching\+Cubes}}
+\subsubsection[{\texorpdfstring{sub}{sub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Subscriber marching\+\_\+cubes\+::\+Marching\+Cubes\+::sub\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classmarching__cubes_1_1_marching_cubes_a7330eddbb78d73dc9aa809354985cee1}{}\label{classmarching__cubes_1_1_marching_cubes_a7330eddbb78d73dc9aa809354985cee1}
+Raw point cloud subscriber 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/marching\+\_\+cubes\+\_\+node/\hyperlink{marching__cubes_8h}{marching\+\_\+cubes.\+h}\item 
+/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/src/marching\+\_\+cubes\+\_\+node/\hyperlink{marching__cubes_8cpp}{marching\+\_\+cubes.\+cpp}\end{DoxyCompactItemize}
