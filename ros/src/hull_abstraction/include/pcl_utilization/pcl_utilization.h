@@ -50,7 +50,7 @@ namespace pcl_utilization
     /**
      * @brief Computing the resolution of a point cloud with normals
      * 
-     * @param cloud Cloud of PointNormal
+     * @param cloud_with_normals Cloud of PointNormal
      * @return Resolution of the input cloud
      **/
     double computeCloudResolution(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
@@ -58,7 +58,7 @@ namespace pcl_utilization
     /**
      * @brief  Calculate the centroid of a point cloud
      * 
-     * @param cloud The input point cloud data
+     * @param cloud Cloud of PointXYZ
      * @return Coordinates of the centroid 
      */
     std::vector<double> computeCentroid(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
@@ -66,7 +66,7 @@ namespace pcl_utilization
     /**
      * @brief Calculate the centroid of a mesh
      * 
-     * @param mesh The input polygon mesh
+     * @param mesh Polygon mesh
      * @return The coordinates of the centroid 
      */
     std::vector<double> computeCentroid(pcl::PolygonMesh mesh);
@@ -74,8 +74,16 @@ namespace pcl_utilization
     /**
      * @brief Compute the AABB for the input point cloud
      * 
-     * @param cloud The input point cloud data
+     * @param cloud Cloud of PointXYZ
      * @return A list of the maximal as well as the minimal x-, y- and z-coordinates
      */
     std::vector<std::vector<double>> computeAABB(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
+
+    /**
+     * @brief Compute the AABB for the input point cloud
+     * 
+     * @param cloud_with_normals Cloud of PointNormal
+     * @return A list of the maximal as well as the minimal x-, y- and z-coordinates
+     */
+    std::vector<std::vector<double>> computeAABB(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 };

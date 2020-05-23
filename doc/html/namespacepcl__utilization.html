@@ -121,8 +121,36 @@ Functions</h2></td></tr>
 <tr class="memitem:a0fa69a5e73bdd8db793db5b515bf86e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a0fa69a5e73bdd8db793db5b515bf86e7">computeCentroid</a> (pcl::PolygonMesh mesh)</td></tr>
 <tr class="memdesc:a0fa69a5e73bdd8db793db5b515bf86e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the centroid of a mesh.  <a href="#a0fa69a5e73bdd8db793db5b515bf86e7">More...</a><br /></td></tr>
 <tr class="separator:a0fa69a5e73bdd8db793db5b515bf86e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21484054fe6624a5c1b6fad0c033ad95"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a21484054fe6624a5c1b6fad0c033ad95">computeAABB</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
+<tr class="memdesc:a21484054fe6624a5c1b6fad0c033ad95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the AABB for the input point cloud.  <a href="#a21484054fe6624a5c1b6fad0c033ad95">More...</a><br /></td></tr>
+<tr class="separator:a21484054fe6624a5c1b6fad0c033ad95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a21484054fe6624a5c1b6fad0c033ad95"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; pcl_utilization::computeAABB </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the AABB for the input point cloud. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>The input point cloud data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of the maximal as well as the minimal x-, y- and z-coordinates </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a217b6e0e27678d9f9bb1a7a4a39a20ea"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +172,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The coordinates of the centroid </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinates of the centroid </dd></dl>
 
 </div>
 </div>
@@ -276,7 +304,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 11:48:59 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2020 12:58:17 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

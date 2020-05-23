@@ -8,7 +8,7 @@
  * @date 2020-05-12
  * 
  * This node subscribes a ROS topic to get an input point cloud and then perform b-spline surface fitting to generate a mesh.
- * The result of b-spline surface fitting is published as a Marker message containing triangle lists.
+ * The result of b-spline surface fitting is published as a pcl message.
  */
 
 #pragma once

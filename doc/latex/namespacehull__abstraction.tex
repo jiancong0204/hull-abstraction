@@ -12,11 +12,29 @@ class \hyperlink{classhull__abstraction_1_1_reconstructor}{Reconstructor}
 \item 
 double \hyperlink{namespacehull__abstraction_aee513dfed72060d83ec57c5909c9640e}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
 \item 
-double \hyperlink{namespacehull__abstraction_af42d720ef8e6155d54b04ad4c7982ad5}{compute\+Cloud\+ResolutionN} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+double \hyperlink{namespacehull__abstraction_aa0e1e236f8dd95c43e92d142cfc2754e}{compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacehull__abstraction_a2e467ab4a24489895dc694bf4dec4ad1}{compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacehull__abstraction_ad0b9805fbf18fffc219231131cee1d9b}{compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{hull\+\_\+abstraction@{hull\+\_\+abstraction}!compute\+A\+A\+BB@{compute\+A\+A\+BB}}
+\index{compute\+A\+A\+BB@{compute\+A\+A\+BB}!hull\+\_\+abstraction@{hull\+\_\+abstraction}}
+\subsubsection[{\texorpdfstring{compute\+A\+A\+B\+B(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{computeAABB(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ double $>$ $>$ hull\+\_\+abstraction\+::compute\+A\+A\+BB (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacehull__abstraction_a2e467ab4a24489895dc694bf4dec4ad1}{}\label{namespacehull__abstraction_a2e467ab4a24489895dc694bf4dec4ad1}
+\index{hull\+\_\+abstraction@{hull\+\_\+abstraction}!compute\+A\+A\+BB@{compute\+A\+A\+BB}}
+\index{compute\+A\+A\+BB@{compute\+A\+A\+BB}!hull\+\_\+abstraction@{hull\+\_\+abstraction}}
+\subsubsection[{\texorpdfstring{compute\+A\+A\+B\+B(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+With\+Normals)}{computeAABB(pcl::PointCloud< pcl::PointNormal >::Ptr cloudWithNormals)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ double $>$ $>$ hull\+\_\+abstraction\+::compute\+A\+A\+BB (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+With\+Normals}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacehull__abstraction_ad0b9805fbf18fffc219231131cee1d9b}{}\label{namespacehull__abstraction_ad0b9805fbf18fffc219231131cee1d9b}
 \index{hull\+\_\+abstraction@{hull\+\_\+abstraction}!compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}}
 \index{compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}!hull\+\_\+abstraction@{hull\+\_\+abstraction}}
 \subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{computeCloudResolution(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}double hull\+\_\+abstraction\+::compute\+Cloud\+Resolution (
@@ -24,10 +42,10 @@ double \hyperlink{namespacehull__abstraction_af42d720ef8e6155d54b04ad4c7982ad5}{
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacehull__abstraction_aee513dfed72060d83ec57c5909c9640e}{}\label{namespacehull__abstraction_aee513dfed72060d83ec57c5909c9640e}
-\index{hull\+\_\+abstraction@{hull\+\_\+abstraction}!compute\+Cloud\+ResolutionN@{compute\+Cloud\+ResolutionN}}
-\index{compute\+Cloud\+ResolutionN@{compute\+Cloud\+ResolutionN}!hull\+\_\+abstraction@{hull\+\_\+abstraction}}
-\subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution\+N(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+With\+Normals)}{computeCloudResolutionN(pcl::PointCloud< pcl::PointNormal >::Ptr cloudWithNormals)}}]{\setlength{\rightskip}{0pt plus 5cm}double hull\+\_\+abstraction\+::compute\+Cloud\+ResolutionN (
+\index{hull\+\_\+abstraction@{hull\+\_\+abstraction}!compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}}
+\index{compute\+Cloud\+Resolution@{compute\+Cloud\+Resolution}!hull\+\_\+abstraction@{hull\+\_\+abstraction}}
+\subsubsection[{\texorpdfstring{compute\+Cloud\+Resolution(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+With\+Normals)}{computeCloudResolution(pcl::PointCloud< pcl::PointNormal >::Ptr cloudWithNormals)}}]{\setlength{\rightskip}{0pt plus 5cm}double hull\+\_\+abstraction\+::compute\+Cloud\+Resolution (
 \begin{DoxyParamCaption}
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+With\+Normals}
 \end{DoxyParamCaption}
-)}\hypertarget{namespacehull__abstraction_af42d720ef8e6155d54b04ad4c7982ad5}{}\label{namespacehull__abstraction_af42d720ef8e6155d54b04ad4c7982ad5}
+)}\hypertarget{namespacehull__abstraction_aa0e1e236f8dd95c43e92d142cfc2754e}{}\label{namespacehull__abstraction_aa0e1e236f8dd95c43e92d142cfc2754e}

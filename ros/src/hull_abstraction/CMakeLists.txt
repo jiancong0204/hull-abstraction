@@ -117,3 +117,19 @@ target_link_libraries(poisson_reconstruction
     ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
+
+# Marching cubes algorithm
+SET(marching_cubes 
+    src/marching_cubes_node.cpp 
+    src/marching_cubes_node/marching_cubes.cpp
+    src/hull_abstraction/reconstructor.cpp
+    src/hull_abstraction/preprocessor.cpp
+    src/pcl_utilization/pcl_utilization.cpp
+)
+
+add_executable(marching_cubes ${marching_cubes})
+
+target_link_libraries(marching_cubes
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+)

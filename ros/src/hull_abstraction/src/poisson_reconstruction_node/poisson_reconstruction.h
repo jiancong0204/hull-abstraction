@@ -8,7 +8,7 @@
  * @date 2020-05-12
  * 
  * This node subscribes a ROS topic to get an input point cloud and then utilize Poisson reconstruction to generate a mesh.
- * The result of Poisson reconstruction is published as a point cloud message.
+ * The result of Poisson reconstruction is published as a pcl message.
  */
 #pragma once
 #include <iostream>

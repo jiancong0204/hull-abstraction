@@ -293,3 +293,56 @@ std::vector<std::vector<double>> pcl_utilization::computeAABB(pcl::PointCloud<pc
     result.push_back(min);
     return result;
 }
+
+std::vector<std::vector<double>> pcl_utilization::computeAABB(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
+{
+    int cloud_size = cloud_with_normals->points.size(); // Number of the points
+    std::vector<std::vector<double>> result;
+    std::vector<double> max;
+    std::vector<double> min;
+
+    max.push_back(cloud_with_normals->points[0].x);
+    max.push_back(cloud_with_normals->points[0].y);
+    max.push_back(cloud_with_normals->points[0].z);
+    min.push_back(cloud_with_normals->points[0].x);
+    min.push_back(cloud_with_normals->points[0].y);
+    min.push_back(cloud_with_normals->points[0].z);
+
+    for (int i = 1; i < cloud_size; i++)
+    {
+        if (cloud_with_normals->points[i].x > max[0])
+        {
+            max[0] = cloud_with_normals->points[i].x;
+        }
+        else if (cloud_with_normals->points[i].x < min[0])
+        {
+            min[0] = cloud_with_normals->points[i].x;
+        }
+        else;
+
+        if (cloud_with_normals->points[i].y > max[1])
+        {
+            max[1] = cloud_with_normals->points[i].y;
+        }
+        else if (cloud_with_normals->points[i].y < min[1])
+        {
+            min[1] = cloud_with_normals->points[i].y;
+        }
+        else;
+
+
+        if (cloud_with_normals->points[i].z > max[2])
+        {
+            max[2] = cloud_with_normals->points[i].z;
+        }
+        else if (cloud_with_normals->points[i].z < min[2])
+        {
+            min[2] = cloud_with_normals->points[i].z;
+        }
+        else;
+    }
+
+    result.push_back(max);
+    result.push_back(min);
+    return result;
+}

@@ -42,7 +42,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     return mesh;
 }
 
-pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
+pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubes(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
     double resolution = pcl_utilization::computeCloudResolution(cloud_with_normals);
     // Define search tree
@@ -50,7 +50,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pc
     tree->setInputCloud(cloud_with_normals);
     pcl::MarchingCubes<pcl::PointNormal>::Ptr marching_cubes(new pcl::MarchingCubesHoppe<pcl::PointNormal>);
     marching_cubes->setIsoLevel(0.0f);
-    marching_cubes->setGridResolution(60, 10, 20);
+    marching_cubes->setGridResolution(60, 10, 40);
     marching_cubes->setPercentageExtendGrid(0.0f);
     marching_cubes->setSearchMethod(tree);
     marching_cubes->setInputCloud(cloud_with_normals);

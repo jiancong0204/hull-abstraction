@@ -1,14 +1,14 @@
 /**
- * @file greedy_triangulation.h
+ * @file marching_cubes.h
  * 
- * @brief Framework of greedy triangulation node
- * @ros_node greedy_triangulation_node
+ * @brief Framework of marching cubes node
+ * @ros_node marhcing_cubes_node
  * 
  * @author Jiancong Zheng
- * @date 2020-05-12
+ * @date 2020-05-23
  * 
- * This node subscribes a ROS topic to get an input point cloud and then utilize greedy triangulation algorithm to generate a mesh.
- * The result of greedy triangulation is published as a pcl message.
+ * This node subscribes a ROS topic to get an input point cloud and then utilize marching cubes algorithm to generate a mesh.
+ * The result of marching cubes is published as a pcl message.
  */
 
 #pragma once
@@ -24,23 +24,23 @@
 #include "hull_abstraction/preprocessor.h"
 #include "pcl_utilization/pcl_utilization.h"
 
-namespace greedy_triangulation
+namespace marching_cubes
 {
     /**
-     * @brief Class utilizing greedy triangulation method
+     * @brief Class utilizing marching cubes method
      * 
-     * This framework is developed to generate a mesh for a point cloud through greedy triangulation.
+     * This framework is developed to generate a mesh for a point cloud through marching cubes methods.
      */
-    class GreedyTriangulation
+    class MarchingCubes
     {
     public:
         /**
-         * @brief Construct a new GreedyTriangulation object
+         * @brief Construct a new MarchingCubes object
          */
-        GreedyTriangulation() {}
+        MarchingCubes() {}
 
         /**
-         * @brief  Encapsulate a method to run the greedy_triangulation node
+         * @brief  Encapsulate a method to run the marching_cubes node
          */
         void run();
 

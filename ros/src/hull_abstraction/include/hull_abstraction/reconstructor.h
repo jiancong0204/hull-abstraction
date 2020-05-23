@@ -62,7 +62,7 @@ namespace hull_abstraction
          * @param cloud_with_normals Cloud of PointNormal
          * @return Resulting polygon meshes of cloud_with_normals
          **/
-        pcl::PolygonMesh marchingCubesReconstruction(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
+        pcl::PolygonMesh marchingCubes(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals);
 
         /**
          * @brief Generate polygon meshes based on b-spline surface fitting
