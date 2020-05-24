@@ -3,9 +3,11 @@
 pcl::PolygonMesh hull_abstraction::Reconstructor::greedyTriangulation(pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals)
 {
     double resolution = hull_abstraction::computeCloudResolution(cloud_with_normals);
+    
     // Define search tree
     pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal>);
     tree->setInputCloud(cloud_with_normals);
+    
     // Configurations of triangulation
     greedy_projection_triangulation.setSearchRadius(5 * resolution);  //Search radium, that is the radium of KNN
     greedy_projection_triangulation.setMu(5);  //in case that the cloud is not perfectly uniform
@@ -29,12 +31,12 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     // Configurations
     poisson.setConfidence(false); //whether uses the magnitude of normals as confidence information. when false, all normals are normalised.
     poisson.setDegree(2);
-    poisson.setDepth(9);
-    poisson.setIsoDivide(10); //still dont know
+    poisson.setDepth(5);
+    poisson.setIsoDivide(9);
     poisson.setManifold(false); //whether add the center of gravity of polygons. 
     poisson.setOutputPolygons(true);
-    poisson.setSamplesPerNode(30);
-    poisson.setScale(1.0);
+    poisson.setSamplesPerNode(15);
+    poisson.setScale(1.25);
     poisson.setInputCloud(cloud_with_normals);
     poisson.performReconstruction(mesh);
     return mesh;
@@ -47,7 +49,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction(pc
     tree->setInputCloud(cloud_with_normals);
     pcl::MarchingCubes<pcl::PointNormal>::Ptr marching_cubes(new pcl::MarchingCubesHoppe<pcl::PointNormal>);
     marching_cubes->setIsoLevel(0.0f);
-    marching_cubes->setGridResolution(60,10,20);
+    marching_cubes->setGridResolution(60,15,20);
     marching_cubes->setPercentageExtendGrid(0.0f);
     marching_cubes->setSearchMethod(tree);
     marching_cubes->setInputCloud(cloud_with_normals);
@@ -67,9 +69,9 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::bsplineSurfaceFitting(pcl::Poi
     unsigned mesh_resolution = 256;
 
     pcl::on_nurbs::FittingSurface::Parameter surface_parameters;
-    surface_parameters.interior_smoothness = 0.2;
+    surface_parameters.interior_smoothness = 0.1;
     surface_parameters.interior_weight = 1.0;
-    surface_parameters.boundary_smoothness = 0.2;
+    surface_parameters.boundary_smoothness = 0.1;
     surface_parameters.boundary_weight = 0.0;
 
     pcl::on_nurbs::FittingCurve2dAPDM::FitParameter curve_parameters;

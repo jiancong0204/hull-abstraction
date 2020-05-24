@@ -148,7 +148,6 @@ std::vector<std::vector<double>> hull_abstraction::computeAABB(pcl::PointCloud<p
         }
         else;
 
-
         if (cloud->points[i].z > max[2])
         {
             max[2] = cloud->points[i].z;
@@ -164,3 +163,23 @@ std::vector<std::vector<double>> hull_abstraction::computeAABB(pcl::PointCloud<p
     result.push_back(min);
     return result;
 }
+
+void hull_abstraction::divideCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr test_cloud)
+    {
+        int cloud_size = cloud->points.size(); // Number of the points
+        int test_size = floor(0.05 * cloud_size);
+        test_cloud->height = cloud->height;
+        test_cloud->height = cloud->width;
+        test_cloud->points.resize(test_size);
+
+        srand((unsigned)time(NULL));
+        for (int i = 0; i < test_size; i++)
+        {
+            // pcl::PointCloud<pcl::PointXYZ>::iterator index = cloud->begin();
+            float random_number = rand() % cloud_size;
+            test_cloud->points[i].x = cloud->points[random_number].x;
+            test_cloud->points[i].y = cloud->points[random_number].y;
+            test_cloud->points[i].z = cloud->points[random_number].z;
+            cloud->erase(cloud->begin() + random_number);
+        }
+    }
