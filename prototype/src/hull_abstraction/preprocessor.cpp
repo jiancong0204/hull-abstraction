@@ -59,7 +59,7 @@ void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl:
 
 void hull_abstraction::Preprocessor::movingLeastSquares(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr smoothed_cloud, pcl::PointCloud<pcl::PointNormal>::Ptr smoothed_cloud_with_normals)
 {
-    double resolution = hull_abstraction::computeCloudResolution(cloud);
+    double resolution = pcl_utilization::computeCloudResolution(cloud);
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
     moving_least_squares.setInputCloud(cloud);

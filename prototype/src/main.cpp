@@ -9,9 +9,8 @@
 int main()
 {
     clock_t start, end;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr original_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    pcl::PointCloud<pcl::PointXYZ>::Ptr test_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr test_cloud(new pcl::PointCloud<pcl::PointNormal>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
     pcl::PointCloud<pcl::PointNormal>::Ptr filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
@@ -20,17 +19,11 @@ int main()
     pcl::PolygonMesh mesh3;
     pcl::PolygonMesh mesh4;
     //  Load original cloud and check if the file exists
-    if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *original_cloud) == -1)
+    if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud) == -1)
     {
         PCL_ERROR("Could not read file.\n");
         return(-1);
     }
-    
-    pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud);
-    hull_abstraction::divideCloud(cloud, test_cloud);
-    
-    int cloud_size = cloud->points.size();
-    std::cout << cloud_size << std::endl;
     
     //std::cout << CLOCKS_PER_SEC << std::endl;
     
@@ -59,6 +52,11 @@ int main()
 
 
 
+    benchmark::divideCloud(cloud_with_normals, test_cloud, 0.1);
+    int input_cloud_size = cloud_with_normals->points.size();
+    int test_cloud_size = test_cloud->points.size();
+    std::cout << "size of input cloud: " << input_cloud_size << std::endl;
+    std::cout << "size of test cloud: " << test_cloud_size << std::endl;
 
     //start = clock();
     //pp.appendNormalEstimation(filtered_cloud, filtered_cloud_with_normals);
@@ -85,6 +83,30 @@ int main()
     end = clock();
     std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
+    // Test of function intersectWith()
+    std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
+    std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
+    std::vector<double> intersection_point(4);
+
+    double len = sqrt(pow(normal[0], 2) + pow(normal[1], 2) + pow(normal[2], 2));
+    std::cout << len << std::endl;
+
+    intersection_point = benchmark::intersectWith(mesh3, point, normal);
+    std::cout << intersection_point[0] << std::endl;
+    std::cout << intersection_point[1] << std::endl;
+    std::cout << intersection_point[2] << std::endl;
+    std::cout << intersection_point[3] << std::endl;
+    
+    // Test of function isInside()
+    // std::vector<double> point = {0.4562, 0.3565, 0.0};
+    // std::vector<std::vector<double>> polygon = {
+    //     {0.0, 1.0, 0.0},
+    //     {-1.0, 0.0, 0.0},
+    //     {0.0, -1.0, 0.0},
+    //     {1.0, 0.0, 0.0}
+    // };
+    // bool flag = benchmark::isInside(point, polygon);
+    // std::cout << flag << std::endl;
 
     // Display clouds
     boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
@@ -112,9 +134,9 @@ int main()
     viewer->addText("Poisson Reconstruction", 10, 10, "text3", v5);
     viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
 
-    viewer->addPointCloud(original_cloud, "cloud0", v0);
-    viewer->addPointCloud(cloud, "cloud1", v1);
-    viewer->addPointCloud(test_cloud, "cloud2", v2);
+    viewer->addPointCloud(cloud, "cloud0", v0);
+    viewer->addPointCloud<pcl::PointNormal>(cloud_with_normals, "cloud1", v1);
+    viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
     viewer->addPolygonMesh(mesh1, "mesh1", v3);
     viewer->addPolygonMesh(mesh2, "mesh2", v4);
