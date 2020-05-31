@@ -76,16 +76,6 @@ int main()
     bm.inputPolygonMesh(mesh1);
     bm.generateData("Greedy Triangulation");
 
-    pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    pcl::copyPointCloud(*input_cloud, *b_input_cloud);
-    start = clock();
-    mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
-    end = clock();
-    std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
-
-    bm.inputPolygonMesh(mesh2);
-    bm.generateData("B-spline Surface Fitting");
-
     start = clock();
     mesh3 = rc.poissonReconstruction(input_cloud);
     end = clock();
@@ -102,6 +92,16 @@ int main()
     bm.inputPolygonMesh(mesh4);
     bm.generateData("Marching Cubes");
 
+    pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::copyPointCloud(*input_cloud, *b_input_cloud);
+    start = clock();
+    mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
+    end = clock();
+    std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
+
+    bm.inputPolygonMesh(mesh2);
+    bm.generateData("B-spline Surface Fitting");
+    
     // Test of function intersectWith()
     // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
     // std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
