@@ -155,9 +155,13 @@ int main()
     viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
     viewer->addPolygonMesh(mesh1, "mesh1", v3);
+
     viewer->addPolygonMesh(mesh2, "mesh2", v4);
 
     viewer->addPolygonMesh(mesh3, "mesh3", v5);
+    // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
+    // viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
+
     viewer->addPolygonMesh(mesh4, "mesh4", v6);
     // viewer->setRepresentationToWireframeForAllActors();
     viewer->initCameraParameters();
