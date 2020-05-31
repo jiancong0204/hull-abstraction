@@ -190,7 +190,6 @@ void benchmark::Benchmark::generateData(std::string file_name)
         std::vector<double> intersection_point;
         intersection_point = benchmark::Benchmark::intersectWith(this->mesh, point, normal);
         double distance = intersection_point[3]; // distance between test point and the mesh
-        oFile << fabs(distance) << ",";
+        oFile << fabs(distance) << std::endl;
     }
-    oFile << std::endl;
 }
