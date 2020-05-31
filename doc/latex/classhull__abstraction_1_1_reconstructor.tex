@@ -15,24 +15,24 @@ Collaboration diagram for hull\+\_\+abstraction\+:\+:Reconstructor\+:\nopagebrea
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{classhull__abstraction_1_1_reconstructor__coll__graph}
+\includegraphics[width=237pt]{classhull__abstraction_1_1_reconstructor__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{Reconstructor} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{$\sim$\+Reconstructor} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
 pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{greedy\+Triangulation} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\item 
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes using greedy triangulation algorithm. \end{DoxyCompactList}\item 
 pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{poisson\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\item 
-pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{marching\+Cubes\+Reconstruction} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\item 
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes through Poisson reconstruction method. \end{DoxyCompactList}\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a41a0fa653923a21b3329b747f0c6943b}{marching\+Cubes} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes utilizing marching cubes method. \end{DoxyCompactList}\item 
 pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{bspline\+Surface\+Fitting} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Generate polygon meshes based on b-\/spline surface fitting. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{Reconstructor} ()
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{$\sim$\+Reconstructor} ()
@@ -49,7 +49,7 @@ pcl\+::\+Polygon\+Mesh \hyperlink{classhull__abstraction_1_1_reconstructor_a531c
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{point\+Cloud2\+Vector3d} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)
-\item 
+\begin{DoxyCompactList}\small\item\em Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{point\+Cloud2\+Vector3d} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)
 \begin{DoxyCompactList}\small\item\em Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -76,6 +76,10 @@ This class wraps some hull construction methods for point cloud data
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}{}\label{classhull__abstraction_1_1_reconstructor_a621404f6ce3a4515adf85491543ace34}
+
+
+Constructor. 
+
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!````~Reconstructor@{$\sim$\+Reconstructor}}
 \index{````~Reconstructor@{$\sim$\+Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{$\sim$\+Reconstructor()}{~Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::$\sim$\+Reconstructor (
@@ -83,6 +87,10 @@ This class wraps some hull construction methods for point cloud data
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}{}\label{classhull__abstraction_1_1_reconstructor_a0db70f08234b090c7a5c58872dbd16c4}
+
+
+Deconstructor. 
+
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!Reconstructor@{Reconstructor}}
 \index{Reconstructor@{Reconstructor}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{Reconstructor()}{Reconstructor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Reconstructor\+::\+Reconstructor (
@@ -115,6 +123,18 @@ Deconstructor.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}{}\label{classhull__abstraction_1_1_reconstructor_a531c5dc53b28b4f1e48a318db1acea90}
+
+
+Generate polygon meshes based on b-\/spline surface fitting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
 $<$ Data structure for N\+U\+R\+BS surface fitting \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}}
 \index{bspline\+Surface\+Fitting@{bspline\+Surface\+Fitting}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{bspline\+Surface\+Fitting(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{bsplineSurfaceFitting(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::bspline\+Surface\+Fitting (
@@ -141,6 +161,18 @@ Resulting polygon meshes of cloud\+\_\+with\+\_\+normals
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}{}\label{classhull__abstraction_1_1_reconstructor_a585b9418c1a64ec21c195c72139ce581}
+
+
+Generate polygon meshes using greedy triangulation algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!greedy\+Triangulation@{greedy\+Triangulation}}
 \index{greedy\+Triangulation@{greedy\+Triangulation}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{greedy\+Triangulation(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{greedyTriangulation(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::greedy\+Triangulation (
@@ -179,13 +211,25 @@ Generate polygon meshes utilizing marching cubes method.
 \begin{DoxyReturn}{Returns}
 Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
 \end{DoxyReturn}
-\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}}
-\index{marching\+Cubes\+Reconstruction@{marching\+Cubes\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
-\subsubsection[{\texorpdfstring{marching\+Cubes\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{marchingCubesReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::marching\+Cubes\+Reconstruction (
+\index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!marching\+Cubes@{marching\+Cubes}}
+\index{marching\+Cubes@{marching\+Cubes}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
+\subsubsection[{\texorpdfstring{marching\+Cubes(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{marchingCubes(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::marching\+Cubes (
 \begin{DoxyParamCaption}
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
 \end{DoxyParamCaption}
-)}\hypertarget{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}{}\label{classhull__abstraction_1_1_reconstructor_a98e633c1c4e98926b0e1beda2e867524}
+)}\hypertarget{classhull__abstraction_1_1_reconstructor_a41a0fa653923a21b3329b747f0c6943b}{}\label{classhull__abstraction_1_1_reconstructor_a41a0fa653923a21b3329b747f0c6943b}
+
+
+Generate polygon meshes utilizing marching cubes method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}}
 \index{point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{point\+Cloud2\+Vector3d(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)}{pointCloud2Vector3d(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Reconstructor\+::point\+Cloud2\+Vector3d (
@@ -194,6 +238,17 @@ Resulting polygon meshes of cloud\+\_\+with\+\_\+normals
 \item[{pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&}]{data}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}{}\label{classhull__abstraction_1_1_reconstructor_a484b377810bba7e42d39c47ed3725941}
+
+
+Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em data} & A set of three-\/dimentional vectors \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}}
 \index{point\+Cloud2\+Vector3d@{point\+Cloud2\+Vector3d}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{point\+Cloud2\+Vector3d(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::on\+\_\+nurbs\+::vector\+\_\+vec3d \&data)}{pointCloud2Vector3d(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::on_nurbs::vector_vec3d &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Reconstructor\+::point\+Cloud2\+Vector3d (
@@ -220,6 +275,18 @@ Converting a cloud of Point\+X\+YZ to a set of three-\/dimensional vectors.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}{}\label{classhull__abstraction_1_1_reconstructor_a9b7e8bda9c001e4d2eab2712e2b57f04}
+
+
+Generate polygon meshes through Poisson reconstruction method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting polygon meshes of cloud\+\_\+with\+\_\+normals 
+\end{DoxyReturn}
 \index{hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}!poisson\+Reconstruction@{poisson\+Reconstruction}}
 \index{poisson\+Reconstruction@{poisson\+Reconstruction}!hull\+\_\+abstraction\+::\+Reconstructor@{hull\+\_\+abstraction\+::\+Reconstructor}}
 \subsubsection[{\texorpdfstring{poisson\+Reconstruction(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{poissonReconstruction(pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh hull\+\_\+abstraction\+::\+Reconstructor\+::poisson\+Reconstruction (
@@ -255,5 +322,5 @@ Object for performing Poisson reconstruction
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/\hyperlink{prototype_2include_2hull__abstraction_2reconstructor_8h}{reconstructor.\+h}\item 
-/home/jc/hull\+\_\+abstraction/prototype/src/hull\+\_\+abstraction/\hyperlink{prototype_2src_2hull__abstraction_2reconstructor_8cpp}{reconstructor.\+cpp}\end{DoxyCompactItemize}
+/home/jc/hull\+\_\+abstraction/benchmark/include/hull\+\_\+abstraction/\hyperlink{benchmark_2include_2hull__abstraction_2reconstructor_8h}{reconstructor.\+h}\item 
+/home/jc/hull\+\_\+abstraction/benchmark/src/hull\+\_\+abstraction/\hyperlink{benchmark_2src_2hull__abstraction_2reconstructor_8cpp}{reconstructor.\+cpp}\end{DoxyCompactItemize}

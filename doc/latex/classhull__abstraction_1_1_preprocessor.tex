@@ -22,23 +22,23 @@ Collaboration diagram for hull\+\_\+abstraction\+:\+:Preprocessor\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classhull__abstraction_1_1_preprocessor_aa1e7b3418d273ceddd2faa0777f3598c}{Preprocessor} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} object. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_preprocessor_a880dfe2a68232c6aea2ad41743df3d97}{$\sim$\+Preprocessor} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} object. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_a423d6c8cb5b08f8387290aae47184b3b}{voxel\+Grid\+Filter} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr filtered\+\_\+cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Implementation of the voxel grid filter to perform down sampling. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_a494877684eca0eaf7207c8655140b692}{statistical\+Filter} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr filtered\+\_\+cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Remove outliers through the statitical filter. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_a4912126b50bdac35c63f521e3bc04314}{pass\+Through\+Filter} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr filtered\+\_\+cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Implement the pass-\/through filter. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_a95229af873f6f1a74c832340f8f9b7bf}{conditional\+Filter} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr filtered\+\_\+cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Implement the conditional filter. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_aef6ccdc23a770af04eb6fc1d34aceff9}{radius\+Filter} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr filtered\+\_\+cloud)
-\item 
+\begin{DoxyCompactList}\small\item\em Implement the radius filter. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_a9768f4de4320607118636323343b5b5c}{append\+Normal\+Estimation} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
-\item 
+\begin{DoxyCompactList}\small\item\em Estimate normals and append those to the input cloud. \end{DoxyCompactList}\item 
 void \hyperlink{classhull__abstraction_1_1_preprocessor_adb771d9dfac554a7dd35db7d9acc3ca3}{moving\+Least\+Squares} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr smoothed\+\_\+cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr smoothed\+\_\+cloud\+\_\+with\+\_\+normals)
-\item 
+\begin{DoxyCompactList}\small\item\em Perform M\+LS (Moving Least Squares) method for data smoothing and normal estimation. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_preprocessor_aa1e7b3418d273ceddd2faa0777f3598c}{Preprocessor} ()
 \begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} object. \end{DoxyCompactList}\item 
 \hyperlink{classhull__abstraction_1_1_preprocessor_a880dfe2a68232c6aea2ad41743df3d97}{$\sim$\+Preprocessor} ()
@@ -91,6 +91,10 @@ This class wraps some preprocessing methods for point cloud data
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_preprocessor_aa1e7b3418d273ceddd2faa0777f3598c}{}\label{classhull__abstraction_1_1_preprocessor_aa1e7b3418d273ceddd2faa0777f3598c}
+
+
+Construct a new \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} object. 
+
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!````~Preprocessor@{$\sim$\+Preprocessor}}
 \index{````~Preprocessor@{$\sim$\+Preprocessor}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{$\sim$\+Preprocessor()}{~Preprocessor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Preprocessor\+::$\sim$\+Preprocessor (
@@ -98,6 +102,10 @@ This class wraps some preprocessing methods for point cloud data
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classhull__abstraction_1_1_preprocessor_a880dfe2a68232c6aea2ad41743df3d97}{}\label{classhull__abstraction_1_1_preprocessor_a880dfe2a68232c6aea2ad41743df3d97}
+
+
+Destroy the \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} object. 
+
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!Preprocessor@{Preprocessor}}
 \index{Preprocessor@{Preprocessor}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{Preprocessor()}{Preprocessor()}}]{\setlength{\rightskip}{0pt plus 5cm}hull\+\_\+abstraction\+::\+Preprocessor\+::\+Preprocessor (
@@ -131,6 +139,17 @@ Destroy the \hyperlink{classhull__abstraction_1_1_preprocessor}{Preprocessor} ob
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud\+\_\+with\+\_\+normals}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_a9768f4de4320607118636323343b5b5c}{}\label{classhull__abstraction_1_1_preprocessor_a9768f4de4320607118636323343b5b5c}
+
+
+Estimate normals and append those to the input cloud. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em cloud\+\_\+with\+\_\+normals} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!append\+Normal\+Estimation@{append\+Normal\+Estimation}}
 \index{append\+Normal\+Estimation@{append\+Normal\+Estimation}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{append\+Normal\+Estimation(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud\+\_\+with\+\_\+normals)}{appendNormalEstimation(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointNormal >::Ptr cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::append\+Normal\+Estimation (
@@ -158,6 +177,17 @@ Estimate normals and append those to the input cloud.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{filtered\+\_\+cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_a95229af873f6f1a74c832340f8f9b7bf}{}\label{classhull__abstraction_1_1_preprocessor_a95229af873f6f1a74c832340f8f9b7bf}
+
+
+Implement the conditional filter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em filtered\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!conditional\+Filter@{conditional\+Filter}}
 \index{conditional\+Filter@{conditional\+Filter}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{conditional\+Filter(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr filtered\+\_\+cloud)}{conditionalFilter(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr filtered_cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::conditional\+Filter (
@@ -186,6 +216,17 @@ Implement the conditional filter.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{smoothed\+\_\+cloud\+\_\+with\+\_\+normals}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_adb771d9dfac554a7dd35db7d9acc3ca3}{}\label{classhull__abstraction_1_1_preprocessor_adb771d9dfac554a7dd35db7d9acc3ca3}
+
+
+Perform M\+LS (Moving Least Squares) method for data smoothing and normal estimation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em smoothed\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!moving\+Least\+Squares@{moving\+Least\+Squares}}
 \index{moving\+Least\+Squares@{moving\+Least\+Squares}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{moving\+Least\+Squares(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr smoothed\+\_\+cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr smoothed\+\_\+cloud\+\_\+with\+\_\+normals)}{movingLeastSquares(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr smoothed_cloud, pcl::PointCloud< pcl::PointNormal >::Ptr smoothed_cloud_with_normals)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::moving\+Least\+Squares (
@@ -214,6 +255,17 @@ Perform M\+LS (Moving Least Squares) method for data smoothing and normal estima
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{filtered\+\_\+cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_a4912126b50bdac35c63f521e3bc04314}{}\label{classhull__abstraction_1_1_preprocessor_a4912126b50bdac35c63f521e3bc04314}
+
+
+Implement the pass-\/through filter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em filtered\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!pass\+Through\+Filter@{pass\+Through\+Filter}}
 \index{pass\+Through\+Filter@{pass\+Through\+Filter}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{pass\+Through\+Filter(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr filtered\+\_\+cloud)}{passThroughFilter(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr filtered_cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::pass\+Through\+Filter (
@@ -241,6 +293,17 @@ Implement the pass-\/through filter.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{filtered\+\_\+cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_aef6ccdc23a770af04eb6fc1d34aceff9}{}\label{classhull__abstraction_1_1_preprocessor_aef6ccdc23a770af04eb6fc1d34aceff9}
+
+
+Implement the radius filter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em filtered\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!radius\+Filter@{radius\+Filter}}
 \index{radius\+Filter@{radius\+Filter}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{radius\+Filter(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr filtered\+\_\+cloud)}{radiusFilter(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr filtered_cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::radius\+Filter (
@@ -268,6 +331,17 @@ Implement the radius filter.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{filtered\+\_\+cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_a494877684eca0eaf7207c8655140b692}{}\label{classhull__abstraction_1_1_preprocessor_a494877684eca0eaf7207c8655140b692}
+
+
+Remove outliers through the statitical filter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em filtered\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!statistical\+Filter@{statistical\+Filter}}
 \index{statistical\+Filter@{statistical\+Filter}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{statistical\+Filter(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr filtered\+\_\+cloud)}{statisticalFilter(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr filtered_cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::statistical\+Filter (
@@ -295,6 +369,17 @@ Remove outliers through the statitical filter.
 \item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{filtered\+\_\+cloud}
 \end{DoxyParamCaption}
 )}\hypertarget{classhull__abstraction_1_1_preprocessor_a423d6c8cb5b08f8387290aae47184b3b}{}\label{classhull__abstraction_1_1_preprocessor_a423d6c8cb5b08f8387290aae47184b3b}
+
+
+Implementation of the voxel grid filter to perform down sampling. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\mbox{\tt out}  & {\em filtered\+\_\+cloud} & Cloud of Point\+X\+YZ \\
+\hline
+\end{DoxyParams}
 \index{hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}!voxel\+Grid\+Filter@{voxel\+Grid\+Filter}}
 \index{voxel\+Grid\+Filter@{voxel\+Grid\+Filter}!hull\+\_\+abstraction\+::\+Preprocessor@{hull\+\_\+abstraction\+::\+Preprocessor}}
 \subsubsection[{\texorpdfstring{voxel\+Grid\+Filter(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr filtered\+\_\+cloud)}{voxelGridFilter(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud, pcl::PointCloud< pcl::PointXYZ >::Ptr filtered_cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void hull\+\_\+abstraction\+::\+Preprocessor\+::voxel\+Grid\+Filter (
@@ -345,5 +430,5 @@ Object for statistical outlier removal
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/\hyperlink{prototype_2include_2hull__abstraction_2preprocessor_8h}{preprocessor.\+h}\item 
-/home/jc/hull\+\_\+abstraction/prototype/src/hull\+\_\+abstraction/\hyperlink{prototype_2src_2hull__abstraction_2preprocessor_8cpp}{preprocessor.\+cpp}\end{DoxyCompactItemize}
+/home/jc/hull\+\_\+abstraction/benchmark/include/hull\+\_\+abstraction/\hyperlink{benchmark_2include_2hull__abstraction_2preprocessor_8h}{preprocessor.\+h}\item 
+/home/jc/hull\+\_\+abstraction/benchmark/src/hull\+\_\+abstraction/\hyperlink{benchmark_2src_2hull__abstraction_2preprocessor_8cpp}{preprocessor.\+cpp}\end{DoxyCompactItemize}

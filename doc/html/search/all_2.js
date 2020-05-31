@@ -1,7 +1,10 @@
 var searchData=
 [
   ['base_5fpath',['base_path',['../namespace__setup__util.html#a83d25140acd7788bbcb95843fe38e639',1,'_setup_util']]],
-  ['benchmark',['benchmark',['../namespacebenchmark.html',1,'']]],
+  ['benchmark',['Benchmark',['../classbenchmark_1_1_benchmark.html',1,'benchmark']]],
+  ['benchmark',['benchmark',['../namespacebenchmark.html',1,'benchmark'],['../classbenchmark_1_1_benchmark.html#aa4d9ebf50ca1abfa2ab9ba263c1c489b',1,'benchmark::Benchmark::Benchmark()']]],
+  ['benchmark_2ecpp',['benchmark.cpp',['../benchmark_8cpp.html',1,'']]],
+  ['benchmark_2eh',['benchmark.h',['../benchmark_8h.html',1,'']]],
   ['blacklisted_5fpackages',['blacklisted_packages',['../namespaceorder__packages.html#a29ea913f00c5a0e81d3c7688e7375507',1,'order_packages']]],
   ['bspline_5fsurface_5ffitting_2ecpp',['bspline_surface_fitting.cpp',['../bspline__surface__fitting_8cpp.html',1,'']]],
   ['bspline_5fsurface_5ffitting_2eh',['bspline_surface_fitting.h',['../bspline__surface__fitting_8h.html',1,'']]],

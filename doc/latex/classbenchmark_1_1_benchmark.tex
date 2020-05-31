@@ -1,0 +1,266 @@
+\hypertarget{classbenchmark_1_1_benchmark}{}\section{benchmark\+:\+:Benchmark Class Reference}
+\label{classbenchmark_1_1_benchmark}\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+
+
+The \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} class.  
+
+
+
+
+{\ttfamily \#include $<$benchmark.\+h$>$}
+
+
+
+Collaboration diagram for benchmark\+:\+:Benchmark\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classbenchmark_1_1_benchmark__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbenchmark_1_1_benchmark_aa4d9ebf50ca1abfa2ab9ba263c1c489b}{Benchmark} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} object. \end{DoxyCompactList}\item 
+\hyperlink{classbenchmark_1_1_benchmark_a7e4dce46b8658c405ab15bc81dc3b92c}{$\sim$\+Benchmark} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} object. \end{DoxyCompactList}\item 
+void \hyperlink{classbenchmark_1_1_benchmark_ae7df7c13433aa1e693b1860374e02c2e}{input\+Polygon\+Mesh} (pcl\+::\+Polygon\+Mesh \hyperlink{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}{mesh})
+\begin{DoxyCompactList}\small\item\em Input a polygon mesh for benchmaking. \end{DoxyCompactList}\item 
+void \hyperlink{classbenchmark_1_1_benchmark_a9a2f37e57ce9f99a89f26b718468e9d0}{input\+Point\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Input a point cloud for further investigation. \end{DoxyCompactList}\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_a1b49288ec1193ac3bc85501091fb5b2f}{get\+Test\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Get the test cloud. \end{DoxyCompactList}\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_ab1dd595f97616c2879b7d102e32e9889}{get\+Input\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Get the input cloud. \end{DoxyCompactList}\item 
+void \hyperlink{classbenchmark_1_1_benchmark_a707e7974bcb0b5b2ee231e9e7cb142a8}{set\+Test\+Cloud\+Size} (double \hyperlink{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}{fraction})
+\begin{DoxyCompactList}\small\item\em Set the test cloud size. \end{DoxyCompactList}\item 
+void \hyperlink{classbenchmark_1_1_benchmark_a56970453ee4a690a35135ffc07dffb34}{generate\+Data} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Generate the result of testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classbenchmark_1_1_benchmark_a9c9393327cf0af813804f8d46a2d1f5c}{divide\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_a9089b4dd75c60319db0450304c073828}{test\+\_\+cloud}, double \hyperlink{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}{fraction})
+\begin{DoxyCompactList}\small\item\em Devide the original cloud into a test cloud and a input cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}{intersect\+With} (pcl\+::\+Polygon\+Mesh \hyperlink{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}{mesh}, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)
+\begin{DoxyCompactList}\small\item\em Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. \end{DoxyCompactList}\item 
+bool \hyperlink{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}{is\+Inside} (std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)
+\begin{DoxyCompactList}\small\item\em Confirm that a point lies inside a polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_a9089b4dd75c60319db0450304c073828}{test\+\_\+cloud} \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_a472d2ad851caafd323436e779ae68e56}{input\+\_\+cloud} \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}{mesh}
+\item 
+double \hyperlink{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}{fraction} = 0.\+02
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} class. 
+
+This class wraps the methods for a surface reconstruction benchmark 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!Benchmark@{Benchmark}}
+\index{Benchmark@{Benchmark}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{Benchmark()}{Benchmark()}}]{\setlength{\rightskip}{0pt plus 5cm}benchmark\+::\+Benchmark\+::\+Benchmark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbenchmark_1_1_benchmark_aa4d9ebf50ca1abfa2ab9ba263c1c489b}{}\label{classbenchmark_1_1_benchmark_aa4d9ebf50ca1abfa2ab9ba263c1c489b}
+
+
+Construct a new \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} object. 
+
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!````~Benchmark@{$\sim$\+Benchmark}}
+\index{````~Benchmark@{$\sim$\+Benchmark}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{$\sim$\+Benchmark()}{~Benchmark()}}]{\setlength{\rightskip}{0pt plus 5cm}benchmark\+::\+Benchmark\+::$\sim$\+Benchmark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classbenchmark_1_1_benchmark_a7e4dce46b8658c405ab15bc81dc3b92c}{}\label{classbenchmark_1_1_benchmark_a7e4dce46b8658c405ab15bc81dc3b92c}
+
+
+Destroy the \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!divide\+Cloud@{divide\+Cloud}}
+\index{divide\+Cloud@{divide\+Cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{divide\+Cloud(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr test\+\_\+cloud, double fraction)}{divideCloud(pcl::PointCloud< pcl::PointNormal >::Ptr cloud, pcl::PointCloud< pcl::PointNormal >::Ptr test_cloud, double fraction)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::divide\+Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud, }
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{test\+\_\+cloud, }
+\item[{double}]{fraction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_a9c9393327cf0af813804f8d46a2d1f5c}{}\label{classbenchmark_1_1_benchmark_a9c9393327cf0af813804f8d46a2d1f5c}
+
+
+Devide the original cloud into a test cloud and a input cloud. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em cloud} & Original cloud that is reduced to a input cloud \\
+\hline
+\mbox{\tt out}  & {\em test\+\_\+cloud} & Cloud for testing the surface reconstruction \\
+\hline
+\mbox{\tt in}  & {\em fraction} & Size of the test cloud \\
+\hline
+\end{DoxyParams}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!generate\+Data@{generate\+Data}}
+\index{generate\+Data@{generate\+Data}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{generate\+Data(std\+::string file\+\_\+name)}{generateData(std::string file_name)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::generate\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_a56970453ee4a690a35135ffc07dffb34}{}\label{classbenchmark_1_1_benchmark_a56970453ee4a690a35135ffc07dffb34}
+
+
+Generate the result of testing. 
+
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!get\+Input\+Cloud@{get\+Input\+Cloud}}
+\index{get\+Input\+Cloud@{get\+Input\+Cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{get\+Input\+Cloud()}{getInputCloud()}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr benchmark\+::\+Benchmark\+::get\+Input\+Cloud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_ab1dd595f97616c2879b7d102e32e9889}{}\label{classbenchmark_1_1_benchmark_ab1dd595f97616c2879b7d102e32e9889}
+
+
+Get the input cloud. 
+
+\begin{DoxyReturn}{Returns}
+Input cloud 
+\end{DoxyReturn}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!get\+Test\+Cloud@{get\+Test\+Cloud}}
+\index{get\+Test\+Cloud@{get\+Test\+Cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{get\+Test\+Cloud()}{getTestCloud()}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr benchmark\+::\+Benchmark\+::get\+Test\+Cloud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_a1b49288ec1193ac3bc85501091fb5b2f}{}\label{classbenchmark_1_1_benchmark_a1b49288ec1193ac3bc85501091fb5b2f}
+
+
+Get the test cloud. 
+
+\begin{DoxyReturn}{Returns}
+Test cloud 
+\end{DoxyReturn}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!input\+Point\+Cloud@{input\+Point\+Cloud}}
+\index{input\+Point\+Cloud@{input\+Point\+Cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{input\+Point\+Cloud(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::\+Ptr cloud)}{inputPointCloud(pcl::PointCloud< pcl::PointNormal >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::input\+Point\+Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_a9a2f37e57ce9f99a89f26b718468e9d0}{}\label{classbenchmark_1_1_benchmark_a9a2f37e57ce9f99a89f26b718468e9d0}
+
+
+Input a point cloud for further investigation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cloud} & Cloud of Point\+Normal \\
+\hline
+\end{DoxyParams}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!input\+Polygon\+Mesh@{input\+Polygon\+Mesh}}
+\index{input\+Polygon\+Mesh@{input\+Polygon\+Mesh}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{input\+Polygon\+Mesh(pcl\+::\+Polygon\+Mesh mesh)}{inputPolygonMesh(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::input\+Polygon\+Mesh (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_ae7df7c13433aa1e693b1860374e02c2e}{}\label{classbenchmark_1_1_benchmark_ae7df7c13433aa1e693b1860374e02c2e}
+
+
+Input a polygon mesh for benchmaking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input mesh representing the surface reconstruction \\
+\hline
+\end{DoxyParams}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!intersect\+With@{intersect\+With}}
+\index{intersect\+With@{intersect\+With}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{intersect\+With(pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)}{intersectWith(pcl::PolygonMesh mesh, std::vector< double > point, std::vector< double > normal)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::\+Benchmark\+::intersect\+With (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh, }
+\item[{std\+::vector$<$ double $>$}]{point, }
+\item[{std\+::vector$<$ double $>$}]{normal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}{}\label{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}
+
+
+Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input mesh representing the surface reconstruction \\
+\hline
+{\em point} & Input Point for estimation \\
+\hline
+{\em normal} & Normal vector of the input point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the coordinates of the resulting intersection point 
+\end{DoxyReturn}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!is\+Inside@{is\+Inside}}
+\index{is\+Inside@{is\+Inside}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{is\+Inside(std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)}{isInside(std::vector< double > point, std::vector< std::vector< double >> polygon)}}]{\setlength{\rightskip}{0pt plus 5cm}bool benchmark\+::\+Benchmark\+::is\+Inside (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{point, }
+\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{polygon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}{}\label{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}
+
+
+Confirm that a point lies inside a polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Input point \\
+\hline
+{\em polygon} & Input polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The point lies inside the polygon 
+
+false The point lies outside the polygon 
+\end{DoxyReturn}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!set\+Test\+Cloud\+Size@{set\+Test\+Cloud\+Size}}
+\index{set\+Test\+Cloud\+Size@{set\+Test\+Cloud\+Size}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{set\+Test\+Cloud\+Size(double fraction)}{setTestCloudSize(double fraction)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::set\+Test\+Cloud\+Size (
+\begin{DoxyParamCaption}
+\item[{double}]{fraction}
+\end{DoxyParamCaption}
+)}\hypertarget{classbenchmark_1_1_benchmark_a707e7974bcb0b5b2ee231e9e7cb142a8}{}\label{classbenchmark_1_1_benchmark_a707e7974bcb0b5b2ee231e9e7cb142a8}
+
+
+Set the test cloud size. 
+
+
+
+\subsection{Member Data Documentation}
+\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!fraction@{fraction}}
+\index{fraction@{fraction}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{fraction}{fraction}}]{\setlength{\rightskip}{0pt plus 5cm}double benchmark\+::\+Benchmark\+::fraction = 0.\+02\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}{}\label{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}
+Size of the test cloud \index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!input\+\_\+cloud@{input\+\_\+cloud}}
+\index{input\+\_\+cloud@{input\+\_\+cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{input\+\_\+cloud}{input_cloud}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\+::Ptr benchmark\+::\+Benchmark\+::input\+\_\+cloud \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_a472d2ad851caafd323436e779ae68e56}{}\label{classbenchmark_1_1_benchmark_a472d2ad851caafd323436e779ae68e56}
+$<$ Input cloud \index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!mesh@{mesh}}
+\index{mesh@{mesh}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{mesh}{mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh benchmark\+::\+Benchmark\+::mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}{}\label{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}
+Mesh representing the surface reconstruction \index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!test\+\_\+cloud@{test\+\_\+cloud}}
+\index{test\+\_\+cloud@{test\+\_\+cloud}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
+\subsubsection[{\texorpdfstring{test\+\_\+cloud}{test_cloud}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\+::Ptr benchmark\+::\+Benchmark\+::test\+\_\+cloud \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_a9089b4dd75c60319db0450304c073828}{}\label{classbenchmark_1_1_benchmark_a9089b4dd75c60319db0450304c073828}
+$<$ Test cloud 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/hull\+\_\+abstraction/benchmark/include/benchmark/\hyperlink{benchmark_8h}{benchmark.\+h}\item 
+/home/jc/hull\+\_\+abstraction/benchmark/src/benchmark/\hyperlink{benchmark_8cpp}{benchmark.\+cpp}\end{DoxyCompactItemize}

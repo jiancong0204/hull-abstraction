@@ -103,26 +103,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="classhull__abstraction_1_1_reconstructor.html" title="The Reconstructor class. ">Reconstructor</a> class.  
  <a href="classhull__abstraction_1_1_reconstructor.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="prototype_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="benchmark_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for hull_abstraction::Reconstructor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="232" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classhull__abstraction_1_1_reconstructor__coll__graph.svg" width="220" height="308"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a621404f6ce3a4515adf85491543ace34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a621404f6ce3a4515adf85491543ace34">Reconstructor</a> ()</td></tr>
+<tr class="memdesc:a621404f6ce3a4515adf85491543ace34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a621404f6ce3a4515adf85491543ace34">More...</a><br /></td></tr>
 <tr class="separator:a621404f6ce3a4515adf85491543ace34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db70f08234b090c7a5c58872dbd16c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a0db70f08234b090c7a5c58872dbd16c4">~Reconstructor</a> ()</td></tr>
+<tr class="memdesc:a0db70f08234b090c7a5c58872dbd16c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor.  <a href="#a0db70f08234b090c7a5c58872dbd16c4">More...</a><br /></td></tr>
 <tr class="separator:a0db70f08234b090c7a5c58872dbd16c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a585b9418c1a64ec21c195c72139ce581"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a585b9418c1a64ec21c195c72139ce581">greedyTriangulation</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:a585b9418c1a64ec21c195c72139ce581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes using greedy triangulation algorithm.  <a href="#a585b9418c1a64ec21c195c72139ce581">More...</a><br /></td></tr>
 <tr class="separator:a585b9418c1a64ec21c195c72139ce581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a9b7e8bda9c001e4d2eab2712e2b57f04">poissonReconstruction</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes through Poisson reconstruction method.  <a href="#a9b7e8bda9c001e4d2eab2712e2b57f04">More...</a><br /></td></tr>
 <tr class="separator:a9b7e8bda9c001e4d2eab2712e2b57f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98e633c1c4e98926b0e1beda2e867524"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a98e633c1c4e98926b0e1beda2e867524">marchingCubesReconstruction</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
-<tr class="separator:a98e633c1c4e98926b0e1beda2e867524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a0fa653923a21b3329b747f0c6943b"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a41a0fa653923a21b3329b747f0c6943b">marchingCubes</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:a41a0fa653923a21b3329b747f0c6943b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes utilizing marching cubes method.  <a href="#a41a0fa653923a21b3329b747f0c6943b">More...</a><br /></td></tr>
+<tr class="separator:a41a0fa653923a21b3329b747f0c6943b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a531c5dc53b28b4f1e48a318db1acea90"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a531c5dc53b28b4f1e48a318db1acea90">bsplineSurfaceFitting</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
+<tr class="memdesc:a531c5dc53b28b4f1e48a318db1acea90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate polygon meshes based on b-spline surface fitting.  <a href="#a531c5dc53b28b4f1e48a318db1acea90">More...</a><br /></td></tr>
 <tr class="separator:a531c5dc53b28b4f1e48a318db1acea90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a621404f6ce3a4515adf85491543ace34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a621404f6ce3a4515adf85491543ace34">Reconstructor</a> ()</td></tr>
 <tr class="memdesc:a621404f6ce3a4515adf85491543ace34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a621404f6ce3a4515adf85491543ace34">More...</a><br /></td></tr>
@@ -146,6 +152,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a484b377810bba7e42d39c47ed3725941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a484b377810bba7e42d39c47ed3725941">pointCloud2Vector3d</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::on_nurbs::vector_vec3d &amp;data)</td></tr>
+<tr class="memdesc:a484b377810bba7e42d39c47ed3725941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converting a cloud of PointXYZ to a set of three-dimensional vectors.  <a href="#a484b377810bba7e42d39c47ed3725941">More...</a><br /></td></tr>
 <tr class="separator:a484b377810bba7e42d39c47ed3725941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484b377810bba7e42d39c47ed3725941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhull__abstraction_1_1_reconstructor.html#a484b377810bba7e42d39c47ed3725941">pointCloud2Vector3d</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::on_nurbs::vector_vec3d &amp;data)</td></tr>
 <tr class="memdesc:a484b377810bba7e42d39c47ed3725941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converting a cloud of PointXYZ to a set of three-dimensional vectors.  <a href="#a484b377810bba7e42d39c47ed3725941">More...</a><br /></td></tr>
@@ -185,6 +192,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0db70f08234b090c7a5c58872dbd16c4"></a>
@@ -207,6 +216,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Deconstructor. </p>
 
 </div>
 </div>
@@ -274,6 +285,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate polygon meshes based on b-spline surface fitting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>Cloud of PointXYZ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resulting polygon meshes of cloud_with_normals </dd></dl>
 <p>&lt; Data structure for NURBS surface fitting </p>
 
 </div>
@@ -316,6 +336,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate polygon meshes using greedy triangulation algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud_with_normals</td><td>Cloud of PointNormal </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resulting polygon meshes of cloud_with_normals </dd></dl>
 
 </div>
 </div>
@@ -369,12 +398,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a98e633c1c4e98926b0e1beda2e867524"></a>
+<a class="anchor" id="a41a0fa653923a21b3329b747f0c6943b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubesReconstruction </td>
+          <td class="memname">pcl::PolygonMesh hull_abstraction::Reconstructor::marchingCubes </td>
           <td>(</td>
           <td class="paramtype">pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr&#160;</td>
           <td class="paramname"><em>cloud_with_normals</em></td><td>)</td>
@@ -382,6 +411,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate polygon meshes utilizing marching cubes method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud_with_normals</td><td>Cloud of PointNormal </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resulting polygon meshes of cloud_with_normals </dd></dl>
 
 </div>
 </div>
@@ -416,6 +454,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Converting a cloud of PointXYZ to a set of three-dimensional vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cloud</td><td>Cloud of PointXYZ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>A set of three-dimentional vectors </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -475,6 +522,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate polygon meshes through Poisson reconstruction method. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud_with_normals</td><td>Cloud of PointNormal </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resulting polygon meshes of cloud_with_normals </dd></dl>
 
 </div>
 </div>
@@ -568,13 +624,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/jc/hull_abstraction/prototype/include/hull_abstraction/<a class="el" href="prototype_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a></li>
-<li>/home/jc/hull_abstraction/prototype/src/hull_abstraction/<a class="el" href="prototype_2src_2hull__abstraction_2reconstructor_8cpp.html">reconstructor.cpp</a></li>
+<li>/home/jc/hull_abstraction/benchmark/include/hull_abstraction/<a class="el" href="benchmark_2include_2hull__abstraction_2reconstructor_8h_source.html">reconstructor.h</a></li>
+<li>/home/jc/hull_abstraction/benchmark/src/hull_abstraction/<a class="el" href="benchmark_2src_2hull__abstraction_2reconstructor_8cpp.html">reconstructor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 30 2020 18:31:18 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 31 2020 09:18:19 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

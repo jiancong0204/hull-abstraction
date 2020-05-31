@@ -1,0 +1,66 @@
+\hypertarget{ros_2src_2hull__abstraction_2include_2pcl__utilization_2pcl__utilization_8h}{}\section{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.h File Reference}
+\label{ros_2src_2hull__abstraction_2include_2pcl__utilization_2pcl__utilization_8h}\index{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.\+h@{/home/jc/hull\+\_\+abstraction/ros/src/hull\+\_\+abstraction/include/pcl\+\_\+utilization/pcl\+\_\+utilization.\+h}}
+
+
+This file contains the declaration of P\+CL utilization methods.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\\*
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$visualization\+\_\+msgs/\+Marker.\+h$>$}\\*
+{\ttfamily \#include $<$Eigen/\+Core$>$}\\*
+{\ttfamily \#include $<$pcl\+\_\+conversions/pcl\+\_\+conversions.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/point\+\_\+types.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/\+P\+C\+L\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/common/centroid.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/search/kdtree.\+h$>$}\\*
+Include dependency graph for pcl\+\_\+utilization.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ros_2src_2hull__abstraction_2include_2pcl__utilization_2pcl__utilization_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ros_2src_2hull__abstraction_2include_2pcl__utilization_2pcl__utilization_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepcl__utilization}{pcl\+\_\+utilization}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a051f0954371074c7331ba054d185950f}{pcl\+\_\+utilization\+::to\+Triangle\+List} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message with a triangle list. \end{DoxyCompactList}\item 
+visualization\+\_\+msgs\+::\+Marker \hyperlink{namespacepcl__utilization_a1a3ffc60b638c2a551b02ba9a755d3f1}{pcl\+\_\+utilization\+::to\+Line\+List} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Convert a polygon mesh to a marker message with a line list. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_a406bb7467e9ca4e3835c7c34076427e8}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud with normals. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a217b6e0e27678d9f9bb1a7a4a39a20ea}{pcl\+\_\+utilization\+::compute\+Centroid} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Calculate the centroid of a point cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacepcl__utilization_a0fa69a5e73bdd8db793db5b515bf86e7}{pcl\+\_\+utilization\+::compute\+Centroid} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Calculate the centroid of a mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_a21484054fe6624a5c1b6fad0c033ad95}{pcl\+\_\+utilization\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_af40198164242e7837f20357bd802b8c9}{pcl\+\_\+utilization\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+\begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the declaration of P\+CL utilization methods. 
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/05-\/20 
+\end{DoxyDate}
