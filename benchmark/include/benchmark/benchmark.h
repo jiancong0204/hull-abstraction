@@ -69,6 +69,11 @@ namespace benchmark
          * @brief Set the test cloud size
          */
         void setTestCloudSize(double fraction);
+        
+        /**
+         * @brief Generate the result of testing
+         */
+        void generateData();
 
     private:
         

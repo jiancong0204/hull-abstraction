@@ -1,13 +1,13 @@
 #include "benchmark/benchmark.h"
 
-void benchmark::Benchmark::inputPolygonMesh(pcl::PolygonMesh polygonMesh)
+void benchmark::Benchmark::inputPolygonMesh(pcl::PolygonMesh mesh)
 {
-    this->mesh = polygonMesh;
+    this->mesh = mesh;
 }
 
-void benchmark::Benchmark::inputPointCloud(pcl::PointCloud<pcl::PointNormal>::Ptr orginal_cloud)
+void benchmark::Benchmark::inputPointCloud(pcl::PointCloud<pcl::PointNormal>::Ptr cloud)
 {
-    this->input_cloud = orginal_cloud;
+    this->input_cloud = cloud;
     benchmark::Benchmark::divideCloud(this->input_cloud, this->test_cloud, this->fraction);
 }
 
@@ -53,7 +53,6 @@ void benchmark::Benchmark::divideCloud(pcl::PointCloud<pcl::PointNormal>::Ptr cl
     }
 }
 
-
 std::vector<double> benchmark::Benchmark::intersectWith(pcl::PolygonMesh mesh, std::vector<double> point, std::vector<double> normal)
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -63,10 +62,10 @@ std::vector<double> benchmark::Benchmark::intersectWith(pcl::PolygonMesh mesh, s
     double y0 = point[1];
     double z0 = point[2];
     double t = INFINITY;
-    int polygon_size = mesh.polygons.size();
+    size_t polygon_size = mesh.polygons.size();
     std::vector<double> intersection_point = {0.0, 0.0, 0.0, 1.0};
 
-    for (int i = 0; i < polygon_size; i++)
+    for (size_t i = 0; i < polygon_size; i++)
     {
         // Parameters for the plane which contains the polygon
         std::vector<double> x = {0.0, 1.0, 0.0};
@@ -169,4 +168,29 @@ bool benchmark::Benchmark::isInside(std::vector<double> point, std::vector<std::
         return true;
     else 
         return false;
+}
+
+void benchmark::Benchmark::generateData()
+{
+    int test_cloud_size = this->test_cloud->points.size();
+    ofstream oFile;
+    oFile.open("test_data.csv", ios::out | ios::trunc);
+    for (int i = 0; i < test_cloud_size; i++)
+    {
+        std::vector<double> point;
+        point.push_back(this->test_cloud->points[i].x);
+        point.push_back(this->test_cloud->points[i].y);
+        point.push_back(this->test_cloud->points[i].z);
+
+        std::vector<double> normal;
+        normal.push_back(this->test_cloud->points[i].normal_x);
+        normal.push_back(this->test_cloud->points[i].normal_y);
+        normal.push_back(this->test_cloud->points[i].normal_z);
+
+        std::vector<double> intersection_point;
+        intersection_point = benchmark::Benchmark::intersectWith(this->mesh, point, normal);
+        double distance = intersection_point[3]; // distance between test point and the mesh
+        oFile << fabs(distance) << ",";
+    }
+    oFile << std::endl;
 }

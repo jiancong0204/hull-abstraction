@@ -20,18 +20,18 @@ int main()
     pcl::PolygonMesh                            mesh2;
     pcl::PolygonMesh                            mesh3;
     pcl::PolygonMesh                            mesh4;
+    hull_abstraction::Preprocessor              pp;
+    hull_abstraction::Reconstructor             rc;
+    benchmark::Benchmark                        bm;
+
     //  Load original cloud and check if the file exists
     if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud) == -1)
     {
         PCL_ERROR("Could not read file.\n");
         return(-1);
     }
-    
+
     //std::cout << CLOCKS_PER_SEC << std::endl;
-    
-    hull_abstraction::Preprocessor    pp;
-    hull_abstraction::Reconstructor   rc;
-    benchmark::Benchmark              bm;
 
     // Down sampling
 
@@ -52,7 +52,8 @@ int main()
     end = clock();
     std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
 
-    bm.setTestCloudSize(0.05);
+    // Generate test cloud and input cloud
+    bm.setTestCloudSize(0.07);
     bm.inputPointCloud(cloud_with_normals);
     test_cloud = bm.getTestCloud();
     input_cloud = bm.getInputCloud();
@@ -88,6 +89,10 @@ int main()
     mesh4 = rc.marchingCubes(input_cloud);
     end = clock();
     std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
+
+    bm.inputPolygonMesh(mesh1);
+    bm.generateData();
+
 
     // Test of function intersectWith()
     // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
