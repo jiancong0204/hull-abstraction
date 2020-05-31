@@ -12,8 +12,8 @@ void hull_abstraction::Preprocessor::voxelGridFilter(pcl::PointCloud<pcl::PointX
 void hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud)
 {
     statistical_outlier_removal.setInputCloud(cloud);
-    statistical_outlier_removal.setMeanK(50);
-    statistical_outlier_removal.setStddevMulThresh(1.0);
+    statistical_outlier_removal.setMeanK(60);
+    statistical_outlier_removal.setStddevMulThresh(0.3);
     statistical_outlier_removal.filter(*filtered_cloud);
 }
 
@@ -52,7 +52,7 @@ void hull_abstraction::Preprocessor::appendNormalEstimation(pcl::PointCloud<pcl:
     tree->setInputCloud(cloud);
     normal_estimation.setInputCloud(cloud);
     normal_estimation.setSearchMethod(tree);
-    normal_estimation.setKSearch(100);
+    normal_estimation.setKSearch(60);
     normal_estimation.compute(*normals);
     pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
 }
@@ -63,8 +63,8 @@ void hull_abstraction::Preprocessor::movingLeastSquares(pcl::PointCloud<pcl::Poi
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
     moving_least_squares.setInputCloud(cloud);
-    moving_least_squares.setComputeNormals(true); 
-    moving_least_squares.setPolynomialOrder(3);
+    moving_least_squares.setComputeNormals(true); // MLS offers a method to estimate normals
+    moving_least_squares.setPolynomialOrder(3); // Polynomial order used to fit the curve. The default value is 2, however 3 or 4 is better in my case
     moving_least_squares.setSearchMethod(tree);
     moving_least_squares.setSearchRadius(10 * resolution);
     // Reconstruct

@@ -5,19 +5,21 @@
 #include <pcl/visualization/cloud_viewer.h>
 #include "hull_abstraction/reconstructor.h"
 #include "hull_abstraction/preprocessor.h"
+#include "benchmark/benchmark.h"
 
 int main()
 {
     clock_t start, end;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    pcl::PointCloud<pcl::PointNormal>::Ptr test_cloud(new pcl::PointCloud<pcl::PointNormal>);
-    pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-    pcl::PointCloud<pcl::PointNormal>::Ptr filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-    pcl::PolygonMesh mesh1;
-    pcl::PolygonMesh mesh2;
-    pcl::PolygonMesh mesh3;
-    pcl::PolygonMesh mesh4;
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      test_cloud(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      input_cloud(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PolygonMesh                            mesh1;
+    pcl::PolygonMesh                            mesh2;
+    pcl::PolygonMesh                            mesh3;
+    pcl::PolygonMesh                            mesh4;
     //  Load original cloud and check if the file exists
     if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud) == -1)
     {
@@ -27,8 +29,9 @@ int main()
     
     //std::cout << CLOCKS_PER_SEC << std::endl;
     
-    hull_abstraction::Preprocessor pp;
-    hull_abstraction::Reconstructor rc;
+    hull_abstraction::Preprocessor    pp;
+    hull_abstraction::Reconstructor   rc;
+    benchmark::Benchmark              bm;
 
     // Down sampling
 
@@ -48,12 +51,13 @@ int main()
     pp.appendNormalEstimation(filtered_cloud, cloud_with_normals);
     end = clock();
     std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
-        
 
+    bm.setTestCloudSize(0.05);
+    bm.inputPointCloud(cloud_with_normals);
+    test_cloud = bm.getTestCloud();
+    input_cloud = bm.getInputCloud();
 
-
-    benchmark::divideCloud(cloud_with_normals, test_cloud, 0.1);
-    int input_cloud_size = cloud_with_normals->points.size();
+    int input_cloud_size = input_cloud->points.size();
     int test_cloud_size = test_cloud->points.size();
     std::cout << "size of input cloud: " << input_cloud_size << std::endl;
     std::cout << "size of test cloud: " << test_cloud_size << std::endl;
@@ -64,38 +68,37 @@ int main()
     //std::cout << "Time cost for normal estimation (filtered cloud): " << (end - start)  << " μs" << std::endl;
 
     start = clock();
-    mesh1 = rc.greedyTriangulation(cloud_with_normals);
+    mesh1 = rc.greedyTriangulation(input_cloud);
     end = clock();
     std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
 
+    pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::copyPointCloud(*input_cloud, *b_input_cloud);
     start = clock();
-    mesh2 = rc.bsplineSurfaceFitting(filtered_cloud);
+    mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
     end = clock();
     std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
     start = clock();
-    mesh3 = rc.poissonReconstruction(cloud_with_normals);
+    mesh3 = rc.poissonReconstruction(input_cloud);
     end = clock();
     std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
 
     start = clock();
-    mesh4 = rc.marchingCubesReconstruction(cloud_with_normals);
+    mesh4 = rc.marchingCubes(input_cloud);
     end = clock();
     std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
     // Test of function intersectWith()
-    std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
-    std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
-    std::vector<double> intersection_point(4);
+    // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
+    // std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
+    // std::vector<double> intersection_point(4);
 
-    double len = sqrt(pow(normal[0], 2) + pow(normal[1], 2) + pow(normal[2], 2));
-    std::cout << len << std::endl;
-
-    intersection_point = benchmark::intersectWith(mesh3, point, normal);
-    std::cout << intersection_point[0] << std::endl;
-    std::cout << intersection_point[1] << std::endl;
-    std::cout << intersection_point[2] << std::endl;
-    std::cout << intersection_point[3] << std::endl;
+    // intersection_point = benchmark::intersectWith(mesh3, point, normal);
+    // std::cout << intersection_point[0] << std::endl;
+    // std::cout << intersection_point[1] << std::endl;
+    // std::cout << intersection_point[2] << std::endl;
+    // std::cout << intersection_point[3] << std::endl;
     
     // Test of function isInside()
     // std::vector<double> point = {0.4562, 0.3565, 0.0};
@@ -135,7 +138,7 @@ int main()
     viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
 
     viewer->addPointCloud(cloud, "cloud0", v0);
-    viewer->addPointCloud<pcl::PointNormal>(cloud_with_normals, "cloud1", v1);
+    viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
     viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
     viewer->addPolygonMesh(mesh1, "mesh1", v3);
