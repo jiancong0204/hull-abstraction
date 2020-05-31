@@ -73,7 +73,7 @@ namespace benchmark
         /**
          * @brief Generate the result of testing
          */
-        void generateData();
+        void generateData(std::string file_name);
 
     private:
         

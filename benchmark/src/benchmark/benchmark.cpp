@@ -170,11 +170,11 @@ bool benchmark::Benchmark::isInside(std::vector<double> point, std::vector<std::
         return false;
 }
 
-void benchmark::Benchmark::generateData()
+void benchmark::Benchmark::generateData(std::string file_name)
 {
     int test_cloud_size = this->test_cloud->points.size();
     ofstream oFile;
-    oFile.open("test_data.csv", ios::out | ios::trunc);
+    oFile.open("../test_data/" + file_name + ".csv", ios::out | ios::trunc);
     for (int i = 0; i < test_cloud_size; i++)
     {
         std::vector<double> point;

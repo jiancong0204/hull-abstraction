@@ -73,6 +73,9 @@ int main()
     end = clock();
     std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
 
+    bm.inputPolygonMesh(mesh1);
+    bm.generateData("Greedy Triangulation");
+
     pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::copyPointCloud(*input_cloud, *b_input_cloud);
     start = clock();
@@ -80,19 +83,24 @@ int main()
     end = clock();
     std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
+    bm.inputPolygonMesh(mesh2);
+    bm.generateData("B-spline Surface Fitting");
+
     start = clock();
     mesh3 = rc.poissonReconstruction(input_cloud);
     end = clock();
     std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
+
+    bm.inputPolygonMesh(mesh3);
+    bm.generateData("Poisson Reconstruction");
 
     start = clock();
     mesh4 = rc.marchingCubes(input_cloud);
     end = clock();
     std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
-    bm.inputPolygonMesh(mesh1);
-    bm.generateData();
-
+    bm.inputPolygonMesh(mesh4);
+    bm.generateData("Marching Cubes");
 
     // Test of function intersectWith()
     // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
