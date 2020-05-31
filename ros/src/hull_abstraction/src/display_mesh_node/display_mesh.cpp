@@ -12,5 +12,5 @@ void display_mesh::DisplayMesh::processing(const pcl_msgs::PolygonMesh input_msg
 
 void display_mesh::DisplayMesh::run()
 {   
-    sub = nh.subscribe("marching_cubes", 1, &DisplayMesh::processing, this);
+    sub = nh.subscribe("poisson_reconstruction", 1, &DisplayMesh::processing, this);
 }

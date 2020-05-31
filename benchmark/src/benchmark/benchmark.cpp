@@ -72,13 +72,21 @@ std::vector<double> benchmark::Benchmark::intersectWith(pcl::PolygonMesh mesh, s
         std::vector<double> y = {0.0, 0.0, 1.0};
         std::vector<double> z = {1.0, 1.0, 1.0};
         std::vector<std::vector<double>> polygon;
-
-        for (int j = 0; j < 3; j++)
+        
+        int vertices_size = mesh.polygons[i].vertices.size();
+        for (int j = 0; j < vertices_size; j++)
         {
-            x[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
-            y[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
-            z[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
-            polygon.push_back({x[j], y[j], z[j]});
+            if (j < 3)
+            {
+                x[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].x;
+                y[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].y;
+                z[j] = mesh_cloud->points[mesh.polygons[i].vertices[j]].z;
+            }
+            polygon.push_back({
+                mesh_cloud->points[mesh.polygons[i].vertices[j]].x, 
+                mesh_cloud->points[mesh.polygons[i].vertices[j]].y,
+                mesh_cloud->points[mesh.polygons[i].vertices[j]].z
+                });
         }
 
         double a = (y[1] - y[0]) * (z[2] - z[0]) - (y[2] - y[0]) * (z[1] -z[0]);
@@ -164,7 +172,7 @@ bool benchmark::Benchmark::isInside(std::vector<double> point, std::vector<std::
     // std::cout << angle_sum << std::endl;
     // std::cout << angle_sum / M_PI << std::endl;
     double angle_sum_rad = angle_sum / M_PI;
-    if(angle_sum_rad > 1.999 and angle_sum_rad < 2.001)
+    if(angle_sum_rad > 1.999 and angle_sum_rad < 2.001)  // allow tiny errors
         return true;
     else 
         return false;
