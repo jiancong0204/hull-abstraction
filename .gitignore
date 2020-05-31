@@ -2,5 +2,6 @@
 *.user.*
 /prototype/build
 *.vscode
+/.vscode
 /ros/build
 /ros/devel
