@@ -164,7 +164,7 @@ bool benchmark::Benchmark::isInside(std::vector<double> point, std::vector<std::
     // std::cout << angle_sum << std::endl;
     // std::cout << angle_sum / M_PI << std::endl;
     double angle_sum_rad = angle_sum / M_PI;
-    if(angle_sum_rad == 2)
+    if(angle_sum_rad > 1.999 and angle_sum_rad < 2.001)
         return true;
     else 
         return false;

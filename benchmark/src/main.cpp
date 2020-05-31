@@ -53,7 +53,7 @@ int main()
     std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
 
     // Generate test cloud and input cloud
-    bm.setTestCloudSize(0.07);
+    bm.setTestCloudSize(0.10);
     bm.inputPointCloud(cloud_with_normals);
     test_cloud = bm.getTestCloud();
     input_cloud = bm.getInputCloud();
@@ -101,7 +101,7 @@ int main()
 
     bm.inputPolygonMesh(mesh2);
     bm.generateData("B-spline Surface Fitting");
-    
+
     // Test of function intersectWith()
     // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
     // std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
