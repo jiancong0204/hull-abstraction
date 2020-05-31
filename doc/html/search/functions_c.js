@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tolinelist',['toLineList',['../namespacepcl__utilization.html#a1a3ffc60b638c2a551b02ba9a755d3f1',1,'pcl_utilization']]],
-  ['totrianglelist',['toTriangleList',['../namespacepcl__utilization.html#a051f0954371074c7331ba054d185950f',1,'pcl_utilization']]]
+  ['statisticalfilter',['statisticalFilter',['../classhull__abstraction_1_1_preprocessor.html#a494877684eca0eaf7207c8655140b692',1,'hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr filtered_cloud)'],['../classhull__abstraction_1_1_preprocessor.html#a494877684eca0eaf7207c8655140b692',1,'hull_abstraction::Preprocessor::statisticalFilter(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr filtered_cloud)']]]
 ];

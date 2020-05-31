@@ -96,11 +96,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">functions.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;pcl/search/kdtree.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;pcl/point_types.h&gt;</code><br />
+<code>#include &lt;pcl/PCLPointCloud2.h&gt;</code><br />
+<code>#include &lt;pcl/features/normal_3d.h&gt;</code><br />
+<code>#include &lt;pcl/visualization/pcl_visualizer.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for functions.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="functions_8h__incl.svg" width="178" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="functions_8h__incl.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -112,24 +119,38 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacehull__abstraction"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehull__abstraction.html">hull_abstraction</a></td></tr>
+<tr class="memitem:namespacepcl__utilization"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html">pcl_utilization</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacebenchmark"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html">benchmark</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee513dfed72060d83ec57c5909c9640e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehull__abstraction.html#aee513dfed72060d83ec57c5909c9640e">hull_abstraction::computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
-<tr class="separator:aee513dfed72060d83ec57c5909c9640e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0e1e236f8dd95c43e92d142cfc2754e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehull__abstraction.html#aa0e1e236f8dd95c43e92d142cfc2754e">hull_abstraction::computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloudWithNormals)</td></tr>
-<tr class="separator:aa0e1e236f8dd95c43e92d142cfc2754e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e467ab4a24489895dc694bf4dec4ad1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehull__abstraction.html#a2e467ab4a24489895dc694bf4dec4ad1">hull_abstraction::computeAABB</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
-<tr class="separator:a2e467ab4a24489895dc694bf4dec4ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0b9805fbf18fffc219231131cee1d9b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehull__abstraction.html#ad0b9805fbf18fffc219231131cee1d9b">hull_abstraction::computeAABB</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloudWithNormals)</td></tr>
-<tr class="separator:ad0b9805fbf18fffc219231131cee1d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#ac199fc2120c5dce78fd87c2c1e0445d0">pcl_utilization::computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
+<tr class="memdesc:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computing the resolution of a point cloud.  <a href="namespacepcl__utilization.html#ac199fc2120c5dce78fd87c2c1e0445d0">More...</a><br /></td></tr>
+<tr class="separator:ac199fc2120c5dce78fd87c2c1e0445d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd7d53d77802f39bdec1098137e198a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a5fd7d53d77802f39bdec1098137e198a">pcl_utilization::computeCloudResolution</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:a5fd7d53d77802f39bdec1098137e198a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computing the resolution of a point cloud with normals.  <a href="namespacepcl__utilization.html#a5fd7d53d77802f39bdec1098137e198a">More...</a><br /></td></tr>
+<tr class="separator:a5fd7d53d77802f39bdec1098137e198a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21484054fe6624a5c1b6fad0c033ad95"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#a21484054fe6624a5c1b6fad0c033ad95">pcl_utilization::computeAABB</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)</td></tr>
+<tr class="memdesc:a21484054fe6624a5c1b6fad0c033ad95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the AABB for the input point cloud.  <a href="namespacepcl__utilization.html#a21484054fe6624a5c1b6fad0c033ad95">More...</a><br /></td></tr>
+<tr class="separator:a21484054fe6624a5c1b6fad0c033ad95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepcl__utilization.html#ad21b81d1b10d9b0ba6c7a41488c01ada">pcl_utilization::computeAABB</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud_with_normals)</td></tr>
+<tr class="memdesc:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the AABB for the input point cloud.  <a href="namespacepcl__utilization.html#ad21b81d1b10d9b0ba6c7a41488c01ada">More...</a><br /></td></tr>
+<tr class="separator:ad21b81d1b10d9b0ba6c7a41488c01ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47b86556e27ebfa1fe0830e753f87cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#ae47b86556e27ebfa1fe0830e753f87cf">benchmark::divideCloud</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr test_cloud, double fraction)</td></tr>
+<tr class="separator:ae47b86556e27ebfa1fe0830e753f87cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5abd113fc5d0aaa696e8fa4063878e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#abe5abd113fc5d0aaa696e8fa4063878e">benchmark::divideCloud</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr test_cloud, double fraction)</td></tr>
+<tr class="separator:abe5abd113fc5d0aaa696e8fa4063878e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d148ddad0fb0499866dd454cde1767a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a2d148ddad0fb0499866dd454cde1767a">benchmark::intersectWith</a> (pcl::PolygonMesh mesh, std::vector&lt; double &gt; point, std::vector&lt; double &gt; normal)</td></tr>
+<tr class="separator:a2d148ddad0fb0499866dd454cde1767a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e580512121573111919f5d97ca986d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a1e580512121573111919f5d97ca986d3">benchmark::isInside</a> (std::vector&lt; double &gt; point, std::vector&lt; std::vector&lt; double &gt;&gt; polygon)</td></tr>
+<tr class="separator:a1e580512121573111919f5d97ca986d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 23 2020 11:21:58 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 30 2020 18:31:18 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

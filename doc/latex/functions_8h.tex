@@ -1,11 +1,18 @@
 \hypertarget{functions_8h}{}\section{/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/functions.h File Reference}
 \label{functions_8h}\index{/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/functions.\+h@{/home/jc/hull\+\_\+abstraction/prototype/include/hull\+\_\+abstraction/functions.\+h}}
-{\ttfamily \#include $<$pcl/search/kdtree.\+h$>$}\\*
-Include dependency graph for functions.\+h\+:\nopagebreak
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/point\+\_\+types.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/\+P\+C\+L\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\+\_\+3d.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\+\_\+visualizer.\+h$>$}\\*
+Include dependency graph for functions.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{functions_8h__incl}
+\includegraphics[width=350pt]{functions_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -18,16 +25,26 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \hyperlink{namespacehull__abstraction}{hull\+\_\+abstraction}
+ \hyperlink{namespacepcl__utilization}{pcl\+\_\+utilization}
+\item 
+ \hyperlink{namespacebenchmark}{benchmark}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \hyperlink{namespacehull__abstraction_aee513dfed72060d83ec57c5909c9640e}{hull\+\_\+abstraction\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+double \hyperlink{namespacepcl__utilization_ac199fc2120c5dce78fd87c2c1e0445d0}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud. \end{DoxyCompactList}\item 
+double \hyperlink{namespacepcl__utilization_a5fd7d53d77802f39bdec1098137e198a}{pcl\+\_\+utilization\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Computing the resolution of a point cloud with normals. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_a21484054fe6624a5c1b6fad0c033ad95}{pcl\+\_\+utilization\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacepcl__utilization_ad21b81d1b10d9b0ba6c7a41488c01ada}{pcl\+\_\+utilization\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+\_\+with\+\_\+normals)
+\begin{DoxyCompactList}\small\item\em Compute the A\+A\+BB for the input point cloud. \end{DoxyCompactList}\item 
+void \hyperlink{namespacebenchmark_ae47b86556e27ebfa1fe0830e753f87cf}{benchmark\+::divide\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr test\+\_\+cloud, double fraction)
 \item 
-double \hyperlink{namespacehull__abstraction_aa0e1e236f8dd95c43e92d142cfc2754e}{hull\+\_\+abstraction\+::compute\+Cloud\+Resolution} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+void \hyperlink{namespacebenchmark_abe5abd113fc5d0aaa696e8fa4063878e}{benchmark\+::divide\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr test\+\_\+cloud, double fraction)
 \item 
-std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacehull__abstraction_a2e467ab4a24489895dc694bf4dec4ad1}{hull\+\_\+abstraction\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a2d148ddad0fb0499866dd454cde1767a}{benchmark\+::intersect\+With} (pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)
 \item 
-std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \hyperlink{namespacehull__abstraction_ad0b9805fbf18fffc219231131cee1d9b}{hull\+\_\+abstraction\+::compute\+A\+A\+BB} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud\+With\+Normals)
+bool \hyperlink{namespacebenchmark_a1e580512121573111919f5d97ca986d3}{benchmark\+::is\+Inside} (std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)
 \end{DoxyCompactItemize}
