@@ -25,7 +25,7 @@ int main()
     benchmark::Benchmark                        bm;
 
     //  Load original cloud and check if the file exists
-    if (pcl::io::loadPCDFile<pcl::PointXYZ>("../point_cloud_data/16_5.pcd", *cloud) == -1)
+    if (pcl::io::loadPLYFile<pcl::PointXYZ>("../point_cloud_data/bun000.ply", *cloud) == -1)
     {
         PCL_ERROR("Could not read file.\n");
         return(-1);
@@ -53,7 +53,7 @@ int main()
     std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
 
     // Generate test cloud and input cloud
-    bm.setTestCloudSize(0.10);
+    bm.setTestCloudSize(0.05);
     bm.inputPointCloud(cloud_with_normals);
     test_cloud = bm.getTestCloud();
     input_cloud = bm.getInputCloud();

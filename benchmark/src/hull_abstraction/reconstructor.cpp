@@ -31,7 +31,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     // Configurations
     poisson.setConfidence(false); //whether uses the magnitude of normals as confidence information. when false, all normals are normalised.
     poisson.setDegree(2);
-    poisson.setDepth(4);
+    poisson.setDepth(8);
     poisson.setIsoDivide(8); 
     poisson.setManifold(false); //whether add the center of gravity of polygons. 
     poisson.setOutputPolygons(true);
