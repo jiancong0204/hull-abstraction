@@ -9,6 +9,7 @@
 * [Introduction](#introduction)
 * [Installation](#installation)
 * [Hull Generation Methods](#hull-generation-methods)
+* [Benchmark](#benchmark)
 
 ---
 
@@ -159,3 +160,10 @@ A summary of the implemented hull generation methods.
 2. Based on how the boundary intersects the cube, each vertex of each cube is assigned a binary value (e.g. 0 if the point is thought to lie outside the surface.).
 3. The situation of intersection here is determined using point cloud instead of the surface.
 
+---
+
+## Benchmark
+
+![16_5-5%](benchmark/test_data/pictures/16_5-5%.png "16_5-5%")
+![16_5-10%](benchmark/test_data/pictures/16_5-10%.png "16_5-10%")
+![16_5-15%](benchmark/test_data/pictures/16_5-15%.png "16_5-15%")
