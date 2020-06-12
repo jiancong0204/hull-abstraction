@@ -158,8 +158,8 @@ int main()
 
     // Add point clouds
     viewer->addPointCloud(cloud, "cloud0", v0);
-    viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
-    viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
+    // viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
+    // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
     // Add meshes
     viewer->addPolygonMesh(mesh1, "mesh1", v3);
