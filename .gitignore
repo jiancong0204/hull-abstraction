@@ -1,6 +1,6 @@
 *.user
 *.user.*
-/prototype/build
+/benchmark/build
 *.vscode
 /.vscode
 /ros/build
