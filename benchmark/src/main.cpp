@@ -31,14 +31,14 @@ int main()
         return(-1);
     }
 
-    //std::cout << CLOCKS_PER_SEC << std::endl;
+    // std::cout << CLOCKS_PER_SEC << std::endl;
 
     // Down sampling
-
-    //start = clock();
-    //pp.statisticalFilter(cloud0, cloud);
-    //end = clock();
-    //std::cout << "Time cost for down sampling: " << (end - start) << " μs" << std::endl;
+    // start = clock();
+    // pp.statisticalFilter(cloud0, cloud);
+    // end = clock();
+    // std::cout << "Time cost for down sampling: " << (end - start) << " μs" << std::endl;
+    
     for (int i = 0; i < 1; i ++)
     {
     // Moving least squares
@@ -47,7 +47,7 @@ int main()
     // end = clock();
     // std::cout << "Time cost for moving least squares algorithm: " << (end - start) << " μs" << std::endl;
 
-    //Normal estimation
+    // Normal estimation
     // start = clock();
     pp.appendNormalEstimation(filtered_cloud, cloud_with_normals);
     // end = clock();
@@ -64,15 +64,10 @@ int main()
     // std::cout << "size of input cloud: " << input_cloud_size << std::endl;
     // std::cout << "size of test cloud: " << test_cloud_size << std::endl;
 
-    //start = clock();
-    //pp.appendNormalEstimation(filtered_cloud, filtered_cloud_with_normals);
-    //end = clock();
-    //std::cout << "Time cost for normal estimation (filtered cloud): " << (end - start)  << " μs" << std::endl;
-
-    // start = clock();
-    // mesh1 = rc.greedyTriangulation(input_cloud);
-    // end = clock();
-    // std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
+    start = clock();
+    mesh1 = rc.greedyTriangulation(input_cloud);
+    end = clock();
+    std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
 
     // bm.inputPolygonMesh(mesh1);
     // std::string tmp_string = "16_5_15%/Greedy Triangulation/" + std::to_string(i);
@@ -80,19 +75,19 @@ int main()
     // std::copy(tmp_string.begin(), tmp_string.end(), tmp_char_array);
     // bm.generateData(tmp_char_array);
 
-    // start = clock();
-    // mesh3 = rc.poissonReconstruction(input_cloud);
-    // end = clock();
-    // std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
+    start = clock();
+    mesh3 = rc.poissonReconstruction(input_cloud);
+    end = clock();
+    std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
 
     // bm.inputPolygonMesh(mesh3);
     // std::string tmp_string = "16_5_15%/Poisson Reconstruction/" + std::to_string(i);
     // bm.generateData(tmp_string);
 
-    // start = clock();
-    // mesh4 = rc.marchingCubes(input_cloud);
-    // end = clock();
-    // std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
+    start = clock();
+    mesh4 = rc.marchingCubes(input_cloud);
+    end = clock();
+    std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
     // bm.inputPolygonMesh(mesh4);
     // std::string tmp_string = "16_5_5%/Marching Cubes/" + std::to_string(i);
@@ -105,11 +100,12 @@ int main()
     end = clock();
     std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
-    bm.inputPolygonMesh(mesh2);
-    std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
-    bm.generateData(tmp_string);
+    //bm.inputPolygonMesh(mesh2);
+    //std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
+    //bm.generateData(tmp_string);
 
     }
+
     // Test of function intersectWith()
     // std::vector<double> point = {test_cloud->points[0].x, test_cloud->points[0].y, test_cloud->points[0].z};
     // std::vector<double> normal = {test_cloud->points[0].normal_x, test_cloud->points[0].normal_y, test_cloud->points[0].normal_z};
@@ -133,49 +129,52 @@ int main()
     // std::cout << flag << std::endl;
 
     // Display clouds
-    // boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
-    // int v1(0), v2(0), v3(0), v4(0), v0(0), v5(0), v6(0);
-    // viewer->createViewPort(0.00, 0.75, 1.00, 1.00, v0);
-    // viewer->createViewPort(0.00, 0.50, 0.50, 0.75, v1);
-    // viewer->createViewPort(0.50, 0.50, 1.00, 0.75, v2);
-    // viewer->createViewPort(0.00, 0.25, 0.50, 0.50, v3);
-    // viewer->createViewPort(0.50, 0.25, 1.00, 0.50, v4);
-    // viewer->createViewPort(0.00, 0.00, 0.50, 0.25, v5);
-    // viewer->createViewPort(0.50, 0.00, 1.00, 0.25, v6);
+    // Create a window for visualization
+    boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
+    int v1(0), v2(0), v3(0), v4(0), v0(0), v5(0), v6(0);
+    viewer->createViewPort(0.00, 0.75, 1.00, 1.00, v0);
+    viewer->createViewPort(0.00, 0.50, 0.50, 0.75, v1);
+    viewer->createViewPort(0.50, 0.50, 1.00, 0.75, v2);
+    viewer->createViewPort(0.00, 0.25, 0.50, 0.50, v3);
+    viewer->createViewPort(0.50, 0.25, 1.00, 0.50, v4);
+    viewer->createViewPort(0.00, 0.00, 0.50, 0.25, v5);
+    viewer->createViewPort(0.50, 0.00, 1.00, 0.25, v6);
 
-    // // Set the background
-    // viewer->setBackgroundColor(0, 0, 0, v0);
-    // viewer->setBackgroundColor(0, 0, 0, v1);
-    // viewer->setBackgroundColor(0, 0, 0, v2);
-    // viewer->setBackgroundColor(0, 0, 0, v3);
-    // viewer->setBackgroundColor(0, 0, 0, v4);
-    // viewer->setBackgroundColor(0, 0, 0, v5);
-    // viewer->setBackgroundColor(0, 0, 0, v6);
+    // Set the background
+    viewer->setBackgroundColor(0, 0, 0, v0);
+    viewer->setBackgroundColor(0, 0, 0, v1);
+    viewer->setBackgroundColor(0, 0, 0, v2);
+    viewer->setBackgroundColor(0, 0, 0, v3);
+    viewer->setBackgroundColor(0, 0, 0, v4);
+    viewer->setBackgroundColor(0, 0, 0, v5);
+    viewer->setBackgroundColor(0, 0, 0, v6);
 
-    // viewer->addText("Point Cloud", 10, 10, "text0", v0);
-    // viewer->addText("Greedy Triangulation", 10, 10, "text1", v3);
-    // viewer->addText("B-Spline Surface Fitting", 10, 10, "text2", v4);
-    // viewer->addText("Poisson Reconstruction", 10, 10, "text3", v5);
-    // viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
+    // Add text
+    viewer->addText("Point Cloud", 10, 10, "text0", v0);
+    viewer->addText("Greedy Triangulation", 10, 10, "text1", v3);
+    viewer->addText("B-Spline Surface Fitting", 10, 10, "text2", v4);
+    viewer->addText("Poisson Reconstruction", 10, 10, "text3", v5);
+    viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
 
-    // viewer->addPointCloud(cloud, "cloud0", v0);
-    // viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
-    // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
+    // Add point clouds
+    viewer->addPointCloud(cloud, "cloud0", v0);
+    viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
+    viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
-    // viewer->addPolygonMesh(mesh1, "mesh1", v3);
+    // Add meshes
+    viewer->addPolygonMesh(mesh1, "mesh1", v3);
+    viewer->addPolygonMesh(mesh2, "mesh2", v4);
+    viewer->addPolygonMesh(mesh3, "mesh3", v5);
+    viewer->addPolygonMesh(mesh4, "mesh4", v6);
 
-    // viewer->addPolygonMesh(mesh2, "mesh2", v4);
+    viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
+    viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
 
-    // viewer->addPolygonMesh(mesh3, "mesh3", v5);
-    // // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
-    // // viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
-
-    // viewer->addPolygonMesh(mesh4, "mesh4", v6);
-    // // viewer->setRepresentationToWireframeForAllActors();
-    // viewer->initCameraParameters();
-    // while (!viewer->wasStopped())
-    // {
-    //     viewer->spinOnce();
-    // }
+    // viewer->setRepresentationToWireframeForAllActors();
+    viewer->initCameraParameters();
+    while (!viewer->wasStopped())
+    {
+        viewer->spinOnce();
+    }
     return 0;
 }
