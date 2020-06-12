@@ -39,7 +39,7 @@ int main()
     //pp.statisticalFilter(cloud0, cloud);
     //end = clock();
     //std::cout << "Time cost for down sampling: " << (end - start) << " μs" << std::endl;
-    for (int i = 0; i < 30; i ++)
+    for (int i = 0; i < 1; i ++)
     {
     // Moving least squares
     // start = clock();
