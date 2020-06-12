@@ -6,7 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(prototype)
 
-find_package(PCL 1.2 REQUIRED) # find PCL library and define the required version
+find_package(PCL 1.8 REQUIRED) # find PCL library and define the required version
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
