@@ -5,6 +5,7 @@
  * 
  * @date 2020-06-16
  */
+#pragma once
 #include <pcl/point_types.h>
 #include <pcl/features/normal_3d.h>
 #include <pcl/PCLPointCloud2.h>
