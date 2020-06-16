@@ -18,6 +18,5 @@ void point_generation::PointGenerator::generatePointCloud()
 pcl::PointCloud<pcl::PointNormal>::Ptr randomlySampling(pcl::PolygonMesh mesh)
 {
     pcl::PointCloud<pcl::PointNormal>::Ptr cloud(new pcl::PointCloud<pcl::PointNormal>);
-    
     retun cloud;
 }
