@@ -52,4 +52,13 @@ namespace benchmark
      * @return Totla area of the triangle mesh
      */
     double calculateArea(pcl::PolygonMesh mesh);
+    
+    /**
+     * @brief Calculate the central symmetry point
+     * 
+     * @param point Source point
+     * @param center_point central point
+     * @return Central symmetry point of the source point 
+     */
+    std::vector<double> calculateCentralSymmetryPoint(std::vector<double> point, std::vector<double> center_point);
 }

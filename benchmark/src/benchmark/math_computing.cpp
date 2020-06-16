@@ -172,3 +172,15 @@ double benchmark::calculateArea(pcl::PolygonMesh mesh)
     }
     return mesh_area;
 }
+
+std::vector<double> benchmark::calculateCentralSymmetryPoint(std::vector<double> point, std::vector<double> center_point)
+{
+    std::vector<double> symmetry_point;
+    auto center_itr = center_point.begin();
+    for (auto itr = point.begin(); itr != point.end(); itr++)
+    {
+        symmetry_point.push_back((*center_itr) * 2 - (*itr));
+        center_itr++;
+    }
+    return symmetry_point;
+} 

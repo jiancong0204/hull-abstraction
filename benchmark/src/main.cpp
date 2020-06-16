@@ -100,9 +100,9 @@ int main()
     end = clock();
     std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
-    //bm.inputPolygonMesh(mesh2);
-    //std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
-    //bm.generateData(tmp_string);
+    // bm.inputPolygonMesh(mesh2);
+    // std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
+    // bm.generateData(tmp_string);
     }
 
     // Test of function intersectWith()
@@ -128,17 +128,23 @@ int main()
     // std::cout << flag << std::endl;
 
     // Test of function calculateAreaTriangle()
-    std::vector<std::vector<double>> triangle = {
-        {0.0, 0.0, 0.0},
-        {-1.0, 0.0, 0.0},
-        {0.0, 1.0, 0.0}
-    };
-    double triangle_area = benchmark::calculateArea(triangle);
-    std::cout << triangle_area << std::endl;
+    // std::vector<std::vector<double>> triangle = {
+    //     {0.0, 0.0, 0.0},
+    //     {-1.0, 0.0, 0.0},
+    //     {0.0, 1.0, 0.0}
+    // };
+    // double triangle_area = benchmark::calculateArea(triangle);
+    // std::cout << triangle_area << std::endl;
 
     // Calculate the area of the meshes
-    double mesh_area = benchmark::calculateArea(mesh1);
-    std::cout << "Area of mesh (greedy triangulation): " << mesh_area << std::endl;
+    // double mesh_area = benchmark::calculateArea(mesh1);
+    // std::cout << "Area of mesh (greedy triangulation): " << mesh_area << std::endl;
+
+    // Test of function calculateCentralSymmetryPoint()
+    // std::vector<double> point = {-1, 1, 0};
+    // std::vector<double> center_point = {1, 2, 0};
+    // std::vector<double> symmetry_point = benchmark::calculateCentralSymmetryPoint(point, center_point);
+    // std::cout << "Symmetry point is: [" << symmetry_point[0] << ", "<< symmetry_point[1] << ", " << symmetry_point[2] << "]" << std::endl;
 
     // Display clouds
     // Create a window for visualization
