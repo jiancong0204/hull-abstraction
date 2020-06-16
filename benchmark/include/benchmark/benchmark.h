@@ -15,6 +15,7 @@
 #include <pcl/PCLPointCloud2.h>
 #include <pcl/features/normal_3d.h>
 #include <pcl/visualization/pcl_visualizer.h>
+#include "benchmark/math_computing.h"
 
 namespace benchmark
 {
@@ -86,31 +87,11 @@ namespace benchmark
          */
         void divideCloud(pcl::PointCloud<pcl::PointNormal>::Ptr cloud, pcl::PointCloud<pcl::PointNormal>::Ptr test_cloud, double fraction);
 
-        /**
-         * @brief Estimate the nearest intersection point between a point's normal vector and the mesh
-         * 
-         * @param mesh Input mesh representing the surface reconstruction
-         * @param point Input Point for estimation
-         * @param normal Normal vector of the input point
-         * @return A vector containing the coordinates of the resulting intersection point  
-         */
-        std::vector<double> intersectWith(pcl::PolygonMesh mesh, std::vector<double> point, std::vector<double> normal);
-
-        /**
-         * @brief Confirm that a point lies inside a polygon
-         * 
-         * @param point Input point
-         * @param polygon Input polygon
-         * @return true The point lies inside the polygon
-         * @return false The point lies outside the polygon
-         */
-        bool isInside(std::vector<double> point, std::vector<std::vector<double>> polygon);
-
-        pcl::PointCloud<pcl::PointNormal>::Ptr         test_cloud         /**< Test cloud */
-            {new pcl::PointCloud<pcl::PointNormal>};       
-        pcl::PointCloud<pcl::PointNormal>::Ptr         input_cloud        /**< Input cloud */
+        pcl::PointCloud<pcl::PointNormal>::Ptr           test_cloud           /**< Test cloud */
+            {new pcl::PointCloud<pcl::PointNormal>};         
+        pcl::PointCloud<pcl::PointNormal>::Ptr           input_cloud          /**< Input cloud */
             {new pcl::PointCloud<pcl::PointNormal>};      
-        pcl::PolygonMesh                               mesh;              /**< Mesh representing the surface reconstruction */
-        double                                         fraction = 0.02;   /**< Size of the test cloud */
+        pcl::PolygonMesh                                 mesh;                /**< Mesh representing the surface reconstruction */
+        double                                           fraction = 0.02;     /**< Size of the test cloud */
     };
 }

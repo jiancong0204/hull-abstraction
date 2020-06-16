@@ -20,6 +20,7 @@ SET(codes
     src/hull_abstraction/preprocessor.cpp 
     src/pcl_utilization/pcl_utilization.cpp
     src/benchmark/benchmark.cpp
+    src/benchmark/math_computing.cpp
 )
 
 add_executable (hull_abstraction ${codes})

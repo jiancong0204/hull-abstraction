@@ -103,7 +103,6 @@ int main()
     //bm.inputPolygonMesh(mesh2);
     //std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
     //bm.generateData(tmp_string);
-
     }
 
     // Test of function intersectWith()
@@ -127,6 +126,19 @@ int main()
     // };
     // bool flag = benchmark::isInside(point, polygon);
     // std::cout << flag << std::endl;
+
+    // Test of function calculateAreaTriangle()
+    std::vector<std::vector<double>> triangle = {
+        {0.0, 0.0, 0.0},
+        {-1.0, 0.0, 0.0},
+        {0.0, 1.0, 0.0}
+    };
+    double triangle_area = benchmark::calculateArea(triangle);
+    std::cout << triangle_area << std::endl;
+
+    // Calculate the area of the meshes
+    double mesh_area = benchmark::calculateArea(mesh1);
+    std::cout << "Area of mesh (greedy triangulation): " << mesh_area << std::endl;
 
     // Display clouds
     // Create a window for visualization
