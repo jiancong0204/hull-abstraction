@@ -137,8 +137,8 @@ int main()
     // std::cout << triangle_area << std::endl;
 
     // Calculate the area of the meshes
-    // double mesh_area = benchmark::calculateArea(mesh4);
-    // std::cout << "Area of mesh: " << mesh_area << std::endl;
+    double mesh_area = benchmark::calculateArea(mesh3);
+    std::cout << "Area of mesh: " << mesh_area << std::endl;
 
     // Test of function calculateCentralSymmetryPoint()
     // std::vector<double> point = {-1, 1, 0};
@@ -157,11 +157,17 @@ int main()
     // Test of function uniformTriangleSampling()
     // std::vector<std::vector<double>> triangle = {
     //     {0.0, 0.0, 0.0},
-    //     {0.0, 0.0, 1.0},
-    //     {0.0, -1.0, 0.0}
+    //     {0.0, 1.0, 0.0},
+    //     {1.0, 0.0, 0.0}
     // };
-    // std::vector<double> point6 = benchmark::uniformTriangleSampling(triangle);
-    // std::cout << "point6 is: [" << point6[0] << ", "<< point6[1] << ", " << point6[2] << "]" << std::endl;
+
+    // srand(time(NULL));
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     std::vector<double> point10 = benchmark::uniformTriangleSampling(triangle);
+    //     std::cout << "point10 is: [" << point10[0] << ", "<< point10[1] << ", " << point10[2] << "]" << std::endl;
+    //     std::cout << point10[0] + point10[1] << std::endl;
+    // }
 
     // Display clouds
     // Create a window for visualization

@@ -255,19 +255,52 @@ std::vector<double> benchmark::uniformTriangleSampling(std::vector<std::vector<d
     }
 
     point4 = calculatePerpendicularIntersection(point1, point2, point3);
-    std::cout << "point4 is: [" << point4[0] << ", "<< point4[1] << ", " << point4[2] << "]" << std::endl;
 
     std::vector<double> center_point;
     center_point.push_back((point2[0] + point3[0]) * 0.5);
     center_point.push_back((point2[1] + point3[1]) * 0.5);
     center_point.push_back((point2[2] + point3[2]) * 0.5);
     point5 = calculateCentralSymmetryPoint(point4, center_point);
-    std::cout << "point5 is: [" << point5[0] << ", "<< point5[1] << ", " << point5[2] << "]" << std::endl;
 
     center_point[0] = (point1[0] + point3[0]) * 0.5;
     center_point[1] = (point1[1] + point3[1]) * 0.5;
     center_point[2] = (point1[2] + point3[2]) * 0.5;
     point6 = calculateCentralSymmetryPoint(point4, center_point);
-    return point6;
+
+    double t1 = rand()%1001;
+    t1 = t1 / 1000;
+    double t2 = rand()%1001;
+    t2 = t2 / 1000;
+
+    std::vector<double> point7;
+    point7.push_back(t1 * point6[0] + (1 - t1) * point1[0]);
+    point7.push_back(t1 * point6[1] + (1 - t1) * point1[1]);
+    point7.push_back(t1 * point6[2] + (1 - t1) * point1[2]);
+
+    std::vector<double> point8;
+    point8.push_back(t1 * point5[0] + (1 - t1) * point2[0]);
+    point8.push_back(t1 * point5[1] + (1 - t1) * point2[1]);
+    point8.push_back(t1 * point5[2] + (1 - t1) * point2[2]);
+
+    std::vector<double> point9;
+    point9.push_back(t2 * point2[0] + (1 - t2) * point1[0]);
+    point9.push_back(t2 * point2[1] + (1 - t2) * point1[1]);
+    point9.push_back(t2 * point2[2] + (1 - t2) * point1[2]);
+
+    std::vector<double> point10;
+    point10 = calculatePerpendicularIntersection(point7, point8, point9);
+    std::vector<double> tmp_point;
+    if (isInside(point10, triangle)) return point10;
+    else
+    {
+        tmp_point = calculateCentralSymmetryPoint(point10, center_point);
+    }
+    if(isInside(tmp_point, triangle)) return tmp_point;
+
+    center_point[0] = (point2[0] + point3[0]) * 0.5;
+    center_point[1] = (point2[1] + point3[1]) * 0.5;
+    center_point[2] = (point2[2] + point3[2]) * 0.5;
+    point10 = calculateCentralSymmetryPoint(point10, center_point);
+    return point10;
 }
 
