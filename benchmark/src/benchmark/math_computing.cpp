@@ -202,3 +202,69 @@ std::vector<double> benchmark::calculatePerpendicularIntersection(std::vector<do
     result_point.push_back(point1[2] + t * p);
     return result_point;
 }
+
+std::vector<double> benchmark::uniformTriangleSampling(std::vector<std::vector<double>> triangle)
+{
+    std::vector<double> point1;
+    std::vector<double> point2;
+    std::vector<double> point3;
+    std::vector<double> point4;
+    std::vector<double> point5;
+    std::vector<double> point6;
+    std::vector<double> sample;
+
+    double length1 = sqrt
+    (
+        pow(triangle[1][0]-triangle[0][0], 2) +
+        pow(triangle[1][1]-triangle[0][1], 2) +
+        pow(triangle[1][2]-triangle[0][2], 2)
+    );
+
+    double length2 = sqrt
+    (
+        pow(triangle[2][0]-triangle[1][0], 2) +
+        pow(triangle[2][1]-triangle[1][1], 2) +
+        pow(triangle[2][2]-triangle[1][2], 2)
+    );
+
+    double length3 = sqrt
+    (
+        pow(triangle[0][0]-triangle[2][0], 2) +
+        pow(triangle[0][1]-triangle[2][1], 2) +
+        pow(triangle[0][2]-triangle[2][2], 2)
+    );
+
+    double horizontal_length = length1;
+    point1 = triangle[0];
+    point2 = triangle[1];
+    point3 = triangle[2];
+
+    if (length2 >= horizontal_length) 
+    {
+        horizontal_length = length2;
+        point1 = triangle[1];
+        point2 = triangle[2];
+        point3 = triangle[0];
+    }
+    if (length3 >= horizontal_length) 
+    {
+        horizontal_length = length3;
+        point1 = triangle[2];
+        point2 = triangle[0];
+        point3 = triangle[1];
+    }
+
+    point4 = calculatePerpendicularIntersection(point1, point2, point3);
+
+    std::vector<double> center_point;
+    center_point.push_back((point2[0] + point3[0]) * 0.5);
+    center_point.push_back((point2[1] + point3[1]) * 0.5);
+    center_point.push_back((point2[2] + point3[2]) * 0.5);
+    point5 = calculateCentralSymmetryPoint(point4, center_point);
+    center_point[0] = point1[0] + point3[0]) * 0.5;
+    center_point[1] = point1[1] + point3[1]) * 0.5;
+    center_point[2] = point1[2] + point3[2]) * 0.5;
+    point6 = calculateCentralSymmetryPoint(point4, center_point);
+    
+}
+

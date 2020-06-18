@@ -71,4 +71,12 @@ namespace benchmark
      * @return Coordinates of the intersection point 
      */
     std::vector<double> calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3);
+
+    /**
+     * @brief Sample a point inside a triangle
+     * 
+     * @param triangle Trigle on which a point will be sampled
+     * @return Coordinates of the point
+     */
+    std::vector<double> uniformTriangleSampling(std::vector<std::vector<double>> triangle);
 }
