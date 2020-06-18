@@ -5,3 +5,176 @@
 \item 
 class \hyperlink{classbenchmark_1_1_benchmark}{Benchmark}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a2d148ddad0fb0499866dd454cde1767a}{intersect\+With} (pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)
+\begin{DoxyCompactList}\small\item\em Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. \end{DoxyCompactList}\item 
+bool \hyperlink{namespacebenchmark_a1e580512121573111919f5d97ca986d3}{is\+Inside} (std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)
+\begin{DoxyCompactList}\small\item\em Confirm that a point lies inside a polygon. \end{DoxyCompactList}\item 
+double \hyperlink{namespacebenchmark_a11e8b8b42926972c4a1795c588d8efa7}{calculate\+Area} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)
+\begin{DoxyCompactList}\small\item\em Calculate the area of a triangle. \end{DoxyCompactList}\item 
+double \hyperlink{namespacebenchmark_a82d4720417fd81d07521ce48ccaebeac}{calculate\+Area} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Calculate the area of a trianlge mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a7885a2fc3dcb43d1198a2fd4111135dc}{calculate\+Central\+Symmetry\+Point} (std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ center\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Calculate the central symmetry point. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a208595619c985eb145eb12cfcb981e8a}{calculate\+Perpendicular\+Intersection} (std\+::vector$<$ double $>$ point1, std\+::vector$<$ double $>$ point2, std\+::vector$<$ double $>$ point3)
+\begin{DoxyCompactList}\small\item\em Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_adc7e10514f96b4597d460b8288908870}{uniform\+Triangle\+Sampling} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)
+\begin{DoxyCompactList}\small\item\em Sample a point inside a triangle (srand(time(\+N\+U\+L\+L)) must be executed before calling this function) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{benchmark@{benchmark}!calculate\+Area@{calculate\+Area}}
+\index{calculate\+Area@{calculate\+Area}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{calculate\+Area(std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)}{calculateArea(std::vector< std::vector< double >> triangle)}}]{\setlength{\rightskip}{0pt plus 5cm}double benchmark\+::calculate\+Area (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{triangle}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a11e8b8b42926972c4a1795c588d8efa7}{}\label{namespacebenchmark_a11e8b8b42926972c4a1795c588d8efa7}
+
+
+Calculate the area of a triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Triangle} & Vertices of the triangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Area of the triangle 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!calculate\+Area@{calculate\+Area}}
+\index{calculate\+Area@{calculate\+Area}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{calculate\+Area(pcl\+::\+Polygon\+Mesh mesh)}{calculateArea(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}double benchmark\+::calculate\+Area (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a82d4720417fd81d07521ce48ccaebeac}{}\label{namespacebenchmark_a82d4720417fd81d07521ce48ccaebeac}
+
+
+Calculate the area of a trianlge mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input mesh whose area is to be calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Totla area of the triangle mesh 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!calculate\+Central\+Symmetry\+Point@{calculate\+Central\+Symmetry\+Point}}
+\index{calculate\+Central\+Symmetry\+Point@{calculate\+Central\+Symmetry\+Point}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{calculate\+Central\+Symmetry\+Point(std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ center\+\_\+point)}{calculateCentralSymmetryPoint(std::vector< double > point, std::vector< double > center_point)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::calculate\+Central\+Symmetry\+Point (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{point, }
+\item[{std\+::vector$<$ double $>$}]{center\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a7885a2fc3dcb43d1198a2fd4111135dc}{}\label{namespacebenchmark_a7885a2fc3dcb43d1198a2fd4111135dc}
+
+
+Calculate the central symmetry point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Source point \\
+\hline
+{\em center\+\_\+point} & central point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Central symmetry point of the source point 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!calculate\+Perpendicular\+Intersection@{calculate\+Perpendicular\+Intersection}}
+\index{calculate\+Perpendicular\+Intersection@{calculate\+Perpendicular\+Intersection}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{calculate\+Perpendicular\+Intersection(std\+::vector$<$ double $>$ point1, std\+::vector$<$ double $>$ point2, std\+::vector$<$ double $>$ point3)}{calculatePerpendicularIntersection(std::vector< double > point1, std::vector< double > point2, std::vector< double > point3)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::calculate\+Perpendicular\+Intersection (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{point1, }
+\item[{std\+::vector$<$ double $>$}]{point2, }
+\item[{std\+::vector$<$ double $>$}]{point3}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a208595619c985eb145eb12cfcb981e8a}{}\label{namespacebenchmark_a208595619c985eb145eb12cfcb981e8a}
+
+
+Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & Point 1 \\
+\hline
+{\em point2} & Point 2 \\
+\hline
+{\em point3} & Point 3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinates of the intersection point 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!intersect\+With@{intersect\+With}}
+\index{intersect\+With@{intersect\+With}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{intersect\+With(pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)}{intersectWith(pcl::PolygonMesh mesh, std::vector< double > point, std::vector< double > normal)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::intersect\+With (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh, }
+\item[{std\+::vector$<$ double $>$}]{point, }
+\item[{std\+::vector$<$ double $>$}]{normal}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a2d148ddad0fb0499866dd454cde1767a}{}\label{namespacebenchmark_a2d148ddad0fb0499866dd454cde1767a}
+
+
+Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input mesh representing the surface reconstruction \\
+\hline
+{\em point} & Input Point for estimation \\
+\hline
+{\em normal} & Normal vector of the input point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the coordinates of the resulting intersection point 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!is\+Inside@{is\+Inside}}
+\index{is\+Inside@{is\+Inside}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{is\+Inside(std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)}{isInside(std::vector< double > point, std::vector< std::vector< double >> polygon)}}]{\setlength{\rightskip}{0pt plus 5cm}bool benchmark\+::is\+Inside (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{point, }
+\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{polygon}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_a1e580512121573111919f5d97ca986d3}{}\label{namespacebenchmark_a1e580512121573111919f5d97ca986d3}
+
+
+Confirm that a point lies inside a polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Input point \\
+\hline
+{\em polygon} & Input polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true The point lies inside the polygon 
+
+false The point lies outside the polygon 
+\end{DoxyReturn}
+\index{benchmark@{benchmark}!uniform\+Triangle\+Sampling@{uniform\+Triangle\+Sampling}}
+\index{uniform\+Triangle\+Sampling@{uniform\+Triangle\+Sampling}!benchmark@{benchmark}}
+\subsubsection[{\texorpdfstring{uniform\+Triangle\+Sampling(std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)}{uniformTriangleSampling(std::vector< std::vector< double >> triangle)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::uniform\+Triangle\+Sampling (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{triangle}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacebenchmark_adc7e10514f96b4597d460b8288908870}{}\label{namespacebenchmark_adc7e10514f96b4597d460b8288908870}
+
+
+Sample a point inside a triangle (srand(time(\+N\+U\+L\+L)) must be executed before calling this function) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle} & Trigle on which a point will be sampled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordinates of the point 
+\end{DoxyReturn}

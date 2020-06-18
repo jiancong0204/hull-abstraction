@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['calculatearea',['calculateArea',['../namespacebenchmark.html#a11e8b8b42926972c4a1795c588d8efa7',1,'benchmark::calculateArea(std::vector&lt; std::vector&lt; double &gt;&gt; triangle)'],['../namespacebenchmark.html#a82d4720417fd81d07521ce48ccaebeac',1,'benchmark::calculateArea(pcl::PolygonMesh mesh)']]],
+  ['calculatecentralsymmetrypoint',['calculateCentralSymmetryPoint',['../namespacebenchmark.html#a7885a2fc3dcb43d1198a2fd4111135dc',1,'benchmark']]],
+  ['calculateperpendicularintersection',['calculatePerpendicularIntersection',['../namespacebenchmark.html#a208595619c985eb145eb12cfcb981e8a',1,'benchmark']]],
   ['catkin_5fmarker_5ffile',['CATKIN_MARKER_FILE',['../namespace__setup__util.html#a3fa0ca5a460a71a43cbc3d4954ab1f10',1,'_setup_util']]],
   ['catkin_5fpackage_5fprefix',['CATKIN_PACKAGE_PREFIX',['../namespacepkg.html#ae26c7a5a06b7d738f4d210ca449e6bee',1,'pkg']]],
   ['cloud',['cloud',['../classload__pcd_1_1_load_p_c_d.html#a3a00c45c42111b42373154c364950842',1,'load_pcd::LoadPCD']]],

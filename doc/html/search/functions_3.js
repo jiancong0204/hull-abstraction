@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['calculatearea',['calculateArea',['../namespacebenchmark.html#a11e8b8b42926972c4a1795c588d8efa7',1,'benchmark::calculateArea(std::vector&lt; std::vector&lt; double &gt;&gt; triangle)'],['../namespacebenchmark.html#a82d4720417fd81d07521ce48ccaebeac',1,'benchmark::calculateArea(pcl::PolygonMesh mesh)']]],
+  ['calculatecentralsymmetrypoint',['calculateCentralSymmetryPoint',['../namespacebenchmark.html#a7885a2fc3dcb43d1198a2fd4111135dc',1,'benchmark']]],
+  ['calculateperpendicularintersection',['calculatePerpendicularIntersection',['../namespacebenchmark.html#a208595619c985eb145eb12cfcb981e8a',1,'benchmark']]],
   ['comment',['comment',['../namespace__setup__util.html#abe8c95c4cfe8b1374dacd5f91d984353',1,'_setup_util']]],
   ['computeaabb',['computeAABB',['../namespacepcl__utilization.html#a21484054fe6624a5c1b6fad0c033ad95',1,'pcl_utilization::computeAABB(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)'],['../namespacepcl__utilization.html#af40198164242e7837f20357bd802b8c9',1,'pcl_utilization::computeAABB(pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloudWithNormals)']]],
   ['computecentroid',['computeCentroid',['../namespacepcl__utilization.html#a217b6e0e27678d9f9bb1a7a4a39a20ea',1,'pcl_utilization::computeCentroid(pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr cloud)'],['../namespacepcl__utilization.html#a0fa69a5e73bdd8db793db5b515bf86e7',1,'pcl_utilization::computeCentroid(pcl::PolygonMesh mesh)']]],

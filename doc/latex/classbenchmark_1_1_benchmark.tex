@@ -11,7 +11,8 @@ The \hyperlink{classbenchmark_1_1_benchmark}{Benchmark} class.
 
 
 
-Collaboration diagram for benchmark\+:\+:Benchmark\+:\nopagebreak
+Collaboration diagram for benchmark\+:\+:Benchmark\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,11 +42,7 @@ void \hyperlink{classbenchmark_1_1_benchmark_a56970453ee4a690a35135ffc07dffb34}{
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classbenchmark_1_1_benchmark_a9c9393327cf0af813804f8d46a2d1f5c}{divide\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr cloud, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classbenchmark_1_1_benchmark_a9089b4dd75c60319db0450304c073828}{test\+\_\+cloud}, double \hyperlink{classbenchmark_1_1_benchmark_ac05259c7c78e7f7fd12c8c573e96871e}{fraction})
-\begin{DoxyCompactList}\small\item\em Devide the original cloud into a test cloud and a input cloud. \end{DoxyCompactList}\item 
-std\+::vector$<$ double $>$ \hyperlink{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}{intersect\+With} (pcl\+::\+Polygon\+Mesh \hyperlink{classbenchmark_1_1_benchmark_ac909ac5421efc317d13cccbe8049879d}{mesh}, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)
-\begin{DoxyCompactList}\small\item\em Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. \end{DoxyCompactList}\item 
-bool \hyperlink{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}{is\+Inside} (std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)
-\begin{DoxyCompactList}\small\item\em Confirm that a point lies inside a polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Devide the original cloud into a test cloud and a input cloud. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -183,55 +180,6 @@ Input a polygon mesh for benchmaking.
 {\em mesh} & Input mesh representing the surface reconstruction \\
 \hline
 \end{DoxyParams}
-\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!intersect\+With@{intersect\+With}}
-\index{intersect\+With@{intersect\+With}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
-\subsubsection[{\texorpdfstring{intersect\+With(pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)}{intersectWith(pcl::PolygonMesh mesh, std::vector< double > point, std::vector< double > normal)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ benchmark\+::\+Benchmark\+::intersect\+With (
-\begin{DoxyParamCaption}
-\item[{pcl\+::\+Polygon\+Mesh}]{mesh, }
-\item[{std\+::vector$<$ double $>$}]{point, }
-\item[{std\+::vector$<$ double $>$}]{normal}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}{}\label{classbenchmark_1_1_benchmark_a72162e69a45d0070510691572b26a9b8}
-
-
-Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mesh} & Input mesh representing the surface reconstruction \\
-\hline
-{\em point} & Input Point for estimation \\
-\hline
-{\em normal} & Normal vector of the input point \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A vector containing the coordinates of the resulting intersection point 
-\end{DoxyReturn}
-\index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!is\+Inside@{is\+Inside}}
-\index{is\+Inside@{is\+Inside}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
-\subsubsection[{\texorpdfstring{is\+Inside(std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)}{isInside(std::vector< double > point, std::vector< std::vector< double >> polygon)}}]{\setlength{\rightskip}{0pt plus 5cm}bool benchmark\+::\+Benchmark\+::is\+Inside (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ double $>$}]{point, }
-\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{polygon}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}{}\label{classbenchmark_1_1_benchmark_ab5b9175bdfcbec1aae85881b3c79f79b}
-
-
-Confirm that a point lies inside a polygon. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em point} & Input point \\
-\hline
-{\em polygon} & Input polygon \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true The point lies inside the polygon 
-
-false The point lies outside the polygon 
-\end{DoxyReturn}
 \index{benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}!set\+Test\+Cloud\+Size@{set\+Test\+Cloud\+Size}}
 \index{set\+Test\+Cloud\+Size@{set\+Test\+Cloud\+Size}!benchmark\+::\+Benchmark@{benchmark\+::\+Benchmark}}
 \subsubsection[{\texorpdfstring{set\+Test\+Cloud\+Size(double fraction)}{setTestCloudSize(double fraction)}}]{\setlength{\rightskip}{0pt plus 5cm}void benchmark\+::\+Benchmark\+::set\+Test\+Cloud\+Size (
@@ -262,5 +210,5 @@ $<$ Test cloud
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/jc/hull\+\_\+abstraction/benchmark/include/benchmark/\hyperlink{benchmark_8h}{benchmark.\+h}\item 
-/home/jc/hull\+\_\+abstraction/benchmark/src/benchmark/\hyperlink{benchmark_8cpp}{benchmark.\+cpp}\end{DoxyCompactItemize}
+/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/include/benchmark/\hyperlink{benchmark_8h}{benchmark.\+h}\item 
+/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/src/benchmark/\hyperlink{benchmark_8cpp}{benchmark.\+cpp}\end{DoxyCompactItemize}

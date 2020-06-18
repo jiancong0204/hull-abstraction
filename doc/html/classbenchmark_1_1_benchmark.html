@@ -107,7 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Collaboration diagram for benchmark::Benchmark:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classbenchmark_1_1_benchmark__coll__graph.svg" width="171" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classbenchmark_1_1_benchmark__coll__graph.svg" width="171" height="250"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -142,12 +143,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a9c9393327cf0af813804f8d46a2d1f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbenchmark_1_1_benchmark.html#a9c9393327cf0af813804f8d46a2d1f5c">divideCloud</a> (pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr cloud, pcl::PointCloud&lt; pcl::PointNormal &gt;::Ptr <a class="el" href="classbenchmark_1_1_benchmark.html#a9089b4dd75c60319db0450304c073828">test_cloud</a>, double <a class="el" href="classbenchmark_1_1_benchmark.html#ac05259c7c78e7f7fd12c8c573e96871e">fraction</a>)</td></tr>
 <tr class="memdesc:a9c9393327cf0af813804f8d46a2d1f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devide the original cloud into a test cloud and a input cloud.  <a href="#a9c9393327cf0af813804f8d46a2d1f5c">More...</a><br /></td></tr>
 <tr class="separator:a9c9393327cf0af813804f8d46a2d1f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72162e69a45d0070510691572b26a9b8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbenchmark_1_1_benchmark.html#a72162e69a45d0070510691572b26a9b8">intersectWith</a> (pcl::PolygonMesh <a class="el" href="classbenchmark_1_1_benchmark.html#ac909ac5421efc317d13cccbe8049879d">mesh</a>, std::vector&lt; double &gt; point, std::vector&lt; double &gt; normal)</td></tr>
-<tr class="memdesc:a72162e69a45d0070510691572b26a9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the nearest intersection point between a point's normal vector and the mesh.  <a href="#a72162e69a45d0070510691572b26a9b8">More...</a><br /></td></tr>
-<tr class="separator:a72162e69a45d0070510691572b26a9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5b9175bdfcbec1aae85881b3c79f79b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbenchmark_1_1_benchmark.html#ab5b9175bdfcbec1aae85881b3c79f79b">isInside</a> (std::vector&lt; double &gt; point, std::vector&lt; std::vector&lt; double &gt;&gt; polygon)</td></tr>
-<tr class="memdesc:ab5b9175bdfcbec1aae85881b3c79f79b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirm that a point lies inside a polygon.  <a href="#ab5b9175bdfcbec1aae85881b3c79f79b">More...</a><br /></td></tr>
-<tr class="separator:ab5b9175bdfcbec1aae85881b3c79f79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -367,103 +362,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a72162e69a45d0070510691572b26a9b8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; double &gt; benchmark::Benchmark::intersectWith </td>
-          <td>(</td>
-          <td class="paramtype">pcl::PolygonMesh&#160;</td>
-          <td class="paramname"><em>mesh</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>point</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>normal</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Estimate the nearest intersection point between a point's normal vector and the mesh. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mesh</td><td>Input mesh representing the surface reconstruction </td></tr>
-    <tr><td class="paramname">point</td><td>Input Point for estimation </td></tr>
-    <tr><td class="paramname">normal</td><td>Normal vector of the input point </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the coordinates of the resulting intersection point </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ab5b9175bdfcbec1aae85881b3c79f79b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool benchmark::Benchmark::isInside </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>point</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>polygon</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Confirm that a point lies inside a polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">point</td><td>Input point </td></tr>
-    <tr><td class="paramname">polygon</td><td>Input polygon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true The point lies inside the polygon </dd>
-<dd>
-false The point lies outside the polygon </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a707e7974bcb0b5b2ee231e9e7cb142a8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -568,13 +466,13 @@ false The point lies outside the polygon </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/jc/hull_abstraction/benchmark/include/benchmark/<a class="el" href="benchmark_8h_source.html">benchmark.h</a></li>
-<li>/home/jc/hull_abstraction/benchmark/src/benchmark/<a class="el" href="benchmark_8cpp.html">benchmark.cpp</a></li>
+<li>/home/jc/THESIS/hull_abstraction/benchmark/include/benchmark/<a class="el" href="benchmark_8h_source.html">benchmark.h</a></li>
+<li>/home/jc/THESIS/hull_abstraction/benchmark/src/benchmark/<a class="el" href="benchmark_8cpp.html">benchmark.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 31 2020 09:18:19 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 23:12:03 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

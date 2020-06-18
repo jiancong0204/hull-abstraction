@@ -95,7 +95,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">benchmark Namespace Reference</div>  </div>
 </div><!--header-->
@@ -106,11 +107,271 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbenchmark_1_1_benchmark.html">Benchmark</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classbenchmark_1_1_benchmark.html" title="The Benchmark class. ">Benchmark</a> class.  <a href="classbenchmark_1_1_benchmark.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2d148ddad0fb0499866dd454cde1767a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a2d148ddad0fb0499866dd454cde1767a">intersectWith</a> (pcl::PolygonMesh mesh, std::vector&lt; double &gt; point, std::vector&lt; double &gt; normal)</td></tr>
+<tr class="memdesc:a2d148ddad0fb0499866dd454cde1767a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the nearest intersection point between a point's normal vector and the mesh.  <a href="#a2d148ddad0fb0499866dd454cde1767a">More...</a><br /></td></tr>
+<tr class="separator:a2d148ddad0fb0499866dd454cde1767a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e580512121573111919f5d97ca986d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a1e580512121573111919f5d97ca986d3">isInside</a> (std::vector&lt; double &gt; point, std::vector&lt; std::vector&lt; double &gt;&gt; polygon)</td></tr>
+<tr class="memdesc:a1e580512121573111919f5d97ca986d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirm that a point lies inside a polygon.  <a href="#a1e580512121573111919f5d97ca986d3">More...</a><br /></td></tr>
+<tr class="separator:a1e580512121573111919f5d97ca986d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e8b8b42926972c4a1795c588d8efa7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a11e8b8b42926972c4a1795c588d8efa7">calculateArea</a> (std::vector&lt; std::vector&lt; double &gt;&gt; triangle)</td></tr>
+<tr class="memdesc:a11e8b8b42926972c4a1795c588d8efa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the area of a triangle.  <a href="#a11e8b8b42926972c4a1795c588d8efa7">More...</a><br /></td></tr>
+<tr class="separator:a11e8b8b42926972c4a1795c588d8efa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d4720417fd81d07521ce48ccaebeac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a82d4720417fd81d07521ce48ccaebeac">calculateArea</a> (pcl::PolygonMesh mesh)</td></tr>
+<tr class="memdesc:a82d4720417fd81d07521ce48ccaebeac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the area of a trianlge mesh.  <a href="#a82d4720417fd81d07521ce48ccaebeac">More...</a><br /></td></tr>
+<tr class="separator:a82d4720417fd81d07521ce48ccaebeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7885a2fc3dcb43d1198a2fd4111135dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a7885a2fc3dcb43d1198a2fd4111135dc">calculateCentralSymmetryPoint</a> (std::vector&lt; double &gt; point, std::vector&lt; double &gt; center_point)</td></tr>
+<tr class="memdesc:a7885a2fc3dcb43d1198a2fd4111135dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the central symmetry point.  <a href="#a7885a2fc3dcb43d1198a2fd4111135dc">More...</a><br /></td></tr>
+<tr class="separator:a7885a2fc3dcb43d1198a2fd4111135dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208595619c985eb145eb12cfcb981e8a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#a208595619c985eb145eb12cfcb981e8a">calculatePerpendicularIntersection</a> (std::vector&lt; double &gt; point1, std::vector&lt; double &gt; point2, std::vector&lt; double &gt; point3)</td></tr>
+<tr class="memdesc:a208595619c985eb145eb12cfcb981e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3.  <a href="#a208595619c985eb145eb12cfcb981e8a">More...</a><br /></td></tr>
+<tr class="separator:a208595619c985eb145eb12cfcb981e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7e10514f96b4597d460b8288908870"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebenchmark.html#adc7e10514f96b4597d460b8288908870">uniformTriangleSampling</a> (std::vector&lt; std::vector&lt; double &gt;&gt; triangle)</td></tr>
+<tr class="memdesc:adc7e10514f96b4597d460b8288908870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a point inside a triangle (srand(time(NULL)) must be executed before calling this function)  <a href="#adc7e10514f96b4597d460b8288908870">More...</a><br /></td></tr>
+<tr class="separator:adc7e10514f96b4597d460b8288908870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a11e8b8b42926972c4a1795c588d8efa7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double benchmark::calculateArea </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
+          <td class="paramname"><em>triangle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the area of a triangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Triangle</td><td>Vertices of the triangle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Area of the triangle </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a82d4720417fd81d07521ce48ccaebeac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double benchmark::calculateArea </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PolygonMesh&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the area of a trianlge mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>Input mesh whose area is to be calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Totla area of the triangle mesh </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7885a2fc3dcb43d1198a2fd4111135dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; benchmark::calculateCentralSymmetryPoint </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>center_point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the central symmetry point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Source point </td></tr>
+    <tr><td class="paramname">center_point</td><td>central point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Central symmetry point of the source point </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a208595619c985eb145eb12cfcb981e8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; benchmark::calculatePerpendicularIntersection </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point1</td><td>Point 1 </td></tr>
+    <tr><td class="paramname">point2</td><td>Point 2 </td></tr>
+    <tr><td class="paramname">point3</td><td>Point 3 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinates of the intersection point </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2d148ddad0fb0499866dd454cde1767a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; benchmark::intersectWith </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PolygonMesh&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>normal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estimate the nearest intersection point between a point's normal vector and the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>Input mesh representing the surface reconstruction </td></tr>
+    <tr><td class="paramname">point</td><td>Input Point for estimation </td></tr>
+    <tr><td class="paramname">normal</td><td>Normal vector of the input point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the coordinates of the resulting intersection point </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e580512121573111919f5d97ca986d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool benchmark::isInside </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
+          <td class="paramname"><em>polygon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Confirm that a point lies inside a polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>Input point </td></tr>
+    <tr><td class="paramname">polygon</td><td>Input polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The point lies inside the polygon </dd>
+<dd>
+false The point lies outside the polygon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc7e10514f96b4597d460b8288908870"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; double &gt; benchmark::uniformTriangleSampling </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
+          <td class="paramname"><em>triangle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sample a point inside a triangle (srand(time(NULL)) must be executed before calling this function) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">triangle</td><td>Trigle on which a point will be sampled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinates of the point </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 31 2020 09:18:19 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 23:12:03 for Hull Abstraction by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

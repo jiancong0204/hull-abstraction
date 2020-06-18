@@ -1,0 +1,152 @@
+\hypertarget{classpoint__generation_1_1_point_generator}{}\section{point\+\_\+generation\+:\+:Point\+Generator Class Reference}
+\label{classpoint__generation_1_1_point_generator}\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+
+
+The \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} class This class wraps the implementation of algorithms in order to generate point cloud data from a given surface.  
+
+
+
+
+{\ttfamily \#include $<$point\+\_\+generator.\+h$>$}
+
+
+
+Collaboration diagram for point\+\_\+generation\+:\+:Point\+Generator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{classpoint__generation_1_1_point_generator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpoint__generation_1_1_point_generator_a5420cf73168237696e903aabff5145e5}{Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} object. \end{DoxyCompactList}\item 
+\hyperlink{classpoint__generation_1_1_point_generator_a6ba5140d919fc003babecec3d3c54563}{$\sim$\+Point\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} object. \end{DoxyCompactList}\item 
+void \hyperlink{classpoint__generation_1_1_point_generator_a7ef5fd6c02cf8d0e946830e50e69db21}{input\+Polygon\+Mesh} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Input a polygon mesh for point cloud generation. \end{DoxyCompactList}\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classpoint__generation_1_1_point_generator_ab25233ac5bae73c74976170910b13dcf}{get\+Point\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Get the resulted point cloud. \end{DoxyCompactList}\item 
+void \hyperlink{classpoint__generation_1_1_point_generator_a87e2c4dbd27760092ff2e3a6d64bb8d2}{generate\+Point\+Cloud} ()
+\begin{DoxyCompactList}\small\item\em Perform cloud generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classpoint__generation_1_1_point_generator_a19fc856d84db5e6d7b6049ebdf101704}{randomly\+Sampling} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Generate point cloud through randomly sampling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr \hyperlink{classpoint__generation_1_1_point_generator_a131d34ab830d99611b438b169fba40ad}{output\+\_\+cloud} \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}
+\item 
+pcl\+::\+Polygon\+Mesh \hyperlink{classpoint__generation_1_1_point_generator_ad776a8a1f8a326f3a4c3c6e2f687f46a}{input\+\_\+mesh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} class This class wraps the implementation of algorithms in order to generate point cloud data from a given surface. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!Point\+Generator@{Point\+Generator}}
+\index{Point\+Generator@{Point\+Generator}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{Point\+Generator()}{PointGenerator()}}]{\setlength{\rightskip}{0pt plus 5cm}point\+\_\+generation\+::\+Point\+Generator\+::\+Point\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classpoint__generation_1_1_point_generator_a5420cf73168237696e903aabff5145e5}{}\label{classpoint__generation_1_1_point_generator_a5420cf73168237696e903aabff5145e5}
+
+
+Construct a new \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} object. 
+
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!````~Point\+Generator@{$\sim$\+Point\+Generator}}
+\index{````~Point\+Generator@{$\sim$\+Point\+Generator}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Point\+Generator()}{~PointGenerator()}}]{\setlength{\rightskip}{0pt plus 5cm}point\+\_\+generation\+::\+Point\+Generator\+::$\sim$\+Point\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classpoint__generation_1_1_point_generator_a6ba5140d919fc003babecec3d3c54563}{}\label{classpoint__generation_1_1_point_generator_a6ba5140d919fc003babecec3d3c54563}
+
+
+Destroy the \hyperlink{classpoint__generation_1_1_point_generator}{Point\+Generator} object. 
+
+
+
+\subsection{Member Function Documentation}
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!generate\+Point\+Cloud@{generate\+Point\+Cloud}}
+\index{generate\+Point\+Cloud@{generate\+Point\+Cloud}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{generate\+Point\+Cloud()}{generatePointCloud()}}]{\setlength{\rightskip}{0pt plus 5cm}void point\+\_\+generation\+::\+Point\+Generator\+::generate\+Point\+Cloud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoint__generation_1_1_point_generator_a87e2c4dbd27760092ff2e3a6d64bb8d2}{}\label{classpoint__generation_1_1_point_generator_a87e2c4dbd27760092ff2e3a6d64bb8d2}
+
+
+Perform cloud generation. 
+
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!get\+Point\+Cloud@{get\+Point\+Cloud}}
+\index{get\+Point\+Cloud@{get\+Point\+Cloud}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{get\+Point\+Cloud()}{getPointCloud()}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr point\+\_\+generation\+::\+Point\+Generator\+::get\+Point\+Cloud (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoint__generation_1_1_point_generator_ab25233ac5bae73c74976170910b13dcf}{}\label{classpoint__generation_1_1_point_generator_ab25233ac5bae73c74976170910b13dcf}
+
+
+Get the resulted point cloud. 
+
+\begin{DoxyReturn}{Returns}
+Resulted point cloud 
+\end{DoxyReturn}
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!input\+Polygon\+Mesh@{input\+Polygon\+Mesh}}
+\index{input\+Polygon\+Mesh@{input\+Polygon\+Mesh}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{input\+Polygon\+Mesh(pcl\+::\+Polygon\+Mesh mesh)}{inputPolygonMesh(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}void point\+\_\+generation\+::\+Point\+Generator\+::input\+Polygon\+Mesh (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoint__generation_1_1_point_generator_a7ef5fd6c02cf8d0e946830e50e69db21}{}\label{classpoint__generation_1_1_point_generator_a7ef5fd6c02cf8d0e946830e50e69db21}
+
+
+Input a polygon mesh for point cloud generation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Triangle mesh representing the surface reconstruction \\
+\hline
+\end{DoxyParams}
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!randomly\+Sampling@{randomly\+Sampling}}
+\index{randomly\+Sampling@{randomly\+Sampling}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{randomly\+Sampling(pcl\+::\+Polygon\+Mesh mesh)}{randomlySampling(pcl::PolygonMesh mesh)}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\+::Ptr point\+\_\+generation\+::\+Point\+Generator\+::randomly\+Sampling (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Polygon\+Mesh}]{mesh}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoint__generation_1_1_point_generator_a19fc856d84db5e6d7b6049ebdf101704}{}\label{classpoint__generation_1_1_point_generator_a19fc856d84db5e6d7b6049ebdf101704}
+
+
+Generate point cloud through randomly sampling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input mesh representing the surface reconstruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulted point cloud data 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!input\+\_\+mesh@{input\+\_\+mesh}}
+\index{input\+\_\+mesh@{input\+\_\+mesh}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{input\+\_\+mesh}{input_mesh}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Polygon\+Mesh point\+\_\+generation\+::\+Point\+Generator\+::input\+\_\+mesh\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoint__generation_1_1_point_generator_ad776a8a1f8a326f3a4c3c6e2f687f46a}{}\label{classpoint__generation_1_1_point_generator_ad776a8a1f8a326f3a4c3c6e2f687f46a}
+Triangle mesh representing the surface reconstruction \index{point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}!output\+\_\+cloud@{output\+\_\+cloud}}
+\index{output\+\_\+cloud@{output\+\_\+cloud}!point\+\_\+generation\+::\+Point\+Generator@{point\+\_\+generation\+::\+Point\+Generator}}
+\subsubsection[{\texorpdfstring{output\+\_\+cloud}{output_cloud}}]{\setlength{\rightskip}{0pt plus 5cm}pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\+::Ptr point\+\_\+generation\+::\+Point\+Generator\+::output\+\_\+cloud \{new pcl\+::\+Point\+Cloud$<$pcl\+::\+Point\+Normal$>$\}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoint__generation_1_1_point_generator_a131d34ab830d99611b438b169fba40ad}{}\label{classpoint__generation_1_1_point_generator_a131d34ab830d99611b438b169fba40ad}
+$<$ Output cloud 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/include/point\+\_\+generation/\hyperlink{point__generator_8h}{point\+\_\+generator.\+h}\item 
+/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/src/point\+\_\+generation/\hyperlink{point__generator_8cpp}{point\+\_\+generator.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\hypertarget{math__computing_8h}{}\section{/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/include/benchmark/math\+\_\+computing.h File Reference}
+\label{math__computing_8h}\index{/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/include/benchmark/math\+\_\+computing.\+h@{/home/jc/\+T\+H\+E\+S\+I\+S/hull\+\_\+abstraction/benchmark/include/benchmark/math\+\_\+computing.\+h}}
+
+
+This file contains declarations of some mathematical computing methods.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/point\+\_\+types.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/\+P\+C\+L\+Point\+Cloud2.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/features/normal\+\_\+3d.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/visualization/pcl\+\_\+visualizer.\+h$>$}\\*
+Include dependency graph for math\+\_\+computing.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math__computing_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math__computing_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacebenchmark}{benchmark}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a2d148ddad0fb0499866dd454cde1767a}{benchmark\+::intersect\+With} (pcl\+::\+Polygon\+Mesh mesh, std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ normal)
+\begin{DoxyCompactList}\small\item\em Estimate the nearest intersection point between a point\textquotesingle{}s normal vector and the mesh. \end{DoxyCompactList}\item 
+bool \hyperlink{namespacebenchmark_a1e580512121573111919f5d97ca986d3}{benchmark\+::is\+Inside} (std\+::vector$<$ double $>$ point, std\+::vector$<$ std\+::vector$<$ double $>$$>$ polygon)
+\begin{DoxyCompactList}\small\item\em Confirm that a point lies inside a polygon. \end{DoxyCompactList}\item 
+double \hyperlink{namespacebenchmark_a11e8b8b42926972c4a1795c588d8efa7}{benchmark\+::calculate\+Area} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)
+\begin{DoxyCompactList}\small\item\em Calculate the area of a triangle. \end{DoxyCompactList}\item 
+double \hyperlink{namespacebenchmark_a82d4720417fd81d07521ce48ccaebeac}{benchmark\+::calculate\+Area} (pcl\+::\+Polygon\+Mesh mesh)
+\begin{DoxyCompactList}\small\item\em Calculate the area of a trianlge mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a7885a2fc3dcb43d1198a2fd4111135dc}{benchmark\+::calculate\+Central\+Symmetry\+Point} (std\+::vector$<$ double $>$ point, std\+::vector$<$ double $>$ center\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Calculate the central symmetry point. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_a208595619c985eb145eb12cfcb981e8a}{benchmark\+::calculate\+Perpendicular\+Intersection} (std\+::vector$<$ double $>$ point1, std\+::vector$<$ double $>$ point2, std\+::vector$<$ double $>$ point3)
+\begin{DoxyCompactList}\small\item\em Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{namespacebenchmark_adc7e10514f96b4597d460b8288908870}{benchmark\+::uniform\+Triangle\+Sampling} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ triangle)
+\begin{DoxyCompactList}\small\item\em Sample a point inside a triangle (srand(time(\+N\+U\+L\+L)) must be executed before calling this function) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains declarations of some mathematical computing methods. 
+
+\begin{DoxyAuthor}{Author}
+Jiancong Zheng 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/06-\/16 
+\end{DoxyDate}
