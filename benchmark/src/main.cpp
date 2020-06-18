@@ -152,7 +152,7 @@ int main()
     std::vector<double> point3 = {1, 1, 0};
     std::vector<double> point4;
     point4 = benchmark::calculatePerpendicularIntersection(point1, point2, point3);
-    std::cout << point4 << std::endl;
+    std::cout << "Intersection point is: [" << point4[0] << ", "<< point4[1] << ", " << point4[2] << "]" << std::endl;
 
     // Display clouds
     // Create a window for visualization
