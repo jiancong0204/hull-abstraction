@@ -146,6 +146,14 @@ int main()
     // std::vector<double> symmetry_point = benchmark::calculateCentralSymmetryPoint(point, center_point);
     // std::cout << "Symmetry point is: [" << symmetry_point[0] << ", "<< symmetry_point[1] << ", " << symmetry_point[2] << "]" << std::endl;
 
+    // Test of function calculatePerpendicularIntersection()
+    std::vector<double> point1 = {0, 0, 0};
+    std::vector<double> point2 = {1, 1, 1};
+    std::vector<double> point3 = {1, 1, 0};
+    std::vector<double> point4;
+    point4 = benchmark::calculatePerpendicularIntersection(point1, point2, point3);
+    std::cout << point4 << std::endl;
+
     // Display clouds
     // Create a window for visualization
     boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
