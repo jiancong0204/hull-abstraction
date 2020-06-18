@@ -185,7 +185,7 @@ std::vector<double> benchmark::calculateCentralSymmetryPoint(std::vector<double>
     return symmetry_point;
 } 
 
-    std::vector<double> benchmark::calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3);
+    std::vector<double> benchmark::calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3)
     {
         // Calculate the direction vector
         double m = point2[0] - point1[0];
