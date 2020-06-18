@@ -195,7 +195,7 @@ std::vector<double> benchmark::calculateCentralSymmetryPoint(std::vector<double>
         // Calculate the coordinates
         double numerator = m * (point3[0] - point1[0]) + n * (point3[1] - point1[1]) + p * (point3[2] - point1[2]);
         double denominator = pow(m, 2) + pow(n, 2) + pow(p, 2);
-        double t = denominator / numerator;
+        double t = numerator / denominator;
         std::vector<double> result_point;
         result_point.push_back(point1[0] + t * m);
         result_point.push_back(point1[1] + t * n);
