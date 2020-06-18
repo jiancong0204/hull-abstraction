@@ -255,12 +255,15 @@ std::vector<double> benchmark::uniformTriangleSampling(std::vector<std::vector<d
     }
 
     point4 = calculatePerpendicularIntersection(point1, point2, point3);
+    std::cout << "point4 is: [" << point4[0] << ", "<< point4[1] << ", " << point4[2] << "]" << std::endl;
 
     std::vector<double> center_point;
     center_point.push_back((point2[0] + point3[0]) * 0.5);
     center_point.push_back((point2[1] + point3[1]) * 0.5);
     center_point.push_back((point2[2] + point3[2]) * 0.5);
     point5 = calculateCentralSymmetryPoint(point4, center_point);
+    std::cout << "point5 is: [" << point5[0] << ", "<< point5[1] << ", " << point5[2] << "]" << std::endl;
+
     center_point[0] = (point1[0] + point3[0]) * 0.5;
     center_point[1] = (point1[1] + point3[1]) * 0.5;
     center_point[2] = (point1[2] + point3[2]) * 0.5;

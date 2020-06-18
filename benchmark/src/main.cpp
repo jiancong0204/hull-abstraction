@@ -84,21 +84,21 @@ int main()
         // std::string tmp_string = "16_5_15%/Poisson Reconstruction/" + std::to_string(i);
         // bm.generateData(tmp_string);
 
-        // start = clock();
-        // mesh4 = rc.marchingCubes(input_cloud);
-        // end = clock();
-        // std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
+        start = clock();
+        mesh4 = rc.marchingCubes(input_cloud);
+        end = clock();
+        std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
         // bm.inputPolygonMesh(mesh4);
         // std::string tmp_string = "16_5_5%/Marching Cubes/" + std::to_string(i);
         // bm.generateData(tmp_string);
 
-        // pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-        // pcl::copyPointCloud(*input_cloud, *b_input_cloud);
-        // start = clock();
-        // mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
-        // end = clock();
-        // std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
+        pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+        pcl::copyPointCloud(*input_cloud, *b_input_cloud);
+        start = clock();
+        mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
+        end = clock();
+        std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
         // bm.inputPolygonMesh(mesh2);
         // std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
@@ -154,53 +154,62 @@ int main()
     // point4 = benchmark::calculatePerpendicularIntersection(point1, point3, point2);
     // std::cout << "Intersection point is: [" << point4[0] << ", "<< point4[1] << ", " << point4[2] << "]" << std::endl;
 
-    // // Display clouds
-    // // Create a window for visualization
-    // boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
-    // int v1(0), v2(0), v3(0), v4(0), v0(0), v5(0), v6(0);
-    // viewer->createViewPort(0.00, 0.75, 1.00, 1.00, v0);
-    // viewer->createViewPort(0.00, 0.50, 0.50, 0.75, v1);
-    // viewer->createViewPort(0.50, 0.50, 1.00, 0.75, v2);
-    // viewer->createViewPort(0.00, 0.25, 0.50, 0.50, v3);
-    // viewer->createViewPort(0.50, 0.25, 1.00, 0.50, v4);
-    // viewer->createViewPort(0.00, 0.00, 0.50, 0.25, v5);
-    // viewer->createViewPort(0.50, 0.00, 1.00, 0.25, v6);
+    // Test of function uniformTriangleSampling()
+    // std::vector<std::vector<double>> triangle = {
+    //     {0.0, 0.0, 0.0},
+    //     {0.0, 0.0, 1.0},
+    //     {0.0, -1.0, 0.0}
+    // };
+    // std::vector<double> point6 = benchmark::uniformTriangleSampling(triangle);
+    // std::cout << "point6 is: [" << point6[0] << ", "<< point6[1] << ", " << point6[2] << "]" << std::endl;
 
-    // // Set the background
-    // viewer->setBackgroundColor(0, 0, 0, v0);
-    // viewer->setBackgroundColor(0, 0, 0, v1);
-    // viewer->setBackgroundColor(0, 0, 0, v2);
-    // viewer->setBackgroundColor(0, 0, 0, v3);
-    // viewer->setBackgroundColor(0, 0, 0, v4);
-    // viewer->setBackgroundColor(0, 0, 0, v5);
-    // viewer->setBackgroundColor(0, 0, 0, v6);
+    // Display clouds
+    // Create a window for visualization
+    boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
+    int v1(0), v2(0), v3(0), v4(0), v0(0), v5(0), v6(0);
+    viewer->createViewPort(0.00, 0.75, 1.00, 1.00, v0);
+    viewer->createViewPort(0.00, 0.50, 0.50, 0.75, v1);
+    viewer->createViewPort(0.50, 0.50, 1.00, 0.75, v2);
+    viewer->createViewPort(0.00, 0.25, 0.50, 0.50, v3);
+    viewer->createViewPort(0.50, 0.25, 1.00, 0.50, v4);
+    viewer->createViewPort(0.00, 0.00, 0.50, 0.25, v5);
+    viewer->createViewPort(0.50, 0.00, 1.00, 0.25, v6);
 
-    // // Add text
-    // viewer->addText("Point Cloud", 10, 10, "text0", v0);
-    // viewer->addText("Greedy Triangulation", 10, 10, "text1", v3);
-    // viewer->addText("B-Spline Surface Fitting", 10, 10, "text2", v4);
-    // viewer->addText("Poisson Reconstruction", 10, 10, "text3", v5);
-    // viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
+    // Set the background
+    viewer->setBackgroundColor(0, 0, 0, v0);
+    viewer->setBackgroundColor(0, 0, 0, v1);
+    viewer->setBackgroundColor(0, 0, 0, v2);
+    viewer->setBackgroundColor(0, 0, 0, v3);
+    viewer->setBackgroundColor(0, 0, 0, v4);
+    viewer->setBackgroundColor(0, 0, 0, v5);
+    viewer->setBackgroundColor(0, 0, 0, v6);
 
-    // // Add point clouds
-    // viewer->addPointCloud(cloud, "cloud0", v0);
-    // viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
-    // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
+    // Add text
+    viewer->addText("Point Cloud", 10, 10, "text0", v0);
+    viewer->addText("Greedy Triangulation", 10, 10, "text1", v3);
+    viewer->addText("B-Spline Surface Fitting", 10, 10, "text2", v4);
+    viewer->addText("Poisson Reconstruction", 10, 10, "text3", v5);
+    viewer->addText("Marching Cubes Algorithm", 10, 10, "text4", v6);
 
-    // // Add meshes
-    // viewer->addPolygonMesh(mesh1, "mesh1", v3);
-    // viewer->addPolygonMesh(mesh2, "mesh2", v4);
-    // viewer->addPolygonMesh(mesh3, "mesh3", v5);
-    // viewer->addPolygonMesh(mesh4, "mesh4", v6);
+    // Add point clouds
+    viewer->addPointCloud(cloud, "cloud0", v0);
+    viewer->addPointCloud<pcl::PointNormal>(input_cloud, "cloud1", v1);
+    viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud2", v2);
 
-    // // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
-    // // viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
+    // Add meshes
+    viewer->addPolygonMesh(mesh1, "mesh1", v3);
+    viewer->addPolygonMesh(mesh2, "mesh2", v4);
+    viewer->addPolygonMesh(mesh3, "mesh3", v5);
+    viewer->addPolygonMesh(mesh4, "mesh4", v6);
 
-    // // viewer->setRepresentationToWireframeForAllActors();
-    // viewer->initCameraParameters();
-    // while (!viewer->wasStopped())
-    // {
-    //     viewer->spinOnce();
-    // }
+    // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
+    // viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
+
+    // viewer->setRepresentationToWireframeForAllActors();
+    viewer->initCameraParameters();
+    while (!viewer->wasStopped())
+    {
+        viewer->spinOnce();
+    }
     return 0;
 }
