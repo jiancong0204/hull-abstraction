@@ -185,20 +185,20 @@ std::vector<double> benchmark::calculateCentralSymmetryPoint(std::vector<double>
     return symmetry_point;
 } 
 
-    std::vector<double> benchmark::calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3)
-    {
-        // Calculate the direction vector
-        double m = point2[0] - point1[0];
-        double n = point2[1] - point1[1];
-        double p = point2[2] - point1[2];
+std::vector<double> benchmark::calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3)
+{
+    // Calculate the direction vector
+    double m = point2[0] - point1[0];
+    double n = point2[1] - point1[1];
+    double p = point2[2] - point1[2];
 
-        // Calculate the coordinates
-        double numerator = m * (point3[0] - point1[0]) + n * (point3[1] - point1[1]) + p * (point3[2] - point1[2]);
-        double denominator = pow(m, 2) + pow(n, 2) + pow(p, 2);
-        double t = numerator / denominator;
-        std::vector<double> result_point;
-        result_point.push_back(point1[0] + t * m);
-        result_point.push_back(point1[1] + t * n);
-        result_point.push_back(point1[2] + t * p);
-        return result_point;
-    }
+    // Calculate the coordinates
+    double numerator = m * (point3[0] - point1[0]) + n * (point3[1] - point1[1]) + p * (point3[2] - point1[2]);
+    double denominator = pow(m, 2) + pow(n, 2) + pow(p, 2);
+    double t = numerator / denominator;
+    std::vector<double> result_point;
+    result_point.push_back(point1[0] + t * m);
+    result_point.push_back(point1[1] + t * n);
+    result_point.push_back(point1[2] + t * p);
+    return result_point;
+}
