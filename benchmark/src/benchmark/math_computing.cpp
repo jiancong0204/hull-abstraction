@@ -261,10 +261,10 @@ std::vector<double> benchmark::uniformTriangleSampling(std::vector<std::vector<d
     center_point.push_back((point2[1] + point3[1]) * 0.5);
     center_point.push_back((point2[2] + point3[2]) * 0.5);
     point5 = calculateCentralSymmetryPoint(point4, center_point);
-    center_point[0] = point1[0] + point3[0]) * 0.5;
-    center_point[1] = point1[1] + point3[1]) * 0.5;
-    center_point[2] = point1[2] + point3[2]) * 0.5;
+    center_point[0] = (point1[0] + point3[0]) * 0.5;
+    center_point[1] = (point1[1] + point3[1]) * 0.5;
+    center_point[2] = (point1[2] + point3[2]) * 0.5;
     point6 = calculateCentralSymmetryPoint(point4, center_point);
-    
+    return point6;
 }
 
