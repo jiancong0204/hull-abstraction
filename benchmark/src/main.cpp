@@ -41,68 +41,68 @@ int main()
     
     for (int i = 0; i < 1; i ++)
     {
-    // Moving least squares
-    // start = clock();
-    pp.movingLeastSquares(cloud, filtered_cloud, filtered_cloud_with_normals);
-    // end = clock();
-    // std::cout << "Time cost for moving least squares algorithm: " << (end - start) << " μs" << std::endl;
+        // Moving least squares
+        // start = clock();
+        pp.movingLeastSquares(cloud, filtered_cloud, filtered_cloud_with_normals);
+        // end = clock();
+        // std::cout << "Time cost for moving least squares algorithm: " << (end - start) << " μs" << std::endl;
 
-    // Normal estimation
-    // start = clock();
-    pp.appendNormalEstimation(filtered_cloud, cloud_with_normals);
-    // end = clock();
-    // std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
+        // Normal estimation
+        // start = clock();
+        pp.appendNormalEstimation(filtered_cloud, cloud_with_normals);
+        // end = clock();
+        // std::cout << "Time cost for normal estimation: " << (end - start)  << " μs" << std::endl;
 
-    // Generate test cloud and input cloud
-    bm.setTestCloudSize(0.05);
-    bm.inputPointCloud(cloud_with_normals);
-    test_cloud = bm.getTestCloud();
-    input_cloud = bm.getInputCloud();
+        // Generate test cloud and input cloud
+        bm.setTestCloudSize(0.05);
+        bm.inputPointCloud(cloud_with_normals);
+        test_cloud = bm.getTestCloud();
+        input_cloud = bm.getInputCloud();
 
-    // int input_cloud_size = input_cloud->points.size();
-    // int test_cloud_size = test_cloud->points.size();
-    // std::cout << "size of input cloud: " << input_cloud_size << std::endl;
-    // std::cout << "size of test cloud: " << test_cloud_size << std::endl;
+        // int input_cloud_size = input_cloud->points.size();
+        // int test_cloud_size = test_cloud->points.size();
+        // std::cout << "size of input cloud: " << input_cloud_size << std::endl;
+        // std::cout << "size of test cloud: " << test_cloud_size << std::endl;
 
-    start = clock();
-    mesh1 = rc.greedyTriangulation(input_cloud);
-    end = clock();
-    std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
+        start = clock();
+        mesh1 = rc.greedyTriangulation(input_cloud);
+        end = clock();
+        std::cout << "Time cost for greedy triangulation algorithm: " << (end - start)  << " μs" << std::endl;
 
-    // bm.inputPolygonMesh(mesh1);
-    // std::string tmp_string = "16_5_15%/Greedy Triangulation/" + std::to_string(i);
-    // char tmp_char_array[tmp_string.length()];
-    // std::copy(tmp_string.begin(), tmp_string.end(), tmp_char_array);
-    // bm.generateData(tmp_char_array);
+        // bm.inputPolygonMesh(mesh1);
+        // std::string tmp_string = "16_5_15%/Greedy Triangulation/" + std::to_string(i);
+        // char tmp_char_array[tmp_string.length()];
+        // std::copy(tmp_string.begin(), tmp_string.end(), tmp_char_array);
+        // bm.generateData(tmp_char_array);
 
-    start = clock();
-    mesh3 = rc.poissonReconstruction(input_cloud);
-    end = clock();
-    std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
+        start = clock();
+        mesh3 = rc.poissonReconstruction(input_cloud);
+        end = clock();
+        std::cout << "Time cost for Poisson reconstruction: " << (end - start)  << " μs" << std::endl;
 
-    // bm.inputPolygonMesh(mesh3);
-    // std::string tmp_string = "16_5_15%/Poisson Reconstruction/" + std::to_string(i);
-    // bm.generateData(tmp_string);
+        // bm.inputPolygonMesh(mesh3);
+        // std::string tmp_string = "16_5_15%/Poisson Reconstruction/" + std::to_string(i);
+        // bm.generateData(tmp_string);
 
-    start = clock();
-    mesh4 = rc.marchingCubes(input_cloud);
-    end = clock();
-    std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
+        start = clock();
+        mesh4 = rc.marchingCubes(input_cloud);
+        end = clock();
+        std::cout << "Time cost for marching cubes algorithm: " << (end - start)  << " μs" << std::endl;
 
-    // bm.inputPolygonMesh(mesh4);
-    // std::string tmp_string = "16_5_5%/Marching Cubes/" + std::to_string(i);
-    // bm.generateData(tmp_string);
+        // bm.inputPolygonMesh(mesh4);
+        // std::string tmp_string = "16_5_5%/Marching Cubes/" + std::to_string(i);
+        // bm.generateData(tmp_string);
 
-    pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    pcl::copyPointCloud(*input_cloud, *b_input_cloud);
-    start = clock();
-    mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
-    end = clock();
-    std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
+        pcl::PointCloud<pcl::PointXYZ>::Ptr b_input_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+        pcl::copyPointCloud(*input_cloud, *b_input_cloud);
+        start = clock();
+        mesh2 = rc.bsplineSurfaceFitting(b_input_cloud);
+        end = clock();
+        std::cout << "Time cost for b-spline surface fitting: " << (end - start)  << " μs" << std::endl;
 
-    // bm.inputPolygonMesh(mesh2);
-    // std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
-    // bm.generateData(tmp_string);
+        // bm.inputPolygonMesh(mesh2);
+        // std::string tmp_string = "16_5_5%/B-spline Surface Fitting/" + std::to_string(i);
+        // bm.generateData(tmp_string);
     }
 
     // Test of function intersectWith()
