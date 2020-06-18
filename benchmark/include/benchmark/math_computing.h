@@ -61,4 +61,14 @@ namespace benchmark
      * @return Central symmetry point of the source point 
      */
     std::vector<double> calculateCentralSymmetryPoint(std::vector<double> point, std::vector<double> center_point);
+
+    /**
+     * @brief Calculate the intersection point between a line going through point 1 and point 2 and its perpendicular line going through point 3
+     * 
+     * @param point1 Point 1
+     * @param point2 Point 2
+     * @param point3 Point 3
+     * @return Coordinates of the intersection point 
+     */
+    std::vector<double> calculatePerpendicularIntersection(std::vector<double> point1, std::vector<double> point2, std::vector<double> point3);
 }
