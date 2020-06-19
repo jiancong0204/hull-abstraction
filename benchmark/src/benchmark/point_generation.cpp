@@ -5,7 +5,7 @@ void benchmark::PointGenerator::inputPolygonMesh(pcl::PolygonMesh mesh)
     this->input_mesh = mesh;
 }
 
-pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::getPointCloud()
+pcl::PointCloud<pcl::PointXYZ>::Ptr benchmark::PointGenerator::getPointCloud()
 {
     return this->output_cloud;
 }
@@ -20,9 +20,9 @@ void benchmark::PointGenerator::generatePointCloud()
     this->output_cloud = randomlySampling(this->input_mesh);
 }
 
-pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::randomlySampling(pcl::PolygonMesh mesh)
+pcl::PointCloud<pcl::PointXYZ>::Ptr benchmark::PointGenerator::randomlySampling(pcl::PolygonMesh mesh)
 {
-    pcl::PointCloud<pcl::PointNormal>::Ptr cloud(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     fromPCLPointCloud2(mesh.cloud, *mesh_cloud); // Extract point cloud from the input mesh
 
@@ -79,21 +79,18 @@ pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::randomlySampli
 
         std::vector<double> sample_point = benchmark::uniformTriangleSampling(triangle);
 
-        pcl::PointNormal point;
+        pcl::PointXYZ point;
         point.x = sample_point[0];
         point.y = sample_point[1];
         point.z = sample_point[2];
-        std::cout << point.x << std::endl;
-        std::cout << point.y << std::endl;
-        std::cout << point.z << std::endl;
 
-        std::vector<double> normal_vector = benchmark::calculateNormal(triangle);
-        point.normal_x = normal_vector[0];
-        point.normal_y = normal_vector[1];
-        point.normal_z = normal_vector[2];
-        point.normal[0] = normal_vector[0];
-        point.normal[1] = normal_vector[1];
-        point.normal[2] = normal_vector[2];
+        // std::vector<double> normal_vector = benchmark::calculateNormal(triangle);
+        // point.normal_x = normal_vector[0];
+        // point.normal_y = normal_vector[1];
+        // point.normal_z = normal_vector[2];
+        // point.normal[0] = normal_vector[0];
+        // point.normal[1] = normal_vector[1];
+        // point.normal[2] = normal_vector[2];
         cloud->push_back(point);
     }
     return cloud;

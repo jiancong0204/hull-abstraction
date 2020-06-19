@@ -170,11 +170,17 @@ int main()
     //     std::cout << point10[0] + point10[1] << std::endl;
     // }
 
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         filtered_cloud1(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
     benchmark::PointGenerator pg;
     pg.inputPolygonMesh(mesh1);
-    pg.setSampleSize(50);
+    pg.setSampleSize(10000);
     pg.generatePointCloud();
-    input_cloud = pg.getPointCloud();
+    cloud = pg.getPointCloud();
+    pp.movingLeastSquares(cloud, filtered_cloud1, filtered_cloud_with_normals1);
+    pp.appendNormalEstimation(filtered_cloud1, cloud_with_normals1);
+    mesh1 = rc.greedyTriangulation(cloud_with_normals1);
 
     // Display clouds
     // Create a window for visualization

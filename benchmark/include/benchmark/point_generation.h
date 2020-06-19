@@ -48,7 +48,7 @@ namespace benchmark
          * 
          * @return Resulted point cloud
          */
-        pcl::PointCloud<pcl::PointNormal>::Ptr getPointCloud();
+        pcl::PointCloud<pcl::PointXYZ>::Ptr getPointCloud();
 
         /**
          * @brief Perform cloud generation
@@ -57,8 +57,8 @@ namespace benchmark
         void generatePointCloud();
 
     private:
-        pcl::PointCloud<pcl::PointNormal>::Ptr         output_cloud         /**< Output cloud */
-            {new pcl::PointCloud<pcl::PointNormal>};      
+        pcl::PointCloud<pcl::PointXYZ>::Ptr         output_cloud         /**< Output cloud */
+            {new pcl::PointCloud<pcl::PointXYZ>};      
         pcl::PolygonMesh                               input_mesh;          /**< Triangle mesh representing the surface reconstruction */
         size_t                                         sample_size;          /**< Sample_size */
 
@@ -68,6 +68,6 @@ namespace benchmark
          * @param mesh Input mesh representing the surface reconstruction
          * @return Resulted point cloud data 
          */
-        pcl::PointCloud<pcl::PointNormal>::Ptr randomlySampling(pcl::PolygonMesh mesh);
+        pcl::PointCloud<pcl::PointXYZ>::Ptr randomlySampling(pcl::PolygonMesh mesh);
     };
 }
