@@ -91,7 +91,9 @@ pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::randomlySampli
         point.normal_x = normal_vector[0];
         point.normal_y = normal_vector[1];
         point.normal_z = normal_vector[2];
-        point.normal = normal_vector;
+        point.normal[0] = normal_vector[0];
+        point.normal[1] = normal_vector[1];
+        point.normal[2] = normal_vector[2];
         cloud->push_back(point);
     }
     return cloud;
