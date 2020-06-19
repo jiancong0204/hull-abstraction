@@ -79,6 +79,4 @@ namespace benchmark
      * @return Coordinates of the point
      */
     std::vector<double> uniformTriangleSampling(std::vector<std::vector<double>> triangle);
-
-
 }
