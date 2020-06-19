@@ -142,7 +142,7 @@ double benchmark::calculateArea(std::vector<std::vector<double>> triangle)
     return triangle_area;
 }
 
-double benchmark::calculateNormal(std::vector<std::vector<double>> triangle)
+std::vector<double> benchmark::calculateNormal(std::vector<std::vector<double>> triangle)
 {
     std::vector<double> vector1, vector2; // Two sides of the triangle
     for (int i = 0; i < 3; i++)
@@ -155,8 +155,8 @@ double benchmark::calculateNormal(std::vector<std::vector<double>> triangle)
     double z = vector1[0] * vector2[1] - vector1[1] * vector2[0];
     double y = -1 * vector1[0] * vector2[2] + vector1[2] * vector2[0];
     double x = vector1[1] * vector2[2] - vector1[2] * vector2[1];
-    double triangle_area = sqrt(pow(x,2) + pow(y,2) + pow(z,2)) * 0.5; // Magnitude of the vector
-    return triangle_area;
+    std::vector<double> normal_vector = {x, y, z};
+    return normal_vector;
 }
 
 double benchmark::calculateArea(pcl::PolygonMesh mesh)
