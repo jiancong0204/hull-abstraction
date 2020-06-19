@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-project(prototype)
+project(benchmark)
 
 find_package(PCL 1.8 REQUIRED) # find PCL library and define the required version
 
@@ -21,6 +21,7 @@ SET(codes
     src/pcl_utilization/pcl_utilization.cpp
     src/benchmark/benchmark.cpp
     src/benchmark/math_computing.cpp
+    src/benchmark/point_generation.cpp
 )
 
 add_executable (hull_abstraction ${codes})

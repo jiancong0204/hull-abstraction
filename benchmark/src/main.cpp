@@ -6,6 +6,7 @@
 #include "hull_abstraction/reconstructor.h"
 #include "hull_abstraction/preprocessor.h"
 #include "benchmark/benchmark.h"
+#include "benchmark/point_generation.h"
 
 int main()
 {
@@ -137,8 +138,8 @@ int main()
     // std::cout << triangle_area << std::endl;
 
     // Calculate the area of the meshes
-    double mesh_area = benchmark::calculateArea(mesh3);
-    std::cout << "Area of mesh: " << mesh_area << std::endl;
+    // double mesh_area = benchmark::calculateArea(mesh3);
+    // std::cout << "Area of mesh: " << mesh_area << std::endl;
 
     // Test of function calculateCentralSymmetryPoint()
     // std::vector<double> point = {-1, 1, 0};
@@ -168,6 +169,12 @@ int main()
     //     std::cout << "point10 is: [" << point10[0] << ", "<< point10[1] << ", " << point10[2] << "]" << std::endl;
     //     std::cout << point10[0] + point10[1] << std::endl;
     // }
+
+    benchmark::PointGenerator pg;
+    pg.inputPolygonMesh(mesh1);
+    pg.setSampleSize(20);
+    pg.generatePointCloud();
+    input_cloud = pg.getPointCloud();
 
     // Display clouds
     // Create a window for visualization

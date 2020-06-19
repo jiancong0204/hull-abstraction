@@ -11,7 +11,7 @@
 #include <pcl/PCLPointCloud2.h>
 #include "benchmark/math_computing.h"
 
-namespace point_generation
+namespace benchmark
 {
     /**
      * @brief The PointGenerator class
@@ -38,6 +38,12 @@ namespace point_generation
         void inputPolygonMesh(pcl::PolygonMesh mesh);
 
         /**
+         * @brief Set the sample size 
+         * @param size Sample size
+         */
+        void setSampleSize(size_t size);
+
+        /**
          * @brief Get the resulted point cloud
          * 
          * @return Resulted point cloud
@@ -51,9 +57,10 @@ namespace point_generation
         void generatePointCloud();
 
     private:
-        pcl::PointCloud<pcl::PointNormal>::Ptr         output_cloud             /**< Output cloud */
+        pcl::PointCloud<pcl::PointNormal>::Ptr         output_cloud         /**< Output cloud */
             {new pcl::PointCloud<pcl::PointNormal>};      
-        pcl::PolygonMesh                               input_mesh;              /**< Triangle mesh representing the surface reconstruction */
+        pcl::PolygonMesh                               input_mesh;          /**< Triangle mesh representing the surface reconstruction */
+        size_t                                         sample_size;          /**< Sample_size */
 
         /**
          * @brief Generate point cloud through randomly sampling
