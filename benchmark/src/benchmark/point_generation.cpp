@@ -10,7 +10,7 @@ pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::getPointCloud(
     return this->output_cloud;
 }
 
-void benchmark::setSampleSize(size_t size)
+void benchmark::PointGenerator::setSampleSize(size_t size)
 {
     this->sample_size = size;
 }
