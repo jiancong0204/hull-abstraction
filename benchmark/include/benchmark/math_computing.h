@@ -79,4 +79,12 @@ namespace benchmark
      * @return Coordinates of the point
      */
     std::vector<double> uniformTriangleSampling(std::vector<std::vector<double>> triangle);
+
+    /**
+     * @brief Calculate the normal vector of a triangle
+     * 
+     * @param triangle Input triangle
+     * @return double Normal vector
+     */
+    std::vector<double> calculateNormal(std::vector<std::vector<double>> triangle);
 }

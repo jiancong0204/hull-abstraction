@@ -81,8 +81,11 @@ pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::randomlySampli
 
         pcl::PointNormal point;
         point.x = sample_point[0];
-        point.y = sample_point[0];
-        point.z = sample_point[0];
+        point.y = sample_point[1];
+        point.z = sample_point[2];
+        std::cout << point.x << std::endl;
+        std::cout << point.y << std::endl;
+        std::cout << point.z << std::endl;
         point.normal_x = 1;
         point.normal_y = 1;
         point.normal_z = 1;

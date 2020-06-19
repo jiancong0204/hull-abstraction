@@ -172,7 +172,7 @@ int main()
 
     benchmark::PointGenerator pg;
     pg.inputPolygonMesh(mesh1);
-    pg.setSampleSize(20);
+    pg.setSampleSize(50);
     pg.generatePointCloud();
     input_cloud = pg.getPointCloud();
 
