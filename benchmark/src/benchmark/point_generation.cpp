@@ -86,12 +86,12 @@ pcl::PointCloud<pcl::PointNormal>::Ptr benchmark::PointGenerator::randomlySampli
         std::cout << point.x << std::endl;
         std::cout << point.y << std::endl;
         std::cout << point.z << std::endl;
-        point.normal_x = 1;
-        point.normal_y = 1;
-        point.normal_z = 1;
-        point.normal[0] = 1;
-        point.normal[1] = 1;
-        point.normal[2] = 1;
+
+        std::vector<double> normal_vector = benchmark::calculateNormal(triangle);
+        point.normal_x = normal_vector[0];
+        point.normal_y = normal_vector[1];
+        point.normal_z = normal_vector[2];
+        point.normal = normal_vector;
         cloud->push_back(point);
     }
     return cloud;
