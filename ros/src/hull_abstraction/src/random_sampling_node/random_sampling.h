@@ -51,7 +51,6 @@ namespace random_sampling
         ros::NodeHandle                      nh;            /**< Node Handle reference from embedding node */
         ros::Publisher                       pub;           /**< Point cloud publisher */
         ros::Subscriber                      sub;           /**< Raw triangle mesh subscriber */
-        pcl_msgs::PolygonMesh                input_msg;     /**< Input message for triangle mesh */
         sensor_msgs::PointCloud2             output_msg;    /**< point cloud message used to publish the result */
         point_generation::PointGenerator     pg;            /**< PointGenerator object */
 

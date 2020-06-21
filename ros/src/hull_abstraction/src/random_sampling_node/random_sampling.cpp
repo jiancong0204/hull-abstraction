@@ -4,7 +4,7 @@ void random_sampling::RandomSampling::processing(const pcl_msgs::PolygonMesh inp
 {
     // Convert from message to mesh in pcl
     pcl::PolygonMesh mesh;
-    pcl_conversions::toPCL(this->input_msg, mesh);
+    pcl_conversions::toPCL(input_msg, mesh);
 
     // Perform random sampling
     pg.inputPolygonMesh(mesh);
@@ -12,7 +12,6 @@ void random_sampling::RandomSampling::processing(const pcl_msgs::PolygonMesh inp
     pg.generatePointCloud();
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     cloud = pg.getPointCloud();
-
     // Generate message for publishing
     pcl::toROSMsg(*cloud, this->output_msg);
     this->output_msg.header.frame_id = "base";
