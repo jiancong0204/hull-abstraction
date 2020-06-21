@@ -76,6 +76,7 @@ SET(bspline_surface_fitting
     src/bspline_surface_fitting_node.cpp 
     src/bspline_surface_fitting_node/bspline_surface_fitting.cpp
     src/hull_abstraction/reconstructor.cpp
+    src/hull_abstraction/preprocessor.cpp
     src/pcl_utilization/pcl_utilization.cpp
 )
 
