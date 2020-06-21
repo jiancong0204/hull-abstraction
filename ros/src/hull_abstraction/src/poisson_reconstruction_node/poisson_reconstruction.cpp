@@ -4,13 +4,13 @@ void poisson_reconstruction::PoissonReconstruction::processing(const sensor_msgs
 {
     pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr         cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    // Generate the mesh
     pcl::PointCloud<pcl::PointXYZ>::Ptr         filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-    
+
+    // Generate the mesh
     pcl::fromROSMsg(*input_msg, *cloud); // Convert point cloud message to a cloud
     pp.movingLeastSquares(cloud, filtered_cloud, filtered_cloud_with_normals);
-    pp.appendNormalEstimation(cloud, cloud_with_normals); // Add normal estimation to the original cloud
+    pp.appendNormalEstimation(filtered_cloud, cloud_with_normals); // Add normal estimation to the original cloud
     mesh = rc.poissonReconstruction(cloud_with_normals); // Perform Poisson reconstruction
     
     // Calculate the centroid of the cloud
