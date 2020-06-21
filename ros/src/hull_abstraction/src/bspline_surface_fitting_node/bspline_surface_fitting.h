@@ -18,7 +18,7 @@
 #include <ros/ros.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <pcl_conversions/pcl_conversions.h>
-
+#include "hull_abstraction/preprocessor.h"
 #include "hull_abstraction/reconstructor.h"
 #include "pcl_utilization/pcl_utilization.h"
 
