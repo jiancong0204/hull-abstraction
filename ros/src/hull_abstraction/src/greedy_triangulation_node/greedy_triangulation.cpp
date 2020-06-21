@@ -2,11 +2,14 @@
 
 void greedy_triangulation::GreedyTriangulation::processing(const sensor_msgs::PointCloud2ConstPtr input_msg)
 {
-    pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    
+    pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+
     // Generate the mesh
     pcl::fromROSMsg(*input_msg, *cloud); // Convert ROS message to a cloud
+    pp.movingLeastSquares(cloud, filtered_cloud, filtered_cloud_with_normals);
     pp.appendNormalEstimation(cloud, cloud_with_normals); // Add normal estimation to the original cloud
     mesh = rc.greedyTriangulation(cloud_with_normals); // Generate mesh through greedy triangulation algorithm
     
