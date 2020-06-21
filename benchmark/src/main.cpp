@@ -174,13 +174,16 @@ int main()
     pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
     pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
     benchmark::PointGenerator pg;
-    pg.inputPolygonMesh(mesh3);
+    pg.inputPolygonMesh(mesh2);
     pg.setSampleSize(500);
     pg.generatePointCloud();
     cloud = pg.getPointCloud();
     pp.movingLeastSquares(cloud, filtered_cloud1, filtered_cloud_with_normals1);
     pp.appendNormalEstimation(filtered_cloud1, cloud_with_normals1);
     mesh1 = rc.greedyTriangulation(cloud_with_normals1);
+    mesh2 = rc.bsplineSurfaceFitting(filtered_cloud1);
+    mesh3 = rc.poissonReconstruction(cloud_with_normals1);
+    mesh4 = rc.marchingCubes(cloud_with_normals1);
 
     // Display clouds
     // Create a window for visualization
@@ -224,7 +227,7 @@ int main()
     // viewer->addPointCloud<pcl::PointNormal>(test_cloud, "cloud5", v5);
     // viewer->addPointCloudNormals<pcl::PointNormal, pcl::PointNormal>(test_cloud, test_cloud, 1, 1.00, "cloud456", v5);
 
-    // viewer->setRepresentationToWireframeForAllActors();
+    viewer->setRepresentationToWireframeForAllActors();
     viewer->initCameraParameters();
     while (!viewer->wasStopped())
     {
