@@ -125,8 +125,6 @@ SET(marching_cubes
     src/hull_abstraction/reconstructor.cpp
     src/hull_abstraction/preprocessor.cpp
     src/pcl_utilization/pcl_utilization.cpp
-    src/pcl_utilization/math_computing.cpp
-    src/point_generation/point_generation.cpp
 )
 
 add_executable(marching_cubes ${marching_cubes})
@@ -138,5 +136,15 @@ target_link_libraries(marching_cubes
 
 # Random Sampling
 SET(random_sampling
+    src/random_sampling_node.cpp
+    src/random_sampling_node/random_sampling.cpp
     src/pcl_utilization/math_computing.cpp
+    src/point_generation/point_generation.cpp
+)
+
+add_executable(random_sampling ${random_sampling})
+
+target_link_libraries(random_sampling
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
 )
