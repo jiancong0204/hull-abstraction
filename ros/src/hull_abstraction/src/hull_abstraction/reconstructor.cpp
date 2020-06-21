@@ -34,7 +34,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::poissonReconstruction(pcl::Poi
     poisson.setDepth(5);
     poisson.setIsoDivide(5); //still dont know
     poisson.setManifold(false); //whether add the center of gravity of polygons. 
-    poisson.setOutputPolygons(true);
+    poisson.setOutputPolygons(false);
     poisson.setSamplesPerNode(20.0);
     poisson.setScale(1.25);cloud_with_normals;
     poisson.setInputCloud(cloud_with_normals);
