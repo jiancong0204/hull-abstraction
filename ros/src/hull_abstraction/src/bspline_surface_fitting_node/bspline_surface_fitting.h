@@ -49,6 +49,7 @@ namespace bspline_surface_fitting_node
         pcl_msgs::PolygonMesh             output_msg;   /**< Polygon mesh message used to publish the mesh */
 
         hull_abstraction::Reconstructor   rc;           /**< Object for Reconstructor class */
+        hull_abstraction::Preprocessor    pp;           /**< Object for Preprocessor class */
         pcl::PolygonMesh                  mesh;         /**< Resulted polygon mesh */
         
 

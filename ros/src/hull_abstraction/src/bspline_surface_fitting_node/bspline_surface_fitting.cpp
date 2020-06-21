@@ -2,11 +2,15 @@
 
 void bspline_surface_fitting_node::BsplineSurfaceFitting::processing(const sensor_msgs::PointCloud2ConstPtr input_msg)
 {
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    
+    pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr         filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
+
     // Generate the mesh
     pcl::fromROSMsg(*input_msg, *cloud); // Convert ROS message to a cloud
-    mesh = rc.bsplineSurfaceFitting(cloud); // Generate mesh through b-spline surface fitting
+    pp.movingLeastSquares(cloud, filtered_cloud, filtered_cloud_with_normals);
+    mesh = rc.bsplineSurfaceFitting(filtered_cloud); // Generate mesh through b-spline surface fitting
     
     // Calculate the centroid of the cloud
     std::vector<double> cloud_centroid = pcl_utilization::computeCentroid(cloud);
