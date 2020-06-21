@@ -174,8 +174,8 @@ int main()
     pcl::PointCloud<pcl::PointNormal>::Ptr      cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
     pcl::PointCloud<pcl::PointNormal>::Ptr      filtered_cloud_with_normals1(new pcl::PointCloud<pcl::PointNormal>);
     benchmark::PointGenerator pg;
-    pg.inputPolygonMesh(mesh1);
-    pg.setSampleSize(10000);
+    pg.inputPolygonMesh(mesh3);
+    pg.setSampleSize(500);
     pg.generatePointCloud();
     cloud = pg.getPointCloud();
     pp.movingLeastSquares(cloud, filtered_cloud1, filtered_cloud_with_normals1);

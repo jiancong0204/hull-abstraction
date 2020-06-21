@@ -9,7 +9,7 @@ pcl::PolygonMesh hull_abstraction::Reconstructor::greedyTriangulation(pcl::Point
     tree->setInputCloud(cloud_with_normals);
 
     // Configurations of triangulation
-    greedy_projection_triangulation.setSearchRadius(5.5 * resolution);  //Search radium, that is the radium of KNN
+    greedy_projection_triangulation.setSearchRadius(10 * resolution);  //Search radium, that is the radium of KNN
     greedy_projection_triangulation.setMu(5);  // In case that the cloud is not perfectly uniform
     greedy_projection_triangulation.setMaximumNearestNeighbors(200);    // The largest searched neighbours，typical value: 50-100
     greedy_projection_triangulation.setMinimumAngle(0); // The minimal allowed angle in a trangle is 0°
