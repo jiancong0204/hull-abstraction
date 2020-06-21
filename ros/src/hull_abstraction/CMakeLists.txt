@@ -126,6 +126,7 @@ SET(marching_cubes
     src/hull_abstraction/preprocessor.cpp
     src/pcl_utilization/pcl_utilization.cpp
     src/pcl_utilization/math_computing.cpp
+    src/point_generation/point_generation.cpp
 )
 
 add_executable(marching_cubes ${marching_cubes})

@@ -1,4 +1,4 @@
-#include "benchmark/math_computing.h" 
+#include "pcl_utilization/math_computing.h" 
 
 std::vector<double> pcl_utilization::intersectWith(pcl::PolygonMesh mesh, std::vector<double> point, std::vector<double> normal)
 {
@@ -46,7 +46,7 @@ std::vector<double> pcl_utilization::intersectWith(pcl::PolygonMesh mesh, std::v
         intersection_point[1] = y0 + normal[1] * tmp;
         intersection_point[2] = z0 + normal[2] * tmp; 
 
-        bool is_inside = benchmark::isInside(intersection_point, polygon);
+        bool is_inside = pcl_utilization::isInside(intersection_point, polygon);
 
         if ((fabs(tmp) < fabs(t)) and is_inside)
         {
@@ -159,7 +159,7 @@ std::vector<double> pcl_utilization::calculateNormal(std::vector<std::vector<dou
     return normal_vector;
 }
 
-double benchmark::calculateArea(pcl::PolygonMesh mesh)
+double pcl_utilization::calculateArea(pcl::PolygonMesh mesh)
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr mesh_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     fromPCLPointCloud2(mesh.cloud, *mesh_cloud); // Extract point cloud from the input mesh
