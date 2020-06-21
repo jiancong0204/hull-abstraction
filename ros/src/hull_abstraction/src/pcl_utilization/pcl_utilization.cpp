@@ -46,6 +46,14 @@ visualization_msgs::Marker pcl_utilization::toLineList(pcl::PolygonMesh mesh)
             temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[j + 1]].z;
             marker.points.push_back(temp_point);
         }
+        temp_point.x = mesh_cloud->points[mesh.polygons[i].vertices[vertices_size-1]].x;
+        temp_point.y = mesh_cloud->points[mesh.polygons[i].vertices[vertices_size-1]].y;
+        temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[vertices_size-1]].z;
+        marker.points.push_back(temp_point);
+        temp_point.x = mesh_cloud->points[mesh.polygons[i].vertices[0]].x;
+        temp_point.y = mesh_cloud->points[mesh.polygons[i].vertices[0]].y;
+        temp_point.z = mesh_cloud->points[mesh.polygons[i].vertices[0]].z;
+        marker.points.push_back(temp_point);
     }
     marker.color = color;
     return marker;
