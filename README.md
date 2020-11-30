@@ -162,11 +162,7 @@ A summary of the implemented hull generation methods.
 
 ---
 
-## Benchmark
+## Final Result
 
-![16_5-5%](doc/assets/16_5-5%.png "16_5-5%")
-
-![16_5-10%](doc/assets/16_5-10%.png "16_5-10%")
-
-![16_5-15%](doc/assets/16_5-15%.png "16_5-15%")
+See [here]()
 
