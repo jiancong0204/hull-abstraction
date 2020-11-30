@@ -162,7 +162,7 @@ A summary of the implemented hull generation methods.
 
 ---
 
-## Final Result
+## Final Report
 
-See [here]()
+See [here](https://github.com/jiancong0204/masters-thesis)
 
