@@ -164,5 +164,5 @@ A summary of the implemented hull generation methods.
 
 ## Final Report
 
-See [here](https://github.com/jiancong0204/masters-thesis)
+See [here](https://github.com/jiancong0204/masters-thesis/blob/master/Thesis.pdf)
 
