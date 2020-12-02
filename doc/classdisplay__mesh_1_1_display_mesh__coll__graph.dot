@@ -1,0 +1,8 @@
+digraph "display_mesh::DisplayMesh"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{display_mesh::DisplayMesh\n|- nh\l- pub\l- sub\l- output_msg\l|+ DisplayMesh()\l+ ~DisplayMesh()\l+ run()\l- processing()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class for displaying mesh in RVIZ."];
+}

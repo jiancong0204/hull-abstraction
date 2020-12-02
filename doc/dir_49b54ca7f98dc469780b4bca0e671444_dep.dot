@@ -1,0 +1,13 @@
+digraph "D:/Projects/hull-abstraction/ros/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_b6bc2876df5f51b64790622082ac4e8d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="ros" fontname="Helvetica", fontsize="10", URL="dir_b6bc2876df5f51b64790622082ac4e8d.html"]
+  subgraph clusterdir_49b54ca7f98dc469780b4bca0e671444 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_49b54ca7f98dc469780b4bca0e671444.html"];
+    dir_49b54ca7f98dc469780b4bca0e671444 [shape=plaintext label="src"];
+    dir_256a2b3af02290e0fc918e131c3b8cf4 [shape=box label="hull_abstraction" color="red" fillcolor="white" style="filled" URL="dir_256a2b3af02290e0fc918e131c3b8cf4.html"];
+  }
+  }
+}

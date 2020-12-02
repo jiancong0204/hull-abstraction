@@ -1,0 +1,10 @@
+digraph "random_sampling::RandomSampling"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{random_sampling::RandomSampling\n|- nh\l- pub\l- sub\l- output_msg\l|+ RandomSampling()\l+ ~RandomSampling()\l+ run()\l- processing()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class that performs random sampling This framework is developed to perform random sampling on a trian..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -pg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{point_generation::PointGenerator\n|- output_cloud\l- input_mesh\l- sample_size\l|+ PointGenerator()\l+ ~PointGenerator()\l+ inputPolygonMesh()\l+ setSampleSize()\l+ getPointCloud()\l+ generatePointCloud()\l- randomlySampling()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpoint__generation_1_1_point_generator.html",tooltip="The PointGenerator class This class wraps the implementation of algorithms in order to generate point..."];
+}
