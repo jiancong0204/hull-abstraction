@@ -1,0 +1,8 @@
+digraph "benchmark::Benchmark"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{benchmark::Benchmark\n|- test_cloud\l- input_cloud\l- mesh\l- fraction\l|+ Benchmark()\l+ ~Benchmark()\l+ inputPolygonMesh()\l+ inputPointCloud()\l+ getTestCloud()\l+ getInputCloud()\l+ setTestCloudSize()\l+ generateData()\l- divideCloud()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Benchmark class."];
+}

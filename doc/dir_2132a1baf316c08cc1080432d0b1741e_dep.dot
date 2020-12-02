@@ -1,0 +1,16 @@
+digraph "D:/Projects/hull-abstraction/ros/src/hull_abstraction/include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_256a2b3af02290e0fc918e131c3b8cf4 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="hull_abstraction" fontname="Helvetica", fontsize="10", URL="dir_256a2b3af02290e0fc918e131c3b8cf4.html"]
+  subgraph clusterdir_2132a1baf316c08cc1080432d0b1741e {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_2132a1baf316c08cc1080432d0b1741e.html"];
+    dir_2132a1baf316c08cc1080432d0b1741e [shape=plaintext label="include"];
+    dir_29776d1a99c90624258a686e86f741da [shape=box label="hull_abstraction" color="black" fillcolor="white" style="filled" URL="dir_29776d1a99c90624258a686e86f741da.html"];
+    dir_795c9cc8624823222291a220b7240db8 [shape=box label="pcl_utilization" color="black" fillcolor="white" style="filled" URL="dir_795c9cc8624823222291a220b7240db8.html"];
+    dir_78c761ff98a02829f37aed1ee929ee64 [shape=box label="point_generation" color="black" fillcolor="white" style="filled" URL="dir_78c761ff98a02829f37aed1ee929ee64.html"];
+  }
+  }
+  dir_78c761ff98a02829f37aed1ee929ee64->dir_795c9cc8624823222291a220b7240db8 [headlabel="1", labeldistance=1.5 headhref="dir_000008_000007.html"];
+}

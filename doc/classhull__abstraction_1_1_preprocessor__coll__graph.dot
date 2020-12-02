@@ -1,0 +1,8 @@
+digraph "hull_abstraction::Preprocessor"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{hull_abstraction::Preprocessor\n|- approximate_voxel_grid\l- statistical_outlier\l_removal\l- pass_through\l- conditional_removal\l- radius_outlier_removal\l- normal_estimation\l- moving_least_squares\l- mls_points\l|+ Preprocessor()\l+ ~Preprocessor()\l+ voxelGridFilter()\l+ statisticalFilter()\l+ passThroughFilter()\l+ conditionalFilter()\l+ radiusFilter()\l+ appendNormalEstimation()\l+ movingLeastSquares()\l+ Preprocessor()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Preprocessor class."];
+}
