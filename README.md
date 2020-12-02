@@ -24,6 +24,14 @@ In this repository, following hull generation methods are implemented,
 - Poisson reconstructio
 - Marching cubes algorithm
 
+## Final Report
+
+See [here](https://github.com/jiancong0204/masters-thesis/blob/master/Thesis.pdf)
+
+## Documentation
+
+See [here]()
+
 ---
 
 ## Installation
@@ -159,10 +167,3 @@ A summary of the implemented hull generation methods.
 1. The space is divided into small cubes. Each cube has eight vertices.
 2. Based on how the boundary intersects the cube, each vertex of each cube is assigned a binary value (e.g. 0 if the point is thought to lie outside the surface.).
 3. The situation of intersection here is determined using point cloud instead of the surface.
-
----
-
-## Final Report
-
-See [here](https://github.com/jiancong0204/masters-thesis/blob/master/Thesis.pdf)
-
