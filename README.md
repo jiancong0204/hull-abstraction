@@ -15,7 +15,7 @@
 
 ## Introduction
 
-This repository is part of the Center of Advanced Robotics by the IGMR - Aachen University. The aim is to implement several hull generation methods and compare their performances. 
+This repository is part of the Center of Advanced Robotics by the IGMR - RWTH Aachen University. The aim is to implement several hull generation methods and compare their performances. 
 
 In this repository, following hull generation methods are implemented,
 
